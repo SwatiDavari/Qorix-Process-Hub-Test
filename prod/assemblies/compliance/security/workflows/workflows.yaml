@@ -1,0 +1,30 @@
+# Security (compliance/security)  -  workflows.
+workflows:
+- id: wf_qx_sec_incident_response
+  title: Coordinate Organisation Level Incident Response
+  status: draft
+  responsible: rl_qx_sec_security_office
+  approved_by: rl_qx_gc_head
+  supported_by:
+  - rl_qx_saf_safety_office
+  input:
+  - wp_qx_sec_policies
+  output:
+  - wp_qx_sec_incident_report
+  description: The Cybersecurity Office coordinates the response to a security incident that crosses projects
+    or meets the threshold for organisation level handling. The Safety Office supports where a security
+    incident has safety implications. An incident report is produced and shared with affected projects.
+- id: wf_qx_sec_maintain_csms
+  title: Maintain Cybersecurity Management System
+  status: draft
+  responsible: rl_qx_sec_security_office
+  approved_by: rl_qx_gc_head
+  supported_by:
+  - rl_qx_qa_quality_office
+  input:
+  - wp_qx_sec_incident_report
+  output:
+  - wp_qx_sec_policies
+  description: The Cybersecurity Office reviews the Cybersecurity Management System at least once per
+    year against ISO/SAE 21434 and updates it based on incident reports and threat intelligence. The Head
+    of G&C approves changes to the organisation level security baseline.

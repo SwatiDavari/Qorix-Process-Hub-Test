@@ -1,0 +1,21 @@
+# Configuration Management (engineering/configuration_management)  -  process: identity, classification, concepts.
+assembly:
+  id: configuration_management
+  code: cfg
+  cluster: engineering
+  title: Configuration Management
+  enabler: '-'
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_qa_quality_office
+  purpose: Identify, baseline and control configuration items so every release is reproducible.
+  standards:
+  - ISO 26262-8 cl. 7
+  - ASPICE 4.0 SUP.8
+  tier: qorix
+getting_started: |-
+  This describes how to get started with process management at organisation level: where a process comes from, how it is kept in step with the upstream process description it builds on, and who assigns a maturity level to it on what evidence.
+
+  At least once per year the Quality Office reviews the process description against the applicable standards and turns improvement inputs into changes to the process description. The Head of G&C approves a change of maturity level.
+concepts: []

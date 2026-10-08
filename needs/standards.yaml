@@ -1,0 +1,14 @@
+# Qorix standards catalogue: the standard clauses Qorix work products comply with.
+# Work products link here with `complies`. Add a clause before referencing it.
+standards:
+  - {id: std_wp_iso26262_management_551, standard: "ISO 26262:2018", clause: "Part 2, 5.5.1", title: "Organisation-specific rules and processes for functional safety"}
+  - {id: std_wp_iso26262_management_552, standard: "ISO 26262:2018", clause: "Part 2, 5.5.2", title: "Evidence of competence management"}
+  - {id: std_wp_isosae21434_org_management_551, standard: "ISO/SAE 21434:2021", clause: "5.5.1 [WP-05-01]", title: "Cybersecurity policy, rules and processes"}
+  - {id: std_wp_isosae21434_org_management_552, standard: "ISO/SAE 21434:2021", clause: "5.5.2 [WP-05-02]", title: "Evidence of competence management, awareness management and continuous learning"}
+  - {id: std_wp_isosae21434_org_management_554, standard: "ISO/SAE 21434:2021", clause: "5.5.4 [WP-05-04]", title: "Evidence of tool management"}
+  - {id: std_wp_isosae21434_org_management_555, standard: "ISO/SAE 21434:2021", clause: "5.5.5 [WP-05-05]", title: "Organisational cybersecurity audit report"}
+  - {id: std_req_aspice_40_iic_06_04, standard: "Automotive SPICE 4.0", clause: "IIC 06-04", title: "Training material"}
+  - {id: std_req_aspice_40_iic_10_00, standard: "Automotive SPICE 4.0", clause: "IIC 10-00", title: "Process description"}
+  - {id: std_req_aspice_40_iic_13_55, standard: "Automotive SPICE 4.0", clause: "IIC 13-55", title: "Process resource and infrastructure documentation"}
+  - {id: std_req_aspice_40_iic_15_13, standard: "Automotive SPICE 4.0", clause: "IIC 15-13", title: "Assessment/audit report"}
+  - {id: std_req_aspice_40_iic_15_54, standard: "Automotive SPICE 4.0", clause: "IIC 15-54", title: "Tailoring documentation"}

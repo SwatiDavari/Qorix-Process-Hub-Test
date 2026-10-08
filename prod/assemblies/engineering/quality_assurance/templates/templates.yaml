@@ -1,0 +1,36 @@
+# Quality Assurance (engineering/quality_assurance)  -  templates and guidance.
+templates:
+- id: gd_temp_qx_qa_qms_plan_template
+  title: QMS Plan Template
+  status: draft
+  description: |-
+    Template for the **QMS Plan** work product (`wp_qx_qa_qms_plan`).
+
+    **Mandatory fields:**
+
+    | Field | Description |
+    |---|---|
+    | Scope | Which projects and assets are covered by this QMS |
+    | Responsible offices | Quality Office, Safety Office, Security Office assignments |
+    | Audit cadence | Minimum frequency (≥1 per project per year) |
+    | Discipline plans | Quality, safety, and security sub-plans with owners |
+    | Improvement actions | Open items from last audit cycle with status |
+    | Version | Document version and approval date |
+- id: gd_temp_qx_qa_audit_report_template
+  title: Audit Report Template
+  status: draft
+  description: |-
+    Template for the **Audit Report** work product (`wp_qx_qa_audit_report`).
+
+    **Mandatory fields:**
+
+    | Field | Description |
+    |---|---|
+    | Audit scope | Processes and assets audited |
+    | Audit date | Date(s) of audit execution |
+    | Audited items | List of items checked with reference to QMS Plan |
+    | Non-conformities | Findings with severity, owner, and due date |
+    | Observations | Improvement suggestions without mandatory action |
+    | Action items | Concrete actions with owner and due date |
+    | Closure status | Open/closed per action (updated at follow-up) |
+    | Approver | Head of G&C signature |

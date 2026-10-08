@@ -1,0 +1,22 @@
+# Safety (compliance/safety)  -  process: identity, classification, concepts.
+assembly:
+  id: safety
+  code: saf
+  cluster: compliance
+  title: Safety
+  enabler: SAF
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_saf_safety_office
+  purpose: 'Functional safety management: plan, perform and assess the safety activities ISO 26262 requires
+    for Qorix products.'
+  standards:
+  - ISO 26262-2
+  - ISO 26262-8
+  tier: qorix
+getting_started: |-
+  This describes how to get started with the parts of functional safety management that belong to the organisation rather than to a project — ISO 26262-2 clause 5 "Overall safety management".
+
+  Four strands make up this area: (1) maintaining the Functional Safety Management System, (2) performing independent assessments, (3) managing safety anomalies, and (4) tailoring rules for project-level safety plans.
+concepts: []

@@ -1,0 +1,5 @@
+# Infrastructure (build/infrastructure)  -  templates and guidance.
+templates:
+- id: gd_temp_qx_infra_repo_onboarding
+  title: Repository Onboarding Checklist
+  file: prod/build/infrastructure/templates/repo_onboarding.md

@@ -1,0 +1,25 @@
+# Infrastructure (build/infrastructure)  -  process: identity, classification, concepts.
+assembly:
+  id: infrastructure
+  code: infra
+  cluster: build
+  title: Infrastructure
+  enabler: BLD
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_infra_lead
+  purpose: |
+    Provide and keep qualified the docs-as-code toolchain (Bazel, Sphinx-needs, qpm), the repository baseline and CI that every Qorix project consumes.
+  standards:
+  - ISO 26262-8 cl. 11
+  - ISO/SAE 21434 cl. 5.4.5
+  - ASPICE 4.0 PIM.3
+  tier: qorix
+concepts:
+- id: doc_concept_qx_infra_infra
+  title: Infrastructure Concept
+  body: |
+    One framework module (Bazel `bazel_dep`) per release. Projects never copy process
+    content; they reference a framework version and add only their tailoring. Tool
+    changes are qualified once, centrally.

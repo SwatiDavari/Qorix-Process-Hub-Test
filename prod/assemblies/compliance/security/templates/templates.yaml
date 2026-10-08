@@ -1,0 +1,11 @@
+# Security (compliance/security)  -  templates and guidance.
+templates:
+- id: gd_temp_qx_sec_csms_template
+  title: CSMS Template
+  status: draft
+  description: 'Template for the Cybersecurity Management System document: scope, objectives, process
+    areas, threat landscape, incident response procedures.'
+- id: gd_temp_qx_sec_incident_template
+  title: Incident Report Template
+  status: draft
+  description: Template for security incident reports.

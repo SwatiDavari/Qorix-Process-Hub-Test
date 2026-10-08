@@ -1,0 +1,25 @@
+# Validation (testing/validation)  -  process: identity, classification, concepts.
+assembly:
+  id: validation
+  code: val
+  cluster: testing
+  title: Validation
+  enabler: TST
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_val_validation_lead
+  purpose: |
+    Set the organisation-wide test policy, qualify the test systems it relies on, and validate products against stakeholder requirements.
+  standards:
+  - ISO 26262-4 cl. 8
+  - ISO 26262-8 cl. 9
+  - ASPICE 4.0 SYS.5 / VAL.1
+  tier: qorix
+concepts:
+- id: doc_concept_qx_val_validation
+  title: Validation Concept
+  body: |
+    The test policy defines what "enough testing" means per ASIL/CAL. Test systems
+    (HIL, SIL, target rigs) are configuration items with their own qualification.
+    Validation closes the loop from stakeholder requirements to the released product.

@@ -1,0 +1,7 @@
+# Change Management (engineering/change_management)  -  templates and guidance.
+templates:
+- id: gd_temp_qx_cm_policy_template
+  title: Change Request Template
+  status: draft
+  description: 'Template for organisation level change requests covering: change description, impact analysis,
+    affected projects, approval authority, closure date.'

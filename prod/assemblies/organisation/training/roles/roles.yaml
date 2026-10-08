@@ -1,0 +1,5 @@
+# Training (organisation/training)  -  roles.
+roles:
+- id: rl_qx_trn_training_coordinator
+  title: Training Coordinator
+  description: Maintains the training catalogue, competence matrix and records.

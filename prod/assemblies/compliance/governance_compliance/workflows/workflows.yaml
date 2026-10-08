@@ -1,0 +1,83 @@
+# Governance & Compliance (compliance/governance_compliance)  -  workflows.
+workflows:
+- id: wf_qx_gc_maintain_overlay
+  title: Maintain Qorix process overlay
+  responsible: rl_qx_gc_process_owner
+  approved_by: rl_qx_gc_head
+  supported_by:
+  - rl_qx_saf_safety_office
+  - rl_qx_sec_security_office
+  - rl_qx_qa_quality_office
+  - rl_qx_infra_engineer
+  input:
+  - wp_qx_gc_process_description
+  - wp_qx_gc_process_improvement_report
+  - wp_qx_saf_policies
+  - wp_qx_sec_policies
+  output:
+  - wp_qx_gc_process_overlay
+  has:
+  - doc_concept_qx_gc_process
+  activities:
+  - step: Raise a change request against the hub repo (new op, new area, base-model change)
+    by: rl_qx_gc_process_owner
+  - step: Edit operations in the Qorix tier
+    by: rl_qx_gc_process_owner
+  - step: CI composes all projects; any project that no longer composes blocks the merge
+    by: rl_qx_infra_engineer
+  - step: Review safety / security / quality impact
+    by: rl_qx_saf_safety_office
+  - step: Approve and tag a framework release
+    by: rl_qx_gc_head
+- id: wf_qx_gc_tailor_project
+  title: Tailor process for a project
+  responsible: rl_qx_gc_project_lead
+  approved_by: rl_qx_gc_head
+  supported_by:
+  - rl_qx_saf_safety_office
+  - rl_qx_sec_security_office
+  input:
+  - wp_qx_gc_process_overlay
+  - wp_qx_gc_feature_request
+  output:
+  - wp_qx_gc_project_tailoring
+  - wp_qx_saf_safety_tailoring
+  contains:
+  - gd_temp_qx_gc_project_tailoring
+  has:
+  - doc_concept_qx_gc_process
+  activities:
+  - step: Copy dist/_template and set ASIL / CAL / ASPICE ceilings and process areas
+    by: rl_qx_gc_project_lead
+  - step: Add narrowing operations with a rationale each
+    by: rl_qx_gc_project_lead
+  - step: '`qpm compose` must pass; generated tailoring report is reviewed'
+    by: rl_qx_saf_safety_office
+  - step: Approve the tailoring (merge to main)
+    by: rl_qx_gc_head
+- id: wf_qx_gc_compliance_audit
+  title: Plan and perform compliance audit
+  responsible: rl_qx_gc_compliance_auditor
+  approved_by: rl_qx_gc_head
+  supported_by:
+  - rl_qx_gc_project_lead
+  - rl_qx_qa_quality_office
+  input:
+  - wp_qx_gc_project_tailoring
+  - wp_qx_qa_qms_plan
+  - wp_qx_gc_safety_plan
+  output:
+  - wp_qx_gc_audit_report
+  contains:
+  - gd_temp_qx_gc_audit_report
+  activities:
+  - step: Select scope from the tailoring record (areas, integrity levels)
+    by: rl_qx_gc_compliance_auditor
+  - step: Run `qpm lint-needs` on the project needs.json for objective evidence
+    by: rl_qx_gc_compliance_auditor
+  - step: Interview and sample work products
+    by: rl_qx_gc_compliance_auditor
+  - step: Record each finding as a gc_finding need linked (affects) to the item
+    by: rl_qx_gc_compliance_auditor
+  - step: Approve the audit report
+    by: rl_qx_gc_head

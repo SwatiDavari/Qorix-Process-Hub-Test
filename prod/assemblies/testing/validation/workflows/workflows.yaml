@@ -1,0 +1,66 @@
+# Validation (testing/validation)  -  workflows.
+workflows:
+- id: wf_qx_val_define_test_policy
+  title: Define and maintain test policy
+  responsible: rl_qx_val_validation_lead
+  approved_by: rl_qx_gc_head
+  supported_by:
+  - rl_qx_saf_safety_office
+  - rl_qx_sec_security_office
+  - rl_qx_val_test_community
+  input:
+  - wp_qx_gc_process_overlay
+  - wp_qx_val_verification_plan
+  output:
+  - wp_qx_val_test_policy
+  contains:
+  - gd_temp_qx_val_test_policy
+  has:
+  - doc_concept_qx_val_validation
+  activities:
+  - step: Derive methods and coverage targets per ASIL / CAL
+    by: rl_qx_val_validation_lead
+  - step: Align with the verification plan
+    by: rl_qx_val_test_community
+  - step: Approve the policy
+    by: rl_qx_gc_head
+- id: wf_qx_val_qualify_test_system
+  title: Specify and qualify test system
+  responsible: rl_qx_val_validation_engineer
+  approved_by: rl_qx_val_validation_lead
+  supported_by:
+  - rl_qx_infra_engineer
+  input:
+  - wp_qx_val_test_policy
+  - wp_qx_infra_toolchain_baseline
+  output:
+  - wp_qx_val_test_system_spec
+  - wp_qx_infra_tool_verification_report
+  contains:
+  - gd_temp_qx_val_test_system
+  activities:
+  - step: Specify the test system and its configuration baseline
+    by: rl_qx_val_validation_engineer
+  - step: Classify and qualify (tool confidence level)
+    by: rl_qx_val_validation_engineer
+  - step: Approve for use
+    by: rl_qx_val_validation_lead
+- id: wf_qx_val_execute_validation
+  title: Execute product validation
+  responsible: rl_qx_val_validation_engineer
+  approved_by: rl_qx_val_validation_lead
+  supported_by:
+  - rl_qx_saf_safety_office
+  input:
+  - wp_qx_val_stakeholder_requirements
+  - wp_qx_val_test_policy
+  - wp_qx_val_test_system_spec
+  output:
+  - wp_qx_val_validation_report
+  activities:
+  - step: Plan validation scope from stakeholder requirements
+    by: rl_qx_val_validation_engineer
+  - step: Execute on qualified test systems
+    by: rl_qx_val_validation_engineer
+  - step: Approve the validation report
+    by: rl_qx_val_validation_lead

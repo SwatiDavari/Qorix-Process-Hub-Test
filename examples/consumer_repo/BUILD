@@ -1,4 +1,4 @@
-load("@qorix_process_framework//bzl:qorix_docs.bzl", "qorix_docs")
+load("@qorix_process_framework//prod/realization/bzl:qorix_docs.bzl", "qorix_docs")
 
 qorix_docs(
     project = "Qorix Performance",

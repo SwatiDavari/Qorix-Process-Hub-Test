@@ -1,0 +1,24 @@
+# Training (organisation/training)  -  process: identity, classification, concepts.
+assembly:
+  id: training
+  code: trn
+  cluster: organisation
+  title: Training
+  enabler: '-'
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_trn_training_coordinator
+  purpose: |
+    Make sure every person holding a process role is qualified for it, and keep the evidence (competence matrix, training records) assessor-ready.
+  standards:
+  - ISO 26262-2 cl. 5.4.5
+  - ISO/SAE 21434 cl. 5.4.4
+  - ASPICE 4.0 (training material)
+  tier: qorix
+concepts:
+- id: doc_concept_qx_trn_training
+  title: Competence Management Concept
+  body: |
+    Each role has required trainings (`training` needs linked with `qualifies`). The
+    competence matrix is generated from those links; records prove completion.

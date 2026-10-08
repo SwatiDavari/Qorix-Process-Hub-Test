@@ -1,0 +1,23 @@
+# Safety (compliance/safety)  -  work products.
+work_products:
+- id: wp_qx_saf_platform_mgmt
+  title: Safety Management System Document
+  status: draft
+  purpose: The Functional Safety Management System document covering Qorix's organisation level safety
+    activities, objectives, and process tailoring rules.
+  template: gd_temp_qx_saf_fsms_template
+- id: wp_qx_saf_safety_tailoring
+  title: Safety Tailoring Rules
+  status: draft
+  purpose: Tailoring rules for project-level safety plans derived from the organisation level FSMS.
+  template: gd_temp_qx_saf_tailoring_template
+- id: wp_qx_saf_safety_anomaly_report
+  title: Safety Anomaly Report
+  status: draft
+  purpose: Record of a safety anomaly, its analysis, resolution, and notification to affected projects.
+  template: gd_temp_qx_saf_anomaly_template
+- id: wp_qx_saf_policies
+  title: Safety Policies
+  status: draft
+  purpose: Organisation level safety policies updated as output of safety management activities.
+  template: gd_temp_qx_saf_fsms_template

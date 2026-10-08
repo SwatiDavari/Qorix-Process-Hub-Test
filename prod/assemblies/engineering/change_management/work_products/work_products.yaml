@@ -1,0 +1,7 @@
+# Change Management (engineering/change_management)  -  work products.
+work_products:
+- id: wp_qx_cm_policies
+  title: Policies
+  status: draft
+  purpose: Organisation level policies updated as the output of change management activities.
+  template: gd_temp_qx_cm_policy_template

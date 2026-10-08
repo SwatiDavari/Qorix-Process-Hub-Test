@@ -1,0 +1,41 @@
+# Quality Assurance (engineering/quality_assurance)  -  process: identity, classification, concepts.
+assembly:
+  id: quality_assurance
+  code: qa
+  cluster: engineering
+  title: Quality Assurance
+  enabler: '-'
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_qa_quality_office
+  purpose: 'Quality management system and quality assurance: make sure processes are followed and work
+    products meet their criteria.'
+  standards:
+  - ISO 9001
+  - IATF 16949
+  - ASPICE 4.0 SUP.1
+  tier: qorix
+concepts:
+- id: doc_concept_qx_qa_process
+  title: Quality Assurance Process
+  status: draft
+  body: |-
+    **Purpose:** Ensure the QMS is maintained and continuously improved through
+    independent audit evidence. Every Qorix project records whether its processes
+    are actually applied, not merely written down.
+
+    **Scope:** All Qorix projects and organisation-level shared assets, from the
+    point at which process definitions exist.
+
+    **Standard alignment:** ASPICE 4.0 SUP.1 (Quality Assurance).
+
+    **Workflow sequence:**
+
+    1. **Conduct Organisation Level Internal Audit** — scheduled at least once per
+       project per year; produces the Audit Report that feeds into step 2.
+    2. **Maintain Quality Management System** — annual; consumes the Audit Report
+       and produces an updated QMS Plan.
+
+    The two workflows form a closed improvement loop: audit findings drive QMS
+    updates, and the updated QMS governs the next audit cycle.

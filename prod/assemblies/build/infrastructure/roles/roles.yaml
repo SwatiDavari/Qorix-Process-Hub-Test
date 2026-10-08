@@ -1,0 +1,8 @@
+# Infrastructure (build/infrastructure)  -  roles.
+roles:
+- id: rl_qx_infra_lead
+  title: Infrastructure Lead
+  description: Owns the toolchain baseline and its qualification evidence.
+- id: rl_qx_infra_engineer
+  title: Infrastructure Engineer
+  description: Maintains Bazel rules, CI workflows and qpm adapters.

@@ -1,0 +1,21 @@
+# Security (compliance/security)  -  process: identity, classification, concepts.
+assembly:
+  id: security
+  code: sec
+  cluster: compliance
+  title: Security
+  enabler: SEC
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_sec_security_office
+  purpose: 'Cybersecurity management: plan, perform and assess the cybersecurity activities ISO/SAE 21434
+    requires for Qorix products.'
+  standards:
+  - ISO/SAE 21434
+  tier: qorix
+getting_started: |-
+  This describes how to get started with the parts of cybersecurity management that belong to the organisation rather than to a project — ISO/SAE 21434 clause 5 "Organizational cybersecurity management".
+
+  The process covers: (1) maintaining the Cybersecurity Management System, and (2) coordinating organisation level incident response.
+concepts: []

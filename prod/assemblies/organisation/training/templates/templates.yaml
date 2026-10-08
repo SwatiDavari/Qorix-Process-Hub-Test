@@ -1,0 +1,5 @@
+# Training (organisation/training)  -  templates and guidance.
+templates:
+- id: gd_temp_qx_trn_competence_matrix
+  title: Competence Matrix Template
+  file: prod/organisation/training/templates/competence_matrix.md

@@ -1,0 +1,19 @@
+# Change Management (engineering/change_management)  -  workflows.
+workflows:
+- id: wf_qx_cm_manage_org_change
+  title: Manage Organisation Level Change
+  status: draft
+  responsible: rl_qx_qa_quality_office
+  approved_by: rl_qx_gc_head
+  supported_by:
+  - rl_qx_saf_safety_office
+  - rl_qx_sec_security_office
+  input:
+  - wp_qx_qa_audit_report
+  output:
+  - wp_qx_cm_policies
+  description: The Quality Office runs the intake, cross-project impact analysis, notification and closure
+    steps for any change to an organisation level work product. The approval authority table determines
+    the approver based on what is being changed. The Functional Safety and Cybersecurity Offices support
+    the impact analysis where the change reaches their discipline. The Head of G&C approves the change
+    to the organisation level baseline.

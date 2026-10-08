@@ -1,0 +1,25 @@
+# Quality Assurance (engineering/quality_assurance)  -  work products.
+work_products:
+- id: wp_qx_qa_qms_plan
+  title: QMS Plan
+  status: draft
+  purpose: |-
+    The Quality Management System (QMS) Plan is the authoritative organisation-level
+    document defining the QMS scope, discipline plans, audit cadence, and improvement
+    tracking.
+
+    **Produced by:** Workflow *Maintain Quality Management System*
+
+    **Consumed by:** Workflow *Conduct Organisation Level Internal Audit*
+  template: gd_temp_qx_qa_qms_plan_template
+- id: wp_qx_qa_audit_report
+  title: Audit Report
+  status: draft
+  purpose: |-
+    The Audit Report records the findings, non-conformities, observations, and
+    action items from an organisation-level internal audit.
+
+    **Produced by:** Workflow *Conduct Organisation Level Internal Audit*
+
+    **Consumed by:** Workflow *Maintain Quality Management System*
+  template: gd_temp_qx_qa_audit_report_template

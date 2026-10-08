@@ -1,0 +1,8 @@
+# Validation (testing/validation)  -  templates and guidance.
+templates:
+- id: gd_temp_qx_val_test_policy
+  title: Test Policy Template
+  file: prod/testing/validation/templates/test_policy.md
+- id: gd_temp_qx_val_test_system
+  title: Test System Specification Template
+  file: prod/testing/validation/templates/test_system.md

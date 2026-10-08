@@ -14,16 +14,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install -r tools/qpm/requirements_lock.txt
+      - run: pip install -r prod/realization/qpm/requirements_lock.txt
       - name: Self-tests (round trip, tiering rules, catalog)
-        run: python -m pytest tools/qpm/tests -q
+        run: python -m pytest prod/realization/qpm/tests -q
       - name: Regenerate and fail on drift
         run: |
-          bash tools/regen.sh
-          git diff --exit-code -- docs upstream || (echo "::error::Generated content out of date - run tools/regen.sh"; exit 1)
+          bash prod/realization/regen.sh
+          git diff --exit-code -- prod needs dist || (echo "::error::Generated content out of date - run prod/realization/regen.sh"; exit 1)
 
   docs:
-    name: Sphinx-needs build (score_docs_as_code)
+    name: Sphinx-needs build
     needs: qpm
     runs-on: ubuntu-latest
     steps:
@@ -34,7 +34,7 @@ jobs:
         with:
           bazelisk-cache: true
           repository-cache: true
-      - run: bazel test //tools/qpm:qpm_test
+      - run: bazel test //prod/realization/qpm:qpm_test
       - name: docs_check
         run: |
           set -o pipefail
@@ -55,9 +55,9 @@ jobs:
           dir=$(dirname "$top")
           echo "Publishing $dir"
           # Guard: never publish a sub-folder or an unstyled site
-          grep -q "<title>Qorix Process Framework" "$top" || { echo "::error::$top is not the site home page"; exit 1; }
+          grep -q "<title>Qorix Process Hub" "$top" || { echo "::error::$top is not the site home page"; exit 1; }
           ls "$dir"/_static/*.css >/dev/null 2>&1 || { echo "::error::no stylesheets in $dir/_static"; exit 1; }
-          test -f "$dir/process_description/index.html" || { echo "::error::Process Description page missing"; exit 1; }
+          test -f "$dir/assemblies/index.html" || { echo "::error::Assemblies page missing"; exit 1; }
           echo "HTML_DIR=$dir" >> "$GITHUB_ENV"
       - uses: actions/upload-pages-artifact@v3
         with:

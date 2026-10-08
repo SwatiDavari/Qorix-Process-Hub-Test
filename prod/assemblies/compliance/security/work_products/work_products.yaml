@@ -1,0 +1,14 @@
+# Security (compliance/security)  -  work products.
+work_products:
+- id: wp_qx_sec_policies
+  title: Cybersecurity Management System Document
+  status: draft
+  purpose: The Cybersecurity Management System document covering Qorix's organisation level cybersecurity
+    activities, objectives, and incident response procedures.
+  template: gd_temp_qx_sec_csms_template
+- id: wp_qx_sec_incident_report
+  title: Incident Report
+  status: draft
+  purpose: 'Record of a security incident: description, affected systems/projects, timeline, response
+    actions, lessons learned.'
+  template: gd_temp_qx_sec_incident_template

@@ -1,0 +1,11 @@
+# Configuration Management (engineering/configuration_management)  -  templates and guidance.
+templates:
+- id: gd_temp_qx_cfg_qms_report_template
+  title: QMS Report Template
+  status: draft
+  description: 'Template for QMS status reports covering: process area, current maturity level, evidence,
+    improvement actions.'
+- id: gd_temp_qx_cfg_policy_template
+  title: Policy Template
+  status: draft
+  description: Template for organisation level policy documents.

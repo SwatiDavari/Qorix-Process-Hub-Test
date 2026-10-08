@@ -1,6 +1,5 @@
 bazel-*
-build/
+/build/
 _build/
 __pycache__/
 .pytest_cache/
-upstream/score_proposal/_candidate_overlay.qpm.yaml

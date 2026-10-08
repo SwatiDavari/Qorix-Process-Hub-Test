@@ -1,0 +1,10 @@
+# Quality Assurance (engineering/quality_assurance)  -  roles.
+roles:
+- id: rl_qx_qa_quality_office
+  title: Quality Office
+  description: |-
+    The Quality Office leads both quality management workflows. It owns the QMS,
+    coordinates audit scheduling and execution, and drives QMS updates based on
+    audit findings.
+
+    **Responsible for:** Conduct Internal Audit, Maintain QMS.

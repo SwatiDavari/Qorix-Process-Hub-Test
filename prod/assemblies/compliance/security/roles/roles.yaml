@@ -1,0 +1,7 @@
+# Security (compliance/security)  -  roles.
+roles:
+- id: rl_qx_sec_security_office
+  title: Cybersecurity Office
+  description: The Cybersecurity Office is responsible for maintaining the CSMS and coordinating organisation
+    level incident response. It supports quality management and safety management where cybersecurity
+    intersects.

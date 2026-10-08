@@ -1,0 +1,15 @@
+# Safety (compliance/safety)  -  templates and guidance.
+templates:
+- id: gd_temp_qx_saf_fsms_template
+  title: FSMS Template
+  status: draft
+  description: 'Template for the Functional Safety Management System document: scope, objectives, process
+    areas, maturity levels, evidence references.'
+- id: gd_temp_qx_saf_tailoring_template
+  title: Tailoring Rules Template
+  status: draft
+  description: Template for project-level safety plan tailoring rules.
+- id: gd_temp_qx_saf_anomaly_template
+  title: Safety Anomaly Report Template
+  status: draft
+  description: Template for safety anomaly reports.

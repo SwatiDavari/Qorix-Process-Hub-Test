@@ -1,0 +1,43 @@
+# Governance & Compliance (compliance/governance_compliance)  -  work products.
+work_products:
+- id: wp_qx_gc_process_overlay
+  title: Qorix Process Overlay
+  purpose: |
+    The versioned Qorix tier (prod/concepts/tiers/10_qorix) and the Qorix process areas: the organisation-specific rules and processes.
+  concept: doc_concept_qx_gc_process
+  complies:
+  - std_wp_iso26262_management_551
+  - std_wp_isosae21434_org_management_551
+  - std_req_aspice_40_iic_10_00
+- id: wp_qx_gc_project_tailoring
+  title: Project Tailoring Record
+  purpose: |
+    dist/<id>/tailoring.qpm.yaml plus the generated tailoring report: integrity ceilings (ASIL, CAL, ASPICE level) and every narrowing with its rationale.
+  concept: doc_concept_qx_gc_process
+  template: gd_temp_qx_gc_project_tailoring
+  complies:
+  - std_req_aspice_40_iic_15_54
+- id: wp_qx_gc_audit_report
+  title: Compliance Audit Report
+  purpose: Result of a process / work-product audit, with findings recorded as gc_finding needs.
+  concept: doc_concept_qx_gc_process
+  template: gd_temp_qx_gc_audit_report
+  complies:
+  - std_req_aspice_40_iic_15_13
+  - std_wp_isosae21434_org_management_555
+- id: wp_qx_gc_process_description
+  title: Process Description
+  origin: external
+  purpose: Existing documented processes that the overlay must stay consistent with.
+- id: wp_qx_gc_process_improvement_report
+  title: Process Improvement Report
+  origin: external
+  purpose: Lessons learned and improvement requests collected from projects and audits.
+- id: wp_qx_gc_feature_request
+  title: Feature Request
+  origin: external
+  purpose: The project's scope and product features, used to set its integrity ceilings.
+- id: wp_qx_gc_safety_plan
+  title: Safety Plan
+  origin: external
+  purpose: The project's safety plan, used as audit input.

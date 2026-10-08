@@ -1,0 +1,11 @@
+# Validation (testing/validation)  -  roles.
+roles:
+- id: rl_qx_val_validation_lead
+  title: Validation Lead
+  description: Owns the test policy and approves validation reports.
+- id: rl_qx_val_validation_engineer
+  title: Validation Engineer
+  description: Specifies and runs validation on qualified test systems.
+- id: rl_qx_val_test_community
+  title: Test Community
+  description: Test practitioners across projects who share methods and review the test policy.

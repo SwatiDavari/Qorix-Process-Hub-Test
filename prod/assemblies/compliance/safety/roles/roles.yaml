@@ -1,0 +1,10 @@
+# Safety (compliance/safety)  -  roles.
+roles:
+- id: rl_qx_saf_safety_office
+  title: Functional Safety Office
+  description: The Functional Safety Office is responsible for maintaining the FSMS, managing safety anomalies,
+    and supporting independent safety assessments.
+- id: rl_qx_saf_independent_assessor
+  title: Independent Safety Assessor
+  description: An independent assessor (internal or external) who evaluates Qorix's functional safety
+    activities against ISO 26262 objectives. Must be independent of the assessed activities.

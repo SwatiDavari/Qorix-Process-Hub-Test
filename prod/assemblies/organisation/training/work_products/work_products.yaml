@@ -1,0 +1,20 @@
+# Training (organisation/training)  -  work products.
+work_products:
+- id: wp_qx_trn_competence_matrix
+  title: Competence Matrix
+  purpose: Roles x required trainings x people, with validity dates.
+  concept: doc_concept_qx_trn_training
+  template: gd_temp_qx_trn_competence_matrix
+  complies:
+  - std_wp_iso26262_management_552
+  - std_wp_isosae21434_org_management_552
+- id: wp_qx_trn_training_material
+  title: Training Material
+  purpose: Training content per process area, versioned with the framework.
+  concept: doc_concept_qx_trn_training
+  complies:
+  - std_req_aspice_40_iic_06_04
+- id: wp_qx_trn_training_path
+  title: Training Path
+  origin: external
+  purpose: The trainings a person plans to take for a role, agreed with their line manager.
