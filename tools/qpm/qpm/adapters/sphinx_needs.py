@@ -20,7 +20,9 @@ def _opts(attrs: dict[str, Any]) -> tuple[dict[str, str], dict[str, str]]:
     return mand, opt
 
 
-def emit(model: dict[str, Any]) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+def emit(model: dict[str, Any], legacy_graph_checks: bool = False) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+    """legacy_graph_checks: emit the single `check` key (= check_all) understood by
+    score_docs_as_code <= 8.3.0 instead of `check_all` / `check_one`."""
     out: dict[str, Any] = {}
     mand, opt = _opts(model["defaults"]["attributes"])
     out["needs_types_base_options"] = {"optional_options": opt, "mandatory_options": mand}
@@ -78,7 +80,13 @@ def emit(model: dict[str, Any]) -> tuple[dict[str, Any], list[dict[str, Any]]]:
         if "where" in a:
             needs["condition"] = a["where"]
         g: dict[str, Any] = {"needs": needs}
-        g["check"] = {c["relation"]: c["expect"]}
+        if legacy_graph_checks:
+            if c["quantifier"] != "all":  # 8.3.0 has no "at least one" check
+                unsupported.append(rule)
+                continue
+            g["check"] = {c["relation"]: c["expect"]}
+        else:
+            g["check_all" if c["quantifier"] == "all" else "check_one"] = {c["relation"]: c["expect"]}
         g["explanation"] = rule.get("explanation", "")
         if rule.get("severity") == "info":
             g["info_only"] = True

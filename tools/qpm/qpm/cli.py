@@ -76,7 +76,7 @@ def main(argv: list[str] | None = None) -> int:
         elif a.cmd == "compose":
             m = compose(a.tier)
             out = Path(a.out_dir)
-            metamodel, unsupported = sphinx_needs.emit(m)
+            metamodel, unsupported = sphinx_needs.emit(m, legacy_graph_checks=True)
             dump_json(m, out / "resolved_model.json")
             dump_yaml(metamodel, out / "metamodel.yaml")
             (out / "tailoring_report.rst").write_text(reports.tailoring_report_rst(m, unsupported), encoding="utf-8")
