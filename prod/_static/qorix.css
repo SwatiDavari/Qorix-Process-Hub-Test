@@ -100,3 +100,16 @@ table.need tr.need.content td { background: var(--pst-color-background, #fff) !i
 .needs_meta .has, .needs_meta .has > span { font-size: 0.9rem; }
 .needs_meta .has > span { font-size: 0; }
 .needs_meta .has > span > a { font-size: 0.78rem; }
+
+/* beat the docs engine's grey need background (need_core.css uses table.need.need.need) */
+table.need.need.need,
+table.need.need.need > tbody > tr,
+table.need.need.need > tbody > tr > td {
+  background: var(--pst-color-background, #fff) !important;
+}
+table.need.need.need > tbody > tr.head,
+table.need.need.need > tbody > tr.head > td,
+table.need.need.need > tbody > tr.footer,
+table.need.need.need > tbody > tr.footer > td {
+  background: var(--qx-purple-tint) !important;
+}
