@@ -1,0 +1,37 @@
+name: Framework CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  qpm:
+    name: Model, catalog and generated-content checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r tools/qpm/requirements_lock.txt
+      - name: Self-tests (round trip, tiering rules, catalog)
+        run: python -m pytest tools/qpm/tests -q
+      - name: Regenerate and fail on drift
+        run: |
+          ./tools/regen.sh
+          git diff --exit-code -- docs upstream || (echo "::error::Generated content out of date - run tools/regen.sh"; exit 1)
+
+  docs:
+    name: Sphinx-needs build (score_docs_as_code)
+    needs: qpm
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: bazel-contrib/setup-bazel@0.14.0
+        with:
+          bazelisk-cache: true
+          repository-cache: true
+      - run: bazel test //tools/qpm:qpm_test
+      - run: bazel run //:docs_check
+      - run: bazel run //:docs

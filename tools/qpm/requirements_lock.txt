@@ -1,0 +1,11 @@
+# qpm runtime deps (installed --no-deps by rules_python; transitive deps listed explicitly)
+pyyaml==6.0.2
+jsonschema==4.23.0
+jsonschema-specifications==2024.10.1
+referencing==0.35.1
+rpds-py==0.22.3
+attrs==24.3.0
+pytest==8.3.4
+iniconfig==2.0.0
+pluggy==1.5.0
+packaging==24.2

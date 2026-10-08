@@ -1,0 +1,306 @@
+--- score/metamodel.yaml
++++ qorix-fork/metamodel.yaml
+@@ -42,8 +42,8 @@
+       links: ANY
+     parts: 3
+   assertion:
+-    color: '#E1D5E7'
+     title: Assertion
++    color: '#E1D5E7'
+     mandatory_options:
+       id: ^assertion__[0-9a-zA-Z_-]*$
+       status: ^(draft|valid)$
+@@ -134,6 +134,8 @@
+       status: ^(valid|draft)$
+     optional_links:
+       complies: std_wp, std_req
++      has: doc_concept
++      contains: gd_temp, gd_chklst
+     parts: 2
+   role:
+     title: Role
+@@ -157,7 +159,7 @@
+     prefix: doc__
+     mandatory_options:
+       status: ^(valid|draft|invalid)$
+-      safety: ^(QM|ASIL_B)$
++      safety: ^(QM|ASIL_A|ASIL_B|ASIL_C|ASIL_D)$
+       security: ^(YES|NO)$
+     optional_options:
+       author: ^.*$
+@@ -216,7 +218,7 @@
+     color: '#DAE8FC'
+     mandatory_options:
+       reqtype: ^(Functional|Interface|Process|Non-Functional)$
+-      safety: ^(QM|ASIL_B)$
++      safety: ^(QM|ASIL_A|ASIL_B|ASIL_C|ASIL_D)$
+       status: ^(valid|invalid|valid_inspected)$
+       rationale: ^.+$
+       security: ^(YES|NO)$
+@@ -225,6 +227,7 @@
+       testcovered: ^(YES|NO)$
+       hash: ^.*$
+       valid_until: ^v(0|[1-9]\d*)\.(0|[1-9]\d*)(\.(0|[1-9]\d*))?$
++      cal: ^(CAL1|CAL2|CAL3|CAL4)$
+     tags:
+     - requirement
+     - requirement_excl_process
+@@ -236,19 +239,20 @@
+     mandatory_options:
+       reqtype: ^(Functional|Interface|Process|Non-Functional)$
+       security: ^(YES|NO)$
+-      safety: ^(QM|ASIL_B)$
++      safety: ^(QM|ASIL_A|ASIL_B|ASIL_C|ASIL_D)$
+       status: ^(valid|invalid|valid_inspected)$
+       content: ^[\s\S]+$
+       valid_from: ^v(0|[1-9]\d*)\.(0|[1-9]\d*)(\.(0|[1-9]\d*))?$
+-    mandatory_links:
+-      satisfied_by: feat
+-    optional_links:
+-      derived_from: stkh_req
+-      covers: aou_req
+     optional_options:
+       testcovered: ^(YES|NO)$
+       hash: ^.*$
+       valid_until: ^v(0|[1-9]\d*)\.(0|[1-9]\d*)(\.(0|[1-9]\d*))?$
++      cal: ^(CAL1|CAL2|CAL3|CAL4)$
++    mandatory_links:
++      satisfied_by: feat
++    optional_links:
++      derived_from: stkh_req
++      covers: aou_req
+     tags:
+     - requirement
+     - requirement_excl_process
+@@ -259,17 +263,18 @@
+     mandatory_options:
+       reqtype: ^(Functional|Interface|Process|Non-Functional)$
+       security: ^(YES|NO)$
+-      safety: ^(QM|ASIL_B)$
+-      status: ^(valid|invalid|valid_inspected)$
+-      content: ^[\s\S]+$
++      safety: ^(QM|ASIL_A|ASIL_B|ASIL_C|ASIL_D)$
++      status: ^(valid|invalid|valid_inspected)$
++      content: ^[\s\S]+$
++    optional_options:
++      testcovered: ^(YES|NO)$
++      hash: ^.*$
++      cal: ^(CAL1|CAL2|CAL3|CAL4)$
+     mandatory_links:
+       satisfied_by: comp
+     optional_links:
+       derived_from: feat_req
+       covers: aou_req
+-    optional_options:
+-      testcovered: ^(YES|NO)$
+-      hash: ^.*$
+     tags:
+     - requirement
+     - requirement_excl_process
+@@ -279,8 +284,6 @@
+     color: '#F5F5F5'
+     mandatory_options:
+       content: ^[\s\S]+$
+-    mandatory_links:
+-      satisfies: gd_req, stkh_req, feat_req, comp_req
+     optional_options:
+       tags: ^.*$
+       testcovered: ^(YES|NO)$
+@@ -289,7 +292,9 @@
+       parent_covered: ^.*$
+       parent_has_problem: ^.*$
+       security: ^(YES|NO)$
+-      safety: ^(QM|ASIL_B)$
++      safety: ^(QM|ASIL_A|ASIL_B|ASIL_C|ASIL_D)$
++    mandatory_links:
++      satisfies: gd_req, stkh_req, feat_req, comp_req
+     tags:
+     - requirement
+     - requirement_excl_process
+@@ -300,12 +305,13 @@
+     mandatory_options:
+       reqtype: ^(Functional|Interface|Process|Non-Functional)$
+       security: ^(YES|NO)$
+-      safety: ^(QM|ASIL_B)$
++      safety: ^(QM|ASIL_A|ASIL_B|ASIL_C|ASIL_D)$
+       status: ^(valid|invalid|valid_inspected)$
+       content: ^[\s\S]+$
+     optional_options:
+       testcovered: ^(YES|NO)$
+       hash: ^.*$
++      cal: ^(CAL1|CAL2|CAL3|CAL4)$
+     tags:
+     - requirement
+     - requirement_excl_process
+@@ -316,8 +322,10 @@
+     style: card
+     mandatory_options:
+       security: ^(YES|NO)$
+-      safety: ^(QM|ASIL_B)$
+-      status: ^(valid|invalid|valid_inspected)$
++      safety: ^(QM|ASIL_A|ASIL_B|ASIL_C|ASIL_D)$
++      status: ^(valid|invalid|valid_inspected)$
++    optional_options:
++      cal: ^(CAL1|CAL2|CAL3|CAL4)$
+     optional_links:
+       includes: logic_arc_int, logic_arc_int_op
+       uses: logic_arc_int, logic_arc_int_op
+@@ -331,7 +339,7 @@
+     style: card
+     mandatory_options:
+       security: ^(YES|NO)$
+-      safety: ^(QM|ASIL_B)$
++      safety: ^(QM|ASIL_A|ASIL_B|ASIL_C|ASIL_D)$
+       status: ^(valid|invalid|valid_inspected)$
+     mandatory_links:
+       includes: logic_arc_int, logic_arc_int_op
+@@ -348,7 +356,7 @@
+     style: card
+     mandatory_options:
+       security: ^(YES|NO)$
+-      safety: ^(QM|ASIL_B)$
++      safety: ^(QM|ASIL_A|ASIL_B|ASIL_C|ASIL_D)$
+       status: ^(valid|invalid|valid_inspected)$
+     mandatory_links:
+       belongs_to: feat
+@@ -364,7 +372,7 @@
+     style: card
+     mandatory_options:
+       security: ^(YES|NO)$
+-      safety: ^(QM|ASIL_B)$
++      safety: ^(QM|ASIL_A|ASIL_B|ASIL_C|ASIL_D)$
+       status: ^(valid|invalid|valid_inspected)$
+     optional_links:
+       included_by: feat
+@@ -379,7 +387,7 @@
+     style: card
+     mandatory_options:
+       security: ^(YES|NO)$
+-      safety: ^(QM|ASIL_B)$
++      safety: ^(QM|ASIL_A|ASIL_B|ASIL_C|ASIL_D)$
+       status: ^(valid|invalid|valid_inspected)$
+     mandatory_links:
+       included_by: logic_arc_int
+@@ -392,9 +400,10 @@
+     style: card
+     optional_options:
+       security: ^(YES|NO)$
+-      safety: ^(QM|ASIL_B)$
++      safety: ^(QM|ASIL_A|ASIL_B|ASIL_C|ASIL_D)$
+       status: ^(valid|invalid|valid_inspected)$
+       maturity: ^(preview|experimental|release)$
++      cal: ^(CAL1|CAL2|CAL3|CAL4)$
+     mandatory_links:
+       includes: comp
+     tags:
+@@ -414,17 +423,19 @@
+     title: Module Architecture Dynamic View
+     color: '#D5E8D4'
+     style: card
+-    parts: 3
+     optional_links:
+       belongs_to: mod
++    parts: 3
+   comp:
+     title: Component
+     color: '#D5E8D4'
+     style: card
+     mandatory_options:
+       security: ^(YES|NO)$
+-      safety: ^(QM|ASIL_B)$
+-      status: ^(valid|invalid|valid_inspected)$
++      safety: ^(QM|ASIL_A|ASIL_B|ASIL_C|ASIL_D)$
++      status: ^(valid|invalid|valid_inspected)$
++    optional_options:
++      cal: ^(CAL1|CAL2|CAL3|CAL4)$
+     mandatory_links:
+       belongs_to: feat
+     optional_links:
+@@ -441,7 +452,7 @@
+     style: card
+     mandatory_options:
+       security: ^(YES|NO)$
+-      safety: ^(QM|ASIL_B)$
++      safety: ^(QM|ASIL_A|ASIL_B|ASIL_C|ASIL_D)$
+       status: ^(valid|invalid|valid_inspected)$
+     mandatory_links:
+       belongs_to: comp
+@@ -457,7 +468,7 @@
+     style: card
+     mandatory_options:
+       security: ^(YES|NO)$
+-      safety: ^(QM|ASIL_B)$
++      safety: ^(QM|ASIL_A|ASIL_B|ASIL_C|ASIL_D)$
+       status: ^(valid|invalid|valid_inspected)$
+     mandatory_links:
+       belongs_to: comp
+@@ -472,7 +483,7 @@
+     style: card
+     mandatory_options:
+       security: ^(YES|NO)$
+-      safety: ^(QM|ASIL_B)$
++      safety: ^(QM|ASIL_A|ASIL_B|ASIL_C|ASIL_D)$
+       status: ^(valid|invalid|valid_inspected)$
+       language: ^(cpp|rust)$
+     optional_links:
+@@ -487,7 +498,7 @@
+     style: card
+     mandatory_options:
+       security: ^(YES|NO)$
+-      safety: ^(QM|ASIL_B)$
++      safety: ^(QM|ASIL_A|ASIL_B|ASIL_C|ASIL_D)$
+       status: ^(valid|invalid|valid_inspected)$
+     mandatory_links:
+       included_by: real_arc_int
+@@ -513,11 +524,11 @@
+       sufficient: ^(yes|no)$
+       status: ^(valid|invalid)$
+       content: ^[\s\S]+$
+-    mandatory_links:
+-      violates: feat_arc_sta
+     optional_options:
+       safety_relevant: ^(yes|no)$
+       mitigation_issue: ^https://github\.com/[^/]+/[^/]+/issues/\d+$
++    mandatory_links:
++      violates: feat_arc_sta
+     optional_links:
+       mitigated_by: stkh_req, aou_req
+     parts: 3
+@@ -530,11 +541,11 @@
+       sufficient: ^(yes|no)$
+       status: ^(valid|invalid)$
+       content: ^[\s\S]+$
+-    mandatory_links:
+-      violates: feat_arc_sta
+     optional_options:
+       safety_relevant: ^(yes|no)$
+       mitigation_issue: ^https://github\.com/[^/]+/[^/]+/issues/\d+$
++    mandatory_links:
++      violates: feat_arc_sta
+     optional_links:
+       mitigated_by: feat_req, aou_req
+     tags:
+@@ -704,7 +715,7 @@
+     title: Module Verification Report
+     prefix: mod_vrep__
+     mandatory_options:
+-      safety: ^(QM|ASIL_B)$
++      safety: ^(QM|ASIL_A|ASIL_B|ASIL_C|ASIL_D)$
+       security: ^(YES|NO)$
+       status: ^(valid|invalid)$
+       verification_method: ^.+$
+@@ -873,3 +884,14 @@
+         - id contains std_wp
+     explanation: Workproducts may only link to ASPICE 40 IIC stakeholder requirements. Please ensure that
+       the linked requirement is an ASPICE 40 IIC stakeholder requirement.
++  qx__arch_asil_d_fulfilment:
++    needs:
++      include: feat_arc_sta, feat_arc_dyn, logic_arc_int, comp, comp_arc_sta, comp_arc_dyn, real_arc_int
++      condition: safety != ASIL_D
++    check_all:
++      fulfils: safety != ASIL_D
++    explanation: 'An element below ASIL D fulfils an ASIL D requirement. Document an ASIL decomposition
++      (ISO 26262-9 cl. 5) or raise the element ASIL.
++
++      '
++    info_only: true

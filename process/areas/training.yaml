@@ -1,0 +1,64 @@
+# Process area: Training  - tier: qorix
+area:
+  id: training
+  title: Training
+  tier: qorix
+  owner: rl__qx_training_coordinator
+  purpose: >
+    Make sure every person holding a process role is qualified for it, and keep the
+    evidence (competence matrix, training records) assessor-ready.
+  standards: [ISO 26262-2 cl. 5.4.5, ISO/SAE 21434 cl. 5.4.4, ASPICE 4.0 (training material)]
+
+concepts:
+  - id: doc_concept__qx_training
+    title: Competence Management Concept
+    body: |
+      Each role has required trainings (`training` needs linked with `qualifies`). The
+      competence matrix is generated from those links; records prove completion.
+
+roles:
+  - id: rl__qx_training_coordinator
+    title: Training Coordinator
+    description: Maintains the training catalogue, competence matrix and records.
+
+templates:
+  - id: gd_temp__qx_competence_matrix
+    title: Competence Matrix Template
+    file: templates/competence_matrix.md
+
+workproducts:
+  - id: wp__qx_competence_matrix
+    title: Competence Matrix
+    purpose: Roles x required trainings x people, with validity dates.
+    concept: doc_concept__qx_training
+    template: gd_temp__qx_competence_matrix
+    complies: [std_wp__iso26262__management_552, std_wp__isosae21434__org_management_552]
+  - id: wp__qx_training_material
+    title: Training Material
+    purpose: Training content per process area, versioned with the framework.
+    concept: doc_concept__qx_training
+    complies: [std_req__aspice_40__iic-06-04]
+
+workflows:
+  - id: wf__qx_trn_maintain_competence
+    title: Maintain competence matrix
+    responsible: rl__qx_training_coordinator
+    approved_by: rl__qx_gc_head
+    supported_by: [rl__qx_process_owner]
+    input: [wp__qx_process_overlay, wp__training_path]
+    output: [wp__qx_competence_matrix]
+    contains: [gd_temp__qx_competence_matrix]
+    has: [doc_concept__qx_training]
+    activities:
+      - {step: "For every role in the resolved process, define required trainings", by: rl__qx_process_owner}
+      - {step: "Generate / update the matrix", by: rl__qx_training_coordinator}
+      - {step: "Approve", by: rl__qx_gc_head}
+  - id: wf__qx_trn_deliver_training
+    title: Develop and deliver training
+    responsible: rl__qx_training_coordinator
+    approved_by: rl__qx_process_owner
+    input: [wp__qx_process_overlay, wp__qx_competence_matrix]
+    output: [wp__qx_training_material, wp__qx_competence_matrix]
+    activities:
+      - {step: "Update material when the overlay changes", by: rl__qx_process_owner}
+      - {step: "Deliver and record completion", by: rl__qx_training_coordinator}

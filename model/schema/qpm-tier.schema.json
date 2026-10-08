@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://qorix.ai/schemas/qpm-tier.schema.json",
+  "title": "Qorix Process Metamodel (QPM) tier file",
+  "type": "object",
+  "required": ["qpm", "tier"],
+  "additionalProperties": false,
+  "properties": {
+    "qpm": {"const": "1.0"},
+    "tier": {
+      "type": "object",
+      "required": ["id", "kind"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$"},
+        "kind": {"enum": ["base", "overlay", "project"]},
+        "extends": {"type": "string"},
+        "title": {"type": "string"},
+        "description": {"type": "string"},
+        "owner": {"type": "string"},
+        "source": {"type": "object"}
+      }
+    },
+    "project": {
+      "type": "object",
+      "required": ["id", "name", "integrity"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+        "name": {"type": "string"},
+        "products": {"type": "array", "items": {"type": "string"}},
+        "integrity": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "asil_max": {"enum": ["QM", "ASIL_A", "ASIL_B", "ASIL_C", "ASIL_D"]},
+            "cal_max": {"enum": ["CAL1", "CAL2", "CAL3", "CAL4", "TBD"]},
+            "aspice_target_level": {"type": "integer", "minimum": 1, "maximum": 5}
+          }
+        },
+        "process_areas": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "defaults": {"$ref": "#/$defs/defaults"},
+    "element_types": {"type": "object", "additionalProperties": {"$ref": "#/$defs/element_type"}},
+    "relation_types": {"type": "object", "additionalProperties": {"$ref": "#/$defs/relation_type"}},
+    "rules": {"type": "array", "items": {"$ref": "#/$defs/rule"}},
+    "lint": {"type": "object"},
+    "operations": {"type": "array", "items": {"$ref": "#/$defs/operation"}}
+  },
+  "$defs": {
+    "attribute": {
+      "type": "object",
+      "required": ["required"],
+      "additionalProperties": false,
+      "properties": {
+        "required": {"type": "boolean"},
+        "enum": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "pattern": {"type": "string"},
+        "description": {"type": "string"}
+      },
+      "oneOf": [{"required": ["enum"]}, {"required": ["pattern"]}]
+    },
+    "relation": {
+      "type": "object",
+      "required": ["required", "targets"],
+      "additionalProperties": false,
+      "properties": {
+        "required": {"type": "boolean"},
+        "targets": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      }
+    },
+    "relation_type": {
+      "type": "object",
+      "required": ["forward", "reverse"],
+      "additionalProperties": false,
+      "properties": {"forward": {"type": "string"}, "reverse": {"type": "string"}}
+    },
+    "defaults": {
+      "type": "object",
+      "properties": {"attributes": {"type": "object", "additionalProperties": {"$ref": "#/$defs/attribute"}}}
+    },
+    "element_type": {
+      "type": "object",
+      "required": ["title", "prefix"],
+      "additionalProperties": false,
+      "properties": {
+        "title": {"type": "string"},
+        "prefix": {"type": "string"},
+        "id_parts": {"type": "integer"},
+        "description": {"type": "string"},
+        "tags": {"type": "array", "items": {"type": "string"}},
+        "attributes": {"type": "object", "additionalProperties": {"$ref": "#/$defs/attribute"}},
+        "relations": {"type": "object", "additionalProperties": {"$ref": "#/$defs/relation"}},
+        "presentation": {"type": "object"}
+      }
+    },
+    "rule": {
+      "type": "object",
+      "required": ["id", "kind"],
+      "properties": {
+        "id": {"type": "string"},
+        "kind": {"enum": ["graph", "attribute_required_if"]},
+        "applies_to": {"type": "object"},
+        "check": {"type": "object"},
+        "require_attributes": {"type": "array", "items": {"type": "string"}},
+        "explanation": {"type": "string"},
+        "severity": {"enum": ["warning", "info"]}
+      }
+    },
+    "operation": {
+      "type": "object",
+      "required": ["op"],
+      "properties": {
+        "op": {
+          "enum": [
+            "add_element_type", "extend_element_type", "extend_enum", "add_relation_type",
+            "add_rule", "add_forbidden_words",
+            "restrict_enum", "require_attribute", "exclude_element_type"
+          ]
+        },
+        "rationale": {"type": "string"},
+        "upstream": {"enum": ["candidate", "qorix_only"]}
+      }
+    }
+  }
+}

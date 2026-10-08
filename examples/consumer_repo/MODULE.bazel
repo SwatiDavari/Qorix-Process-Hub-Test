@@ -1,0 +1,9 @@
+# Example: a Qorix project repo (e.g. Qorix Performance) consuming the framework.
+module(name = "qorix_performance", version = "0.0.0")
+
+bazel_dep(name = "qorix_process_framework", version = "0.1.0")
+bazel_dep(name = "score_docs_as_code", version = "8.3.0")
+bazel_dep(name = "score_process_description", version = "2.1.2")
+
+# Until the framework is published to a Qorix Bazel registry, pin it from GitHub:
+# git_override(module_name = "qorix_process_framework", remote = "https://github.com/<org>/qorix-process-framework.git", commit = "<sha>")

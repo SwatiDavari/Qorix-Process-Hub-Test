@@ -1,0 +1,41 @@
+load("@rules_python//python:defs.bzl", "py_binary", "py_library", "py_test")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files(["requirements_lock.txt"])
+
+py_library(
+    name = "qpm_lib",
+    srcs = glob(["qpm/**/*.py"]),
+    data = ["//model:schema/qpm-tier.schema.json"],
+    imports = ["."],
+    deps = [
+        "@qpm_pip//jsonschema",
+        "@qpm_pip//pyyaml",
+    ],
+)
+
+py_binary(
+    name = "qpm",
+    srcs = ["qpm/__main__.py"],
+    main = "qpm/__main__.py",
+    deps = [":qpm_lib"],
+)
+
+py_test(
+    name = "qpm_test",
+    srcs = ["tests/test_qpm.py"],
+    data = glob(["tests/fixtures/**"]) + [
+        "//model:qorix_overlay",
+        "//model:score_base",
+        "//model:score_process_ids",
+        "//model:upstream_yaml",
+        "//process:areas",
+        "//projects:tailorings",
+    ],
+    main = "tests/test_qpm.py",
+    deps = [
+        ":qpm_lib",
+        "@qpm_pip//pytest",
+    ],
+)

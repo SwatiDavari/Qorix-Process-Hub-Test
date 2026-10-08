@@ -1,0 +1,69 @@
+# Process area: Infrastructure  - tier: qorix
+area:
+  id: infrastructure
+  title: Infrastructure
+  tier: qorix
+  owner: rl__qx_infra_lead
+  purpose: >
+    Provide and keep qualified the docs-as-code toolchain (Bazel, Sphinx-needs, qpm), the
+    repository baseline and CI that every Qorix project consumes.
+  standards: [ISO 26262-8 cl. 11, ISO/SAE 21434 cl. 5.4.5, ASPICE 4.0 PIM.3]
+
+concepts:
+  - id: doc_concept__qx_infra
+    title: Infrastructure Concept
+    body: |
+      One framework module (Bazel `bazel_dep`) per release. Projects never copy process
+      content; they reference a framework version and add only their tailoring. Tool
+      changes are qualified once, centrally.
+
+roles:
+  - id: rl__qx_infra_lead
+    title: Infrastructure Lead
+    description: Owns the toolchain baseline and its qualification evidence.
+  - id: rl__qx_infra_engineer
+    title: Infrastructure Engineer
+    description: Maintains Bazel rules, CI workflows and qpm adapters.
+
+templates:
+  - id: gd_temp__qx_repo_onboarding
+    title: Repository Onboarding Checklist
+    file: templates/repo_onboarding.md
+
+workproducts:
+  - id: wp__qx_toolchain_baseline
+    title: Toolchain Baseline
+    purpose: Pinned versions of Bazel, score_docs_as_code, Python and qpm per framework release.
+    concept: doc_concept__qx_infra
+    complies: [std_wp__isosae21434__org_management_554, std_req__aspice_40__iic-13-55]
+  - id: wp__qx_repo_baseline
+    title: Project Repository Baseline
+    purpose: A project repo wired to the framework (MODULE.bazel, BUILD, tailoring, CI).
+    concept: doc_concept__qx_infra
+    template: gd_temp__qx_repo_onboarding
+
+workflows:
+  - id: wf__qx_infra_maintain_toolchain
+    title: Maintain and qualify toolchain baseline
+    responsible: rl__qx_infra_engineer
+    approved_by: rl__qx_infra_lead
+    supported_by: [rl__safety_manager]
+    input: [wp__requirements_proc_tool, wp__qx_process_overlay]
+    output: [wp__qx_toolchain_baseline, wp__tool_verification_report]
+    has: [doc_concept__qx_infra]
+    activities:
+      - {step: "Propose version bump (Bazel module / pip lock)", by: rl__qx_infra_engineer}
+      - {step: "Run framework self-tests and compose all reference projects", by: rl__qx_infra_engineer}
+      - {step: "Update tool verification report (TCL / TD)", by: rl__qx_infra_engineer}
+      - {step: "Approve and release the baseline", by: rl__qx_infra_lead}
+  - id: wf__qx_infra_onboard_repo
+    title: Onboard a project repository
+    responsible: rl__qx_infra_engineer
+    approved_by: rl__project_lead
+    input: [wp__qx_toolchain_baseline, wp__qx_project_tailoring]
+    output: [wp__qx_repo_baseline]
+    contains: [gd_temp__qx_repo_onboarding]
+    activities:
+      - {step: "Add bazel_dep on qorix_process_framework and call qorix_docs()", by: rl__qx_infra_engineer}
+      - {step: "Add CI workflow (docs build + qpm lint-needs)", by: rl__qx_infra_engineer}
+      - {step: "Confirm first green build", by: rl__project_lead}

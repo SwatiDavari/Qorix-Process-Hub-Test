@@ -1,0 +1,130 @@
+# Qorix overlay on top of the Eclipse SCORE baseline.
+#
+# Superset rule: an overlay may only ADD or WIDEN. Anything valid against SCORE
+# stays valid here, so Qorix content can be contributed back via the Qorix Fork.
+#
+# upstream: candidate  -> exported by `qpm export-upstream` as a SCORE proposal
+# upstream: qorix_only -> stays in Qorix (company-specific)
+qpm: "1.0"
+tier:
+  id: qorix
+  kind: overlay
+  extends: score-base
+  title: Qorix Processes (ASIL B + ASIL D support with CAL 3, ASPICE L3)
+  owner: Qorix Governance & Compliance
+  description: >
+    Adds ASIL D and ISO/SAE 21434 CAL support, the WP purpose/concept/template
+    triad, and the G&C, Infrastructure, Validation and Training process areas.
+
+operations:
+  # ------------------------------------------------------------ safety (ISO 26262)
+  - op: extend_enum
+    attribute: safety
+    values: [ASIL_A, ASIL_C, ASIL_D]
+    upstream: candidate
+    rationale: >
+      SCORE caps safety at ASIL_B. Qorix products (e.g. CP) are developed to ASIL D;
+      ASIL_A/ASIL_C are needed as decomposition results (ISO 26262-9 clause 5).
+
+  # ------------------------------------------------------------ security (ISO/SAE 21434)
+  - op: extend_element_type
+    name: stkh_req
+    add_attributes: &cal
+      cal:
+        required: false
+        enum: [CAL1, CAL2, CAL3, CAL4]
+        description: Cybersecurity Assurance Level (ISO/SAE 21434 Annex E)
+    upstream: candidate
+    rationale: SCORE lists CAL as TBD; attribute is optional so SCORE content stays valid.
+  - {op: extend_element_type, name: feat_req, add_attributes: *cal, upstream: candidate, rationale: "Optional CAL attribute, as for stkh_req."}
+  - {op: extend_element_type, name: comp_req, add_attributes: *cal, upstream: candidate, rationale: "Optional CAL attribute, as for stkh_req."}
+  - {op: extend_element_type, name: aou_req, add_attributes: *cal, upstream: candidate, rationale: "Optional CAL attribute, as for stkh_req."}
+  - {op: extend_element_type, name: feat, add_attributes: *cal, upstream: candidate, rationale: "Optional CAL attribute, as for stkh_req."}
+  - {op: extend_element_type, name: comp, add_attributes: *cal, upstream: candidate, rationale: "Optional CAL attribute, as for stkh_req."}
+  - {op: extend_element_type, name: mod, add_attributes: *cal, upstream: candidate, rationale: "Optional CAL attribute, as for stkh_req."}
+
+  - op: add_rule
+    upstream: qorix_only
+    rationale: Every security-relevant item must carry its CAL for 21434 evidence.
+    rule:
+      id: qx__sec_cal_required
+      kind: attribute_required_if
+      applies_to:
+        types: [stkh_req, feat_req, comp_req, aou_req, feat, comp, mod]
+        where: security == YES
+      require_attributes: [cal]
+      explanation: Security-relevant elements (security == YES) must state a CAL.
+      severity: warning
+
+  # ------------------------------------------------------------ ASIL D integrity
+  - op: add_rule
+    upstream: candidate
+    rationale: Flags lower-integrity elements fulfilling ASIL D requirements unless decomposed.
+    rule:
+      id: qx__arch_asil_d_fulfilment
+      kind: graph
+      applies_to:
+        types: [feat_arc_sta, feat_arc_dyn, logic_arc_int, comp, comp_arc_sta, comp_arc_dyn, real_arc_int]
+        where: safety != ASIL_D
+      check:
+        quantifier: all
+        relation: fulfils
+        expect: safety != ASIL_D
+      explanation: >
+        An element below ASIL D fulfils an ASIL D requirement. Document an ASIL
+        decomposition (ISO 26262-9 cl. 5) or raise the element ASIL.
+      severity: info
+
+  # ------------------------------------------------------------ WP triad: purpose / concept / template
+  - op: extend_element_type
+    name: workproduct
+    add_relations:
+      has: {required: false, targets: [doc_concept]}
+      contains: {required: false, targets: [gd_temp, gd_chklst]}
+    upstream: candidate
+    rationale: Each work product links its concept and its template, making WPs self-describing.
+
+  # ------------------------------------------------------------ Governance & Compliance area
+  - op: add_relation_type
+    name: qualifies
+    forward: qualifies
+    reverse: qualified by
+    upstream: qorix_only
+  - op: add_element_type
+    name: gc_finding
+    upstream: qorix_only
+    rationale: Audit / assessment findings tracked as traceable needs (ASPICE SUP.1, ISO 26262-2 6.4.9).
+    definition:
+      title: G&C Finding
+      prefix: gc_finding__
+      id_parts: 2
+      tags: [governance]
+      attributes:
+        status: {required: true, enum: [open, in_progress, closed, accepted_risk]}
+        severity: {required: true, enum: [minor, major, critical]}
+        standard: {required: true, enum: [ISO26262, ISOSAE21434, ISOPAS8926, ASPICE40, ISO15288, ISO9001]}
+        due: {required: false, pattern: '^\d{4}-\d{2}-\d{2}$'}
+        tracking: {required: false, pattern: '^https://.*$'}
+      relations:
+        affects: {required: true, targets: [ANY]}
+        evidence: {required: false, targets: [ANY]}
+      presentation: {color: "#F8CECC"}
+
+  # ------------------------------------------------------------ Training area
+  - op: add_element_type
+    name: training
+    upstream: qorix_only
+    rationale: Competence management evidence (ISO 26262-2 5.4.5, ASPICE HR/OPM).
+    definition:
+      title: Training
+      prefix: trn__
+      id_parts: 2
+      tags: [training]
+      attributes:
+        status: {required: true, enum: [draft, valid, retired]}
+        validity_months: {required: false, pattern: '^[0-9]+$'}
+        delivery: {required: false, enum: [self_paced, instructor_led, on_the_job]}
+      relations:
+        qualifies: {required: true, targets: [role]}
+        contains: {required: false, targets: [gd_guidl, gd_temp, gd_chklst]}
+      presentation: {color: "#DAE8FC"}

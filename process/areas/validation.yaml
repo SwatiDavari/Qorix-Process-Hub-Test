@@ -1,0 +1,88 @@
+# Process area: Validation  - tier: qorix
+area:
+  id: validation
+  title: Validation
+  tier: qorix
+  owner: rl__qx_validation_lead
+  purpose: >
+    Set the organisation-wide test policy, qualify the test systems it relies on, and
+    validate products against stakeholder requirements.
+  standards: [ISO 26262-4 cl. 8, ISO 26262-8 cl. 9, ASPICE 4.0 SYS.5 / VAL.1]
+
+concepts:
+  - id: doc_concept__qx_validation
+    title: Validation Concept
+    body: |
+      The test policy defines what "enough testing" means per ASIL/CAL. Test systems
+      (HIL, SIL, target rigs) are configuration items with their own qualification.
+      Validation closes the loop from stakeholder requirements to the released product.
+
+roles:
+  - id: rl__qx_validation_lead
+    title: Validation Lead
+    description: Owns the test policy and approves validation reports.
+  - id: rl__qx_validation_engineer
+    title: Validation Engineer
+    description: Specifies and runs validation on qualified test systems.
+
+templates:
+  - id: gd_temp__qx_test_policy
+    title: Test Policy Template
+    file: templates/test_policy.md
+  - id: gd_temp__qx_test_system
+    title: Test System Specification Template
+    file: templates/test_system.md
+
+workproducts:
+  - id: wp__qx_test_policy
+    title: Test Policy
+    purpose: Test objectives, methods and coverage targets per ASIL / CAL and test level.
+    concept: doc_concept__qx_validation
+    template: gd_temp__qx_test_policy
+  - id: wp__qx_test_system_spec
+    title: Test System Specification and Qualification
+    purpose: Definition, configuration baseline and qualification evidence of each test system.
+    concept: doc_concept__qx_validation
+    template: gd_temp__qx_test_system
+  - id: wp__qx_validation_report
+    title: Validation Report
+    purpose: Evidence that the released product meets its stakeholder requirements in the target environment.
+    concept: doc_concept__qx_validation
+
+workflows:
+  - id: wf__qx_val_define_test_policy
+    title: Define and maintain test policy
+    responsible: rl__qx_validation_lead
+    approved_by: rl__qx_gc_head
+    supported_by: [rl__safety_manager, rl__security_manager, rl__testing_community]
+    input: [wp__qx_process_overlay, wp__verification_plan]
+    output: [wp__qx_test_policy]
+    contains: [gd_temp__qx_test_policy]
+    has: [doc_concept__qx_validation]
+    activities:
+      - {step: "Derive methods and coverage targets per ASIL / CAL", by: rl__qx_validation_lead}
+      - {step: "Align with SCORE verification plan", by: rl__testing_community}
+      - {step: "Approve the policy", by: rl__qx_gc_head}
+  - id: wf__qx_val_qualify_test_system
+    title: Specify and qualify test system
+    responsible: rl__qx_validation_engineer
+    approved_by: rl__qx_validation_lead
+    supported_by: [rl__qx_infra_engineer]
+    input: [wp__qx_test_policy, wp__qx_toolchain_baseline]
+    output: [wp__qx_test_system_spec, wp__tool_verification_report]
+    contains: [gd_temp__qx_test_system]
+    activities:
+      - {step: "Specify the test system and its configuration baseline", by: rl__qx_validation_engineer}
+      - {step: "Classify and qualify (tool confidence level)", by: rl__qx_validation_engineer}
+      - {step: "Approve for use", by: rl__qx_validation_lead}
+  - id: wf__qx_val_execute_validation
+    title: Execute product validation
+    responsible: rl__qx_validation_engineer
+    approved_by: rl__qx_validation_lead
+    supported_by: [rl__safety_manager]
+    input: [wp__requirements_stkh, wp__qx_test_policy, wp__qx_test_system_spec]
+    output: [wp__qx_validation_report]
+    activities:
+      - {step: "Plan validation scope from stakeholder requirements", by: rl__qx_validation_engineer}
+      - {step: "Execute on qualified test systems", by: rl__qx_validation_engineer}
+      - {step: "Approve the validation report", by: rl__qx_validation_lead}

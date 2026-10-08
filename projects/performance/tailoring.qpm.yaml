@@ -1,0 +1,23 @@
+# Project tailoring: Qorix Performance (SCORE-aligned, ASIL B, ASPICE L3).
+# Project tiers may only NARROW the Qorix overlay. Every operation needs a rationale.
+qpm: "1.0"
+tier:
+  id: performance
+  kind: project
+  extends: qorix
+  title: Qorix Performance
+  owner: Performance project lead
+project:
+  id: performance
+  name: Qorix Performance
+  integrity:
+    asil_max: ASIL_B          # -> safety enum narrowed to QM, ASIL_A, ASIL_B
+    cal_max: TBD              # aligned with SCORE (CAL TBD); no CAL narrowing yet
+    aspice_target_level: 3
+  process_areas: [all]
+operations:
+  - op: exclude_element_type
+    name: gc_finding
+    rationale: >
+      Findings for Performance are tracked in the SCORE issue tracker (wp__issue_track_system);
+      keeping the element type out keeps Performance docs pushable to SCORE unchanged.

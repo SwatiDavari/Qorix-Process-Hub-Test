@@ -1,0 +1,22 @@
+# Project tailoring: Qorix Products - CP (ASIL D, CAL 3, ASPICE L3).
+qpm: "1.0"
+tier:
+  id: products-cp
+  kind: project
+  extends: qorix
+  title: Qorix Products - CP
+  owner: CP product lead
+project:
+  id: products_cp
+  name: Qorix Products - CP
+  products: [CP]
+  integrity:
+    asil_max: ASIL_D
+    cal_max: CAL3             # -> cal enum narrowed to CAL1..CAL3
+    aspice_target_level: 3
+  process_areas: [all]
+operations:
+  - op: require_attribute
+    attribute: cal
+    types: [feat_req, comp_req]
+    rationale: CP is a 21434 item; every feature/component requirement states its CAL (CAL3 ceiling).

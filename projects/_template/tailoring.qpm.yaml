@@ -1,0 +1,20 @@
+# Copy to projects/<your_project>/tailoring.qpm.yaml and adapt.
+# Allowed ops: restrict_enum, require_attribute, exclude_element_type, add_rule.
+# Every op needs `rationale:` - this file IS the tailoring evidence for assessors.
+qpm: "1.0"
+tier:
+  id: my-project
+  kind: project
+  extends: qorix
+  title: <Project name>
+  owner: <project lead>
+project:
+  id: my_project
+  name: <Project name>
+  products: []                # e.g. [BL] / [QD] / [CPM]
+  integrity:
+    asil_max: ASIL_B          # QM | ASIL_A..ASIL_D
+    cal_max: TBD              # CAL1..CAL4 | TBD
+    aspice_target_level: 3
+  process_areas: [all]        # or a subset of process area ids
+operations: []
