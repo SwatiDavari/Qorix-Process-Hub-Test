@@ -50,7 +50,15 @@ jobs:
             exit 1
           }
       - name: Locate HTML output
-        run: echo "HTML_DIR=$(dirname "$(find _build -maxdepth 3 -name index.html | head -1)")" >> "$GITHUB_ENV"
+        run: |
+          top=$(find _build -maxdepth 3 -name index.html -printf '%d %p\n' | sort -n | head -1 | cut -d' ' -f2)
+          dir=$(dirname "$top")
+          echo "Publishing $dir"
+          # Guard: never publish a sub-folder or an unstyled site
+          grep -q "<title>Qorix Process Framework" "$top" || { echo "::error::$top is not the site home page"; exit 1; }
+          ls "$dir"/_static/*.css >/dev/null 2>&1 || { echo "::error::no stylesheets in $dir/_static"; exit 1; }
+          test -f "$dir/process_description/index.html" || { echo "::error::Process Description page missing"; exit 1; }
+          echo "HTML_DIR=$dir" >> "$GITHUB_ENV"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ${{ env.HTML_DIR }}

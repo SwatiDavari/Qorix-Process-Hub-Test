@@ -1,0 +1,27 @@
+/* Qorix header: purple bar, white text (matches the Qorix documentation sites) */
+.bd-header.navbar {
+  background-color: #5a14f0 !important;
+}
+.bd-header .navbar-brand,
+.bd-header .navbar-brand .title,
+.bd-header .navbar-nav .nav-link,
+.bd-header .navbar-icon-links .nav-link,
+.bd-header .theme-switch-button,
+.bd-header button {
+  color: #ffffff !important;
+}
+.bd-header .navbar-brand .title {
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+.bd-header .navbar-nav .nav-item.current > .nav-link,
+.bd-header .navbar-nav .nav-link:hover {
+  font-weight: 700;
+  border-bottom: 2px solid #ffffff;
+  text-decoration: none;
+}
+.bd-header .search-button__button {
+  background: #ffffff;
+  color: #5a14f0 !important;
+  border-radius: 1rem;
+}

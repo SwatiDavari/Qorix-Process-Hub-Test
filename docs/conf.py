@@ -11,3 +11,11 @@ needs_role_need_template = "{{ title }}"
 # score_process_description 2.1.2 ships a 'root_cause' key unknown to docs-as-code 8.3.0 (upstream data, not ours)
 suppress_warnings = ["needs.unknown_external_keys"]
 project_url = "https://github.com/SwatiDavari/Qorix-Process-Hub-Test"
+
+# Qorix branding (overrides score_docs_as_code defaults)
+html_static_path = ["_static"]
+html_css_files = ["qorix.css"]
+html_theme_options = {
+    "logo": {"text": "QORIX"},
+    "navbar_end": ["theme-switcher", "navbar-icon-links"],  # no version switcher (no versions.json)
+}
