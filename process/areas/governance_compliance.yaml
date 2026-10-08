@@ -3,6 +3,8 @@
 area:
   id: governance_compliance
   title: Governance & Compliance
+  level: organisation
+  maturity: ML1
   tier: qorix
   owner: rl__qx_gc_head
   purpose: >

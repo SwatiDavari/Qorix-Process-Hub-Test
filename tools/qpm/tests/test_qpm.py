@@ -152,10 +152,18 @@ def test_catalog_detects_violations():
     assert "four-eyes" in errs and "unresolved" in errs and "performer" in errs
 
 
+def test_catalog_rejects_bad_level_and_maturity():
+    areas = catalog.load_catalog(ROOT / "process/areas")
+    areas[0]["area"]["level"] = "team"
+    areas[0]["area"]["maturity"] = "ML9"
+    errs = "\n".join(catalog.check_catalog(areas, catalog.load_external_ids(IDS)))
+    assert ".level:" in errs and ".maturity:" in errs
+
+
 def test_rendered_rst_is_current():
     areas = catalog.load_catalog(ROOT / "process/areas")
     for rel, txt in catalog.render_catalog(areas).items():
-        assert (ROOT / "docs/process_areas" / rel).read_text(encoding="utf-8") == txt, rel
+        assert (ROOT / "docs/process_description" / rel).read_text(encoding="utf-8") == txt, rel
 
 
 if __name__ == "__main__":

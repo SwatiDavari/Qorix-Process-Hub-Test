@@ -8,6 +8,8 @@ Validation
 
 Set the organisation-wide test policy, qualify the test systems it relies on, and validate products against stakeholder requirements.
 
+* **Level:** Organisation Level
+* **Maturity:** :bdg-warning:`ML1 Initial`
 * **Tier:** qorix
 * **Owner:** :need:`rl__qx_validation_lead`
 * **Standards:** ISO 26262-4 cl. 8, ISO 26262-8 cl. 9, ASPICE 4.0 SYS.5 / VAL.1

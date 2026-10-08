@@ -8,6 +8,6 @@ composed from a technology-neutral metamodel.
 .. toctree::
    :maxdepth: 2
 
+   process_description/index
    design/index
-   process_areas/index
    tailoring/index

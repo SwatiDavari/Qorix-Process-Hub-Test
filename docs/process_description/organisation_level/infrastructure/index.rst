@@ -8,6 +8,8 @@ Infrastructure
 
 Provide and keep qualified the docs-as-code toolchain (Bazel, Sphinx-needs, qpm), the repository baseline and CI that every Qorix project consumes.
 
+* **Level:** Organisation Level
+* **Maturity:** :bdg-warning:`ML1 Initial`
 * **Tier:** qorix
 * **Owner:** :need:`rl__qx_infra_lead`
 * **Standards:** ISO 26262-8 cl. 11, ISO/SAE 21434 cl. 5.4.5, ASPICE 4.0 PIM.3

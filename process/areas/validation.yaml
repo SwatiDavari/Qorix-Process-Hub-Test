@@ -2,6 +2,8 @@
 area:
   id: validation
   title: Validation
+  level: organisation
+  maturity: ML1
   tier: qorix
   owner: rl__qx_validation_lead
   purpose: >

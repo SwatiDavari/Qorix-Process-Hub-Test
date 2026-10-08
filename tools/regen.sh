@@ -7,7 +7,7 @@ B=model/tiers/00_score_base/score_base.qpm.yaml
 Q=model/tiers/10_qorix/qorix_overlay.qpm.yaml
 IDS=model/tiers/00_score_base/score_process_ids.txt
 
-python3 -m qpm render-process --areas process/areas --external-ids "$IDS" --out-dir docs/process_areas
+python3 -m qpm render-process --areas process/areas --external-ids "$IDS" --out-dir docs/process_description
 
 python3 -m qpm compose --tier "$B" --tier "$Q" --out-dir build/qorix
 cp build/qorix/tailoring_report.rst docs/tailoring/qorix.rst

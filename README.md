@@ -28,7 +28,7 @@ Project tailoring  (Performance: ASIL B · Products CP: ASIL D, CAL 3 · BL · Q
 | `templates/` | Work-product templates (Markdown) |
 | `tools/qpm/` | `qpm` CLI: import, compose, adapters, catalog checks, reports, tests |
 | `bzl/qorix_docs.bzl` | `qorix_docs()` macro: compose, then call `score_docs_as_code` `docs()` |
-| `docs/` | Framework docs. `process_areas/` and `tailoring/` are **generated** |
+| `docs/` | Framework docs. `process_description/` and `tailoring/` are **generated** |
 | `upstream/score_proposal/` | Generated SCORE proposal (metamodel diff + PR text) for the Qorix Fork |
 | `examples/consumer_repo/` | How a project repo consumes the framework |
 
@@ -37,7 +37,7 @@ Project tailoring  (Performance: ASIL B · Products CP: ASIL D, CAL 3 · BL · Q
 ```bash
 pip install -r tools/qpm/requirements_lock.txt
 python -m pytest tools/qpm/tests -q      # round trip, tiering rules, catalog checks
-./tools/regen.sh                          # regenerate docs/process_areas, docs/tailoring, upstream/
+./tools/regen.sh                          # regenerate docs/process_description, docs/tailoring, upstream/
 bazel run //:docs                         # Sphinx-needs build with the composed metamodel
 ```
 

@@ -2,6 +2,8 @@
 area:
   id: training
   title: Training
+  level: organisation
+  maturity: ML1
   tier: qorix
   owner: rl__qx_training_coordinator
   purpose: >

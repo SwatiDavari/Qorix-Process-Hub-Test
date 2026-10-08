@@ -8,6 +8,8 @@ Governance & Compliance
 
 Own the Qorix process framework: maintain the Qorix overlay on top of Eclipse SCORE, approve project tailoring, run compliance audits, and feed improvements back to SCORE through the Qorix Fork.
 
+* **Level:** Organisation Level
+* **Maturity:** :bdg-warning:`ML1 Initial`
 * **Tier:** qorix
 * **Owner:** :need:`rl__qx_gc_head`
 * **Standards:** ISO 26262-2, ISO/SAE 21434 cl. 5-6, ASPICE 4.0 PIM.3 / SUP.1 / MAN.3

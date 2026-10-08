@@ -13,6 +13,17 @@ from .model import QpmError, load_yaml
 
 LIST_FIELDS = ("supported_by", "input", "output", "contains", "has")
 
+LEVELS = {"organisation": "Organisation Level", "project": "Project Level"}
+# Maturity scale ML0-ML4; colour = sphinx-design colour name used for cards and badges.
+MATURITY = {
+    "ML0": ("Not started", "secondary"),
+    "ML1": ("Initial", "warning"),
+    "ML2": ("Defined", "info"),
+    "ML3": ("Applied", "primary"),
+    "ML4": ("Optimised", "success"),
+}
+SCORE_PROCESS_URL = "https://eclipse-score.github.io/process_description/main/"
+
 
 def load_catalog(area_dir: str | Path) -> list[dict[str, Any]]:
     areas = []
@@ -60,6 +71,10 @@ def check_catalog(areas: list[dict[str, Any]], external: set[str]) -> list[str]:
     for a in areas:
         aid = a["area"]["id"]
         ref(a["area"]["owner"], f"{aid}.owner", "rl__")
+        if a["area"].get("level") not in LEVELS:
+            errs.append(f"{aid}.level: must be one of {', '.join(LEVELS)}")
+        if a["area"].get("maturity") not in MATURITY:
+            errs.append(f"{aid}.maturity: must be one of {', '.join(MATURITY)}")
         for wp in a.get("workproducts") or []:
             ctx = f"{aid}.{wp['id']}"
             if not wp.get("purpose"):
@@ -137,6 +152,9 @@ def render_area(a: dict[str, Any]) -> dict[str, str]:
     # index
     idx = h + f".. _qx_area_{aid}:\n\n" + _hdr(ar["title"], "#") + "\n"
     idx += ar["purpose"].strip() + "\n\n"
+    ml = ar["maturity"]
+    idx += f"* **Level:** {LEVELS[ar['level']]}\n"
+    idx += f"* **Maturity:** :bdg-{MATURITY[ml][1]}:`{ml} {MATURITY[ml][0]}`\n"
     idx += f"* **Tier:** {ar['tier']}\n* **Owner:** :need:`{ar['owner']}`\n"
     idx += f"* **Standards:** {', '.join(ar.get('standards') or [])}\n\n"
     for c in a.get("concepts") or []:
@@ -193,17 +211,106 @@ def render_area(a: dict[str, Any]) -> dict[str, str]:
     return files
 
 
+def _card(a: dict[str, Any]) -> str:
+    ar = a["area"]
+    ml = ar["maturity"]
+    color = MATURITY[ml][1]
+    purpose = " ".join(ar["purpose"].split())
+    return (f"   .. grid-item-card:: {ar['title']}\n"
+            f"      :link: qx_area_{ar['id']}\n      :link-type: ref\n"
+            f"      :class-card: sd-border-{color}\n\n"
+            f"      :bdg-{color}:`{ml} {MATURITY[ml][0]}`\n\n      {purpose}\n\n")
+
+
+def _legend() -> str:
+    t = (".. list-table::\n   :header-rows: 1\n   :widths: 20 80\n\n"
+         "   * - Level\n     - Meaning\n")
+    meaning = {
+        "ML0": "Area identified; no process content yet.",
+        "ML1": "Workflows, roles and work products are described; not yet applied by a project.",
+        "ML2": "Description reviewed and released; templates and guidance complete.",
+        "ML3": "Applied by at least one project with evidence of use.",
+        "ML4": "Measured and improved from project feedback.",
+    }
+    for ml, (name, color) in MATURITY.items():
+        t += f"   * - :bdg-{color}:`{ml} {name}`\n     - {meaning[ml]}\n"
+    return t
+
+
+def _level_page(level: str, areas: list[dict[str, Any]]) -> str:
+    h = HEADER.format(src="process/areas/*.yaml (level: " + level + ")")
+    title = LEVELS[level]
+    out = h + f".. _qx_{level}_level:\n\n" + _hdr(title, "#") + "\n"
+    if level == "organisation":
+        out += (_hdr("Our goal", "=") + "\nOne set of company-wide processes that every Qorix project inherits, so a "
+                "project only describes what is specific to its product.\n\n"
+                + _hdr("What this level covers", "=") + "\nProcesses that apply to Qorix as a company, independent of "
+                "any project: governance and compliance, shared infrastructure, training and validation "
+                "support. Each one is a process area below.\n\n"
+                + _hdr("How this section is modelled", "=") + "\nEvery area uses the same process model - workflows, "
+                "work products, roles and guidance - authored as YAML in ``process/areas`` and rendered "
+                "to these pages (see :ref:`qx_process_introduction`).\n\n"
+                + _hdr("How this section relates to the project level", "=") + "\nProjects apply these processes "
+                "and narrow them in their tailoring; they do not redefine them. See "
+                ":ref:`qx_project_level`.\n\n")
+    else:
+        out += (_hdr("What belongs at this level, and what does not", "=") + "\nProcesses a project carries out "
+                "for its own product and that no other project shares. Anything that applies to every "
+                "project belongs at the :ref:`qx_organisation_level`; project-specific tools and "
+                "solutions belong in the project's own documentation.\n\n"
+                + _hdr("How this level relates to the two above it", "=") + "\nEclipse S-CORE is the base, the "
+                "Qorix organisation level adds to it, and a project level area adds only what neither "
+                "covers. Tailoring of inherited processes is recorded in the tailoring reports, not "
+                "here.\n\n"
+                + _hdr("How each area is modelled", "=") + "\nThe same model as the organisation level: set "
+                "``level: project`` in the area's YAML file.\n\n")
+    out += _hdr("Structure", "=") + "\n"
+    if areas:
+        out += ".. toctree::\n   :maxdepth: 1\n\n" + "".join(f"   {a['area']['id']}/index\n" for a in areas)
+    else:
+        out += "No process areas at this level yet.\n"
+    if level == "organisation":
+        out += "\n" + _hdr("Status of this section", "=") + "\n"
+        out += "".join(f"* {a['area']['title']}: :bdg-{MATURITY[a['area']['maturity']][1]}:"
+                       f"`{a['area']['maturity']} {MATURITY[a['area']['maturity']][0]}`\n" for a in areas)
+    return out
+
+
 def render_catalog(areas: list[dict[str, Any]]) -> dict[str, str]:
-    """Return {relative_path: content} for docs/process_areas/."""
+    """Return {relative_path: content} for docs/process_description/."""
     out: dict[str, str] = {}
-    toc = []
+    by_level: dict[str, list[dict[str, Any]]] = {lv: [] for lv in LEVELS}
     for a in areas:
-        aid = a["area"]["id"]
+        lv = a["area"]["level"]
+        by_level[lv].append(a)
         for name, txt in render_area(a).items():
-            out[f"{aid}/{name}"] = txt
-        toc.append(f"   {aid}/index")
-    out["index.rst"] = (HEADER.format(src="process/areas/*.yaml") + ".. _qx_process_areas:\n\n"
-                        + _hdr("Qorix Process Areas", "#") + "\n"
-                        "Process areas added by the Qorix tier on top of the Eclipse SCORE process areas.\n\n"
-                        ".. toctree::\n   :maxdepth: 2\n\n" + "\n".join(toc) + "\n")
+            out[f"{lv}_level/{a['area']['id']}/{name}"] = txt
+    for lv, la in by_level.items():
+        out[f"{lv}_level/index.rst"] = _level_page(lv, la)
+
+    idx = HEADER.format(src="process/areas/*.yaml") + ".. _qx_process_areas:\n\n" + _hdr("Process Description", "#")
+    idx += ("\nDescription of the Qorix processes that are not covered by the upstream Eclipse S-CORE process "
+            "description. They are written solution-free and compliant with the applicable standards, so "
+            "any Qorix project can apply them.\n\n"
+            "The process model these areas follow - workflows, roles, work products, guidance and the "
+            "reading order within an area - is explained in :ref:`qx_process_introduction`.\n\n"
+            "The section has two layers: the :ref:`qx_organisation_level` holds what applies to Qorix as a "
+            "company, the :ref:`qx_project_level` holds processes a project carries out for its own product. "
+            "Everything else comes from the upstream S-CORE process description; each project's narrowing "
+            "of it is in the tailoring reports.\n\n")
+    idx += _hdr("Process area overview", "=") + ("\nEach card opens a process area; its colour shows the area's "
+            "current maturity (legend below).\n\n")
+    for lv, la in by_level.items():
+        idx += _hdr(f"Qorix {LEVELS[lv]}", "-") + "\n"
+        if la:
+            idx += ".. grid:: 1 2 3 3\n   :gutter: 2\n\n" + "".join(_card(a) for a in la)
+        else:
+            idx += "No process areas at this level yet.\n\n"
+    idx += (_hdr("Eclipse S-CORE", "-") + "\n.. grid:: 1 2 3 3\n   :gutter: 2\n\n"
+            "   .. grid-item-card:: Eclipse S-CORE process areas\n"
+            f"      :link: {SCORE_PROCESS_URL}\n\n"
+            "      The generic, community-level process areas every Qorix process builds on.\n\n")
+    idx += _hdr("Legend - maturity level", "-") + "\n" + _legend() + "\n"
+    idx += ".. toctree::\n   :maxdepth: 2\n\n   introduction\n   organisation_level/index\n   project_level/index\n"
+    out["index.rst"] = idx
     return out

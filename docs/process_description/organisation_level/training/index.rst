@@ -8,6 +8,8 @@ Training
 
 Make sure every person holding a process role is qualified for it, and keep the evidence (competence matrix, training records) assessor-ready.
 
+* **Level:** Organisation Level
+* **Maturity:** :bdg-warning:`ML1 Initial`
 * **Tier:** qorix
 * **Owner:** :need:`rl__qx_training_coordinator`
 * **Standards:** ISO 26262-2 cl. 5.4.5, ISO/SAE 21434 cl. 5.4.4, ASPICE 4.0 (training material)
