@@ -33,5 +33,11 @@ jobs:
           bazelisk-cache: true
           repository-cache: true
       - run: bazel test //tools/qpm:qpm_test
-      - run: bazel run //:docs_check
+      - name: docs_check
+        run: |
+          set -o pipefail
+          bazel run //:docs_check 2>&1 | tee /tmp/docs.log || {
+            grep -E "WARNING|ERROR" /tmp/docs.log | sed 's/^/::error::/'
+            exit 1
+          }
       - run: bazel run //:docs
