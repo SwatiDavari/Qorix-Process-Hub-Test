@@ -28,6 +28,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Install Graphviz (needed by PlantUML)
+        run: sudo apt-get update && sudo apt-get install -y graphviz
       - uses: bazel-contrib/setup-bazel@0.14.0
         with:
           bazelisk-cache: true
@@ -40,4 +42,10 @@ jobs:
             grep -E "WARNING|ERROR" /tmp/docs.log | sed 's/^/::error::/'
             exit 1
           }
-      - run: bazel run //:docs
+      - name: docs
+        run: |
+          set -o pipefail
+          bazel run //:docs 2>&1 | tee /tmp/docs_html.log || {
+            grep -E "WARNING|ERROR" /tmp/docs_html.log | sed 's/^/::error::/'
+            exit 1
+          }
