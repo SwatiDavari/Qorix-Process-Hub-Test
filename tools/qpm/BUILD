@@ -6,7 +6,7 @@ exports_files(["requirements_lock.txt"])
 
 py_library(
     name = "qpm_lib",
-    srcs = glob(["qpm/**/*.py"]),
+    srcs = glob(["qpm/**/*.py"], exclude = ["qpm/__main__.py"]),
     data = ["//model:schema/qpm-tier.schema.json"],
     imports = ["."],
     deps = [
