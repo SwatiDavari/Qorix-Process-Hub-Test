@@ -15,7 +15,7 @@ load("@score_docs_as_code//:docs.bzl", "docs")
 _FW = "@qorix_process_framework"
 _BASE = _FW + "//model:score_base"
 _OVERLAY = _FW + "//model:qorix_overlay"
-_QPM = _FW + "//tools/qpm:qpm"
+_QPM = _FW + "//tools/qpm:qpm_cli"
 
 def qorix_docs(project, tailoring = None, source_dir = "docs", external_needs = [], **kwargs):
     """Tailored docs build.
