@@ -289,7 +289,49 @@
        security: ^(YES|NO)$
        status: ^(valid|invalid)$
        verification_method: ^.+$
-@@ -873,3 +884,14 @@
+@@ -827,14 +838,14 @@
+     needs:
+       include: stkh_req, feat_req, comp_req, aou_req, gd_req, tool_req
+       condition: safety == QM
+-    check_all:
++    check:
+       derived_from: safety == QM
+     explanation: QM requirements cannot be derived from ASIL requirements.
+   tool_req__docs_arch_link_qm_to_safety_req:
+     needs:
+       include: feat_arc_sta, logic_arc_int, logic_arc_int_op, comp_arc_sta, real_arc_int, real_arc_int_op
+       condition: safety == QM
+-    check_all:
++    check:
+       fulfils: safety != QM
+     explanation: An QM architecture element cannot implement ASIL requirements.
+   tool_req__docs_req_arch_link_safety_to_arch:
+@@ -847,7 +858,7 @@
+         - or:
+           - status == valid
+           - status == valid_inspected
+-    check_all:
++    check:
+       implements:
+         and:
+         - safety != QM
+@@ -859,17 +870,28 @@
+     needs:
+       include: feat_arc_sta, logic_arc_int, logic_arc_int_op, comp_arc_sta, real_arc_int, real_arc_int_op
+       condition: security == YES
+-    check_all:
++    check:
+       implements: security == YES
+     explanation: An security architecture element can only link other security architecture elements.
+   workproduct_aspice_40:
+     needs:
+       include: workproduct
+       condition: complies != []
+-    check_all:
++    check:
+       complies:
+         or:
+         - id contains aspice_40__iic
          - id contains std_wp
      explanation: Workproducts may only link to ASPICE 40 IIC stakeholder requirements. Please ensure that
        the linked requirement is an ASPICE 40 IIC stakeholder requirement.
@@ -297,7 +339,7 @@
 +    needs:
 +      include: feat_arc_sta, feat_arc_dyn, logic_arc_int, comp, comp_arc_sta, comp_arc_dyn, real_arc_int
 +      condition: safety != ASIL_D
-+    check_all:
++    check:
 +      fulfils: safety != ASIL_D
 +    explanation: 'An element below ASIL D fulfils an ASIL D requirement. Document an ASIL decomposition
 +      (ISO 26262-9 cl. 5) or raise the element ASIL.

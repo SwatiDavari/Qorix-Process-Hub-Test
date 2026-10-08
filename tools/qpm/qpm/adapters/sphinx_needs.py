@@ -78,7 +78,7 @@ def emit(model: dict[str, Any]) -> tuple[dict[str, Any], list[dict[str, Any]]]:
         if "where" in a:
             needs["condition"] = a["where"]
         g: dict[str, Any] = {"needs": needs}
-        g["check_all" if c["quantifier"] == "all" else "check_one"] = {c["relation"]: c["expect"]}
+        g["check"] = {c["relation"]: c["expect"]}
         g["explanation"] = rule.get("explanation", "")
         if rule.get("severity") == "info":
             g["info_only"] = True
