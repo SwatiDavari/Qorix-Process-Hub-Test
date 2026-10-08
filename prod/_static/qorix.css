@@ -45,7 +45,6 @@ html[data-theme="dark"] {
 table.need {
   width: 100%;
   border: 1px solid var(--qx-purple-line) !important;
-  border-left: 5px solid var(--qx-purple) !important;
   border-radius: 10px;
   border-collapse: separate;
   border-spacing: 0;

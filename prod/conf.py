@@ -24,3 +24,15 @@ html_theme_options = {
     ],
     "navbar_end": ["theme-switcher", "navbar-icon-links"],  # no version switcher (no versions.json)
 }
+
+# Need cards: use the plain "clean" layout (styled in _static/qorix.css) instead of the engine's default.
+needs_default_layout = "clean"
+
+
+def _force_qorix_layout(app, config):
+    config.needs_default_layout = "clean"
+
+
+def setup(app):
+    # priority > 500 so this runs after the docs engine's own config-inited hook
+    app.connect("config-inited", _force_qorix_layout, priority=900)
