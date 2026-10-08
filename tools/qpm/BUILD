@@ -25,7 +25,7 @@ py_binary(
 py_test(
     name = "qpm_test",
     srcs = ["tests/test_qpm.py"],
-    data = glob(["tests/fixtures/**"]) + [
+    data = glob(["tests/fixtures/**"], allow_empty = True) + [
         "//model:qorix_overlay",
         "//model:score_base",
         "//model:score_process_ids",
