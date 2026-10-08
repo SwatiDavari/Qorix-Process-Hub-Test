@@ -19,7 +19,7 @@ jobs:
         run: python -m pytest tools/qpm/tests -q
       - name: Regenerate and fail on drift
         run: |
-          ./tools/regen.sh
+          bash tools/regen.sh
           git diff --exit-code -- docs upstream || (echo "::error::Generated content out of date - run tools/regen.sh"; exit 1)
 
   docs:
