@@ -25,3 +25,79 @@
   color: #5a14f0 !important;
   border-radius: 1rem;
 }
+
+/* ---- Qorix need cards (sphinx-needs, layout "clean") ---- */
+:root {
+  --qx-purple: #5a14f0;
+  --qx-purple-dark: #3b0ca8;
+  --qx-purple-tint: #f1ebfe;
+  --qx-purple-line: #d9ccfb;
+  --qx-ink: #1b1530;
+  --qx-muted: #6b6485;
+}
+html[data-theme="dark"] {
+  --qx-purple-tint: #241a45;
+  --qx-purple-line: #3d2e75;
+  --qx-ink: #ece8fa;
+  --qx-muted: #a69fc0;
+}
+.need_container { margin: 1.5rem 0; }
+table.need {
+  width: 100%;
+  border: 1px solid var(--qx-purple-line) !important;
+  border-left: 5px solid var(--qx-purple) !important;
+  border-radius: 10px;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  background: var(--pst-color-background, #fff);
+  box-shadow: 0 1px 3px rgba(90, 20, 240, 0.10);
+}
+table.need td { border: 0 !important; padding: 0 !important; background: transparent !important; }
+table.need tr.need.head td { background: var(--qx-purple-tint) !important; padding: 0.9rem 1.2rem !important; }
+table.need tr.need.meta td { padding: 0.9rem 1.2rem !important; border-top: 1px solid var(--qx-purple-line) !important; }
+table.need tr.need.content td { padding: 0.2rem 1.2rem 0.8rem !important; border-top: 1px solid var(--qx-purple-line) !important; }
+table.need tr.need.footer td { padding: 0.5rem 1.2rem !important; border-top: 1px solid var(--qx-purple-line) !important;
+  background: var(--qx-purple-tint) !important; font-size: 0.82rem; color: var(--qx-muted); }
+
+.needs_head .needs_type_name { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--qx-purple); }
+.needs_head .needs_type_name::after { content: none; }
+.needs_head .needs_title { font-size: 1.25rem; font-weight: 800; color: var(--qx-ink); }
+.needs_head .needs-id a {
+  display: inline-block; margin-left: 0.5rem; padding: 0.05rem 0.55rem; border-radius: 999px;
+  background: var(--qx-purple); color: #fff !important; font-family: var(--pst-font-family-monospace);
+  font-size: 0.74rem; text-decoration: none; vertical-align: middle;
+}
+.needs_head svg { color: var(--qx-purple); width: 22px; height: 22px; }
+
+.needs_meta .needs_label { color: var(--qx-muted); font-size: 0.78rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.04em; }
+.needs_meta .needs_status .needs_data {
+  display: inline-block; padding: 0 0.6rem; border-radius: 999px; font-size: 0.78rem; font-weight: 700;
+  background: #e3f6ea; color: #0b6b36; }
+.needs_meta .needs_tags .needs_data { display: inline-block; padding: 0 0.55rem; border-radius: 4px;
+  background: var(--qx-purple-tint); color: var(--qx-purple-dark); font-size: 0.78rem; }
+.needs_meta .line { line-height: 1.9; }
+.needs_meta a.reference {
+  display: inline-block; margin: 0.1rem 0.15rem 0.1rem 0; padding: 0 0.5rem; border-radius: 4px;
+  border: 1px solid var(--qx-purple-line); background: var(--pst-color-background, #fff);
+  color: var(--qx-purple) !important; font-family: var(--pst-font-family-monospace); font-size: 0.78rem;
+  line-height: 1.6; text-decoration: none;
+}
+.needs_meta a.reference:hover { background: var(--qx-purple); color: #fff !important; border-color: var(--qx-purple); }
+.needs_head .line > span:first-child { font-size: 0; }
+.needs_head .needs_type_name { font-size: 0.72rem; }
+.needs_meta span[class] > span { font-size: 0; }
+.needs_meta .needs_status, .needs_meta .needs_tags, .needs_meta .needs_version { font-size: 0.95rem; }
+.needs_meta .needs_status span, .needs_meta .needs_tags span, .needs_meta .needs_version span { font-size: inherit; }
+.needs_meta .needs_status .needs_data, .needs_meta .needs_tags .needs_data { font-size: 0.78rem; }
+.needs_meta .needs_label { font-size: 0.78rem; }
+table.need tr.need.content td { background: var(--pst-color-background, #fff) !important; }
+.needs_meta .needs_label { font-size: 0.78rem !important; }
+.needs_meta .needs_version .needs_data { font-size: 0.9rem !important; font-weight: 700; }
+.needs_meta .needs_status .needs_data, .needs_meta .needs_tags .needs_data { font-size: 0.78rem !important; }
+.needs_meta .needs_data_container { font-size: 0.9rem; }
+.needs_meta .has, .needs_meta .has > span { font-size: 0.9rem; }
+.needs_meta .has > span { font-size: 0; }
+.needs_meta .has > span > a { font-size: 0.78rem; }
