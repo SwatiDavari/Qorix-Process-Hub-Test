@@ -16,7 +16,7 @@ py_library(
 )
 
 py_binary(
-    name = "qpm",
+    name = "qpm_cli",
     srcs = ["qpm/__main__.py"],
     main = "qpm/__main__.py",
     deps = [":qpm_lib"],
