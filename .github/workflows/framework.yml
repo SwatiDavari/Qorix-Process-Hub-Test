@@ -49,3 +49,23 @@ jobs:
             grep -E "WARNING|ERROR" /tmp/docs_html.log | sed 's/^/::error::/'
             exit 1
           }
+      - name: Locate HTML output
+        run: echo "HTML_DIR=$(dirname "$(find _build -maxdepth 3 -name index.html | head -1)")" >> "$GITHUB_ENV"
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.HTML_DIR }}
+
+  deploy:
+    name: Publish to GitHub Pages
+    needs: docs
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4
