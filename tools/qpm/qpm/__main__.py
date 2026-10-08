@@ -1,3 +1,3 @@
 import sys
-from .cli import main
+from qpm.cli import main
 sys.exit(main())
