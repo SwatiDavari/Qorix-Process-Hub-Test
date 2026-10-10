@@ -198,3 +198,150 @@ Use this guide to find your way around the hub, change a process safely and look
            - policy, rule, material
          * - Record
            - record, register
+
+   .. tab-item:: Abbreviations
+
+      **Terms and abbreviations**
+
+      .. list-table::
+         :header-rows: 1
+         :widths: 18 24 58
+
+         * - Abbreviation
+           - Full form
+           - Details
+         * - 15288
+           - ISO/IEC/IEEE 15288
+           - International standard for system life cycle processes. The hub's outcomes and clauses refer to it; Qorix claims tailored, not full, conformance.
+         * - ASPICE
+           - Automotive SPICE
+           - Process assessment model for automotive software. The hub links work products to its process outcomes and information item characteristics.
+         * - IIC
+           - Information item characteristics
+           - ASPICE description of what an information item (work product) should contain. Written as IIC and a number, for example IIC 13-55.
+         * - ISO 26262
+           - ISO 26262
+           - Functional safety standard for road vehicles.
+         * - ISO/SAE 21434
+           - ISO/SAE 21434
+           - Cybersecurity engineering standard for road vehicles.
+         * - ASIL
+           - Automotive Safety Integrity Level
+           - Safety integrity level from ISO 26262, from QM and ASIL A up to ASIL D.
+         * - CAL
+           - Cybersecurity Assurance Level
+           - Assurance level from ISO/SAE 21434, CAL1 to CAL4.
+         * - QMS
+           - Quality management system
+           - The system through which Qorix plans, runs and improves the quality of its processes.
+         * - QA
+           - Quality assurance
+           - The assurance of conformance to the QMS and to the process definitions.
+         * - QPM
+           - Qorix process metamodel tool
+           - The command-line tool in the repository that composes, checks and renders the process definitions. See Realization.
+         * - Tier
+           - Metamodel tier
+           - A layer of the composed metamodel: Qorix base, Qorix overlay, then a project's tailoring. A project may only narrow.
+         * - GLOB, FEAT, COMP, UNIT
+           - Global, feature, component, unit
+           - Scope levels at which a process definition is replicated. The hub holds the organisation (global) level only.
+         * - Assembly
+           - Process assembly
+           - A folder of YAML that defines one process: process, workflows, work products, roles and templates.
+         * - Cluster
+           - Assembly cluster
+           - A group of assemblies shown together, for example Engineering or Compliance.
+         * - Gate
+           - Entry gate
+           - A condition on a workflow: a work product that must reach a minimum status (draft, proposed, approved, released) before work starts.
+         * - R, A, S roles
+           - responsible, approved_by, supported_by
+           - The three roles a workflow names: who does the work, who approves it and who supports it.
+         * - SoI
+           - System of interest
+           - The thing being defined. For this repository it is the Process Hub itself.
+         * - WP
+           - Work product
+           - An input or output of a workflow. IDs start with ``wp_``.
+         * - CI
+           - Continuous integration
+           - The automated build that rebuilds the site and fails when a generated page differs from its source.
+         * - RST, YAML
+           - reStructuredText, YAML
+           - The page format and the definition format used in the repository.
+         * - TBD
+           - To be determined
+           - A value not yet set. All objective targets are TBD until the owner sets them.
+
+      **Assembly codes**
+
+      The code appears in every ID of the assembly, for example ``wp_qx_qa_qms_plan``.
+
+      .. list-table::
+         :header-rows: 1
+         :widths: 18 42 40
+
+         * - Code
+           - Assembly
+           - Cluster
+         * - ``infra``
+           - infrastructure
+           - Build
+         * - ``gc``
+           - governance_compliance
+           - Compliance
+         * - ``saf``
+           - safety
+           - Compliance
+         * - ``sec``
+           - security
+           - Compliance
+         * - ``cm``
+           - change_management
+           - Engineering
+         * - ``cfg``
+           - configuration_management
+           - Engineering
+         * - ``dec``
+           - decision_management
+           - Engineering
+         * - ``info``
+           - information_management
+           - Engineering
+         * - ``meas``
+           - measurement
+           - Engineering
+         * - ``prb``
+           - problem_resolution
+           - Engineering
+         * - ``pim``
+           - process_improvement
+           - Engineering
+         * - ``plan``
+           - project_planning
+           - Engineering
+         * - ``qa``
+           - quality_assurance
+           - Engineering
+         * - ``rel``
+           - release_management
+           - Engineering
+         * - ``req``
+           - requirements_management
+           - Engineering
+         * - ``risk``
+           - risk_management
+           - Engineering
+         * - ``sup``
+           - supplier_management
+           - Engineering
+         * - ``vnr``
+           - verification_reviews
+           - Engineering
+         * - ``trn``
+           - training
+           - Organisation
+         * - ``val``
+           - validation
+           - Testing
