@@ -239,3 +239,17 @@ kbd, .kbd-shortcut__modifier, .kbd-shortcut__key, .search-button__wrapper .btn.r
 }
 .bd-content a.headerlink, .bd-content a.headerlink:hover { color: var(--qx-muted) !important; border-color: transparent; }
 #pst-back-to-top { background-color: #f3f4f5 !important; color: var(--qx-ink) !important; border: 1px solid var(--qx-purple-line) !important; }
+
+/* process names stay whole words (no mid-word breaks) in every Qorix table; the matrix scrolls sideways with the process column fixed */
+.bd-article table.qx-reg td:first-child, .bd-article table.qx-reg th:first-child,
+.bd-article table.qx-reg td:first-child a {
+  overflow-wrap: normal; word-break: normal; hyphens: none; min-width: 13rem;
+}
+.bd-article table.qx-matrix { display: block; overflow-x: auto; width: 100%; }
+.bd-article table.qx-matrix th:not(:first-child), .bd-article table.qx-matrix td:not(:first-child) {
+  width: 2.4rem; min-width: 2.4rem; padding-left: 0.2rem; padding-right: 0.2rem;
+}
+.bd-article table.qx-matrix th:first-child, .bd-article table.qx-matrix td:first-child {
+  position: sticky; left: 0; z-index: 1; background: var(--pst-color-background, #fff) !important;
+}
+.bd-article table.qx-matrix thead th:first-child { background: var(--qx-head) !important; }
