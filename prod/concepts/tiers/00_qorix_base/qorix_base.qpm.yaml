@@ -94,7 +94,7 @@ element_types:
     attributes:
       id:
         required: true
-        pattern: ^std_req_(iso26262|isosae21434|isopas8926|aspice_40)_[0-9a-zA-Z_-]*$
+        pattern: ^std_req_(iso26262|isosae21434|isopas8926|aspice_40|iso15288)_[0-9a-zA-Z_-]*$
       status:
         required: true
         enum:
@@ -114,7 +114,7 @@ element_types:
     attributes:
       id:
         required: true
-        pattern: ^std_wp_(iso26262|isosae21434|isopas8926|aspice_40)_[0-9a-z_]*$
+        pattern: ^std_wp_(iso26262|isosae21434|isopas8926|aspice_40|iso15288)_[0-9a-z_]*$
       status:
         required: true
         enum:

@@ -9,7 +9,7 @@ Change Management (Feature) Work Products
    :status: draft
    :version: 1
    :tags: change_management_feat
-   :typed_by: gd_temp_qx_cmf_feature_change_package_template
+   :typed_by: gd_temp_qx_cmf_feature_change_template
 
    **Purpose:** Approved change to one feature with its impact analysis. Passed up when it reaches an organisation level work product.
 

@@ -30,6 +30,7 @@ Configuration Management Workflows
    :responsible: rl_qx_qa_quality_office
    :approved_by: rl_qx_gc_head
    :supported_by: rl_qx_saf_safety_office, rl_qx_sec_security_office
+   :input: wp_qx_cfg_policies
    :output: wp_qx_cfg_config_item_list
    :achieves: oc_qx_cfg_items_controlled
    :exercises: cap_qx_cfg_item_identification

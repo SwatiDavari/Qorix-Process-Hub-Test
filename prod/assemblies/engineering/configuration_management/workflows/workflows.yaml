@@ -25,6 +25,8 @@ workflows:
   - rl_qx_sec_security_office
   achieves:
   - oc_qx_cfg_items_controlled
+  input:
+  - wp_qx_cfg_policies
   output:
   - wp_qx_cfg_config_item_list
   description: The Quality Office identifies and lists the organisation level work products that are placed under configuration control, with owner and version. The list is the scope reference for change impact analysis in Change Management.

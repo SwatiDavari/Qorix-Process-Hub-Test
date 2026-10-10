@@ -4,4 +4,4 @@ work_products:
   title: Feature Change Package
   status: draft
   purpose: Approved change to one feature with its impact analysis. Passed up when it reaches an organisation level work product.
-  template: gd_temp_qx_cmf_feature_change_package_template
+  template: gd_temp_qx_cmf_feature_change_template

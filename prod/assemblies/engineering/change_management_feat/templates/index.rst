@@ -5,7 +5,7 @@ Change Management (Feature) Templates
 #####################################
 
 .. gd_temp:: Feature Change Package Template
-   :id: gd_temp_qx_cmf_feature_change_package_template
+   :id: gd_temp_qx_cmf_feature_change_template
    :status: draft
    :version: 1
    :tags: change_management_feat

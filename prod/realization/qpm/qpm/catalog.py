@@ -22,6 +22,7 @@ CLUSTERS = {"compliance": "Compliance", "engineering": "Engineering", "build": "
 
 # Assembly layout: prod/assemblies/<cluster>/<process>/<subcomponent>/<file>.yaml
 # (the five subcomponents of every process; each also holds its generated index.rst)
+MAX_ID_LENGTH = 45   # the docs engine's metamodel limit on need ids
 ASSEMBLY_FILES = {
     "process/process.yaml": None,           # assembly header, getting_started, concepts
     "workflows/workflows.yaml": "workflows",
@@ -103,6 +104,8 @@ def check_catalog(areas: list[dict[str, Any]], standards: list[dict[str, Any]]) 
     for i in local:
         if "__" in i:
             errs.append(f"{i}: double underscore is not allowed in ids")
+        if len(i) > MAX_ID_LENGTH:
+            errs.append(f"{i}: id is {len(i)} characters, the maximum is {MAX_ID_LENGTH}")
     known = set(local)
 
     def ref(i, ctx, prefix):
@@ -144,6 +147,8 @@ def check_catalog(areas: list[dict[str, Any]], standards: list[dict[str, Any]]) 
                 ref(r, ctx, "rl_")
             for i in wf.get("input") or []:
                 ref(i, ctx, "wp_")
+            if not wf.get("input"):
+                errs.append(f"{ctx}: workflow must have at least one input WP")
             if not wf.get("output"):
                 errs.append(f"{ctx}: workflow must have at least one output WP")
             for o in wf.get("output") or []:

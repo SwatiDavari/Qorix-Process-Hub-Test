@@ -304,5 +304,27 @@ def test_overlay_adds_outcome_and_capability_types():
     assert m["element_types"]["capability"]["relations"]["realizes"]["targets"] == ["outcome"]
 
 
+# ---------------------------------------------------------------- limits the docs engine enforces
+def test_workflow_needs_an_input():
+    areas = catalog.load_catalog(ASSEMBLIES)
+    _wf(areas, "wf_qx_cfg_identify_items")["input"] = []
+    assert "at least one input" in _errs(areas)
+
+
+def test_id_length_is_limited():
+    areas = catalog.load_catalog(ASSEMBLIES)
+    a = _area(areas, "change_management_feat")
+    a["templates"][0]["id"] = "gd_temp_qx_cmf_" + "x" * 40
+    assert "the maximum is 45" in _errs(areas)
+
+
+def test_iso15288_ids_match_the_standard_id_pattern():
+    m = compose([BASE, OVERLAY])
+    pat = m["element_types"]["std_req"]["attributes"]["id"]["pattern"]
+    import re
+    assert re.match(pat, "std_req_iso15288_635") and re.match(pat, "std_req_aspice_40_sup_10")
+    assert re.match(m["element_types"]["std_wp"]["attributes"]["id"]["pattern"], "std_wp_iso15288_x")
+
+
 if __name__ == "__main__":
     sys.exit(pytest.main([__file__, "-q"]))
