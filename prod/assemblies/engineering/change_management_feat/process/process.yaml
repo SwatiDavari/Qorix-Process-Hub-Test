@@ -1,0 +1,22 @@
+# Change Management at feature scope (engineering/change_management_feat)  -  pilot of the scope axis.
+assembly:
+  id: change_management_feat
+  code: cmf
+  cluster: engineering
+  title: Change Management (Feature)
+  enabler: '-'
+  scope: FEAT
+  layer: '-'
+  part_of: change_management
+  status: draft
+  owner: rl_qx_qa_quality_office
+  purpose: The change management process applied to one feature. The same shape as the organisation level process, one scope down; a feature change that reaches an organisation level work product is escalated to it.
+  standards:
+  - ISO 26262-8 cl. 8
+  - ASPICE 4.0 SUP.10
+  tier: qorix
+getting_started: |-
+  This is a pilot of the scope axis. It shows how a process is repeated one scope down.
+
+  The feature level process reuses the outcome and the capabilities of the organisation level process. A feature change package that touches an organisation level work product is passed up as an input to the organisation level change process.
+concepts: []

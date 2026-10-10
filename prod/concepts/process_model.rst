@@ -62,6 +62,20 @@ Every assembly has the same five pages, in this order:
 Templates are solution-free: they do not prescribe a tool. A project's choice of tools is
 documented on the project side.
 
+Outcomes, capabilities, gates and scope
+=======================================
+
+* **Outcome** - what a process must achieve, in Qorix's neutral words. A workflow ``achieves`` it;
+  clauses of any standard attach to it with ``complies``.
+* **Capability** - a reusable ability that ``realizes`` outcomes. Workflow activities exercise it, at
+  any scope.
+* **Gate** - entry criteria on a workflow: work products and the status each must have before the
+  workflow can be approved.
+* **Scope composition** - a process at FEAT, COMP or UNIT scope is ``part_of`` the same process one
+  scope up.
+
+How to author them: :ref:`qx_guide_layered_processes`.
+
 Lifecycle
 =========
 

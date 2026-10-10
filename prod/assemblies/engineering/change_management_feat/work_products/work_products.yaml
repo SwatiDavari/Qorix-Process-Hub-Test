@@ -1,0 +1,7 @@
+# Change Management at feature scope (engineering/change_management_feat)  -  work products.
+work_products:
+- id: wp_qx_cmf_feature_change_package
+  title: Feature Change Package
+  status: draft
+  purpose: Approved change to one feature with its impact analysis. Passed up when it reaches an organisation level work product.
+  template: gd_temp_qx_cmf_feature_change_package_template

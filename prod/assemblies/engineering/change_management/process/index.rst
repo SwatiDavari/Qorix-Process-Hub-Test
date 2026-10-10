@@ -11,6 +11,7 @@ Request, analyse, approve and track changes to work products and products.
 * **Assembly:** Engineering / Change Management (code ``cm``)
 * **Status:** :bdg-secondary:`draft`
 * **Enabler / Scope / Layer:** - / GLOB / -
+* **Parts:** :ref:`qx_assembly_change_management_feat`
 * **Owner:** :need:`rl_qx_qa_quality_office`
 * **Standards:** ISO 26262-8 cl. 8, ASPICE 4.0 SUP.10
 
@@ -26,6 +27,42 @@ Request, analyse, approve and track changes to work products and products.
 
    * **Changing a project's own work product** — follows your project's change management plan. Nothing in this area applies.
    * **Changing an organisation level work product** — a policy, management system, plan, register, or role. Every project applies those, so the change must be analysed across all of them before approval.
+
+.. outcome:: Changes are analysed and authorised before they are applied
+   :id: oc_qx_cm_changes_authorised
+   :status: draft
+   :version: 1
+   :tags: change_management
+   :complies: std_req_aspice_40_sup_10, std_req_iso15288_635, std_req_iso15288_633
+
+   Every change to an organisation level work product is analysed for its impact and authorised by the approver the approval authority table names before it is applied.
+
+.. outcome:: Approved changes are traceable to the items they affect
+   :id: oc_qx_cm_changes_traceable
+   :status: draft
+   :version: 1
+   :tags: change_management
+   :complies: std_req_aspice_40_sup_10, std_req_iso15288_635
+
+   Each approved change is recorded in a change package that names the configuration items it affects, so any item can be traced back to the change that produced its current version.
+
+.. capability:: Impact analysis
+   :id: cap_qx_cm_impact_analysis
+   :status: draft
+   :version: 1
+   :tags: change_management
+   :realizes: oc_qx_cm_changes_authorised, oc_qx_cm_changes_traceable
+
+   Establish which work products, projects and disciplines a change reaches, and what each of them must do. Used wherever a change, a risk or a release needs its reach understood.
+
+.. capability:: Change authorisation
+   :id: cap_qx_cm_change_authorisation
+   :status: draft
+   :version: 1
+   :tags: change_management
+   :realizes: oc_qx_cm_changes_authorised
+
+   Decide on a change against the approval authority table and record the decision.
 
 .. toctree::
    :maxdepth: 1

@@ -24,3 +24,21 @@ Configuration Management Work Products
 
    **Purpose:** Updated process policies and plans as output of process management activities.
 
+.. workproduct:: Configuration Item List
+   :id: wp_qx_cfg_config_item_list
+   :status: draft
+   :version: 1
+   :tags: configuration_management
+   :typed_by: gd_temp_qx_cfg_config_item_list_template
+
+   **Purpose:** List of organisation level configuration items under control, with owner and version.
+
+.. workproduct:: Baseline Record
+   :id: wp_qx_cfg_baseline
+   :status: draft
+   :version: 1
+   :tags: configuration_management
+   :typed_by: gd_temp_qx_cfg_baseline_template
+
+   **Purpose:** Frozen, versioned set of configuration items that reflects all approved changes. Input to release.
+

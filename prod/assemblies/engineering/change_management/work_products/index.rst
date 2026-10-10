@@ -13,3 +13,12 @@ Change Management Work Products
 
    **Purpose:** Organisation level policies updated as the output of change management activities.
 
+.. workproduct:: Change Package
+   :id: wp_qx_cm_change_package
+   :status: draft
+   :version: 1
+   :tags: change_management
+   :typed_by: gd_temp_qx_cm_change_package_template
+
+   **Purpose:** Approved set of changes to organisation level work products, with the impact analysis and approval record. Input to baselining in Configuration Management.
+

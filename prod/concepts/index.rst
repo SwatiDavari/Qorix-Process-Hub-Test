@@ -10,3 +10,5 @@ Concepts
    tiering
    metamodel
    workflow_model
+   common_processes
+   guide_layered_processes

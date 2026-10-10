@@ -9,3 +9,11 @@ templates:
   title: Policy Template
   status: draft
   description: Template for organisation level policy documents.
+- id: gd_temp_qx_cfg_config_item_list_template
+  title: Configuration Item List Template
+  status: draft
+  description: 'Template for the configuration item list covering: item, owner, version, location, change control status.'
+- id: gd_temp_qx_cfg_baseline_template
+  title: Baseline Record Template
+  status: draft
+  description: 'Template for baseline records covering: baseline identifier, included items and versions, change package reference, approval date.'

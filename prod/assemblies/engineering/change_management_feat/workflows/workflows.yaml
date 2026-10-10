@@ -1,0 +1,23 @@
+# Change Management at feature scope (engineering/change_management_feat)  -  workflows.
+workflows:
+- id: wf_qx_cmf_manage_feature_change
+  title: Manage Feature Level Change
+  status: draft
+  responsible: rl_qx_cmf_feature_owner
+  approved_by: rl_qx_qa_quality_office
+  input:
+  - wp_qx_cfg_config_item_list
+  output:
+  - wp_qx_cmf_feature_change_package
+  achieves:
+  - oc_qx_cm_changes_authorised
+  description: The feature owner analyses and requests a change to a feature. The Quality Office approves it. When the change reaches an organisation level work product, the approved feature change package is an input to Manage Organisation Level Change.
+  activities:
+  - step: Record the feature change request and the items it affects
+    by: rl_qx_cmf_feature_owner
+  - step: Analyse the impact on the feature and on the organisation level work products
+    by: rl_qx_cmf_feature_owner
+    capability: cap_qx_cm_impact_analysis
+  - step: Authorise the feature change
+    by: rl_qx_qa_quality_office
+    capability: cap_qx_cm_change_authorisation

@@ -195,5 +195,114 @@ def test_rendered_rst_is_current():
         assert (ROOT / "prod" / rel).read_text(encoding="utf-8") == txt, rel
 
 
+# ---------------------------------------------------------------- scope replication, outcomes, capabilities, gates
+def _errs(areas):
+    return "\n".join(catalog.check_catalog(areas, catalog.load_standards(STANDARDS)))
+
+
+def _area(areas, aid):
+    return next(a for a in areas if a["area"]["id"] == aid)
+
+
+def _wf(areas, wid):
+    return next(w for a in areas for w in a["workflows"] if w["id"] == wid)
+
+
+def test_part_of_pilot_is_consistent():
+    areas = catalog.load_catalog(ASSEMBLIES)
+    child = _area(areas, "change_management_feat")["area"]
+    assert child["scope"] == "FEAT" and child["part_of"] == "change_management"
+
+
+def test_part_of_needs_a_parent_one_scope_up():
+    areas = catalog.load_catalog(ASSEMBLIES)
+    _area(areas, "change_management_feat")["area"]["part_of"] = None
+    assert "must be part_of an assembly one scope up" in _errs(areas)
+    areas = catalog.load_catalog(ASSEMBLIES)
+    _area(areas, "change_management_feat")["area"]["scope"] = "UNIT"
+    assert "exactly one scope above" in _errs(areas)
+
+
+def test_part_of_unknown_parent_and_glob_with_parent():
+    areas = catalog.load_catalog(ASSEMBLIES)
+    _area(areas, "change_management_feat")["area"]["part_of"] = "nowhere"
+    assert "unknown assembly" in _errs(areas)
+    areas = catalog.load_catalog(ASSEMBLIES)
+    _area(areas, "change_management")["area"]["part_of"] = "quality_assurance"
+    assert "cannot be part_of" in _errs(areas)
+
+
+def test_part_of_interface_must_be_consumed_by_parent():
+    areas = catalog.load_catalog(ASSEMBLIES)
+    _wf(areas, "wf_qx_cm_manage_org_change")["input"].remove("wp_qx_cmf_feature_change_package")
+    assert "broken interface" in _errs(areas)
+
+
+def test_part_of_cycle_is_detected():
+    areas = catalog.load_catalog(ASSEMBLIES)
+    _area(areas, "change_management")["area"]["part_of"] = "change_management_feat"
+    errs = _errs(areas)
+    assert "cycle" in errs
+
+
+def test_outcome_needs_workflow_capability_and_clause():
+    areas = catalog.load_catalog(ASSEMBLIES)
+    _wf(areas, "wf_qx_qa_internal_audit")["achieves"] = []
+    assert "no workflow achieves this outcome" in _errs(areas)
+    areas = catalog.load_catalog(ASSEMBLIES)
+    _area(areas, "quality_assurance")["capabilities"] = []
+    assert "no capability realizes this outcome" in _errs(areas)
+    areas = catalog.load_catalog(ASSEMBLIES)
+    _area(areas, "quality_assurance")["outcomes"][0]["complies"] = ["std_req_nothing"]
+    assert "unresolved standard clause" in _errs(areas)
+
+
+def test_capability_must_be_exercised_and_resolve():
+    areas = catalog.load_catalog(ASSEMBLIES)
+    for act in _wf(areas, "wf_qx_qa_internal_audit")["activities"]:
+        act.pop("capability", None)
+    assert "no workflow activity exercises this capability" in _errs(areas)
+    areas = catalog.load_catalog(ASSEMBLIES)
+    _wf(areas, "wf_qx_qa_internal_audit")["activities"][0]["capability"] = "cap_qx_qa_missing"
+    assert "unresolved capability" in _errs(areas)
+
+
+def test_capability_is_reused_across_scopes():
+    areas = catalog.load_catalog(ASSEMBLIES)
+    cap = "cap_qx_cm_impact_analysis"
+    users = {w["id"] for a in areas for w in a["workflows"] for x in w.get("activities") or [] if x.get("capability") == cap}
+    assert {"wf_qx_cm_manage_org_change", "wf_qx_cmf_manage_feature_change"} <= users
+
+
+def test_gate_inputs_and_status_are_checked():
+    areas = catalog.load_catalog(ASSEMBLIES)
+    _wf(areas, "wf_qx_rel_release_org_baseline")["gate"].append({"wp": "wp_qx_gc_does_not_exist", "min_status": "approved"})
+    assert "does not resolve" in _errs(areas)
+    areas = catalog.load_catalog(ASSEMBLIES)
+    _wf(areas, "wf_qx_rel_release_org_baseline")["gate"][0]["min_status"] = "finished"
+    assert "min_status" in _errs(areas)
+    areas = catalog.load_catalog(ASSEMBLIES)
+    _wf(areas, "wf_qx_rel_release_org_baseline")["input"].remove("wp_qx_cfg_baseline")
+    assert "must be an input" in _errs(areas)
+
+
+def test_gate_blocks_approval_until_criteria_are_met():
+    areas = catalog.load_catalog(ASSEMBLIES)
+    _wf(areas, "wf_qx_rel_release_org_baseline")["status"] = "approved"
+    assert "gate not met" in _errs(areas)
+    for w in (w for a in areas for w in a["workproducts"] if w["id"] in {
+            "wp_qx_cfg_baseline", "wp_qx_cm_change_package"}):
+        w["status"] = "approved"
+    next(w for a in areas for w in a["workproducts"] if w["id"] == "wp_qx_qa_audit_report")["status"] = "released"
+    assert "gate not met" not in _errs(areas)
+
+
+def test_overlay_adds_outcome_and_capability_types():
+    m = compose([BASE, OVERLAY])
+    assert {"outcome", "capability"} <= set(m["element_types"])
+    assert "achieves" in m["element_types"]["workflow"]["relations"]
+    assert m["element_types"]["capability"]["relations"]["realizes"]["targets"] == ["outcome"]
+
+
 if __name__ == "__main__":
     sys.exit(pytest.main([__file__, "-q"]))
