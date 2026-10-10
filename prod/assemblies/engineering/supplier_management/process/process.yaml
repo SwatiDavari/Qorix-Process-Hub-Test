@@ -9,6 +9,7 @@ assembly:
   layer: '-'
   status: draft
   owner: rl_qx_sup_supplier_manager
+  group: Control and release
   purpose: "Agree what is acquired from suppliers, put the agreement in writing and monitor the supplier against it."
   standards:
   - "ISO/IEC/IEEE 15288 6.1.1-6.1.2"

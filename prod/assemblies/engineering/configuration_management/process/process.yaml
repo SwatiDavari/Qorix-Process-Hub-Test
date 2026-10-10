@@ -9,10 +9,12 @@ assembly:
   layer: '-'
   status: draft
   owner: rl_qx_cfg_config_manager
+  group: Control and release
   purpose: Identify, baseline and control configuration items so every release is reproducible.
   standards:
   - ISO 26262-8 cl. 7
   - ASPICE 4.0 SUP.8
+  - ISO/IEC/IEEE 15288 6.3.5
   tier: qorix
 getting_started: |-
   This describes how to get started with process management at organisation level: where a process comes from, how it is kept in step with the upstream process description it builds on, and who assigns a maturity level to it on what evidence.

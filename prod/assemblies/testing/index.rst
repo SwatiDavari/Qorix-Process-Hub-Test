@@ -13,9 +13,14 @@ Testing
       :link: qx_assembly_validation
       :link-type: ref
 
-      :bdg-secondary:`draft` :bdg-light:`TST / GLOB / -`
+      :bdg-secondary:`draft` :bdg-light:`TST`
+
+      :bdg-info:`SYS.5 / VAL.1` :bdg-dark-line:`ISO 26262-4 cl. 8` :bdg-dark-line:`ISO 26262-8 cl. 9`
 
       Set the organisation-wide test policy, qualify the test systems it relies on, and validate products against stakeholder requirements.
+
+      +++
+      Owner: Validation Lead · 3 workflows · 5 work products
 
 .. toctree::
    :hidden:

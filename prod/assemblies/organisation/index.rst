@@ -13,9 +13,14 @@ Organisation
       :link: qx_assembly_training
       :link-type: ref
 
-      :bdg-secondary:`draft` :bdg-light:`- / GLOB / -`
+      :bdg-secondary:`draft`
+
+      :bdg-info:`(training material)` :bdg-dark-line:`ISO 26262-2 cl. 5.4.5` :bdg-dark-line:`ISO/SAE 21434 cl. 5.4.4`
 
       Make sure every person holding a process role is qualified for it, and keep the evidence (competence matrix, training records) assessor-ready.
+
+      +++
+      Owner: Training Coordinator · 2 workflows · 3 work products
 
 .. toctree::
    :hidden:

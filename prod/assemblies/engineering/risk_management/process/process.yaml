@@ -9,6 +9,7 @@ assembly:
   layer: '-'
   status: draft
   owner: rl_qx_risk_risk_manager
+  group: Plan and control
   purpose: "Identify, analyse, treat and monitor risks to projects and to the organisation level processes."
   standards:
   - "ISO/IEC/IEEE 15288 6.3.4"

@@ -12,7 +12,7 @@ Release a baselined, audited organisation level configuration so every project a
 * **Status:** :bdg-secondary:`draft`
 * **Enabler / Scope / Layer:** - / GLOB / -
 * **Owner:** :need:`rl_qx_rel_release_manager`
-* **Standards:** ISO 26262-4 cl. 11, ASPICE 4.0 SPL.2
+* **Standards:** ISO 26262-4 cl. 11, ASPICE 4.0 SPL.2, ISO/IEC/IEEE 15288 6.4.10
 
 .. doc_getstrt:: Getting started on Release Management
    :id: doc_getstrt_qx_rel_getting_started

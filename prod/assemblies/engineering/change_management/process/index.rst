@@ -12,7 +12,7 @@ Request, analyse, approve and track changes to work products and products.
 * **Status:** :bdg-secondary:`draft`
 * **Enabler / Scope / Layer:** - / GLOB / -
 * **Owner:** :need:`rl_qx_cm_change_manager`
-* **Standards:** ISO 26262-8 cl. 8, ASPICE 4.0 SUP.10
+* **Standards:** ISO 26262-8 cl. 8, ASPICE 4.0 SUP.10, ISO/IEC/IEEE 15288 6.3.5
 
 .. doc_getstrt:: Getting started on Change Management
    :id: doc_getstrt_qx_cm_getting_started

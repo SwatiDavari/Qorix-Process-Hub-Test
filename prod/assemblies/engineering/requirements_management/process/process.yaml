@@ -9,6 +9,7 @@ assembly:
   layer: 'REQ'
   status: draft
   owner: rl_qx_req_requirements_engineer
+  group: Requirements and verification
   purpose: "Define stakeholder and system requirements once, keep them agreed and trace them both ways to what they come from and what satisfies them."
   standards:
   - "ISO/IEC/IEEE 15288 6.4.2-6.4.3"

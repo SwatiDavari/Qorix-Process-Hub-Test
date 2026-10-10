@@ -20,6 +20,11 @@ CLUSTERS = {"compliance": "Compliance", "engineering": "Engineering", "build": "
             "testing": "Testing", "organisation": "Organisation", "common": "Common"}
 
 
+# Optional grouping inside a cluster page: process.yaml `assembly.group` must be one of these, in this order.
+CLUSTER_GROUPS = {"engineering": ["Plan and control", "Requirements and verification", "Control and release",
+                                  "Assure and improve"]}
+
+
 # Assembly layout: prod/assemblies/<cluster>/<process>/<subcomponent>/<file>.yaml
 # (the five subcomponents of every process; each also holds its generated index.rst)
 MAX_ID_LENGTH = 45   # the docs engine's metamodel limit on need ids
@@ -124,6 +129,11 @@ def check_catalog(areas: list[dict[str, Any]], standards: list[dict[str, Any]]) 
             errs.append(f"{aid}.status: must be one of {', '.join(STATUS)}")
         if a["area"].get("cluster") not in CLUSTERS:
             errs.append(f"{aid}.cluster: must be one of {', '.join(CLUSTERS)}")
+        grp, allowed = a["area"].get("group"), CLUSTER_GROUPS.get(a["area"].get("cluster"))
+        if allowed and grp not in allowed:
+            errs.append(f"{aid}.group: must be one of {', '.join(allowed)}")
+        if grp and not allowed:
+            errs.append(f"{aid}.group: cluster '{a['area'].get('cluster')}' defines no groups")
         for key, allowed in (("enabler", ENABLERS), ("scope", SCOPES), ("layer", LAYERS)):
             if a["area"].get(key) not in allowed:
                 errs.append(f"{aid}.{key}: must be one of {', '.join(sorted(allowed))}")
@@ -438,20 +448,77 @@ def render_area(a: dict[str, Any], areas: list[dict[str, Any]] | None = None) ->
     return files
 
 
-def _card(a: dict[str, Any]) -> str:
+def _std_badge(s: str) -> str:
+    """One standard as a badge; colour by family: ISO/IEC/IEEE 15288, Automotive SPICE, other."""
+    s = " ".join(s.split())
+    if s.startswith("ISO/IEC/IEEE 15288"):
+        return f":bdg-primary:`{('15288 ' + s[len('ISO/IEC/IEEE 15288'):].strip()).strip()}`"
+    if s.startswith("ASPICE 4.0 "):
+        return f":bdg-info:`{s[len('ASPICE 4.0 '):]}`"
+    return f":bdg-dark-line:`{s}`"
+
+
+def _std_list(ar: dict[str, Any]) -> list[str]:
+    """Standards of an assembly, grouped by family: 15288 first, then Automotive SPICE, then the rest."""
+    fam = lambda x: 0 if x.startswith("ISO/IEC/IEEE 15288") else 1 if x.startswith("ASPICE 4.0 ") else 2
+    return sorted(ar.get("standards") or [], key=fam)
+
+
+def _meta_line(a: dict[str, Any], owners: dict[str, str]) -> str:
+    nwf, nwp = len(a.get("workflows") or []), len(a.get("workproducts") or [])
+    own = owners.get(a["area"]["owner"], a["area"]["owner"])
+    return f"Owner: {own} · {nwf} workflow{'s' if nwf != 1 else ''} · {nwp} work product{'s' if nwp != 1 else ''}"
+
+
+def _card(a: dict[str, Any], owners: dict[str, str]) -> str:
     ar = a["area"]
     st = ar["status"]
-    purpose = " ".join(ar["purpose"].split())
-    return (f"   .. grid-item-card:: {ar['title']}\n"
-            f"      :link: qx_assembly_{ar['id']}\n      :link-type: ref\n\n"
-            f"      :bdg-{STATUS[st]}:`{st}` :bdg-light:`{ar.get('enabler', '-')} / {ar.get('scope', '-')} / "
-            f"{ar.get('layer', '-')}`\n\n      {purpose}\n\n")
+    extra = [x for x in (ar.get("enabler", "-"), ar.get("scope", "-"), ar.get("layer", "-")) if x not in ("-", "GLOB")]
+    chips = f":bdg-{STATUS[st]}:`{st}`" + (f" :bdg-light:`{' / '.join(extra)}`" if extra else "")
+    stds = " ".join(_std_badge(x) for x in _std_list(ar))
+    body = [chips, ""] + ([stds, ""] if stds else []) + [" ".join(ar["purpose"].split()), "", "+++", _meta_line(a, owners)]
+    lines = [f".. grid-item-card:: {ar['title']}", f"   :link: qx_assembly_{ar['id']}", "   :link-type: ref", ""]
+    lines += [("   " + l) if l else "" for l in body]
+    return _indent("\n".join(lines), 3) + "\n\n"
 
 
-def _cluster_page(cluster: str, areas: list[dict[str, Any]]) -> str:
+def _grid(cards: list[str]) -> str:
+    return ".. grid:: 1 2 3 3\n   :gutter: 2\n\n" + "".join(cards)
+
+
+def _table(areas: list[dict[str, Any]], owners: dict[str, str]) -> str:
+    out = (".. list-table::\n   :header-rows: 1\n   :widths: 26 16 26 9 12 11\n\n"
+           "   * - Process\n     - Owner\n     - Standards\n     - Workflows\n     - Work products\n     - Status\n")
+    for a in areas:
+        ar = a["area"]
+        stds = ("\n\n" + " " * 7).join(_std_badge(x) for x in _std_list(ar))
+        out += (f"   * - :ref:`{ar['title']} <qx_assembly_{ar['id']}>`\n"
+                f"     - {owners.get(ar['owner'], ar['owner'])}\n"
+                f"     - {stds}\n".replace("     - \n", "     -\n") +
+                f"     - {len(a.get('workflows') or [])}\n     - {len(a.get('workproducts') or [])}\n"
+                f"     - :bdg-{STATUS[ar['status']]}:`{ar['status']}`\n")
+    return out + "\n"
+
+
+def _cluster_body(cluster: str, areas: list[dict[str, Any]], owners: dict[str, str]) -> str:
+    """Cluster content: plain card grid, or (when the cluster defines groups) Table / Cards tabs grouped by group."""
+    groups = CLUSTER_GROUPS.get(cluster)
+    if not groups:
+        return _grid([_card(a, owners) for a in areas])
+    by: dict[str, list[dict[str, Any]]] = {}
+    for a in sorted(areas, key=lambda x: x["area"]["title"]):
+        by.setdefault(a["area"].get("group") or "Other", []).append(a)
+    order = [g for g in groups if g in by] + [g for g in by if g not in groups]
+    tables = "".join(f".. rubric:: {g}\n\n{_table(by[g], owners)}" for g in order)
+    cards = "".join(f".. rubric:: {g}\n\n{_grid([_card(a, owners) for a in by[g]])}\n" for g in order)
+    return (".. tab-set::\n\n   .. tab-item:: Table\n\n" + _indent(tables, 6) + "\n\n"
+            "   .. tab-item:: Cards\n\n" + _indent(cards, 6) + "\n\n")
+
+
+def _cluster_page(cluster: str, areas: list[dict[str, Any]], owners: dict[str, str]) -> str:
     out = HEADER.format(src=f"prod/assemblies/{cluster}/*/process/process.yaml") + f".. _qx_cluster_{cluster}:\n\n"
     out += _hdr(CLUSTERS[cluster], "#") + "\n"
-    out += ".. grid:: 1 2 3 3\n   :gutter: 2\n\n" + "".join(_card(a) for a in areas)
+    out += _cluster_body(cluster, areas, owners)
     out += ".. toctree::\n   :hidden:\n\n" + "".join(f"   /assemblies/{a['_path']}/process/index\n" for a in areas)
     return out
 
@@ -476,6 +543,7 @@ def _standards_page(standards: list[dict[str, Any]]) -> str:
 def render_catalog(areas: list[dict[str, Any]], standards: list[dict[str, Any]]) -> dict[str, str]:
     """Return {path relative to prod/: content}: assembly pages, cluster pages, Assemblies and Needs pages."""
     out: dict[str, str] = {}
+    owners = {r["id"]: r["title"] for a in areas for r in a.get("roles") or []}
     by_cluster: dict[str, list[dict[str, Any]]] = {c: [] for c in CLUSTERS}
     for a in areas:
         by_cluster.setdefault(a["area"]["cluster"], []).append(a)
@@ -483,7 +551,7 @@ def render_catalog(areas: list[dict[str, Any]], standards: list[dict[str, Any]])
             out[f"assemblies/{a['_path']}/{name}"] = txt
     used = [c for c, la in by_cluster.items() if la]
     for c in used:
-        out[f"assemblies/{c}/index.rst"] = _cluster_page(c, by_cluster[c])
+        out[f"assemblies/{c}/index.rst"] = _cluster_page(c, by_cluster[c], owners)
 
     idx = HEADER.format(src="prod/assemblies/*/*/process/process.yaml") + ".. _qx_assemblies:\n\n"
     idx += _hdr("Assemblies", "#")
@@ -497,7 +565,7 @@ def render_catalog(areas: list[dict[str, Any]], standards: list[dict[str, Any]])
             "   * - Enabler\n     - Scope\n     - Layer\n"
             "   * - PRD, TST, BLD, DOC, SAF, SEC\n     - GLOB, FEAT, COMP, UNIT\n     - INT, REQ, ARC, DES, IMP\n\n")
     for c in used:
-        idx += _hdr(CLUSTERS[c], "=") + "\n.. grid:: 1 2 3 3\n   :gutter: 2\n\n" + "".join(_card(a) for a in by_cluster[c])
+        idx += _hdr(CLUSTERS[c], "=") + "\n" + _cluster_body(c, by_cluster[c], owners)
     idx += ".. toctree::\n   :hidden:\n\n" + "".join(f"   {c}/index\n" for c in used)
     out["assemblies/index.rst"] = idx
     out["needs.rst"] = _standards_page(standards)

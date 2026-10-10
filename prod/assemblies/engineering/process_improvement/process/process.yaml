@@ -9,6 +9,7 @@ assembly:
   layer: '-'
   status: draft
   owner: rl_qx_pim_improvement_lead
+  group: Assure and improve
   purpose: "Turn audit findings, metrics and feedback into process improvements, and record how a project tailors the processes and why."
   standards:
   - "ISO/IEC/IEEE 15288 Annex A"

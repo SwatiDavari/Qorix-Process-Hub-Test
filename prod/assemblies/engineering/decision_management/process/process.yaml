@@ -9,6 +9,7 @@ assembly:
   layer: '-'
   status: draft
   owner: rl_qx_dec_decision_owner
+  group: Plan and control
   purpose: "Take significant decisions from analysed alternatives and keep the decision, its rationale and its owner on record."
   standards:
   - "ISO/IEC/IEEE 15288 6.3.3"

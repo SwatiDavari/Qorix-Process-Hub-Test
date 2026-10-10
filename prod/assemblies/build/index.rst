@@ -13,9 +13,14 @@ Build
       :link: qx_assembly_infrastructure
       :link-type: ref
 
-      :bdg-secondary:`draft` :bdg-light:`BLD / GLOB / -`
+      :bdg-secondary:`draft` :bdg-light:`BLD`
+
+      :bdg-info:`PIM.3` :bdg-dark-line:`ISO 26262-8 cl. 11` :bdg-dark-line:`ISO/SAE 21434 cl. 5.4.5`
 
       Provide and keep qualified the docs-as-code toolchain (Bazel, Sphinx-needs, qpm), the repository baseline and CI that every Qorix project consumes.
+
+      +++
+      Owner: Infrastructure Lead · 2 workflows · 4 work products
 
 .. toctree::
    :hidden:

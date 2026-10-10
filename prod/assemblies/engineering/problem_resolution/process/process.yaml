@@ -9,6 +9,7 @@ assembly:
   layer: '-'
   status: draft
   owner: rl_qx_prb_problem_manager
+  group: Requirements and verification
   purpose: "Record problems from any source, analyse their cause and take them to verified resolution."
   standards:
   - "ASPICE 4.0 SUP.9"
