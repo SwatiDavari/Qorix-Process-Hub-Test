@@ -20,3 +20,19 @@ Configuration Management Templates
 
    Template for organisation level policy documents.
 
+.. gd_temp:: Configuration Item List Template
+   :id: gd_temp_qx_cfg_config_item_list_template
+   :status: draft
+   :version: 1
+   :tags: configuration_management
+
+   Template for the configuration item list covering: item, owner, version, location, change control status.
+
+.. gd_temp:: Baseline Record Template
+   :id: gd_temp_qx_cfg_baseline_template
+   :status: draft
+   :version: 1
+   :tags: configuration_management
+
+   Template for baseline records covering: baseline identifier, included items and versions, change package reference, approval date.
+

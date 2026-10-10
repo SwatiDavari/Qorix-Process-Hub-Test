@@ -5,3 +5,7 @@ templates:
   status: draft
   description: 'Template for organisation level change requests covering: change description, impact analysis,
     affected projects, approval authority, closure date.'
+- id: gd_temp_qx_cm_change_package_template
+  title: Change Package Template
+  status: draft
+  description: 'Template for the approved change package covering: changes included, impact analysis, approval record, affected configuration items.'

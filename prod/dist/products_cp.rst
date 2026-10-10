@@ -23,7 +23,7 @@ Element types by origin
 =======================
 
 * qorix-base: 52
-* qorix: 2
+* qorix: 4
 
 Operations log
 ==============
@@ -100,6 +100,26 @@ Operations log
      - add_element_type
      - ``training``
      - Competence management evidence (ISO 26262-2 5.4.5, ASPICE HR/OPM).
+   * - qorix
+     - add_relation_type
+     - ``achieves``
+     - -
+   * - qorix
+     - add_relation_type
+     - ``exercises``
+     - -
+   * - qorix
+     - add_element_type
+     - ``outcome``
+     - A process outcome in Qorix's own technology- and domain-neutral wording. Standards attach to it through `complies`, so conformance to ISO/IEC/IEEE 15288, ASPICE or others is claimed per outcome and a non-automotive project can drop the automotive clauses without touching the outcome.
+   * - qorix
+     - add_element_type
+     - ``capability``
+     - A reusable ability (for example impact analysis) that realizes one or more outcomes and is exercised by workflow activities at any scope. Naming it lets a lower-scope process reuse the capability of the process above it and lets competence be mapped to it.
+   * - qorix
+     - extend_element_type
+     - ``workflow``
+     - A workflow achieves outcomes and exercises capabilities through its activities.
    * - products-cp
      - require_attribute
      - ``cal``

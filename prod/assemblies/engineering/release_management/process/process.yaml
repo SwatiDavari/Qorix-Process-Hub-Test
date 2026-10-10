@@ -1,0 +1,49 @@
+# Release Management (engineering/release_management)  -  process: identity, classification, concepts.
+assembly:
+  id: release_management
+  code: rel
+  cluster: engineering
+  title: Release Management
+  enabler: '-'
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_qa_quality_office
+  purpose: Release a baselined, audited organisation level configuration so every project applies a known, reproducible version.
+  standards:
+  - ISO 26262-4 cl. 11
+  - ASPICE 4.0 SPL.2
+  tier: qorix
+getting_started: |-
+  This describes how an organisation level baseline is released to projects.
+
+  A release depends on three things being in place first:
+
+  * **Configuration Management** has frozen a baseline that reflects every approved change.
+  * **Change Management** has approved the changes in that baseline, through the change package.
+  * **Quality Assurance** has an internal audit report covering the baseline.
+
+  Without all three, there is no release. The Quality Office prepares the release and the Head of G&C approves it.
+concepts: []
+outcomes:
+- id: oc_qx_rel_release_controlled
+  title: Only an audited baseline that reflects approved changes is released
+  status: draft
+  statement: A baseline is released only when it reflects approved changes and an audit covers it. The release is approved by the Head of G&C.
+  complies: [std_req_aspice_40_spl_2, std_req_iso15288_6410]
+- id: oc_qx_rel_release_communicated
+  title: Released baselines are communicated to projects
+  status: draft
+  statement: Projects are told which baseline is released, what changed and from when it applies.
+  complies: [std_req_aspice_40_spl_2, std_req_iso15288_6410]
+capabilities:
+- id: cap_qx_rel_release_readiness_check
+  title: Release readiness check
+  status: draft
+  description: Check that every entry criterion of a release is met before approval is asked for.
+  realizes: [oc_qx_rel_release_controlled]
+- id: cap_qx_rel_release_communication
+  title: Release communication
+  status: draft
+  description: Tell the affected projects what was released and what changed.
+  realizes: [oc_qx_rel_release_communicated]

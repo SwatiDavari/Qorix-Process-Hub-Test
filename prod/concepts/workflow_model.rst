@@ -26,4 +26,10 @@ Checks applied by ``qpm check-process``
 * each activity performer is one of the workflow's roles; each role is used;
 * every ID is unique and follows ``<type>_qx_<assembly code>_<name>`` with no double
   underscore; work products marked ``origin: external`` are
-  inputs produced outside these areas and must not be output by a Qorix workflow.
+  inputs produced outside these areas and must not be output by a Qorix workflow;
+* ``part_of``: the parent exists, is exactly one scope above, and consumes an output of the child;
+  every FEAT, COMP and UNIT assembly has a parent; no cycle;
+* every outcome is achieved by a workflow, realized by a capability and links only to clauses in the
+  standards catalogue; every capability is exercised by an activity;
+* a gate work product is an input of its workflow, has a valid minimum status and, once the workflow is
+  ``approved`` or ``released``, has reached it.

@@ -17,8 +17,39 @@ Change Management Workflows
    :responsible: rl_qx_qa_quality_office
    :approved_by: rl_qx_gc_head
    :supported_by: rl_qx_saf_safety_office, rl_qx_sec_security_office
-   :input: wp_qx_qa_audit_report
-   :output: wp_qx_cm_policies
+   :input: wp_qx_qa_audit_report, wp_qx_cfg_config_item_list, wp_qx_cmf_feature_change_package
+   :output: wp_qx_cm_policies, wp_qx_cm_change_package
+   :achieves: oc_qx_cm_changes_authorised, oc_qx_cm_changes_traceable
+   :exercises: cap_qx_cm_impact_analysis, cap_qx_cm_change_authorisation
 
    The Quality Office runs the intake, cross-project impact analysis, notification and closure steps for any change to an organisation level work product. The approval authority table determines the approver based on what is being changed. The Functional Safety and Cybersecurity Offices support the impact analysis where the change reaches their discipline. The Head of G&C approves the change to the organisation level baseline.
+
+   .. list-table:: Activities (RWE)
+      :header-rows: 1
+      :widths: 5 50 20 25
+
+      * - #
+        - Activity
+        - Performed by
+        - Capability
+      * - 1
+        - Record the change request and the configuration items it affects
+        - :need:`rl_qx_qa_quality_office`
+        -
+      * - 2
+        - Analyse the impact across all projects
+        - :need:`rl_qx_qa_quality_office`
+        - :need:`cap_qx_cm_impact_analysis`
+      * - 3
+        - Support the analysis where the change reaches safety or cybersecurity
+        - :need:`rl_qx_saf_safety_office`
+        -
+      * - 4
+        - Authorise the change against the approval authority table
+        - :need:`rl_qx_gc_head`
+        - :need:`cap_qx_cm_change_authorisation`
+      * - 5
+        - Compile the change package and notify the projects
+        - :need:`rl_qx_qa_quality_office`
+        -
 

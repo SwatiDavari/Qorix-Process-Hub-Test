@@ -113,3 +113,37 @@ table.need.need.need > tbody > tr.footer,
 table.need.need.need > tbody > tr.footer > td {
   background: var(--qx-purple-tint) !important;
 }
+
+/* ---- Light grid cards (sphinx-design): light purple tint, dark text, purple accents ---- */
+:root { --qx-card-title: #3b0ca8; }
+html[data-theme="dark"] { --qx-card-title: #d3c8fb; }
+.sd-card {
+  background: var(--qx-purple-tint) !important;
+  border: 1px solid var(--qx-purple-line) !important;
+  box-shadow: none !important;
+  color: var(--qx-ink) !important;
+}
+.sd-card .sd-card-body,
+.sd-card .sd-card-text,
+.sd-card p {
+  background: transparent !important;
+  color: var(--qx-ink) !important;
+}
+.sd-card .sd-card-title,
+.sd-card .sd-card-title a {
+  color: var(--qx-card-title) !important;
+  font-weight: 700;
+}
+.sd-card.sd-card-hover:hover,
+.sd-card:hover {
+  border-color: var(--qx-purple) !important;
+  transform: none;
+}
+
+/* long identifiers in tables wrap instead of running out of the page */
+.bd-article table td,
+.bd-article table th,
+.bd-article table td a {
+  overflow-wrap: anywhere;
+}
+.bd-article table.docutils { width: 100%; }

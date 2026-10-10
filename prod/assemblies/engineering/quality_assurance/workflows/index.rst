@@ -19,6 +19,8 @@ Quality Assurance Workflows
    :supported_by: rl_qx_sec_security_office
    :input: wp_qx_qa_qms_plan
    :output: wp_qx_qa_audit_report
+   :achieves: oc_qx_qa_compliance_assured
+   :exercises: cap_qx_qa_audit
 
    The Quality Office schedules, performs (or commissions) and tracks to closure
    at least one organisation level internal audit per project per year.
@@ -34,6 +36,31 @@ Quality Assurance Workflows
    The cybersecurity scope — judging independently whether organisational processes
    achieve ISO/SAE 21434 objectives — is evaluated as part of this audit, with the
    Cybersecurity Office supporting the assessment.
+
+   .. list-table:: Activities (RWE)
+      :header-rows: 1
+      :widths: 5 50 20 25
+
+      * - #
+        - Activity
+        - Performed by
+        - Capability
+      * - 1
+        - Plan the audit from the QMS plan
+        - :need:`rl_qx_qa_quality_office`
+        -
+      * - 2
+        - Perform the audit independently of the audited work
+        - :need:`rl_qx_qa_quality_office`
+        - :need:`cap_qx_qa_audit`
+      * - 3
+        - Report findings and track them to closure
+        - :need:`rl_qx_qa_quality_office`
+        -
+      * - 4
+        - Approve the audit report
+        - :need:`rl_qx_gc_head`
+        -
 
 .. workflow:: Maintain Quality Management System
    :id: wf_qx_qa_maintain_qms

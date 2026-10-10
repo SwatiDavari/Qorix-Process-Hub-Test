@@ -128,3 +128,52 @@ operations:
         qualifies: {required: true, targets: [role]}
         contains: {required: false, targets: [gd_guidl, gd_temp, gd_chklst]}
       presentation: {color: "#DAE8FC"}
+
+  # ------------------------------------------------------------ outcomes, capabilities (technology-neutral conformance spine)
+  - op: add_relation_type
+    name: achieves
+    forward: achieves
+    reverse: achieved by
+  # `realizes` already exists in the base (tool realizes work product); capability reuses it.
+  - op: add_relation_type
+    name: exercises
+    forward: exercises
+    reverse: exercised by
+  - op: add_element_type
+    name: outcome
+    rationale: >
+      A process outcome in Qorix's own technology- and domain-neutral wording. Standards attach to it
+      through `complies`, so conformance to ISO/IEC/IEEE 15288, ASPICE or others is claimed per outcome
+      and a non-automotive project can drop the automotive clauses without touching the outcome.
+    definition:
+      title: Outcome
+      prefix: oc_
+      id_parts: 1
+      tags: []
+      attributes:
+        status: {required: true, enum: [valid, draft, proposed, approved, released, deprecated, retired]}
+      relations:
+        complies: {required: false, targets: [std_wp, std_req]}
+      presentation: {color: "#EADFFD"}
+  - op: add_element_type
+    name: capability
+    rationale: >
+      A reusable ability (for example impact analysis) that realizes one or more outcomes and is
+      exercised by workflow activities at any scope. Naming it lets a lower-scope process reuse the
+      capability of the process above it and lets competence be mapped to it.
+    definition:
+      title: Capability
+      prefix: cap_
+      id_parts: 1
+      tags: []
+      attributes:
+        status: {required: true, enum: [valid, draft, proposed, approved, released, deprecated, retired]}
+      relations:
+        realizes: {required: true, targets: [outcome]}
+      presentation: {color: "#DCE8FB"}
+  - op: extend_element_type
+    name: workflow
+    add_relations:
+      achieves: {required: false, targets: [outcome]}
+      exercises: {required: false, targets: [capability]}
+    rationale: A workflow achieves outcomes and exercises capabilities through its activities.

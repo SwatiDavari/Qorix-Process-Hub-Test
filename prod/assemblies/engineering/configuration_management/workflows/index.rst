@@ -22,3 +22,87 @@ Configuration Management Workflows
 
    At least once per year, the Quality Office reviews the process description against the applicable standards, assesses the maturity level of every process area against the criteria, and turns improvement inputs into changes to the process description.
 
+.. workflow:: Identify Organisation Level Configuration Items
+   :id: wf_qx_cfg_identify_items
+   :status: draft
+   :version: 1
+   :tags: configuration_management
+   :responsible: rl_qx_qa_quality_office
+   :approved_by: rl_qx_gc_head
+   :supported_by: rl_qx_saf_safety_office, rl_qx_sec_security_office
+   :output: wp_qx_cfg_config_item_list
+   :achieves: oc_qx_cfg_items_controlled
+   :exercises: cap_qx_cfg_item_identification
+
+   The Quality Office identifies and lists the organisation level work products that are placed under configuration control, with owner and version. The list is the scope reference for change impact analysis in Change Management.
+
+   .. list-table:: Activities (RWE)
+      :header-rows: 1
+      :widths: 5 50 20 25
+
+      * - #
+        - Activity
+        - Performed by
+        - Capability
+      * - 1
+        - Decide which organisation level work products are configuration items
+        - :need:`rl_qx_qa_quality_office`
+        - :need:`cap_qx_cfg_item_identification`
+      * - 2
+        - Record owner, version and location for each item
+        - :need:`rl_qx_qa_quality_office`
+        -
+      * - 3
+        - Confirm the list where safety or cybersecurity work products are included
+        - :need:`rl_qx_saf_safety_office`
+        -
+
+.. workflow:: Baseline Organisation Level Configuration Items
+   :id: wf_qx_cfg_baseline_items
+   :status: draft
+   :version: 1
+   :tags: configuration_management
+   :responsible: rl_qx_qa_quality_office
+   :approved_by: rl_qx_gc_head
+   :supported_by: rl_qx_saf_safety_office, rl_qx_sec_security_office
+   :input: wp_qx_cm_change_package, wp_qx_cfg_config_item_list
+   :output: wp_qx_cfg_baseline
+   :achieves: oc_qx_cfg_baseline_reproducible
+   :exercises: cap_qx_cfg_baseline_management
+
+   After a change package is approved, the Quality Office freezes the affected configuration items into a new baseline. Only a baseline that reflects approved changes can be released.
+
+   .. list-table:: Activities (RWE)
+      :header-rows: 1
+      :widths: 5 50 20 25
+
+      * - #
+        - Activity
+        - Performed by
+        - Capability
+      * - 1
+        - Collect the approved change package and the configuration item list
+        - :need:`rl_qx_qa_quality_office`
+        -
+      * - 2
+        - Freeze the affected item versions into a new baseline
+        - :need:`rl_qx_qa_quality_office`
+        - :need:`cap_qx_cfg_baseline_management`
+      * - 3
+        - Approve the baseline record
+        - :need:`rl_qx_gc_head`
+        -
+
+   **Gate.** This workflow cannot be approved until every work product below has reached its minimum status.
+
+   .. list-table:: Gate (entry criteria)
+      :header-rows: 1
+      :widths: 40 20 40
+
+      * - Work product
+        - Minimum status
+        - Produced by
+      * - :need:`wp_qx_cm_change_package`
+        - approved
+        - :need:`wf_qx_cm_manage_org_change`
+

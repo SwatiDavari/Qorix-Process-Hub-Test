@@ -39,6 +39,24 @@ Quality management system and quality assurance: make sure processes are followe
    The two workflows form a closed improvement loop: audit findings drive QMS
    updates, and the updated QMS governs the next audit cycle.
 
+.. outcome:: Processes are followed and work products meet their criteria
+   :id: oc_qx_qa_compliance_assured
+   :status: draft
+   :version: 1
+   :tags: quality_assurance
+   :complies: std_req_aspice_40_sup_1, std_req_iso15288_638
+
+   Independent audits show whether the organisation level processes are followed and whether work products meet their criteria, and findings are tracked to closure.
+
+.. capability:: Independent audit
+   :id: cap_qx_qa_audit
+   :status: draft
+   :version: 1
+   :tags: quality_assurance
+   :realizes: oc_qx_qa_compliance_assured, oc_qx_rel_release_controlled
+
+   Plan and perform an audit that is independent of the audited work and report findings.
+
 .. toctree::
    :maxdepth: 1
 

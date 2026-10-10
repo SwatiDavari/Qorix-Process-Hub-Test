@@ -24,6 +24,42 @@ Identify, baseline and control configuration items so every release is reproduci
 
    At least once per year the Quality Office reviews the process description against the applicable standards and turns improvement inputs into changes to the process description. The Head of G&C approves a change of maturity level.
 
+.. outcome:: Configuration items are identified and under version control
+   :id: oc_qx_cfg_items_controlled
+   :status: draft
+   :version: 1
+   :tags: configuration_management
+   :complies: std_req_aspice_40_sup_8, std_req_iso15288_635
+
+   Every organisation level work product that projects rely on is identified, has an owner and a version, and is changed only through change management.
+
+.. outcome:: Baselines reflect approved changes and can be reproduced
+   :id: oc_qx_cfg_baseline_reproducible
+   :status: draft
+   :version: 1
+   :tags: configuration_management
+   :complies: std_req_aspice_40_sup_8, std_req_iso15288_635
+
+   A baseline contains exactly the configuration item versions that approved changes produced, and the same baseline can be recreated later.
+
+.. capability:: Configuration item identification
+   :id: cap_qx_cfg_item_identification
+   :status: draft
+   :version: 1
+   :tags: configuration_management
+   :realizes: oc_qx_cfg_items_controlled
+
+   Decide which work products are configuration items, and record owner, version and location for each.
+
+.. capability:: Baseline management
+   :id: cap_qx_cfg_baseline_management
+   :status: draft
+   :version: 1
+   :tags: configuration_management
+   :realizes: oc_qx_cfg_baseline_reproducible, oc_qx_rel_release_controlled
+
+   Freeze a set of configuration item versions into a baseline and keep it reproducible. A release also relies on it.
+
 .. toctree::
    :maxdepth: 1
 

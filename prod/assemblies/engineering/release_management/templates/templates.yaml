@@ -1,0 +1,6 @@
+# Release Management (engineering/release_management)  -  templates and guidance.
+templates:
+- id: gd_temp_qx_rel_release_notice_template
+  title: Release Notice Template
+  status: draft
+  description: 'Template for release notices covering: baseline identifier, changes included, audit reference, open points, effective date.'

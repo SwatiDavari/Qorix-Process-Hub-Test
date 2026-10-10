@@ -11,13 +11,13 @@ from typing import Any
 
 from .model import QpmError, load_yaml
 
-LIST_FIELDS = ("supported_by", "input", "output", "contains", "has")
+LIST_FIELDS = ("supported_by", "input", "output", "achieves", "contains", "has")
 
 # Lifecycle of assemblies and their elements; value = badge colour.
 STATUS = {"draft": "secondary", "proposed": "info", "approved": "primary", "released": "success",
           "deprecated": "warning", "retired": "dark", "valid": "success"}
 CLUSTERS = {"compliance": "Compliance", "engineering": "Engineering", "build": "Build",
-            "testing": "Testing", "organisation": "Organisation"}
+            "testing": "Testing", "organisation": "Organisation", "common": "Common"}
 
 
 # Assembly layout: prod/assemblies/<cluster>/<process>/<subcomponent>/<file>.yaml
@@ -34,7 +34,12 @@ ENABLERS = {"PRD", "TST", "BLD", "DOC", "SAF", "SEC", "-"}
 SCOPES = {"GLOB", "FEAT", "COMP", "UNIT", "-"}
 LAYERS = {"INT", "REQ", "ARC", "DES", "IMP", "-"}
 # ID scheme: <type>_qx_<assembly code>_<name>  - never a double underscore
-TYPE_PREFIX = {"workflows": "wf_", "work_products": "wp_", "roles": "rl_", "templates": "gd_temp_", "concepts": "doc_concept_"}
+TYPE_PREFIX = {"workflows": "wf_", "work_products": "wp_", "roles": "rl_", "templates": "gd_temp_", "concepts": "doc_concept_",
+               "outcomes": "oc_", "capabilities": "cap_"}
+# Scope axis (rank = depth of the composition): a process at one scope is part_of the same process one scope up.
+SCOPE_RANK = {"GLOB": 0, "FEAT": 1, "COMP": 2, "UNIT": 3}
+# Status a gate work product may hold, lowest first. deprecated / retired never satisfy a gate.
+GATE_RANK = {"draft": 0, "proposed": 1, "approved": 2, "released": 3}
 
 
 def load_catalog(prod_dir: str | Path) -> list[dict[str, Any]]:
@@ -52,6 +57,8 @@ def load_catalog(prod_dir: str | Path) -> list[dict[str, Any]]:
                 doc["area"] = data.get("assembly") or {}
                 doc["concepts"] = data.get("concepts") or []
                 doc["getting_started"] = data.get("getting_started")
+                doc["outcomes"] = data.get("outcomes") or []
+                doc["capabilities"] = data.get("capabilities") or []
             else:
                 doc["workproducts" if key == "work_products" else key] = data.get(key) or []
         ar = doc["area"]
@@ -71,7 +78,7 @@ def load_standards(path: str | Path) -> list[dict[str, Any]]:
 
 def _ids(areas):
     for a in areas:
-        for key in ("concepts", "roles", "templates", "workproducts", "workflows"):
+        for key in ("concepts", "outcomes", "capabilities", "roles", "templates", "workproducts", "workflows"):
             for item in a.get(key) or []:
                 yield a, key, item["id"]
 
@@ -162,6 +169,103 @@ def check_catalog(areas: list[dict[str, Any]], standards: list[dict[str, Any]]) 
         for r in a.get("roles") or []:
             if r["id"] not in used_roles and r["id"] not in owners:
                 errs.append(f"{a['area']['id']}.{r['id']}: role not used by any workflow")
+    errs += _check_layers(areas, known)
+    return errs
+
+
+def _check_layers(areas: list[dict[str, Any]], known: set[str]) -> list[str]:
+    """Replication across scopes (part_of), outcomes, capabilities and gates."""
+    errs: list[str] = []
+    by_id = {a["area"]["id"]: a for a in areas}
+    wps = {w["id"]: w for a in areas for w in a.get("workproducts") or []}
+    outcomes = {o["id"]: o for a in areas for o in a.get("outcomes") or []}
+    caps = {c["id"]: c for a in areas for c in a.get("capabilities") or []}
+
+    # --- composition: part_of one scope up, interface between child and parent, no cycle
+    for a in areas:
+        ar = a["area"]
+        aid, scope, parent = ar["id"], ar.get("scope", "-"), ar.get("part_of")
+        if scope in SCOPE_RANK and scope != "GLOB" and not parent:
+            errs.append(f"{aid}.part_of: a {scope} assembly must be part_of an assembly one scope up")
+        if not parent:
+            continue
+        if scope not in SCOPE_RANK or scope == "GLOB":
+            errs.append(f"{aid}.part_of: a '{scope}' assembly cannot be part_of another assembly")
+            continue
+        p = by_id.get(parent)
+        if p is None:
+            errs.append(f"{aid}.part_of: unknown assembly '{parent}'")
+            continue
+        pscope = p["area"].get("scope", "-")
+        if SCOPE_RANK.get(pscope, -9) != SCOPE_RANK[scope] - 1:
+            errs.append(f"{aid}.part_of: parent '{parent}' is {pscope}; it must be exactly one scope above {scope}")
+        outs = {o for wf in a.get("workflows") or [] for o in wf.get("output") or []}
+        ins = {i for wf in p.get("workflows") or [] for i in wf.get("input") or []}
+        if not outs & ins:
+            errs.append(f"{aid}.part_of: no output work product of this assembly is an input of '{parent}' (broken interface)")
+    for a in areas:
+        seen: set[str] = set()
+        cur = a["area"]["id"]
+        while cur in by_id and by_id[cur]["area"].get("part_of"):
+            if cur in seen:
+                errs.append(f"{a['area']['id']}.part_of: composition cycle through '{cur}'")
+                break
+            seen.add(cur)
+            cur = by_id[cur]["area"]["part_of"]
+
+    # --- outcomes and capabilities
+    achieved: set[str] = set()
+    used: set[str] = set()
+    for a in areas:
+        aid = a["area"]["id"]
+        for o in a.get("outcomes") or []:
+            if not o.get("statement"):
+                errs.append(f"{aid}.{o['id']}: outcome needs a statement")
+            for c in o.get("complies") or []:
+                if not c.startswith("std_") or c not in known:
+                    errs.append(f"{aid}.{o['id']}: unresolved standard clause '{c}'")
+        for c in a.get("capabilities") or []:
+            if not c.get("description"):
+                errs.append(f"{aid}.{c['id']}: capability needs a description")
+            if not c.get("realizes"):
+                errs.append(f"{aid}.{c['id']}: capability must realize at least one outcome")
+            for r in c.get("realizes") or []:
+                if r not in outcomes:
+                    errs.append(f"{aid}.{c['id']}: unresolved outcome '{r}'")
+        for wf in a.get("workflows") or []:
+            ctx = f"{aid}.{wf['id']}"
+            for oc in wf.get("achieves") or []:
+                if oc in outcomes:
+                    achieved.add(oc)
+                else:
+                    errs.append(f"{ctx}: unresolved outcome '{oc}'")
+            for n, act in enumerate(wf.get("activities") or [], 1):
+                cap = act.get("capability")
+                if cap:
+                    if cap in caps:
+                        used.add(cap)
+                    else:
+                        errs.append(f"{ctx} activity {n}: unresolved capability '{cap}'")
+            for g in wf.get("gate") or []:
+                w, m = g.get("wp"), g.get("min_status")
+                if w not in wps:
+                    errs.append(f"{ctx}: gate work product '{w}' does not resolve")
+                    continue
+                if w not in (wf.get("input") or []):
+                    errs.append(f"{ctx}: gate work product '{w}' must be an input of the workflow")
+                if m not in GATE_RANK:
+                    errs.append(f"{ctx}: gate min_status '{m}' must be one of {', '.join(GATE_RANK)}")
+                elif wf.get("status") in ("approved", "released"):
+                    if GATE_RANK.get(wps[w].get("status"), -1) < GATE_RANK[m]:
+                        errs.append(f"{ctx}: gate not met - '{w}' is {wps[w].get('status')}, needs at least {m}")
+    for oc in outcomes:
+        if oc not in achieved:
+            errs.append(f"{oc}: no workflow achieves this outcome")
+        if not any(oc in (c.get("realizes") or []) for c in caps.values()):
+            errs.append(f"{oc}: no capability realizes this outcome")
+    for cap in caps:
+        if cap not in used:
+            errs.append(f"{cap}: no workflow activity exercises this capability")
     return errs
 
 
@@ -217,7 +321,7 @@ def _need(kind: str, title: str, nid: str, status: str, tag: str, opts: str = ""
             f"   :tags: {tag}\n{opts}\n")
 
 
-def render_area(a: dict[str, Any]) -> dict[str, str]:
+def render_area(a: dict[str, Any], areas: list[dict[str, Any]] | None = None) -> dict[str, str]:
     """Render one assembly into its five subcomponent pages (<sub>/index.rst)."""
     ar = a["area"]
     aid, path = ar["id"], a["_path"]
@@ -231,6 +335,11 @@ def render_area(a: dict[str, Any]) -> dict[str, str]:
     idx += f"* **Status:** :bdg-{STATUS[ar['status']]}:`{ar['status']}`\n"
     idx += (f"* **Enabler / Scope / Layer:** {ar.get('enabler', '-')} / {ar.get('scope', '-')} / "
             f"{ar.get('layer', '-')}\n")
+    if ar.get("part_of"):
+        idx += f"* **Part of:** :ref:`qx_assembly_{ar['part_of']}`\n"
+    kids = [b["area"]["id"] for b in areas or [] if b["area"].get("part_of") == aid]
+    if kids:
+        idx += "* **Parts:** " + ", ".join(f":ref:`qx_assembly_{k}`" for k in kids) + "\n"
     idx += f"* **Owner:** :need:`{ar['owner']}`\n"
     idx += f"* **Standards:** {', '.join(ar.get('standards') or [])}\n\n"
     if a.get("getting_started"):
@@ -240,6 +349,12 @@ def render_area(a: dict[str, Any]) -> dict[str, str]:
     for c in a.get("concepts") or []:
         idx += _need("doc_concept", c["title"], c["id"], c.get("status", "valid"), aid)
         idx += _indent(_md(c["body"])) + "\n\n"
+    for o in a.get("outcomes") or []:
+        idx += _need("outcome", o["title"], o["id"], o.get("status", "draft"), aid, _opt("complies", o.get("complies")))
+        idx += _indent(_md(o["statement"])) + "\n\n"
+    for c in a.get("capabilities") or []:
+        idx += _need("capability", c["title"], c["id"], c.get("status", "draft"), aid, _opt("realizes", c.get("realizes")))
+        idx += _indent(_md(c["description"])) + "\n\n"
     idx += ".. toctree::\n   :maxdepth: 1\n\n" + "".join(
         f"   /assemblies/{path}/{sub}/index\n" for sub in SUBCOMPONENTS[1:])
     files["process/index.rst"] = idx
@@ -254,14 +369,32 @@ def render_area(a: dict[str, Any]) -> dict[str, str]:
                    "   :link_types: input, output\n   :show_link_names:\n\n")
     for wf in a.get("workflows") or []:
         opts = "".join(_opt(f, wf.get(f)) for f in ("responsible", "approved_by") + LIST_FIELDS)
+        exercised = list(dict.fromkeys(x["capability"] for x in wf.get("activities") or [] if x.get("capability")))
+        opts += _opt("exercises", exercised)
         wf_txt += _need("workflow", wf["title"], wf["id"], wf.get("status", "valid"), aid, opts)
         if wf.get("description"):
             wf_txt += _indent(_md(wf["description"])) + "\n\n"
         if wf.get("activities"):
-            wf_txt += "   .. list-table:: Activities (RWE)\n      :header-rows: 1\n      :widths: 5 70 25\n\n"
+            has_cap = bool(exercised)
+            wf_txt += ("   .. list-table:: Activities (RWE)\n      :header-rows: 1\n      :widths: "
+                       + ("5 50 20 25" if has_cap else "5 70 25") + "\n\n")
             wf_txt += "      * - #\n        - Activity\n        - Performed by\n"
+            wf_txt += "        - Capability\n" if has_cap else ""
             for n, act in enumerate(wf["activities"], 1):
                 wf_txt += f"      * - {n}\n        - {act['step']}\n        - :need:`{act['by']}`\n"
+                if has_cap:
+                    cap = act.get("capability")
+                    wf_txt += f"        - :need:`{cap}`\n" if cap else "        -\n"
+            wf_txt += "\n"
+        if wf.get("gate"):
+            wf_txt += ("   **Gate.** This workflow cannot be approved until every work product below has reached "
+                       "its minimum status.\n\n"
+                       "   .. list-table:: Gate (entry criteria)\n      :header-rows: 1\n      :widths: 40 20 40\n\n"
+                       "      * - Work product\n        - Minimum status\n        - Produced by\n")
+            for g in wf["gate"]:
+                prod = [w2["id"] for b in areas or [a] for w2 in b.get("workflows") or [] if g["wp"] in (w2.get("output") or [])]
+                who = ", ".join(f":need:`{x}`" for x in prod) or "outside these assemblies"
+                wf_txt += f"      * - :need:`{g['wp']}`\n        - {g['min_status']}\n        - {who}\n"
             wf_txt += "\n"
     files["workflows/index.rst"] = wf_txt
 
@@ -341,7 +474,7 @@ def render_catalog(areas: list[dict[str, Any]], standards: list[dict[str, Any]])
     by_cluster: dict[str, list[dict[str, Any]]] = {c: [] for c in CLUSTERS}
     for a in areas:
         by_cluster.setdefault(a["area"]["cluster"], []).append(a)
-        for name, txt in render_area(a).items():
+        for name, txt in render_area(a, areas).items():
             out[f"assemblies/{a['_path']}/{name}"] = txt
     used = [c for c, la in by_cluster.items() if la]
     for c in used:

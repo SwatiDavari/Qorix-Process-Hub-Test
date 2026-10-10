@@ -5,3 +5,8 @@ work_products:
   status: draft
   purpose: Organisation level policies updated as the output of change management activities.
   template: gd_temp_qx_cm_policy_template
+- id: wp_qx_cm_change_package
+  title: Change Package
+  status: draft
+  purpose: Approved set of changes to organisation level work products, with the impact analysis and approval record. Input to baselining in Configuration Management.
+  template: gd_temp_qx_cm_change_package_template

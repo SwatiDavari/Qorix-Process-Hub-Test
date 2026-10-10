@@ -22,4 +22,5 @@ Checks that block a merge
 * every activity is performed by one of the workflow's roles;
 * every identifier follows ``<type>_qx_<assembly code>_<name>`` and never contains a double
   underscore;
-* every assembly has a valid cluster, status and enabler / scope / layer classification.
+* every assembly has a valid cluster, status and enabler / scope / layer classification;
+* ``part_of`` composition, outcomes, capabilities and gates pass the checks in :ref:`qx_workflow_model`.

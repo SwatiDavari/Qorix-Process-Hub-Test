@@ -94,3 +94,62 @@ Automotive SPICE 4.0
 
    Clause: IIC 15-54
 
+.. std_req:: Configuration management
+   :id: std_req_aspice_40_sup_8
+   :status: valid
+   :version: 1
+
+   Clause: SUP.8
+
+.. std_req:: Change request management
+   :id: std_req_aspice_40_sup_10
+   :status: valid
+   :version: 1
+
+   Clause: SUP.10
+
+.. std_req:: Quality assurance
+   :id: std_req_aspice_40_sup_1
+   :status: valid
+   :version: 1
+
+   Clause: SUP.1
+
+.. std_req:: Product release
+   :id: std_req_aspice_40_spl_2
+   :status: valid
+   :version: 1
+
+   Clause: SPL.2
+
+ISO/IEC/IEEE 15288:2023
+=======================
+
+.. std_req:: Configuration management process
+   :id: std_req_iso15288_635
+   :status: valid
+   :version: 1
+
+   Clause: 6.3.5
+
+.. std_req:: Decision management process
+   :id: std_req_iso15288_633
+   :status: valid
+   :version: 1
+
+   Clause: 6.3.3
+
+.. std_req:: Quality assurance process
+   :id: std_req_iso15288_638
+   :status: valid
+   :version: 1
+
+   Clause: 6.3.8
+
+.. std_req:: Transition process
+   :id: std_req_iso15288_6410
+   :status: valid
+   :version: 1
+
+   Clause: 6.4.10
+

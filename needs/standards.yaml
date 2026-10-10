@@ -12,3 +12,11 @@ standards:
   - {id: std_req_aspice_40_iic_13_55, standard: "Automotive SPICE 4.0", clause: "IIC 13-55", title: "Process resource and infrastructure documentation"}
   - {id: std_req_aspice_40_iic_15_13, standard: "Automotive SPICE 4.0", clause: "IIC 15-13", title: "Assessment/audit report"}
   - {id: std_req_aspice_40_iic_15_54, standard: "Automotive SPICE 4.0", clause: "IIC 15-54", title: "Tailoring documentation"}
+  - {id: std_req_iso15288_635, standard: "ISO/IEC/IEEE 15288:2023", clause: "6.3.5", title: "Configuration management process"}
+  - {id: std_req_iso15288_633, standard: "ISO/IEC/IEEE 15288:2023", clause: "6.3.3", title: "Decision management process"}
+  - {id: std_req_iso15288_638, standard: "ISO/IEC/IEEE 15288:2023", clause: "6.3.8", title: "Quality assurance process"}
+  - {id: std_req_iso15288_6410, standard: "ISO/IEC/IEEE 15288:2023", clause: "6.4.10", title: "Transition process"}
+  - {id: std_req_aspice_40_sup_8, standard: "Automotive SPICE 4.0", clause: "SUP.8", title: "Configuration management"}
+  - {id: std_req_aspice_40_sup_10, standard: "Automotive SPICE 4.0", clause: "SUP.10", title: "Change request management"}
+  - {id: std_req_aspice_40_sup_1, standard: "Automotive SPICE 4.0", clause: "SUP.1", title: "Quality assurance"}
+  - {id: std_req_aspice_40_spl_2, standard: "Automotive SPICE 4.0", clause: "SPL.2", title: "Product release"}

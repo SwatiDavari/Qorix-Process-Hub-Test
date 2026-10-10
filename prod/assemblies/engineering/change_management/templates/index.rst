@@ -12,3 +12,11 @@ Change Management Templates
 
    Template for organisation level change requests covering: change description, impact analysis, affected projects, approval authority, closure date.
 
+.. gd_temp:: Change Package Template
+   :id: gd_temp_qx_cm_change_package_template
+   :status: draft
+   :version: 1
+   :tags: change_management
+
+   Template for the approved change package covering: changes included, impact analysis, approval record, affected configuration items.
+
