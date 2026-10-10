@@ -10,7 +10,7 @@ assembly:
   part_of: change_management
   status: draft
   owner: rl_qx_qa_quality_office
-  purpose: The change management process applied to one feature. The same shape as the organisation level process, one scope down; a feature change that reaches an organisation level work product is escalated to it.
+  purpose: Change management applied to one feature, one scope below the organisation level process.
   standards:
   - ISO 26262-8 cl. 8
   - ASPICE 4.0 SUP.10

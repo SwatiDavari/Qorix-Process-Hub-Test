@@ -23,7 +23,7 @@ Engineering
 
       :bdg-secondary:`draft` :bdg-light:`- / FEAT / -`
 
-      The change management process applied to one feature. The same shape as the organisation level process, one scope down; a feature change that reaches an organisation level work product is escalated to it.
+      Change management applied to one feature, one scope below the organisation level process.
 
    .. grid-item-card:: Configuration Management
       :link: qx_assembly_configuration_management

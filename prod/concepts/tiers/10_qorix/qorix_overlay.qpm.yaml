@@ -154,7 +154,7 @@ operations:
         status: {required: true, enum: [valid, draft, proposed, approved, released, deprecated, retired]}
       relations:
         complies: {required: false, targets: [std_wp, std_req]}
-      presentation: {color: "#D5E8D4"}
+      presentation: {color: "#EADFFD"}
   - op: add_element_type
     name: capability
     rationale: >
@@ -170,7 +170,7 @@ operations:
         status: {required: true, enum: [valid, draft, proposed, approved, released, deprecated, retired]}
       relations:
         realizes: {required: true, targets: [outcome]}
-      presentation: {color: "#FFE6CC"}
+      presentation: {color: "#DCE8FB"}
   - op: extend_element_type
     name: workflow
     add_relations:

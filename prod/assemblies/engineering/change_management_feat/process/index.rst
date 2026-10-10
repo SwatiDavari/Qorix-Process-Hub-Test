@@ -6,7 +6,7 @@
 Change Management (Feature)
 ###########################
 
-The change management process applied to one feature. The same shape as the organisation level process, one scope down; a feature change that reaches an organisation level work product is escalated to it.
+Change management applied to one feature, one scope below the organisation level process.
 
 * **Assembly:** Engineering / Change Management (Feature) (code ``cmf``)
 * **Status:** :bdg-secondary:`draft`
