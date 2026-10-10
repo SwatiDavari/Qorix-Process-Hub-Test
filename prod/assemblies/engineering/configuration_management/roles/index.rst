@@ -4,4 +4,13 @@
 Configuration Management Roles
 ##############################
 
-No roles defined yet.
+.. role:: Configuration Manager
+   :id: rl_qx_cfg_config_manager
+   :status: valid
+   :version: 1
+   :tags: configuration_management
+
+   Keeps the configuration item list and baselines and runs the yearly process description review.
+
+   **Responsible for:** Manage the Process Description, Identify Items, Baseline Items.
+

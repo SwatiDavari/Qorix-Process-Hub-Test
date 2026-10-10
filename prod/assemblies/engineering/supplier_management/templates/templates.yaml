@@ -1,0 +1,10 @@
+# Supplier and Acquisition Management (engineering/supplier_management)  -  templates and guidance.
+templates:
+- id: gd_temp_qx_sup_agreement_template
+  title: "Supplier Agreement Template"
+  status: draft
+  description: "Template covering: scope, requirements, deliverables, acceptance criteria, safety and security obligations."
+- id: gd_temp_qx_sup_review_template
+  title: "Supplier Review Template"
+  status: draft
+  description: "Template covering: progress, deliverables, deviations, actions, escalation."

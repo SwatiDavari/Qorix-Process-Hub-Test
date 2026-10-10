@@ -1,0 +1,10 @@
+# Project Planning and Control (engineering/project_planning)  -  templates and guidance.
+templates:
+- id: gd_temp_qx_plan_project_plan_template
+  title: "Project Plan Template"
+  status: draft
+  description: "Template for the project plan covering: scope, work breakdown, schedule, resources, responsibilities, applied processes."
+- id: gd_temp_qx_plan_status_template
+  title: "Project Status Report Template"
+  status: draft
+  description: "Template for the status report covering: progress, deviations, actions, escalations."

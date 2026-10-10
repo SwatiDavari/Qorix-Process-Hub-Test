@@ -1,0 +1,42 @@
+# Information and Documentation Management (engineering/information_management)  -  process: identity, classification, concepts.
+assembly:
+  id: information_management
+  code: info
+  cluster: engineering
+  title: "Information and Documentation Management"
+  enabler: 'DOC'
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_info_documentation_owner
+  purpose: "Decide which information the organisation keeps, keep it current and retrievable, and protect it as its classification requires."
+  standards:
+  - "ISO/IEC/IEEE 15288 6.3.6"
+  tier: qorix
+getting_started: |-
+  This describes how organisation level information and documents are identified, kept current and made retrievable.
+
+  Version control of the items is Configuration Management. This process decides what must be documented, who owns it and where it can be found.
+concepts: []
+outcomes:
+- id: oc_qx_info_info_identified
+  title: "Required information is identified and owned"
+  status: draft
+  statement: "The information the organisation must keep is identified, each item has an owner, a classification and a retention rule."
+  complies: [std_req_iso15288_636]
+- id: oc_qx_info_info_controlled
+  title: "Information is current, retrievable and protected"
+  status: draft
+  statement: "Controlled documents are current, can be found from one register and are protected according to their classification."
+  complies: [std_req_iso15288_636]
+capabilities:
+- id: cap_qx_info_documentation_planning
+  title: "Documentation planning"
+  status: draft
+  description: "Decide what is documented, by whom, in what form and for how long."
+  realizes: [oc_qx_info_info_identified]
+- id: cap_qx_info_register_maintenance
+  title: "Register maintenance"
+  status: draft
+  description: "Keep the document register current and withdraw superseded items."
+  realizes: [oc_qx_info_info_controlled]

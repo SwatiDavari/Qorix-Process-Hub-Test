@@ -1,0 +1,52 @@
+# Information and Documentation Management (engineering/information_management)  -  workflows.
+workflows:
+- id: wf_qx_info_plan_documentation
+  title: "Plan Documentation"
+  status: draft
+  responsible: rl_qx_info_documentation_owner
+  approved_by: rl_qx_gc_head
+  supported_by:
+  - rl_qx_sec_security_office
+  input:
+  - wp_qx_info_document_request
+  achieves:
+  - oc_qx_info_info_identified
+  output:
+  - wp_qx_info_document_plan
+  description: "The Documentation Owner decides which information must be documented, names owners and sets classification and retention. The Cybersecurity Office confirms the classification of security-relevant items."
+  activities:
+  - step: "Decide which information must be documented"
+    by: rl_qx_info_documentation_owner
+    capability: cap_qx_info_documentation_planning
+  - step: "Assign owner, form and retention"
+    by: rl_qx_info_documentation_owner
+  - step: "Confirm classification of security-relevant items"
+    by: rl_qx_sec_security_office
+  - step: "Approve the documentation plan"
+    by: rl_qx_gc_head
+
+- id: wf_qx_info_maintain_register
+  title: "Maintain the Document Register"
+  status: draft
+  responsible: rl_qx_info_documentation_owner
+  approved_by: rl_qx_gc_head
+  supported_by:
+  - rl_qx_sec_security_office
+  input:
+  - wp_qx_info_document_plan
+  gate:
+  - wp: wp_qx_info_document_plan
+    min_status: approved
+  achieves:
+  - oc_qx_info_info_controlled
+  output:
+  - wp_qx_info_document_register
+  description: "The Documentation Owner keeps the register current, withdraws superseded items and checks access against classification. The Head of G&C reviews the register at the agreed interval."
+  activities:
+  - step: "Update the register for new, changed and withdrawn items"
+    by: rl_qx_info_documentation_owner
+    capability: cap_qx_info_register_maintenance
+  - step: "Check access against classification"
+    by: rl_qx_sec_security_office
+  - step: "Review the register"
+    by: rl_qx_gc_head

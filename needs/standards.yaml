@@ -20,3 +20,22 @@ standards:
   - {id: std_req_aspice_40_sup_10, standard: "Automotive SPICE 4.0", clause: "SUP.10", title: "Change request management"}
   - {id: std_req_aspice_40_sup_1, standard: "Automotive SPICE 4.0", clause: "SUP.1", title: "Quality assurance"}
   - {id: std_req_aspice_40_spl_2, standard: "Automotive SPICE 4.0", clause: "SPL.2", title: "Product release"}
+  - {id: std_req_iso15288_631, standard: "ISO/IEC/IEEE 15288:2023", clause: "6.3.1", title: "Project planning process"}
+  - {id: std_req_iso15288_632, standard: "ISO/IEC/IEEE 15288:2023", clause: "6.3.2", title: "Project assessment and control process"}
+  - {id: std_req_iso15288_634, standard: "ISO/IEC/IEEE 15288:2023", clause: "6.3.4", title: "Risk management process"}
+  - {id: std_req_iso15288_636, standard: "ISO/IEC/IEEE 15288:2023", clause: "6.3.6", title: "Information management process"}
+  - {id: std_req_iso15288_637, standard: "ISO/IEC/IEEE 15288:2023", clause: "6.3.7", title: "Measurement process"}
+  - {id: std_req_iso15288_642, standard: "ISO/IEC/IEEE 15288:2023", clause: "6.4.2", title: "Stakeholder needs and requirements definition process"}
+  - {id: std_req_iso15288_643, standard: "ISO/IEC/IEEE 15288:2023", clause: "6.4.3", title: "System requirements definition process"}
+  - {id: std_req_iso15288_649, standard: "ISO/IEC/IEEE 15288:2023", clause: "6.4.9", title: "Verification process"}
+  - {id: std_req_iso15288_611, standard: "ISO/IEC/IEEE 15288:2023", clause: "6.1.1", title: "Acquisition process"}
+  - {id: std_req_iso15288_612, standard: "ISO/IEC/IEEE 15288:2023", clause: "6.1.2", title: "Supply process"}
+  - {id: std_req_iso15288_annex_a, standard: "ISO/IEC/IEEE 15288:2023", clause: "Annex A", title: "Tailoring process"}
+  - {id: std_req_aspice_40_man_3, standard: "Automotive SPICE 4.0", clause: "MAN.3", title: "Project management"}
+  - {id: std_req_aspice_40_man_5, standard: "Automotive SPICE 4.0", clause: "MAN.5", title: "Risk management"}
+  - {id: std_req_aspice_40_man_6, standard: "Automotive SPICE 4.0", clause: "MAN.6", title: "Measurement"}
+  - {id: std_req_aspice_40_sys_2, standard: "Automotive SPICE 4.0", clause: "SYS.2", title: "System requirements analysis"}
+  - {id: std_req_aspice_40_swe_1, standard: "Automotive SPICE 4.0", clause: "SWE.1", title: "Software requirements analysis"}
+  - {id: std_req_aspice_40_sup_9, standard: "Automotive SPICE 4.0", clause: "SUP.9", title: "Problem resolution management"}
+  - {id: std_req_aspice_40_acq_4, standard: "Automotive SPICE 4.0", clause: "ACQ.4", title: "Supplier monitoring"}
+  - {id: std_req_aspice_40_pim_3, standard: "Automotive SPICE 4.0", clause: "PIM.3", title: "Process improvement"}

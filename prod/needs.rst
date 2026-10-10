@@ -122,6 +122,62 @@ Automotive SPICE 4.0
 
    Clause: SPL.2
 
+.. std_req:: Project management
+   :id: std_req_aspice_40_man_3
+   :status: valid
+   :version: 1
+
+   Clause: MAN.3
+
+.. std_req:: Risk management
+   :id: std_req_aspice_40_man_5
+   :status: valid
+   :version: 1
+
+   Clause: MAN.5
+
+.. std_req:: Measurement
+   :id: std_req_aspice_40_man_6
+   :status: valid
+   :version: 1
+
+   Clause: MAN.6
+
+.. std_req:: System requirements analysis
+   :id: std_req_aspice_40_sys_2
+   :status: valid
+   :version: 1
+
+   Clause: SYS.2
+
+.. std_req:: Software requirements analysis
+   :id: std_req_aspice_40_swe_1
+   :status: valid
+   :version: 1
+
+   Clause: SWE.1
+
+.. std_req:: Problem resolution management
+   :id: std_req_aspice_40_sup_9
+   :status: valid
+   :version: 1
+
+   Clause: SUP.9
+
+.. std_req:: Supplier monitoring
+   :id: std_req_aspice_40_acq_4
+   :status: valid
+   :version: 1
+
+   Clause: ACQ.4
+
+.. std_req:: Process improvement
+   :id: std_req_aspice_40_pim_3
+   :status: valid
+   :version: 1
+
+   Clause: PIM.3
+
 ISO/IEC/IEEE 15288:2023
 =======================
 
@@ -152,4 +208,81 @@ ISO/IEC/IEEE 15288:2023
    :version: 1
 
    Clause: 6.4.10
+
+.. std_req:: Project planning process
+   :id: std_req_iso15288_631
+   :status: valid
+   :version: 1
+
+   Clause: 6.3.1
+
+.. std_req:: Project assessment and control process
+   :id: std_req_iso15288_632
+   :status: valid
+   :version: 1
+
+   Clause: 6.3.2
+
+.. std_req:: Risk management process
+   :id: std_req_iso15288_634
+   :status: valid
+   :version: 1
+
+   Clause: 6.3.4
+
+.. std_req:: Information management process
+   :id: std_req_iso15288_636
+   :status: valid
+   :version: 1
+
+   Clause: 6.3.6
+
+.. std_req:: Measurement process
+   :id: std_req_iso15288_637
+   :status: valid
+   :version: 1
+
+   Clause: 6.3.7
+
+.. std_req:: Stakeholder needs and requirements definition process
+   :id: std_req_iso15288_642
+   :status: valid
+   :version: 1
+
+   Clause: 6.4.2
+
+.. std_req:: System requirements definition process
+   :id: std_req_iso15288_643
+   :status: valid
+   :version: 1
+
+   Clause: 6.4.3
+
+.. std_req:: Verification process
+   :id: std_req_iso15288_649
+   :status: valid
+   :version: 1
+
+   Clause: 6.4.9
+
+.. std_req:: Acquisition process
+   :id: std_req_iso15288_611
+   :status: valid
+   :version: 1
+
+   Clause: 6.1.1
+
+.. std_req:: Supply process
+   :id: std_req_iso15288_612
+   :status: valid
+   :version: 1
+
+   Clause: 6.1.2
+
+.. std_req:: Tailoring process
+   :id: std_req_iso15288_annex_a
+   :status: valid
+   :version: 1
+
+   Clause: Annex A
 

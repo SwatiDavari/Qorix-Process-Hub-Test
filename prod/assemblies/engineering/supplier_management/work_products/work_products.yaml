@@ -1,0 +1,17 @@
+# Supplier and Acquisition Management (engineering/supplier_management)  -  work products.
+work_products:
+- id: wp_qx_sup_acquisition_need
+  title: "Acquisition Need"
+  status: draft
+  purpose: "What is to be acquired, why and by when."
+  origin: external
+- id: wp_qx_sup_agreement
+  title: "Supplier Agreement"
+  status: draft
+  purpose: "Agreed requirements, deliverables, acceptance criteria and process obligations."
+  template: gd_temp_qx_sup_agreement_template
+- id: wp_qx_sup_supplier_review
+  title: "Supplier Review"
+  status: draft
+  purpose: "Supplier progress, deliverable status, deviations and actions for the period."
+  template: gd_temp_qx_sup_review_template

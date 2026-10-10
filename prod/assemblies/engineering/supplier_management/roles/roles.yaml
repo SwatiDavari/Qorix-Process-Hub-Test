@@ -1,0 +1,8 @@
+# Supplier and Acquisition Management (engineering/supplier_management)  -  roles.
+roles:
+- id: rl_qx_sup_supplier_manager
+  title: "Supplier Manager"
+  description: |-
+    Prepares agreements with suppliers and monitors supplier performance.
+
+    **Responsible for:** Agree with a Supplier, Monitor a Supplier.

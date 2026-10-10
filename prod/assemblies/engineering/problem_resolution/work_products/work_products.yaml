@@ -1,0 +1,17 @@
+# Problem Resolution (engineering/problem_resolution)  -  work products.
+work_products:
+- id: wp_qx_prb_problem_report
+  title: "Problem Report"
+  status: draft
+  purpose: "Problem as first reported, with source, date and evidence."
+  origin: external
+- id: wp_qx_prb_problem_record
+  title: "Problem Record"
+  status: draft
+  purpose: "Analysed problem with severity, cause, impact, owner and status."
+  template: gd_temp_qx_prb_record_template
+- id: wp_qx_prb_resolution_report
+  title: "Resolution Report"
+  status: draft
+  purpose: "Action taken, verification of the fix and closure date."
+  template: gd_temp_qx_prb_resolution_template

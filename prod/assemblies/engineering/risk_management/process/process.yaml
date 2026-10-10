@@ -1,0 +1,43 @@
+# Risk Management (engineering/risk_management)  -  process: identity, classification, concepts.
+assembly:
+  id: risk_management
+  code: risk
+  cluster: engineering
+  title: "Risk Management"
+  enabler: '-'
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_risk_risk_manager
+  purpose: "Identify, analyse, treat and monitor risks to projects and to the organisation level processes."
+  standards:
+  - "ISO/IEC/IEEE 15288 6.3.4"
+  - "ASPICE 4.0 MAN.5"
+  tier: qorix
+getting_started: |-
+  This describes how risks are identified, rated, treated and monitored at organisation level.
+
+  A risk that affects only one project belongs in that project's register. Use this process for risks that reach several projects or the organisation level processes.
+concepts: []
+outcomes:
+- id: oc_qx_risk_risks_known
+  title: "Risks are identified and rated"
+  status: draft
+  statement: "Risks to the organisation level processes and to projects are identified, rated by likelihood and impact, and recorded in a register with an owner."
+  complies: [std_req_iso15288_634, std_req_aspice_40_man_5]
+- id: oc_qx_risk_risks_treated
+  title: "Risks are treated and monitored"
+  status: draft
+  statement: "Each risk above the agreed threshold has a treatment with an owner and a date, and the register is reviewed at a defined cadence."
+  complies: [std_req_iso15288_634, std_req_aspice_40_man_5]
+capabilities:
+- id: cap_qx_risk_risk_assessment
+  title: "Risk assessment"
+  status: draft
+  description: "Rate each risk by likelihood and impact against agreed scales."
+  realizes: [oc_qx_risk_risks_known]
+- id: cap_qx_risk_risk_treatment
+  title: "Risk treatment"
+  status: draft
+  description: "Choose and track treatment for a risk: avoid, reduce, transfer or accept."
+  realizes: [oc_qx_risk_risks_treated]

@@ -1,0 +1,44 @@
+# Requirements Management and Traceability (engineering/requirements_management)  -  process: identity, classification, concepts.
+assembly:
+  id: requirements_management
+  code: req
+  cluster: engineering
+  title: "Requirements Management and Traceability"
+  enabler: 'PRD'
+  scope: GLOB
+  layer: 'REQ'
+  status: draft
+  owner: rl_qx_req_requirements_engineer
+  purpose: "Define stakeholder and system requirements once, keep them agreed and trace them both ways to what they come from and what satisfies them."
+  standards:
+  - "ISO/IEC/IEEE 15288 6.4.2-6.4.3"
+  - "ASPICE 4.0 SYS.2"
+  - "ASPICE 4.0 SWE.1"
+  tier: qorix
+getting_started: |-
+  This describes the common requirements process every Qorix project follows, independent of tooling.
+
+  The same process applies at every scope. A feature, component or unit requirement set refines the one above it, so define the process here once and replicate it per scope rather than rewriting it.
+concepts: []
+outcomes:
+- id: oc_qx_req_requirements_agreed
+  title: "Requirements are defined and agreed"
+  status: draft
+  statement: "Stakeholder needs are turned into requirements that are unambiguous, verifiable and agreed with the stakeholders before design depends on them."
+  complies: [std_req_iso15288_642, std_req_iso15288_643, std_req_aspice_40_sys_2, std_req_aspice_40_swe_1]
+- id: oc_qx_req_traceability_both_ways
+  title: "Requirements are traceable in both directions"
+  status: draft
+  statement: "Each requirement traces up to the need it comes from and down to the design and verification that satisfy it, and gaps are visible."
+  complies: [std_req_iso15288_643, std_req_aspice_40_sys_2, std_req_aspice_40_swe_1]
+capabilities:
+- id: cap_qx_req_requirements_analysis
+  title: "Requirements analysis"
+  status: draft
+  description: "Analyse needs for completeness, consistency and verifiability and write them as requirements."
+  realizes: [oc_qx_req_requirements_agreed]
+- id: cap_qx_req_traceability_mgmt
+  title: "Traceability management"
+  status: draft
+  description: "Maintain links between needs, requirements, design and verification and report gaps."
+  realizes: [oc_qx_req_traceability_both_ways]

@@ -1,0 +1,52 @@
+# Decision Management (engineering/decision_management)  -  workflows.
+workflows:
+- id: wf_qx_dec_prepare_decision
+  title: "Prepare a Decision"
+  status: draft
+  responsible: rl_qx_dec_decision_owner
+  approved_by: rl_qx_gc_head
+  supported_by:
+  - rl_qx_qa_quality_office
+  input:
+  - wp_qx_dec_decision_request
+  achieves:
+  - oc_qx_dec_decisions_reasoned
+  output:
+  - wp_qx_dec_options_analysis
+  description: "The Decision Owner states the decision to be taken, sets the criteria, lists the options and analyses them. The Quality Office checks that the criteria were set before the options were scored."
+  activities:
+  - step: "State the decision and the criteria"
+    by: rl_qx_dec_decision_owner
+  - step: "Analyse each option against the criteria"
+    by: rl_qx_dec_decision_owner
+    capability: cap_qx_dec_options_analysis
+  - step: "Check that the criteria precede the scoring"
+    by: rl_qx_qa_quality_office
+  - step: "Release the analysis for decision"
+    by: rl_qx_gc_head
+
+- id: wf_qx_dec_take_decision
+  title: "Take and Record a Decision"
+  status: draft
+  responsible: rl_qx_dec_decision_owner
+  approved_by: rl_qx_gc_head
+  supported_by:
+  - rl_qx_qa_quality_office
+  input:
+  - wp_qx_dec_options_analysis
+  gate:
+  - wp: wp_qx_dec_options_analysis
+    min_status: proposed
+  achieves:
+  - oc_qx_dec_decisions_recorded
+  output:
+  - wp_qx_dec_decision_record
+  description: "The Head of G&C takes the decision on the analysis and the Decision Owner records it with its rationale and rejected options."
+  activities:
+  - step: "Take the decision on the analysis"
+    by: rl_qx_gc_head
+  - step: "Record decision, rationale and rejected options"
+    by: rl_qx_dec_decision_owner
+    capability: cap_qx_dec_decision_recording
+  - step: "Check the record is complete and retrievable"
+    by: rl_qx_qa_quality_office

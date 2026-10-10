@@ -1,0 +1,8 @@
+# Verification and Reviews (engineering/verification_reviews)  -  roles.
+roles:
+- id: rl_qx_vnr_review_lead
+  title: "Review Lead"
+  description: |-
+    Plans verification and leads reviews to closure of findings.
+
+    **Responsible for:** Plan Verification, Conduct a Review.

@@ -14,15 +14,15 @@ Release Management Workflows
    :status: draft
    :version: 1
    :tags: release_management
-   :responsible: rl_qx_qa_quality_office
+   :responsible: rl_qx_rel_release_manager
    :approved_by: rl_qx_gc_head
-   :supported_by: rl_qx_saf_safety_office, rl_qx_sec_security_office
+   :supported_by: rl_qx_qa_quality_office, rl_qx_saf_safety_office, rl_qx_sec_security_office
    :input: wp_qx_cfg_baseline, wp_qx_cm_change_package, wp_qx_qa_audit_report
    :output: wp_qx_rel_release_notice
    :achieves: oc_qx_rel_release_controlled, oc_qx_rel_release_communicated
    :exercises: cap_qx_rel_release_readiness_check, cap_qx_rel_release_communication
 
-   The Quality Office checks that the baseline exists and that the internal audit report covers it, then prepares the release notice. The Functional Safety and Cybersecurity Offices confirm that no open safety or security finding blocks the release. The Head of G&C approves the release, which makes the baseline the version projects apply.
+   The Quality Office checks independently that the baseline exists and that the internal audit report covers it, and the Release Manager then prepares the release notice. The Functional Safety and Cybersecurity Offices confirm that no open safety or security finding blocks the release. The Head of G&C approves the release, which makes the baseline the version projects apply.
 
    .. list-table:: Activities (RWE)
       :header-rows: 1
@@ -42,7 +42,7 @@ Release Management Workflows
         -
       * - 3
         - Prepare the release notice
-        - :need:`rl_qx_qa_quality_office`
+        - :need:`rl_qx_rel_release_manager`
         -
       * - 4
         - Approve the release
@@ -50,7 +50,7 @@ Release Management Workflows
         -
       * - 5
         - Tell the projects which baseline is released and from when it applies
-        - :need:`rl_qx_qa_quality_office`
+        - :need:`rl_qx_rel_release_manager`
         - :need:`cap_qx_rel_release_communication`
 
    **Gate.** This workflow cannot be approved until every work product below has reached its minimum status.

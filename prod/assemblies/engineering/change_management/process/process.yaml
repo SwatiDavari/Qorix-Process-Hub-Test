@@ -8,7 +8,7 @@ assembly:
   scope: GLOB
   layer: '-'
   status: draft
-  owner: rl_qx_qa_quality_office
+  owner: rl_qx_cm_change_manager
   purpose: Request, analyse, approve and track changes to work products and products.
   standards:
   - ISO 26262-8 cl. 8

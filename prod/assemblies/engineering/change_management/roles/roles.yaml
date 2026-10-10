@@ -1,2 +1,8 @@
 # Change Management (engineering/change_management)  -  roles.
-roles: []
+roles:
+- id: rl_qx_cm_change_manager
+  title: Change Manager
+  description: |-
+    Runs change intake, impact analysis, notification and closure for organisation level work products.
+
+    **Responsible for:** Manage Organisation Level Change.

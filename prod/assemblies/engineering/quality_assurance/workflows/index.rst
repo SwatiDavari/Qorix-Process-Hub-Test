@@ -88,3 +88,16 @@ Quality Assurance Workflows
    The Functional Safety and Cybersecurity Offices support where a finding reaches
    their discipline.
 
+   **Gate.** This workflow cannot be approved until every work product below has reached its minimum status.
+
+   .. list-table:: Gate (entry criteria)
+      :header-rows: 1
+      :widths: 40 20 40
+
+      * - Work product
+        - Minimum status
+        - Produced by
+      * - :need:`wp_qx_qa_audit_report`
+        - approved
+        - :need:`wf_qx_saf_independent_assessment`, :need:`wf_qx_qa_internal_audit`
+

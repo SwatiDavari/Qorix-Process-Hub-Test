@@ -1,0 +1,8 @@
+# Project Planning and Control (engineering/project_planning)  -  roles.
+roles:
+- id: rl_qx_plan_project_manager
+  title: "Project Manager"
+  description: |-
+    Plans the project, keeps the plan current and reports progress against it.
+
+    **Responsible for:** Plan the Project, Control the Project.

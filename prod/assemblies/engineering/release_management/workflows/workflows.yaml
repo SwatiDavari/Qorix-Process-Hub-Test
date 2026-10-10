@@ -3,9 +3,10 @@ workflows:
 - id: wf_qx_rel_release_org_baseline
   title: Release Organisation Level Baseline
   status: draft
-  responsible: rl_qx_qa_quality_office
+  responsible: rl_qx_rel_release_manager
   approved_by: rl_qx_gc_head
   supported_by:
+  - rl_qx_qa_quality_office
   - rl_qx_saf_safety_office
   - rl_qx_sec_security_office
   input:
@@ -24,7 +25,7 @@ workflows:
   achieves:
   - oc_qx_rel_release_controlled
   - oc_qx_rel_release_communicated
-  description: The Quality Office checks that the baseline exists and that the internal audit report covers it, then prepares the release notice. The Functional Safety and Cybersecurity Offices confirm that no open safety or security finding blocks the release. The Head of G&C approves the release, which makes the baseline the version projects apply.
+  description: The Quality Office checks independently that the baseline exists and that the internal audit report covers it, and the Release Manager then prepares the release notice. The Functional Safety and Cybersecurity Offices confirm that no open safety or security finding blocks the release. The Head of G&C approves the release, which makes the baseline the version projects apply.
   activities:
   - step: Check every gate work product against its minimum status
     by: rl_qx_qa_quality_office
@@ -32,9 +33,9 @@ workflows:
   - step: Confirm that no open safety or security finding blocks the release
     by: rl_qx_saf_safety_office
   - step: Prepare the release notice
-    by: rl_qx_qa_quality_office
+    by: rl_qx_rel_release_manager
   - step: Approve the release
     by: rl_qx_gc_head
   - step: Tell the projects which baseline is released and from when it applies
-    by: rl_qx_qa_quality_office
+    by: rl_qx_rel_release_manager
     capability: cap_qx_rel_release_communication

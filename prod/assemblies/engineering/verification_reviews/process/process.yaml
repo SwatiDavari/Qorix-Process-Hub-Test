@@ -1,0 +1,42 @@
+# Verification and Reviews (engineering/verification_reviews)  -  process: identity, classification, concepts.
+assembly:
+  id: verification_reviews
+  code: vnr
+  cluster: engineering
+  title: "Verification and Reviews"
+  enabler: 'TST'
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_vnr_review_lead
+  purpose: "Plan verification of work products against their criteria and carry out reviews that record findings and close them."
+  standards:
+  - "ISO/IEC/IEEE 15288 6.4.9"
+  tier: qorix
+getting_started: |-
+  This describes how a work product is verified and reviewed at organisation level.
+
+  Validation of the product against user needs is a different process and sits in Validation. This one checks that a work product meets its own criteria.
+concepts: []
+outcomes:
+- id: oc_qx_vnr_verification_planned
+  title: "Verification is planned against criteria"
+  status: draft
+  statement: "Each work product that needs verification has a plan naming the criteria, the method and the reviewers."
+  complies: [std_req_iso15288_649]
+- id: oc_qx_vnr_findings_closed
+  title: "Review findings are recorded and closed"
+  status: draft
+  statement: "Reviews are held against the plan, findings are recorded with owners, and no finding stays open past its date without escalation."
+  complies: [std_req_iso15288_649]
+capabilities:
+- id: cap_qx_vnr_verification_planning
+  title: "Verification planning"
+  status: draft
+  description: "Choose criteria, method and reviewers for a work product."
+  realizes: [oc_qx_vnr_verification_planned]
+- id: cap_qx_vnr_review_conduct
+  title: "Review conduct"
+  status: draft
+  description: "Run a review, record findings with owners and track them to closure."
+  realizes: [oc_qx_vnr_findings_closed]

@@ -1,0 +1,43 @@
+# Supplier and Acquisition Management (engineering/supplier_management)  -  process: identity, classification, concepts.
+assembly:
+  id: supplier_management
+  code: sup
+  cluster: engineering
+  title: "Supplier and Acquisition Management"
+  enabler: '-'
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_sup_supplier_manager
+  purpose: "Agree what is acquired from suppliers, put the agreement in writing and monitor the supplier against it."
+  standards:
+  - "ISO/IEC/IEEE 15288 6.1.1-6.1.2"
+  - "ASPICE 4.0 ACQ.4"
+  tier: qorix
+getting_started: |-
+  This describes how Qorix acquires products and services from suppliers and monitors them.
+
+  Use it for any acquisition that a Qorix work product or product depends on, including open source components taken under a contract or agreement.
+concepts: []
+outcomes:
+- id: oc_qx_sup_agreements_defined
+  title: "Acquisitions are covered by a written agreement"
+  status: draft
+  statement: "Each acquisition has a written agreement stating requirements, deliverables, acceptance criteria and the process obligations of the supplier."
+  complies: [std_req_iso15288_611, std_req_iso15288_612, std_req_aspice_40_acq_4]
+- id: oc_qx_sup_suppliers_monitored
+  title: "Suppliers are monitored against the agreement"
+  status: draft
+  statement: "Supplier progress and deliverables are reviewed at the agreed interval and deviations are acted on."
+  complies: [std_req_iso15288_611, std_req_aspice_40_acq_4]
+capabilities:
+- id: cap_qx_sup_agreement_definition
+  title: "Agreement definition"
+  status: draft
+  description: "State requirements, deliverables, acceptance criteria and obligations in an agreement."
+  realizes: [oc_qx_sup_agreements_defined]
+- id: cap_qx_sup_supplier_monitoring
+  title: "Supplier monitoring"
+  status: draft
+  description: "Review supplier progress and deliverables against the agreement."
+  realizes: [oc_qx_sup_suppliers_monitored]

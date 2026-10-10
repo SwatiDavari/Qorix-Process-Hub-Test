@@ -1,0 +1,43 @@
+# Process Improvement and Tailoring (engineering/process_improvement)  -  process: identity, classification, concepts.
+assembly:
+  id: process_improvement
+  code: pim
+  cluster: engineering
+  title: "Process Improvement and Tailoring"
+  enabler: '-'
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_pim_improvement_lead
+  purpose: "Turn audit findings, metrics and feedback into process improvements, and record how a project tailors the processes and why."
+  standards:
+  - "ISO/IEC/IEEE 15288 Annex A"
+  - "ASPICE 4.0 PIM.3"
+  tier: qorix
+getting_started: |-
+  This describes how the Qorix processes are improved and how a project tailors them.
+
+  Improvement inputs come from audits, metrics, problems and project feedback. A tailoring may only narrow the organisation level process and must state its rationale.
+concepts: []
+outcomes:
+- id: oc_qx_pim_improvements_planned
+  title: "Improvements are planned from evidence"
+  status: draft
+  statement: "Process improvements are planned from audit findings, metrics and feedback, each with an owner, a date and an expected effect."
+  complies: [std_req_iso15288_annex_a, std_req_aspice_40_pim_3]
+- id: oc_qx_pim_tailoring_justified
+  title: "Tailoring is recorded with its rationale"
+  status: draft
+  statement: "Each project tailoring is recorded, narrows the organisation level process only, and states why."
+  complies: [std_req_iso15288_annex_a, std_req_aspice_40_iic_15_54]
+capabilities:
+- id: cap_qx_pim_improvement_planning
+  title: "Improvement planning"
+  status: draft
+  description: "Select and plan improvements from the evidence available."
+  realizes: [oc_qx_pim_improvements_planned]
+- id: cap_qx_pim_tailoring_record
+  title: "Tailoring record"
+  status: draft
+  description: "Record each tailoring decision with its rationale and the person who approved it."
+  realizes: [oc_qx_pim_tailoring_justified]

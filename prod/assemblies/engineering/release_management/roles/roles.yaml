@@ -1,2 +1,8 @@
 # Release Management (engineering/release_management)  -  roles.
-roles: []
+roles:
+- id: rl_qx_rel_release_manager
+  title: Release Manager
+  description: |-
+    Prepares the organisation level release and tells the projects which baseline applies.
+
+    **Responsible for:** Release Organisation Level Baseline.

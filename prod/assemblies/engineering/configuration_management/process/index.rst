@@ -11,7 +11,7 @@ Identify, baseline and control configuration items so every release is reproduci
 * **Assembly:** Engineering / Configuration Management (code ``cfg``)
 * **Status:** :bdg-secondary:`draft`
 * **Enabler / Scope / Layer:** - / GLOB / -
-* **Owner:** :need:`rl_qx_qa_quality_office`
+* **Owner:** :need:`rl_qx_cfg_config_manager`
 * **Standards:** ISO 26262-8 cl. 7, ASPICE 4.0 SUP.8
 
 .. doc_getstrt:: Getting started on Configuration Management
@@ -22,7 +22,7 @@ Identify, baseline and control configuration items so every release is reproduci
 
    This describes how to get started with process management at organisation level: where a process comes from, how it is kept in step with the upstream process description it builds on, and who assigns a maturity level to it on what evidence.
 
-   At least once per year the Quality Office reviews the process description against the applicable standards and turns improvement inputs into changes to the process description. The Head of G&C approves a change of maturity level.
+   At least once per year the Configuration Manager reviews the process description against the applicable standards and turns improvement inputs into changes to the process description. The Head of G&C approves a change of maturity level.
 
 .. outcome:: Configuration items are identified and under version control
    :id: oc_qx_cfg_items_controlled

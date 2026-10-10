@@ -1,0 +1,10 @@
+# Process Improvement and Tailoring (engineering/process_improvement)  -  templates and guidance.
+templates:
+- id: gd_temp_qx_pim_plan_template
+  title: "Improvement Plan Template"
+  status: draft
+  description: "Template covering: finding, improvement, owner, date, expected effect."
+- id: gd_temp_qx_pim_tailoring_template
+  title: "Tailoring Record Template"
+  status: draft
+  description: "Template covering: process element, narrowing, rationale, approver, date."

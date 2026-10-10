@@ -1,0 +1,8 @@
+# Requirements Management and Traceability (engineering/requirements_management)  -  roles.
+roles:
+- id: rl_qx_req_requirements_engineer
+  title: "Requirements Engineer"
+  description: |-
+    Elicits and writes requirements, keeps them agreed and maintains traceability.
+
+    **Responsible for:** Define Requirements, Maintain Traceability.

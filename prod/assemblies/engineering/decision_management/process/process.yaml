@@ -1,0 +1,42 @@
+# Decision Management (engineering/decision_management)  -  process: identity, classification, concepts.
+assembly:
+  id: decision_management
+  code: dec
+  cluster: engineering
+  title: "Decision Management"
+  enabler: '-'
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_dec_decision_owner
+  purpose: "Take significant decisions from analysed alternatives and keep the decision, its rationale and its owner on record."
+  standards:
+  - "ISO/IEC/IEEE 15288 6.3.3"
+  tier: qorix
+getting_started: |-
+  This describes how a significant organisation level decision is prepared, taken and recorded.
+
+  Use it when a decision has more than one realistic option and affects several projects. Routine approvals inside a workflow stay in that workflow.
+concepts: []
+outcomes:
+- id: oc_qx_dec_decisions_reasoned
+  title: "Decisions are taken from analysed alternatives"
+  status: draft
+  statement: "Each significant decision is taken after the alternatives are analysed against stated criteria."
+  complies: [std_req_iso15288_633]
+- id: oc_qx_dec_decisions_recorded
+  title: "Decisions and their rationale are recorded"
+  status: draft
+  statement: "The decision, its rationale, the options rejected and the owner are recorded and can be retrieved later."
+  complies: [std_req_iso15288_633]
+capabilities:
+- id: cap_qx_dec_options_analysis
+  title: "Options analysis"
+  status: draft
+  description: "Compare alternatives against agreed criteria and record the result."
+  realizes: [oc_qx_dec_decisions_reasoned]
+- id: cap_qx_dec_decision_recording
+  title: "Decision recording"
+  status: draft
+  description: "Record the decision, rationale, rejected options and owner so they can be found again."
+  realizes: [oc_qx_dec_decisions_recorded]

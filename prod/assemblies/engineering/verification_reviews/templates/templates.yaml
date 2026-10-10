@@ -1,0 +1,10 @@
+# Verification and Reviews (engineering/verification_reviews)  -  templates and guidance.
+templates:
+- id: gd_temp_qx_vnr_plan_template
+  title: "Verification Plan Template"
+  status: draft
+  description: "Template covering: work product, criteria, method, reviewers, schedule."
+- id: gd_temp_qx_vnr_record_template
+  title: "Review Record Template"
+  status: draft
+  description: "Template covering: participants, findings, owners, due dates, closure."

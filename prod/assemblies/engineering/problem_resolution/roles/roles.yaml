@@ -1,0 +1,8 @@
+# Problem Resolution (engineering/problem_resolution)  -  roles.
+roles:
+- id: rl_qx_prb_problem_manager
+  title: "Problem Manager"
+  description: |-
+    Owns the problem record from first report to verified closure.
+
+    **Responsible for:** Analyse a Problem, Resolve a Problem.

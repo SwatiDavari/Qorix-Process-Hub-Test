@@ -1,0 +1,8 @@
+# Measurement and Metrics (engineering/measurement)  -  roles.
+roles:
+- id: rl_qx_meas_metrics_analyst
+  title: "Metrics Analyst"
+  description: |-
+    Defines metrics from information needs, collects the data and reports it.
+
+    **Responsible for:** Define Metrics, Collect and Report Metrics.

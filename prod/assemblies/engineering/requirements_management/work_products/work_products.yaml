@@ -1,0 +1,17 @@
+# Requirements Management and Traceability (engineering/requirements_management)  -  work products.
+work_products:
+- id: wp_qx_req_stakeholder_needs
+  title: "Stakeholder Needs"
+  status: draft
+  purpose: "Needs and constraints stated by customers, regulators and internal stakeholders."
+  origin: external
+- id: wp_qx_req_requirements_spec
+  title: "Requirements Specification"
+  status: draft
+  purpose: "Agreed set of requirements for the scope in question, each with identifier, attributes and verification criterion."
+  template: gd_temp_qx_req_spec_template
+- id: wp_qx_req_traceability_record
+  title: "Traceability Record"
+  status: draft
+  purpose: "Links from needs to requirements to design and verification, with gaps listed."
+  template: gd_temp_qx_req_trace_template

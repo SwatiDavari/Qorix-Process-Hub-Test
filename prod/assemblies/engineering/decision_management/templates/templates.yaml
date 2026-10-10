@@ -1,0 +1,10 @@
+# Decision Management (engineering/decision_management)  -  templates and guidance.
+templates:
+- id: gd_temp_qx_dec_options_template
+  title: "Options Analysis Template"
+  status: draft
+  description: "Template covering: decision, criteria and weights, options, scoring, recommendation."
+- id: gd_temp_qx_dec_record_template
+  title: "Decision Record Template"
+  status: draft
+  description: "Template covering: decision, rationale, rejected options, owner, date, review date."

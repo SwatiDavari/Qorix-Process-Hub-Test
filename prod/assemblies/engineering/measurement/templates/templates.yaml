@@ -1,0 +1,10 @@
+# Measurement and Metrics (engineering/measurement)  -  templates and guidance.
+templates:
+- id: gd_temp_qx_meas_plan_template
+  title: "Metrics Plan Template"
+  status: draft
+  description: "Template covering: information need, metric, definition, source, interval, owner, target."
+- id: gd_temp_qx_meas_report_template
+  title: "Metrics Report Template"
+  status: draft
+  description: "Template covering: metric, value, trend, interpretation, data quality notes."

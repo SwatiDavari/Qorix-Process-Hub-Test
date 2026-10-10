@@ -1,0 +1,51 @@
+# Requirements Management and Traceability (engineering/requirements_management)  -  workflows.
+workflows:
+- id: wf_qx_req_define_requirements
+  title: "Define Requirements"
+  status: draft
+  responsible: rl_qx_req_requirements_engineer
+  approved_by: rl_qx_qa_quality_office
+  supported_by:
+  - rl_qx_saf_safety_office
+  - rl_qx_sec_security_office
+  input:
+  - wp_qx_req_stakeholder_needs
+  achieves:
+  - oc_qx_req_requirements_agreed
+  output:
+  - wp_qx_req_requirements_spec
+  description: "The Requirements Engineer analyses stakeholder needs and writes requirements. The Functional Safety and Cybersecurity Offices contribute the safety and cybersecurity requirements. The Quality Office reviews the specification for verifiability."
+  activities:
+  - step: "Analyse stakeholder needs for completeness and conflicts"
+    by: rl_qx_req_requirements_engineer
+    capability: cap_qx_req_requirements_analysis
+  - step: "Add safety requirements"
+    by: rl_qx_saf_safety_office
+  - step: "Add cybersecurity requirements"
+    by: rl_qx_sec_security_office
+  - step: "Review the specification for verifiability"
+    by: rl_qx_qa_quality_office
+
+- id: wf_qx_req_maintain_traceability
+  title: "Maintain Traceability"
+  status: draft
+  responsible: rl_qx_req_requirements_engineer
+  approved_by: rl_qx_qa_quality_office
+  input:
+  - wp_qx_req_requirements_spec
+  gate:
+  - wp: wp_qx_req_requirements_spec
+    min_status: approved
+  achieves:
+  - oc_qx_req_traceability_both_ways
+  output:
+  - wp_qx_req_traceability_record
+  description: "The Requirements Engineer keeps the links between needs, requirements, design and verification current and lists gaps. The Quality Office checks the record before a baseline is taken."
+  activities:
+  - step: "Link each requirement to its source need"
+    by: rl_qx_req_requirements_engineer
+  - step: "Link requirements to design and verification items"
+    by: rl_qx_req_requirements_engineer
+    capability: cap_qx_req_traceability_mgmt
+  - step: "Check the record for gaps before baselining"
+    by: rl_qx_qa_quality_office

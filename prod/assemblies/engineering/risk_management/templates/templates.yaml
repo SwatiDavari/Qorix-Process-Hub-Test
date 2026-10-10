@@ -1,0 +1,10 @@
+# Risk Management (engineering/risk_management)  -  templates and guidance.
+templates:
+- id: gd_temp_qx_risk_register_template
+  title: "Risk Register Template"
+  status: draft
+  description: "Template for the risk register covering: risk, source, likelihood, impact, owner, treatment, status."
+- id: gd_temp_qx_risk_report_template
+  title: "Risk Report Template"
+  status: draft
+  description: "Template for the risk report covering: new risks, changed ratings, closed risks, open treatments."

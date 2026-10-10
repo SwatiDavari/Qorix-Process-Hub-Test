@@ -1,0 +1,43 @@
+# Project Planning and Control (engineering/project_planning)  -  process: identity, classification, concepts.
+assembly:
+  id: project_planning
+  code: plan
+  cluster: engineering
+  title: "Project Planning and Control"
+  enabler: '-'
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_plan_project_manager
+  purpose: "Plan a project's scope, schedule, resources and responsibilities, and control progress against that plan."
+  standards:
+  - "ISO/IEC/IEEE 15288 6.3.1-6.3.2"
+  - "ASPICE 4.0 MAN.3"
+  tier: qorix
+getting_started: |-
+  This describes how to plan and control a project at organisation level: what every Qorix project's plan must contain and how progress is reviewed.
+
+  Use it when a project is commissioned or when a plan is re-baselined. A project's own schedule and task list stay in the project; this process defines the plan content and the review rhythm.
+concepts: []
+outcomes:
+- id: oc_qx_plan_plan_established
+  title: "Each project has an approved plan"
+  status: draft
+  statement: "Every project has a plan approved before work starts that states scope, schedule, resources, responsibilities and the processes it applies."
+  complies: [std_req_iso15288_631, std_req_aspice_40_man_3]
+- id: oc_qx_plan_progress_controlled
+  title: "Progress is assessed against the plan and deviations are acted on"
+  status: draft
+  statement: "Project progress is reviewed at a defined cadence against the plan, and each deviation has an owner and a recorded action."
+  complies: [std_req_iso15288_632, std_req_aspice_40_man_3]
+capabilities:
+- id: cap_qx_plan_estimation
+  title: "Estimation and scheduling"
+  status: draft
+  description: "Estimate effort and duration from scope and derive a schedule with named responsibilities."
+  realizes: [oc_qx_plan_plan_established]
+- id: cap_qx_plan_progress_review
+  title: "Progress review"
+  status: draft
+  description: "Compare actual progress with the plan, record deviations and agree actions."
+  realizes: [oc_qx_plan_progress_controlled]

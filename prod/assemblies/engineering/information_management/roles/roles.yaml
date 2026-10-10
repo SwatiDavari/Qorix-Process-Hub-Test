@@ -1,0 +1,8 @@
+# Information and Documentation Management (engineering/information_management)  -  roles.
+roles:
+- id: rl_qx_info_documentation_owner
+  title: "Documentation Owner"
+  description: |-
+    Keeps the register of controlled documents and the rules for them.
+
+    **Responsible for:** Plan Documentation, Maintain the Document Register.

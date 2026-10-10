@@ -1,0 +1,10 @@
+# Requirements Management and Traceability (engineering/requirements_management)  -  templates and guidance.
+templates:
+- id: gd_temp_qx_req_spec_template
+  title: "Requirements Specification Template"
+  status: draft
+  description: "Template covering: scope, requirement, identifier, attributes, verification criterion, source."
+- id: gd_temp_qx_req_trace_template
+  title: "Traceability Record Template"
+  status: draft
+  description: "Template covering: need, requirement, design item, verification item, gaps."

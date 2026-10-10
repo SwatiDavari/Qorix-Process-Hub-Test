@@ -72,6 +72,54 @@ Engineering
 
       Identify, baseline and control configuration items so every release is reproducible.
 
+   .. grid-item-card:: Decision Management
+      :link: qx_assembly_decision_management
+      :link-type: ref
+
+      :bdg-secondary:`draft` :bdg-light:`- / GLOB / -`
+
+      Take significant decisions from analysed alternatives and keep the decision, its rationale and its owner on record.
+
+   .. grid-item-card:: Information and Documentation Management
+      :link: qx_assembly_information_management
+      :link-type: ref
+
+      :bdg-secondary:`draft` :bdg-light:`DOC / GLOB / -`
+
+      Decide which information the organisation keeps, keep it current and retrievable, and protect it as its classification requires.
+
+   .. grid-item-card:: Measurement and Metrics
+      :link: qx_assembly_measurement
+      :link-type: ref
+
+      :bdg-secondary:`draft` :bdg-light:`- / GLOB / -`
+
+      Define the measures the organisation needs, collect them consistently and report them to the people who decide.
+
+   .. grid-item-card:: Problem Resolution
+      :link: qx_assembly_problem_resolution
+      :link-type: ref
+
+      :bdg-secondary:`draft` :bdg-light:`- / GLOB / -`
+
+      Record problems from any source, analyse their cause and take them to verified resolution.
+
+   .. grid-item-card:: Process Improvement and Tailoring
+      :link: qx_assembly_process_improvement
+      :link-type: ref
+
+      :bdg-secondary:`draft` :bdg-light:`- / GLOB / -`
+
+      Turn audit findings, metrics and feedback into process improvements, and record how a project tailors the processes and why.
+
+   .. grid-item-card:: Project Planning and Control
+      :link: qx_assembly_project_planning
+      :link-type: ref
+
+      :bdg-secondary:`draft` :bdg-light:`- / GLOB / -`
+
+      Plan a project's scope, schedule, resources and responsibilities, and control progress against that plan.
+
    .. grid-item-card:: Quality Assurance
       :link: qx_assembly_quality_assurance
       :link-type: ref
@@ -87,6 +135,38 @@ Engineering
       :bdg-secondary:`draft` :bdg-light:`- / GLOB / -`
 
       Release a baselined, audited organisation level configuration so every project applies a known, reproducible version.
+
+   .. grid-item-card:: Requirements Management and Traceability
+      :link: qx_assembly_requirements_management
+      :link-type: ref
+
+      :bdg-secondary:`draft` :bdg-light:`PRD / GLOB / REQ`
+
+      Define stakeholder and system requirements once, keep them agreed and trace them both ways to what they come from and what satisfies them.
+
+   .. grid-item-card:: Risk Management
+      :link: qx_assembly_risk_management
+      :link-type: ref
+
+      :bdg-secondary:`draft` :bdg-light:`- / GLOB / -`
+
+      Identify, analyse, treat and monitor risks to projects and to the organisation level processes.
+
+   .. grid-item-card:: Supplier and Acquisition Management
+      :link: qx_assembly_supplier_management
+      :link-type: ref
+
+      :bdg-secondary:`draft` :bdg-light:`- / GLOB / -`
+
+      Agree what is acquired from suppliers, put the agreement in writing and monitor the supplier against it.
+
+   .. grid-item-card:: Verification and Reviews
+      :link: qx_assembly_verification_reviews
+      :link-type: ref
+
+      :bdg-secondary:`draft` :bdg-light:`TST / GLOB / -`
+
+      Plan verification of work products against their criteria and carry out reviews that record findings and close them.
 
 Build
 =====

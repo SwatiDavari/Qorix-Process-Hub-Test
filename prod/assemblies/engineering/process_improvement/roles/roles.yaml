@@ -1,0 +1,8 @@
+# Process Improvement and Tailoring (engineering/process_improvement)  -  roles.
+roles:
+- id: rl_qx_pim_improvement_lead
+  title: "Process Improvement Lead"
+  description: |-
+    Plans improvements and records project tailoring.
+
+    **Responsible for:** Improve the Processes, Tailor the Processes.

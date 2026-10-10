@@ -1,0 +1,54 @@
+# Project Planning and Control (engineering/project_planning)  -  workflows.
+workflows:
+- id: wf_qx_plan_plan_project
+  title: "Plan the Project"
+  status: draft
+  responsible: rl_qx_plan_project_manager
+  approved_by: rl_qx_gc_head
+  supported_by:
+  - rl_qx_qa_quality_office
+  input:
+  - wp_qx_plan_project_brief
+  achieves:
+  - oc_qx_plan_plan_established
+  output:
+  - wp_qx_plan_project_plan
+  description: "The Project Manager turns the project brief into a plan covering scope, schedule, resources, responsibilities and applied processes. The Head of G&C approves the plan before work starts."
+  activities:
+  - step: "Define scope and work breakdown from the project brief"
+    by: rl_qx_plan_project_manager
+  - step: "Estimate effort and build the schedule"
+    by: rl_qx_plan_project_manager
+    capability: cap_qx_plan_estimation
+  - step: "Check the plan against the organisation level processes"
+    by: rl_qx_qa_quality_office
+  - step: "Approve the plan"
+    by: rl_qx_gc_head
+
+- id: wf_qx_plan_control_project
+  title: "Control the Project"
+  status: draft
+  responsible: rl_qx_plan_project_manager
+  approved_by: rl_qx_gc_head
+  supported_by:
+  - rl_qx_qa_quality_office
+  input:
+  - wp_qx_plan_project_plan
+  gate:
+  - wp: wp_qx_plan_project_plan
+    min_status: approved
+  achieves:
+  - oc_qx_plan_progress_controlled
+  output:
+  - wp_qx_plan_status_report
+  description: "At the agreed cadence the Project Manager compares progress with the approved plan, records deviations and actions, and reports status. The Head of G&C reviews status for organisation level escalations."
+  activities:
+  - step: "Collect progress against the plan"
+    by: rl_qx_plan_project_manager
+  - step: "Review progress and record deviations with owners"
+    by: rl_qx_plan_project_manager
+    capability: cap_qx_plan_progress_review
+  - step: "Verify that deviations are followed up"
+    by: rl_qx_qa_quality_office
+  - step: "Review status and decide escalations"
+    by: rl_qx_gc_head

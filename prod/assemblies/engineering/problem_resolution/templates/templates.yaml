@@ -1,0 +1,10 @@
+# Problem Resolution (engineering/problem_resolution)  -  templates and guidance.
+templates:
+- id: gd_temp_qx_prb_record_template
+  title: "Problem Record Template"
+  status: draft
+  description: "Template covering: source, description, severity, cause, impact, owner, status."
+- id: gd_temp_qx_prb_resolution_template
+  title: "Resolution Report Template"
+  status: draft
+  description: "Template covering: action, change reference, verification, closure date."

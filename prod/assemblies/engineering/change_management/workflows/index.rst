@@ -14,7 +14,7 @@ Change Management Workflows
    :status: draft
    :version: 1
    :tags: change_management
-   :responsible: rl_qx_qa_quality_office
+   :responsible: rl_qx_cm_change_manager
    :approved_by: rl_qx_gc_head
    :supported_by: rl_qx_saf_safety_office, rl_qx_sec_security_office
    :input: wp_qx_qa_audit_report, wp_qx_cfg_config_item_list
@@ -22,7 +22,7 @@ Change Management Workflows
    :achieves: oc_qx_cm_changes_authorised, oc_qx_cm_changes_traceable
    :exercises: cap_qx_cm_impact_analysis, cap_qx_cm_change_authorisation
 
-   The Quality Office runs the intake, cross-project impact analysis, notification and closure steps for any change to an organisation level work product. The approval authority table determines the approver based on what is being changed. The Functional Safety and Cybersecurity Offices support the impact analysis where the change reaches their discipline. The Head of G&C approves the change to the organisation level baseline.
+   The Change Manager runs the intake, cross-project impact analysis, notification and closure steps for any change to an organisation level work product. The approval authority table determines the approver based on what is being changed. The Functional Safety and Cybersecurity Offices support the impact analysis where the change reaches their discipline. The Head of G&C approves the change to the organisation level baseline.
 
    .. list-table:: Activities (RWE)
       :header-rows: 1
@@ -34,11 +34,11 @@ Change Management Workflows
         - Capability
       * - 1
         - Record the change request and the configuration items it affects
-        - :need:`rl_qx_qa_quality_office`
+        - :need:`rl_qx_cm_change_manager`
         -
       * - 2
         - Analyse the impact across all projects
-        - :need:`rl_qx_qa_quality_office`
+        - :need:`rl_qx_cm_change_manager`
         - :need:`cap_qx_cm_impact_analysis`
       * - 3
         - Support the analysis where the change reaches safety or cybersecurity
@@ -50,6 +50,19 @@ Change Management Workflows
         - :need:`cap_qx_cm_change_authorisation`
       * - 5
         - Compile the change package and notify the projects
-        - :need:`rl_qx_qa_quality_office`
+        - :need:`rl_qx_cm_change_manager`
         -
+
+   **Gate.** This workflow cannot be approved until every work product below has reached its minimum status.
+
+   .. list-table:: Gate (entry criteria)
+      :header-rows: 1
+      :widths: 40 20 40
+
+      * - Work product
+        - Minimum status
+        - Produced by
+      * - :need:`wp_qx_cfg_config_item_list`
+        - approved
+        - :need:`wf_qx_cfg_identify_items`
 

@@ -1,0 +1,51 @@
+# Verification and Reviews (engineering/verification_reviews)  -  workflows.
+workflows:
+- id: wf_qx_vnr_plan_verification
+  title: "Plan Verification"
+  status: draft
+  responsible: rl_qx_vnr_review_lead
+  approved_by: rl_qx_qa_quality_office
+  input:
+  - wp_qx_vnr_item_under_review
+  achieves:
+  - oc_qx_vnr_verification_planned
+  output:
+  - wp_qx_vnr_verification_plan
+  description: "The Review Lead sets the criteria, method and reviewers for the work product. The Quality Office checks that the reviewers are independent of the author."
+  activities:
+  - step: "Set criteria and method for the work product"
+    by: rl_qx_vnr_review_lead
+    capability: cap_qx_vnr_verification_planning
+  - step: "Choose reviewers independent of the author"
+    by: rl_qx_vnr_review_lead
+  - step: "Confirm independence of the reviewers"
+    by: rl_qx_qa_quality_office
+
+- id: wf_qx_vnr_conduct_review
+  title: "Conduct a Review"
+  status: draft
+  responsible: rl_qx_vnr_review_lead
+  approved_by: rl_qx_qa_quality_office
+  supported_by:
+  - rl_qx_saf_safety_office
+  - rl_qx_sec_security_office
+  input:
+  - wp_qx_vnr_verification_plan
+  gate:
+  - wp: wp_qx_vnr_verification_plan
+    min_status: approved
+  achieves:
+  - oc_qx_vnr_findings_closed
+  output:
+  - wp_qx_vnr_review_record
+  description: "The Review Lead holds the review against the plan, records findings with owners and dates and tracks them to closure. The Functional Safety and Cybersecurity Offices review the parts that reach their discipline. The Quality Office approves the closed record."
+  activities:
+  - step: "Hold the review against the plan"
+    by: rl_qx_vnr_review_lead
+    capability: cap_qx_vnr_review_conduct
+  - step: "Review safety-relevant content"
+    by: rl_qx_saf_safety_office
+  - step: "Review cybersecurity-relevant content"
+    by: rl_qx_sec_security_office
+  - step: "Approve the closed review record"
+    by: rl_qx_qa_quality_office

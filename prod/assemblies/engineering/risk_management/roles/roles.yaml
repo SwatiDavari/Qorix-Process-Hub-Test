@@ -1,0 +1,8 @@
+# Risk Management (engineering/risk_management)  -  roles.
+roles:
+- id: rl_qx_risk_risk_manager
+  title: "Risk Manager"
+  description: |-
+    Maintains the risk register, rates risks and tracks treatments to closure.
+
+    **Responsible for:** Identify and Assess Risks, Treat and Monitor Risks.

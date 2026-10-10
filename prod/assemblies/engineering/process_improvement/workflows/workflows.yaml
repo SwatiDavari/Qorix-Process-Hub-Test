@@ -1,0 +1,51 @@
+# Process Improvement and Tailoring (engineering/process_improvement)  -  workflows.
+workflows:
+- id: wf_qx_pim_improve_process
+  title: "Improve the Processes"
+  status: draft
+  responsible: rl_qx_pim_improvement_lead
+  approved_by: rl_qx_gc_head
+  supported_by:
+  - rl_qx_qa_quality_office
+  input:
+  - wp_qx_pim_improvement_input
+  achieves:
+  - oc_qx_pim_improvements_planned
+  output:
+  - wp_qx_pim_improvement_plan
+  description: "The Process Improvement Lead collects findings, metrics and feedback, selects improvements and plans them with owners and dates. The Quality Office checks that each improvement ties back to evidence. The Head of G&C approves the plan."
+  activities:
+  - step: "Collect audit findings, metrics and feedback"
+    by: rl_qx_pim_improvement_lead
+  - step: "Select improvements and plan them with owners and dates"
+    by: rl_qx_pim_improvement_lead
+    capability: cap_qx_pim_improvement_planning
+  - step: "Check each improvement ties to evidence"
+    by: rl_qx_qa_quality_office
+  - step: "Approve the improvement plan"
+    by: rl_qx_gc_head
+
+- id: wf_qx_pim_tailor_process
+  title: "Tailor the Processes"
+  status: draft
+  responsible: rl_qx_pim_improvement_lead
+  approved_by: rl_qx_gc_head
+  supported_by:
+  - rl_qx_qa_quality_office
+  input:
+  - wp_qx_pim_project_profile
+  achieves:
+  - oc_qx_pim_tailoring_justified
+  output:
+  - wp_qx_pim_tailoring_record
+  description: "The Process Improvement Lead takes the project profile and records which parts of the organisation level process the project narrows and why. The Quality Office checks that the tailoring only narrows. The Head of G&C approves the record."
+  activities:
+  - step: "Compare the project profile with the organisation level process"
+    by: rl_qx_pim_improvement_lead
+  - step: "Record each narrowing with its rationale"
+    by: rl_qx_pim_improvement_lead
+    capability: cap_qx_pim_tailoring_record
+  - step: "Check that the tailoring only narrows"
+    by: rl_qx_qa_quality_office
+  - step: "Approve the tailoring record"
+    by: rl_qx_gc_head

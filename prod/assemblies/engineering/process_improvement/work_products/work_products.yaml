@@ -1,0 +1,22 @@
+# Process Improvement and Tailoring (engineering/process_improvement)  -  work products.
+work_products:
+- id: wp_qx_pim_improvement_input
+  title: "Improvement Input"
+  status: draft
+  purpose: "Audit findings, metrics, problem records and feedback that point to a process change."
+  origin: external
+- id: wp_qx_pim_improvement_plan
+  title: "Improvement Plan"
+  status: draft
+  purpose: "Selected improvements with owner, date, expected effect and evidence."
+  template: gd_temp_qx_pim_plan_template
+- id: wp_qx_pim_project_profile
+  title: "Project Profile"
+  status: draft
+  purpose: "The project's safety level, cybersecurity level, size and constraints."
+  origin: external
+- id: wp_qx_pim_tailoring_record
+  title: "Tailoring Record"
+  status: draft
+  purpose: "Parts of the organisation level process the project narrows, with rationale and approval."
+  template: gd_temp_qx_pim_tailoring_template

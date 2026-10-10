@@ -1,0 +1,54 @@
+# Measurement and Metrics (engineering/measurement)  -  workflows.
+workflows:
+- id: wf_qx_meas_define_metrics
+  title: "Define Metrics"
+  status: draft
+  responsible: rl_qx_meas_metrics_analyst
+  approved_by: rl_qx_gc_head
+  supported_by:
+  - rl_qx_qa_quality_office
+  input:
+  - wp_qx_meas_information_need
+  achieves:
+  - oc_qx_meas_metrics_defined
+  output:
+  - wp_qx_meas_metrics_plan
+  description: "The Metrics Analyst turns each information need into a defined metric with a source, interval and owner. The Head of G&C approves the metrics plan."
+  activities:
+  - step: "Confirm the information need and who decides on it"
+    by: rl_qx_meas_metrics_analyst
+  - step: "Define metric, data source, interval and owner"
+    by: rl_qx_meas_metrics_analyst
+    capability: cap_qx_meas_metric_definition
+  - step: "Check the definitions are measurable and unambiguous"
+    by: rl_qx_qa_quality_office
+  - step: "Approve the metrics plan"
+    by: rl_qx_gc_head
+
+- id: wf_qx_meas_collect_report
+  title: "Collect and Report Metrics"
+  status: draft
+  responsible: rl_qx_meas_metrics_analyst
+  approved_by: rl_qx_gc_head
+  supported_by:
+  - rl_qx_qa_quality_office
+  input:
+  - wp_qx_meas_metrics_plan
+  gate:
+  - wp: wp_qx_meas_metrics_plan
+    min_status: approved
+  achieves:
+  - oc_qx_meas_decisions_informed
+  output:
+  - wp_qx_meas_metrics_report
+  description: "At the defined interval the Metrics Analyst collects the data, checks its quality, reports it and notes what it means for the decision owners."
+  activities:
+  - step: "Collect the data as defined"
+    by: rl_qx_meas_metrics_analyst
+  - step: "Report the metrics with their interpretation"
+    by: rl_qx_meas_metrics_analyst
+    capability: cap_qx_meas_data_reporting
+  - step: "Check data quality against the plan"
+    by: rl_qx_qa_quality_office
+  - step: "Review the report and act on it"
+    by: rl_qx_gc_head

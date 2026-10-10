@@ -1,0 +1,53 @@
+# Problem Resolution (engineering/problem_resolution)  -  workflows.
+workflows:
+- id: wf_qx_prb_analyse_problem
+  title: "Analyse a Problem"
+  status: draft
+  responsible: rl_qx_prb_problem_manager
+  approved_by: rl_qx_qa_quality_office
+  supported_by:
+  - rl_qx_saf_safety_office
+  - rl_qx_sec_security_office
+  input:
+  - wp_qx_prb_problem_report
+  achieves:
+  - oc_qx_prb_problems_recorded
+  output:
+  - wp_qx_prb_problem_record
+  description: "The Problem Manager records the reported problem, rates its severity and analyses cause and impact. The Functional Safety and Cybersecurity Offices assess problems that reach their discipline. The Quality Office checks severity ratings."
+  activities:
+  - step: "Record the problem with its source"
+    by: rl_qx_prb_problem_manager
+  - step: "Analyse cause and impact"
+    by: rl_qx_prb_problem_manager
+    capability: cap_qx_prb_problem_analysis
+  - step: "Assess safety impact"
+    by: rl_qx_saf_safety_office
+  - step: "Assess cybersecurity impact"
+    by: rl_qx_sec_security_office
+  - step: "Confirm the severity rating"
+    by: rl_qx_qa_quality_office
+
+- id: wf_qx_prb_resolve_problem
+  title: "Resolve a Problem"
+  status: draft
+  responsible: rl_qx_prb_problem_manager
+  approved_by: rl_qx_qa_quality_office
+  input:
+  - wp_qx_prb_problem_record
+  gate:
+  - wp: wp_qx_prb_problem_record
+    min_status: proposed
+  achieves:
+  - oc_qx_prb_problems_resolved
+  output:
+  - wp_qx_prb_resolution_report
+  description: "The Problem Manager agrees the action, hands changes to Change Management where an organisation level work product is affected, verifies the fix and closes the record. The Quality Office confirms closure."
+  activities:
+  - step: "Agree the resolution action and owner"
+    by: rl_qx_prb_problem_manager
+  - step: "Verify the fix and close the record"
+    by: rl_qx_prb_problem_manager
+    capability: cap_qx_prb_problem_closure
+  - step: "Confirm closure and trend data"
+    by: rl_qx_qa_quality_office

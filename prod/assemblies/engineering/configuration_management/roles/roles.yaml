@@ -1,2 +1,8 @@
 # Configuration Management (engineering/configuration_management)  -  roles.
-roles: []
+roles:
+- id: rl_qx_cfg_config_manager
+  title: Configuration Manager
+  description: |-
+    Keeps the configuration item list and baselines and runs the yearly process description review.
+
+    **Responsible for:** Manage the Process Description, Identify Items, Baseline Items.

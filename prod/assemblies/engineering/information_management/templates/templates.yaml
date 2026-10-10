@@ -1,0 +1,10 @@
+# Information and Documentation Management (engineering/information_management)  -  templates and guidance.
+templates:
+- id: gd_temp_qx_info_plan_template
+  title: "Documentation Plan Template"
+  status: draft
+  description: "Template covering: information item, owner, form, classification, retention."
+- id: gd_temp_qx_info_register_template
+  title: "Document Register Template"
+  status: draft
+  description: "Template covering: document, owner, version, classification, location, status."

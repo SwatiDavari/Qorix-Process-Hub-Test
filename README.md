@@ -31,7 +31,7 @@ Concepts · Realization · Assemblies · Dist.
 | Cluster | Assemblies (code) |
 |---|---|
 | `compliance` | Governance & Compliance (`gc`), Safety (`saf`), Security (`sec`) |
-| `engineering` | Change Management (`cm`), Configuration Management (`cfg`), Quality Assurance (`qa`) |
+| `engineering` | Project Planning and Control (`plan`), Risk Management (`risk`), Decision Management (`dec`), Measurement and Metrics (`meas`), Requirements Management and Traceability (`req`), Configuration Management (`cfg`), Change Management (`cm`), Problem Resolution (`prb`), Quality Assurance (`qa`), Verification and Reviews (`vnr`), Information and Documentation Management (`info`), Release Management (`rel`), Supplier and Acquisition Management (`sup`), Process Improvement and Tailoring (`pim`) |
 | `build` | Infrastructure (`infra`) |
 | `testing` | Validation (`val`) |
 | `organisation` | Training (`trn`) |

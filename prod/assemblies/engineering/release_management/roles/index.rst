@@ -4,4 +4,13 @@
 Release Management Roles
 ########################
 
-No roles defined yet.
+.. role:: Release Manager
+   :id: rl_qx_rel_release_manager
+   :status: valid
+   :version: 1
+   :tags: release_management
+
+   Prepares the organisation level release and tells the projects which baseline applies.
+
+   **Responsible for:** Release Organisation Level Baseline.
+

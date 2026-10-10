@@ -1,0 +1,17 @@
+# Project Planning and Control (engineering/project_planning)  -  work products.
+work_products:
+- id: wp_qx_plan_project_brief
+  title: "Project Brief"
+  status: draft
+  purpose: "Scope statement, constraints and stakeholders from the project's commissioning."
+  origin: external
+- id: wp_qx_plan_project_plan
+  title: "Project Plan"
+  status: draft
+  purpose: "Approved plan with scope, schedule, resources, responsibilities and the processes the project applies."
+  template: gd_temp_qx_plan_project_plan_template
+- id: wp_qx_plan_status_report
+  title: "Project Status Report"
+  status: draft
+  purpose: "Progress against the plan, deviations, actions and escalations for the review period."
+  template: gd_temp_qx_plan_status_template

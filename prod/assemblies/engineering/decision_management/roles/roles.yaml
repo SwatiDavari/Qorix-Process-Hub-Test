@@ -1,0 +1,8 @@
+# Decision Management (engineering/decision_management)  -  roles.
+roles:
+- id: rl_qx_dec_decision_owner
+  title: "Decision Owner"
+  description: |-
+    Prepares the decision, analyses the options against the criteria and records the outcome.
+
+    **Responsible for:** Prepare a Decision, Take and Record a Decision.

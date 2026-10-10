@@ -1,0 +1,43 @@
+# Measurement and Metrics (engineering/measurement)  -  process: identity, classification, concepts.
+assembly:
+  id: measurement
+  code: meas
+  cluster: engineering
+  title: "Measurement and Metrics"
+  enabler: '-'
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_meas_metrics_analyst
+  purpose: "Define the measures the organisation needs, collect them consistently and report them to the people who decide."
+  standards:
+  - "ISO/IEC/IEEE 15288 6.3.7"
+  - "ASPICE 4.0 MAN.6"
+  tier: qorix
+getting_started: |-
+  This describes how organisation level metrics are defined, collected and reported.
+
+  Start from an information need, not from the data you already have. A metric with no decision behind it does not belong here.
+concepts: []
+outcomes:
+- id: oc_qx_meas_metrics_defined
+  title: "Metrics trace to an information need"
+  status: draft
+  statement: "Each metric states the information need it serves, its definition, data source, collection interval and owner."
+  complies: [std_req_iso15288_637, std_req_aspice_40_man_6]
+- id: oc_qx_meas_decisions_informed
+  title: "Decision makers receive current, consistent metrics"
+  status: draft
+  statement: "Metrics are collected as defined and reported at the agreed interval to the roles that decide on them."
+  complies: [std_req_iso15288_637, std_req_aspice_40_man_6]
+capabilities:
+- id: cap_qx_meas_metric_definition
+  title: "Metric definition"
+  status: draft
+  description: "Turn an information need into a measurable, owned metric with a defined source."
+  realizes: [oc_qx_meas_metrics_defined]
+- id: cap_qx_meas_data_reporting
+  title: "Data collection and reporting"
+  status: draft
+  description: "Collect metric data as defined and report it with its interpretation."
+  realizes: [oc_qx_meas_decisions_informed]

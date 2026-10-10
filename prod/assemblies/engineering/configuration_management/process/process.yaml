@@ -8,7 +8,7 @@ assembly:
   scope: GLOB
   layer: '-'
   status: draft
-  owner: rl_qx_qa_quality_office
+  owner: rl_qx_cfg_config_manager
   purpose: Identify, baseline and control configuration items so every release is reproducible.
   standards:
   - ISO 26262-8 cl. 7
@@ -17,7 +17,7 @@ assembly:
 getting_started: |-
   This describes how to get started with process management at organisation level: where a process comes from, how it is kept in step with the upstream process description it builds on, and who assigns a maturity level to it on what evidence.
 
-  At least once per year the Quality Office reviews the process description against the applicable standards and turns improvement inputs into changes to the process description. The Head of G&C approves a change of maturity level.
+  At least once per year the Configuration Manager reviews the process description against the applicable standards and turns improvement inputs into changes to the process description. The Head of G&C approves a change of maturity level.
 concepts: []
 outcomes:
 - id: oc_qx_cfg_items_controlled

@@ -1,0 +1,56 @@
+# Supplier and Acquisition Management (engineering/supplier_management)  -  workflows.
+workflows:
+- id: wf_qx_sup_agree_supplier
+  title: "Agree with a Supplier"
+  status: draft
+  responsible: rl_qx_sup_supplier_manager
+  approved_by: rl_qx_gc_head
+  supported_by:
+  - rl_qx_saf_safety_office
+  - rl_qx_sec_security_office
+  input:
+  - wp_qx_sup_acquisition_need
+  achieves:
+  - oc_qx_sup_agreements_defined
+  output:
+  - wp_qx_sup_agreement
+  description: "The Supplier Manager turns the acquisition need into an agreement with requirements, acceptance criteria and process obligations. The Functional Safety and Cybersecurity Offices set the safety and security obligations. The Head of G&C approves the agreement."
+  activities:
+  - step: "Define requirements and acceptance criteria"
+    by: rl_qx_sup_supplier_manager
+    capability: cap_qx_sup_agreement_definition
+  - step: "Set safety obligations for the supplier"
+    by: rl_qx_saf_safety_office
+  - step: "Set cybersecurity obligations for the supplier"
+    by: rl_qx_sec_security_office
+  - step: "Approve the agreement"
+    by: rl_qx_gc_head
+
+- id: wf_qx_sup_monitor_supplier
+  title: "Monitor a Supplier"
+  status: draft
+  responsible: rl_qx_sup_supplier_manager
+  approved_by: rl_qx_gc_head
+  supported_by:
+  - rl_qx_saf_safety_office
+  - rl_qx_sec_security_office
+  input:
+  - wp_qx_sup_agreement
+  gate:
+  - wp: wp_qx_sup_agreement
+    min_status: approved
+  achieves:
+  - oc_qx_sup_suppliers_monitored
+  output:
+  - wp_qx_sup_supplier_review
+  description: "At the agreed interval the Supplier Manager reviews progress and deliverables against the agreement and records deviations. The Head of G&C decides on escalation."
+  activities:
+  - step: "Review progress and deliverables against the agreement"
+    by: rl_qx_sup_supplier_manager
+    capability: cap_qx_sup_supplier_monitoring
+  - step: "Check safety obligations are met"
+    by: rl_qx_saf_safety_office
+  - step: "Check cybersecurity obligations are met"
+    by: rl_qx_sec_security_office
+  - step: "Decide on escalation"
+    by: rl_qx_gc_head

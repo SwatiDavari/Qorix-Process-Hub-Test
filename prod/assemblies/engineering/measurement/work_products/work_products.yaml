@@ -1,0 +1,17 @@
+# Measurement and Metrics (engineering/measurement)  -  work products.
+work_products:
+- id: wp_qx_meas_information_need
+  title: "Information Need"
+  status: draft
+  purpose: "What a decision maker needs to know and why."
+  origin: external
+- id: wp_qx_meas_metrics_plan
+  title: "Metrics Plan"
+  status: draft
+  purpose: "Defined metrics with information need, source, interval, owner and target."
+  template: gd_temp_qx_meas_plan_template
+- id: wp_qx_meas_metrics_report
+  title: "Metrics Report"
+  status: draft
+  purpose: "Metric values for the period with trend and interpretation."
+  template: gd_temp_qx_meas_report_template

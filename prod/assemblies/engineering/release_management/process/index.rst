@@ -11,7 +11,7 @@ Release a baselined, audited organisation level configuration so every project a
 * **Assembly:** Engineering / Release Management (code ``rel``)
 * **Status:** :bdg-secondary:`draft`
 * **Enabler / Scope / Layer:** - / GLOB / -
-* **Owner:** :need:`rl_qx_qa_quality_office`
+* **Owner:** :need:`rl_qx_rel_release_manager`
 * **Standards:** ISO 26262-4 cl. 11, ASPICE 4.0 SPL.2
 
 .. doc_getstrt:: Getting started on Release Management
@@ -28,7 +28,7 @@ Release a baselined, audited organisation level configuration so every project a
    * **Change Management** has approved the changes in that baseline, through the change package.
    * **Quality Assurance** has an internal audit report covering the baseline.
 
-   Without all three, there is no release. The Quality Office prepares the release and the Head of G&C approves it.
+   Without all three, there is no release. The Release Manager prepares the release and the Head of G&C approves it.
 
 .. outcome:: Only an audited baseline that reflects approved changes is released
    :id: oc_qx_rel_release_controlled

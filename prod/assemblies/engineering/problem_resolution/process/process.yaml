@@ -1,0 +1,42 @@
+# Problem Resolution (engineering/problem_resolution)  -  process: identity, classification, concepts.
+assembly:
+  id: problem_resolution
+  code: prb
+  cluster: engineering
+  title: "Problem Resolution"
+  enabler: '-'
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_prb_problem_manager
+  purpose: "Record problems from any source, analyse their cause and take them to verified resolution."
+  standards:
+  - "ASPICE 4.0 SUP.9"
+  tier: qorix
+getting_started: |-
+  This describes how a problem or defect found in a work product or process is recorded, analysed and resolved.
+
+  A fix that changes an organisation level work product also goes through Change Management; this process hands over to it.
+concepts: []
+outcomes:
+- id: oc_qx_prb_problems_recorded
+  title: "Problems are recorded and analysed"
+  status: draft
+  statement: "Each problem is recorded with its source and severity and analysed for cause and impact."
+  complies: [std_req_aspice_40_sup_9]
+- id: oc_qx_prb_problems_resolved
+  title: "Problems are resolved and the fix verified"
+  status: draft
+  statement: "Each problem is resolved through an agreed action, the fix is verified and the record is closed with trend data kept."
+  complies: [std_req_aspice_40_sup_9]
+capabilities:
+- id: cap_qx_prb_problem_analysis
+  title: "Problem analysis"
+  status: draft
+  description: "Establish cause, impact and severity of a reported problem."
+  realizes: [oc_qx_prb_problems_recorded]
+- id: cap_qx_prb_problem_closure
+  title: "Problem closure"
+  status: draft
+  description: "Agree the action, verify the fix and close the record."
+  realizes: [oc_qx_prb_problems_resolved]

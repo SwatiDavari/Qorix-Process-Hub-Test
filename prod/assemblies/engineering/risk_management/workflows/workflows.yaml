@@ -1,0 +1,58 @@
+# Risk Management (engineering/risk_management)  -  workflows.
+workflows:
+- id: wf_qx_risk_identify_assess
+  title: "Identify and Assess Risks"
+  status: draft
+  responsible: rl_qx_risk_risk_manager
+  approved_by: rl_qx_gc_head
+  supported_by:
+  - rl_qx_saf_safety_office
+  - rl_qx_sec_security_office
+  input:
+  - wp_qx_risk_context
+  achieves:
+  - oc_qx_risk_risks_known
+  output:
+  - wp_qx_risk_register
+  description: "The Risk Manager collects risks from projects, audits and incidents, rates them and records them in the register. The Functional Safety and Cybersecurity Offices rate the risks that reach their discipline."
+  activities:
+  - step: "Collect risks from the context, audits and projects"
+    by: rl_qx_risk_risk_manager
+  - step: "Rate likelihood and impact"
+    by: rl_qx_risk_risk_manager
+    capability: cap_qx_risk_risk_assessment
+  - step: "Rate safety-related risks"
+    by: rl_qx_saf_safety_office
+  - step: "Rate cybersecurity-related risks"
+    by: rl_qx_sec_security_office
+  - step: "Approve the register"
+    by: rl_qx_gc_head
+
+- id: wf_qx_risk_treat_monitor
+  title: "Treat and Monitor Risks"
+  status: draft
+  responsible: rl_qx_risk_risk_manager
+  approved_by: rl_qx_gc_head
+  supported_by:
+  - rl_qx_saf_safety_office
+  - rl_qx_sec_security_office
+  input:
+  - wp_qx_risk_register
+  gate:
+  - wp: wp_qx_risk_register
+    min_status: proposed
+  achieves:
+  - oc_qx_risk_risks_treated
+  output:
+  - wp_qx_risk_report
+  description: "The Risk Manager agrees a treatment and owner for each risk above the threshold, tracks it and reports the risk position. The Head of G&C decides on risk acceptance."
+  activities:
+  - step: "Agree treatment and owner for each risk above the threshold"
+    by: rl_qx_risk_risk_manager
+    capability: cap_qx_risk_risk_treatment
+  - step: "Confirm treatments that touch safety"
+    by: rl_qx_saf_safety_office
+  - step: "Confirm treatments that touch cybersecurity"
+    by: rl_qx_sec_security_office
+  - step: "Decide on acceptance of residual risk"
+    by: rl_qx_gc_head

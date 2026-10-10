@@ -49,6 +49,9 @@ workflows:
   - rl_qx_sec_security_office
   input:
   - wp_qx_qa_audit_report
+  gate:
+  - wp: wp_qx_qa_audit_report
+    min_status: approved
   output:
   - wp_qx_qa_qms_plan
   description: |-

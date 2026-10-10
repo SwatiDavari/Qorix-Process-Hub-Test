@@ -4,4 +4,13 @@
 Change Management Roles
 #######################
 
-No roles defined yet.
+.. role:: Change Manager
+   :id: rl_qx_cm_change_manager
+   :status: valid
+   :version: 1
+   :tags: change_management
+
+   Runs change intake, impact analysis, notification and closure for organisation level work products.
+
+   **Responsible for:** Manage Organisation Level Change.
+

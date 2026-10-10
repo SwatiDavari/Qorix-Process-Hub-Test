@@ -1,0 +1,17 @@
+# Risk Management (engineering/risk_management)  -  work products.
+work_products:
+- id: wp_qx_risk_context
+  title: "Risk Context"
+  status: draft
+  purpose: "Risk sources, risk appetite and the scales the organisation uses to rate risk."
+  origin: external
+- id: wp_qx_risk_register
+  title: "Risk Register"
+  status: draft
+  purpose: "Identified risks with rating, owner, treatment and status."
+  template: gd_temp_qx_risk_register_template
+- id: wp_qx_risk_report
+  title: "Risk Report"
+  status: draft
+  purpose: "Risk position for the review period: new, changed and closed risks and open treatments."
+  template: gd_temp_qx_risk_report_template
