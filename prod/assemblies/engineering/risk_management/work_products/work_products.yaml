@@ -5,13 +5,20 @@ work_products:
   status: draft
   purpose: "Risk sources, risk appetite and the scales the organisation uses to rate risk."
   origin: external
+  internal: true
 - id: wp_qx_risk_register
   title: "Risk Register"
   status: draft
   purpose: "Identified risks with rating, owner, treatment and status."
   template: gd_temp_qx_risk_register_template
+  complies:
+  - std_req_iso15288_634
+  - std_req_aspice_40_man_5
 - id: wp_qx_risk_report
   title: "Risk Report"
   status: draft
   purpose: "Risk position for the review period: new, changed and closed risks and open treatments."
   template: gd_temp_qx_risk_report_template
+  complies:
+  - std_req_iso15288_634
+  - std_req_aspice_40_man_5

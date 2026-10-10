@@ -13,6 +13,12 @@ technology-neutral model, that every Qorix project inherits and narrows in its o
 
       What the hub must satisfy: the standard clauses Qorix work products comply with.
 
+   .. grid-item-card:: Policies
+      :link: qx_policies
+      :link-type: ref
+
+      Organisation level safety, quality and cybersecurity policies, and where each lives in the hub.
+
    .. grid-item-card:: Missions
       :link: qx_missions
       :link-type: ref
@@ -47,6 +53,7 @@ technology-neutral model, that every Qorix project inherits and narrows in its o
    :hidden:
 
    needs
+   policies/index
    missions/index
    concepts/index
    realization/index

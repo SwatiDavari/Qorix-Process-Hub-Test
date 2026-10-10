@@ -51,6 +51,7 @@ A double underscore is never allowed; `qpm render-process` and the self-tests re
 pip install -r prod/realization/qpm/requirements_lock.txt
 python -m pytest prod/realization/qpm/tests -q   # adapter completeness, tiering rules, catalog and ID checks
 ./prod/realization/regen.sh                       # regenerate assembly, Needs, Assemblies and Dist pages
+bash prod/realization/publish.sh             # check, regenerate, commit and push to main, then watch CI (--dry-run to preview)
 bazel run //:docs                                 # Sphinx-needs build with the composed metamodel
 ```
 

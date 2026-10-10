@@ -19,6 +19,7 @@ Project Planning and Control Work Products
    :status: draft
    :version: 1
    :tags: project_planning
+   :complies: std_req_iso15288_631, std_req_aspice_40_man_3
    :typed_by: gd_temp_qx_plan_project_plan_template
 
    **Purpose:** Approved plan with scope, schedule, resources, responsibilities and the processes the project applies.
@@ -28,6 +29,7 @@ Project Planning and Control Work Products
    :status: draft
    :version: 1
    :tags: project_planning
+   :complies: std_req_iso15288_632, std_req_aspice_40_man_3
    :typed_by: gd_temp_qx_plan_status_template
 
    **Purpose:** Progress against the plan, deviations, actions and escalations for the review period.

@@ -12,9 +12,26 @@ workflows:
   output:
   - wp_qx_saf_platform_mgmt
   - wp_qx_saf_policies
+  achieves:
+  - oc_qx_saf_management_maintained
+  gate:
+  - wp: wp_qx_qa_audit_report
+    min_status: approved
   description: The Safety Office reviews the Functional Safety Management System at least once per year
     against ISO 26262 and quality metrics, and updates the FSMS document. The Head
     of G&C approves changes to the organisation level safety baseline.
+  activities:
+  - step: Review the management system against its standard and its metrics
+    by: rl_qx_saf_safety_office
+    capability: cap_qx_saf_management_review
+  - step: Update the management system document and the policies
+    by: rl_qx_saf_safety_office
+    capability: cap_qx_saf_management_review
+  - step: Check the update against the audit findings
+    by: rl_qx_qa_quality_office
+  - step: Approve changes to the organisation level safety baseline
+    by: rl_qx_gc_head
+
 - id: wf_qx_saf_safety_anomaly
   title: Manage Organisation Level Safety Anomaly
   status: draft
@@ -26,9 +43,29 @@ workflows:
   - wp_qx_saf_policies
   output:
   - wp_qx_saf_safety_anomaly_report
+  achieves:
+  - oc_qx_saf_anomalies_handled
+  gate:
+  - wp: wp_qx_saf_policies
+    min_status: approved
   description: The Safety Office routes a reported safety anomaly in an organisation level asset, coordinates
     its analysis and correction, and ensures notification to affected projects. The Head of G&C approves
     any resulting policy change.
+  activities:
+  - step: Record the anomaly and route it to the owner of the affected asset
+    by: rl_qx_saf_safety_office
+    capability: cap_qx_saf_anomaly_handling
+  - step: Analyse the anomaly and agree the correction
+    by: rl_qx_saf_safety_office
+    capability: cap_qx_saf_anomaly_handling
+  - step: Support the analysis where the anomaly has security implications
+    by: rl_qx_sec_security_office
+  - step: Notify every affected project
+    by: rl_qx_saf_safety_office
+    capability: cap_qx_saf_anomaly_handling
+  - step: Approve any resulting policy change
+    by: rl_qx_gc_head
+
 - id: wf_qx_saf_independent_assessment
   title: Perform Independent Functional Safety Assessment
   status: draft
@@ -40,6 +77,25 @@ workflows:
   - wp_qx_saf_safety_tailoring
   output:
   - wp_qx_qa_audit_report
+  achieves:
+  - oc_qx_saf_independence_assured
+  gate:
+  - wp: wp_qx_saf_safety_tailoring
+    min_status: approved
   description: An independent assessor evaluates whether Qorix's functional safety activities achieve
     the objectives of ISO 26262. The assessment covers process compliance and product-level safety cases.
     Findings are recorded as an assessment report.
+  activities:
+  - step: Plan the assessment scope from the tailoring record
+    by: rl_qx_saf_independent_assessor
+    capability: cap_qx_saf_independent_assessment
+  - step: Evaluate process compliance and the product level safety cases
+    by: rl_qx_saf_independent_assessor
+    capability: cap_qx_saf_independent_assessment
+  - step: Provide the evidence the assessor asks for
+    by: rl_qx_saf_safety_office
+  - step: Record the findings in the assessment report
+    by: rl_qx_saf_independent_assessor
+    capability: cap_qx_saf_independent_assessment
+  - step: Approve the assessment report
+    by: rl_qx_gc_head

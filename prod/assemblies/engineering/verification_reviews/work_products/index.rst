@@ -19,6 +19,7 @@ Verification and Reviews Work Products
    :status: draft
    :version: 1
    :tags: verification_reviews
+   :complies: std_req_iso15288_649
    :typed_by: gd_temp_qx_vnr_plan_template
 
    **Purpose:** Criteria, method, reviewers and schedule for verifying the work product.
@@ -28,6 +29,7 @@ Verification and Reviews Work Products
    :status: draft
    :version: 1
    :tags: verification_reviews
+   :complies: std_req_iso15288_649
    :typed_by: gd_temp_qx_vnr_record_template
 
    **Purpose:** Findings, owners, dates and closure status of the review.

@@ -19,3 +19,25 @@ getting_started: |-
 
   The process covers: (1) maintaining the Cybersecurity Management System, and (2) coordinating organisation level incident response.
 concepts: []
+outcomes:
+- id: oc_qx_sec_incidents_handled
+  title: An incident that crosses projects is coordinated and reported
+  status: draft
+  statement: A security incident that crosses projects is coordinated, contained and reported to every affected project.
+  complies: [std_wp_isosae21434_org_management_551]
+- id: oc_qx_sec_management_maintained
+  title: The security management system is current and approved
+  status: draft
+  statement: The organisation security management system is reviewed at least once a year against incidents and threat information, and approved.
+  complies: [std_wp_isosae21434_org_management_551, std_wp_isosae21434_org_management_555]
+capabilities:
+- id: cap_qx_sec_incident_coordination
+  title: Incident coordination
+  status: draft
+  description: Confirm an incident, coordinate containment and correction across projects and report it.
+  realizes: [oc_qx_sec_incidents_handled]
+- id: cap_qx_sec_management_review
+  title: Security management review
+  status: draft
+  description: Review the security management system against its standard, incidents and threat information and decide what changes.
+  realizes: [oc_qx_sec_management_maintained]

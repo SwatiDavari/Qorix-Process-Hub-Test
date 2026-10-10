@@ -9,6 +9,7 @@ Release Management Work Products
    :status: draft
    :version: 1
    :tags: release_management
+   :complies: std_req_aspice_40_spl_2, std_req_iso15288_6410
    :typed_by: gd_temp_qx_rel_release_notice_template
 
    **Purpose:** Announces the released organisation level baseline to projects, with the changes it contains and any open points.

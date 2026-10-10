@@ -23,3 +23,35 @@ concepts:
     Three tiers compose every project's process: (1) the Qorix base process model;
     (2) the Qorix overlay, which may only add or widen (superset rule); (3) the
     project tailoring, which may only narrow and must justify each narrowing. The resolved model is generated, never hand-edited.
+outcomes:
+- id: oc_qx_gc_process_consistent
+  title: The organisation process set is consistent with policy and released after impact review
+  status: draft
+  statement: The organisation process set is defined, kept consistent with the organisation policies and objectives, and released only after its impact on safety, security and quality is reviewed.
+  complies: [std_req_iso15288_621, std_req_aspice_40_iic_10_00]
+- id: oc_qx_gc_tailoring_controlled
+  title: Every project departure from the organisation process is recorded and approved
+  status: draft
+  statement: Every departure of a project from the organisation process is recorded with a rationale and approved before the project relies on it.
+  complies: [std_req_iso15288_annex_a, std_req_aspice_40_iic_15_54]
+- id: oc_qx_gc_compliance_evidenced
+  title: Project conformance to its recorded tailoring is checked and reported
+  status: draft
+  statement: Conformance of each project to its recorded tailoring is checked against objective evidence and the findings are reported.
+  complies: [std_req_aspice_40_iic_15_13, std_req_iso15288_638]
+capabilities:
+- id: cap_qx_gc_process_release
+  title: Process release
+  status: draft
+  description: Review the impact of a change, approve it and publish a version of the organisation process.
+  realizes: [oc_qx_gc_process_consistent]
+- id: cap_qx_gc_tailoring_review
+  title: Tailoring review
+  status: draft
+  description: Check that a tailoring only narrows the organisation process and carries a rationale for each narrowing.
+  realizes: [oc_qx_gc_tailoring_controlled]
+- id: cap_qx_gc_conformance_audit
+  title: Conformance audit
+  status: draft
+  description: Sample work products against the recorded tailoring and record each finding against the item it affects.
+  realizes: [oc_qx_gc_compliance_evidenced]

@@ -9,6 +9,7 @@ Quality Assurance Work Products
    :status: draft
    :version: 1
    :tags: quality_assurance
+   :complies: std_req_aspice_40_sup_1, std_req_iso15288_625
    :typed_by: gd_temp_qx_qa_qms_plan_template
 
    **Purpose:** The Quality Management System (QMS) Plan is the authoritative organisation-level document defining the QMS scope, discipline plans, audit cadence, and improvement tracking. **Produced by:** Workflow *Maintain Quality Management System* **Consumed by:** Workflow *Conduct Organisation Level Internal Audit*
@@ -18,6 +19,7 @@ Quality Assurance Work Products
    :status: draft
    :version: 1
    :tags: quality_assurance
+   :complies: std_wp_iso26262_management_551, std_req_iso15288_638, std_req_aspice_40_sup_1
    :typed_by: gd_temp_qx_qa_audit_report_template
 
    **Purpose:** The Audit Report records the findings, non-conformities, observations, and action items from an organisation-level internal audit. **Produced by:** Workflow *Conduct Organisation Level Internal Audit* **Consumed by:** Workflow *Maintain Quality Management System*

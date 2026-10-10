@@ -19,30 +19,51 @@ Governance & Compliance Workflows
    :supported_by: rl_qx_saf_safety_office, rl_qx_sec_security_office, rl_qx_qa_quality_office, rl_qx_infra_engineer
    :input: wp_qx_gc_process_description, wp_qx_gc_process_improvement_report, wp_qx_saf_policies, wp_qx_sec_policies
    :output: wp_qx_gc_process_overlay
+   :achieves: oc_qx_gc_process_consistent
    :has: doc_concept_qx_gc_process
+   :exercises: cap_qx_gc_process_release
 
    .. list-table:: Activities (RWE)
       :header-rows: 1
-      :widths: 5 70 25
+      :widths: 5 50 20 25
 
       * - #
         - Activity
         - Performed by
+        - Capability
       * - 1
         - Raise a change request against the hub repo (new op, new area, base-model change)
         - :need:`rl_qx_gc_process_owner`
+        -
       * - 2
         - Edit operations in the Qorix tier
         - :need:`rl_qx_gc_process_owner`
+        - :need:`cap_qx_gc_process_release`
       * - 3
         - CI composes all projects; any project that no longer composes blocks the merge
         - :need:`rl_qx_infra_engineer`
+        -
       * - 4
         - Review safety / security / quality impact
         - :need:`rl_qx_saf_safety_office`
+        - :need:`cap_qx_gc_process_release`
       * - 5
         - Approve and tag a framework release
         - :need:`rl_qx_gc_head`
+        - :need:`cap_qx_gc_process_release`
+
+   **Gate.** This workflow cannot be approved until every work product below has reached its minimum status.
+
+   .. list-table:: Gate (entry criteria)
+      :header-rows: 1
+      :widths: 40 20 40
+
+      * - Work product
+        - Minimum status
+        - Produced by
+      * - :need:`wp_qx_gc_process_improvement_report`
+        - approved
+        - outside these assemblies
 
 .. workflow:: Tailor process for a project
    :id: wf_qx_gc_tailor_project
@@ -54,28 +75,48 @@ Governance & Compliance Workflows
    :supported_by: rl_qx_saf_safety_office, rl_qx_sec_security_office
    :input: wp_qx_gc_process_overlay, wp_qx_gc_feature_request
    :output: wp_qx_gc_project_tailoring, wp_qx_saf_safety_tailoring
+   :achieves: oc_qx_gc_tailoring_controlled
    :contains: gd_temp_qx_gc_project_tailoring
    :has: doc_concept_qx_gc_process
+   :exercises: cap_qx_gc_tailoring_review
 
    .. list-table:: Activities (RWE)
       :header-rows: 1
-      :widths: 5 70 25
+      :widths: 5 50 20 25
 
       * - #
         - Activity
         - Performed by
+        - Capability
       * - 1
         - Copy dist/_template and set ASIL / CAL / ASPICE ceilings and process areas
         - :need:`rl_qx_gc_project_lead`
+        -
       * - 2
         - Add narrowing operations with a rationale each
         - :need:`rl_qx_gc_project_lead`
+        - :need:`cap_qx_gc_tailoring_review`
       * - 3
         - `qpm compose` must pass; generated tailoring report is reviewed
         - :need:`rl_qx_saf_safety_office`
+        - :need:`cap_qx_gc_tailoring_review`
       * - 4
         - Approve the tailoring (merge to main)
         - :need:`rl_qx_gc_head`
+        - :need:`cap_qx_gc_tailoring_review`
+
+   **Gate.** This workflow cannot be approved until every work product below has reached its minimum status.
+
+   .. list-table:: Gate (entry criteria)
+      :header-rows: 1
+      :widths: 40 20 40
+
+      * - Work product
+        - Minimum status
+        - Produced by
+      * - :need:`wp_qx_gc_process_overlay`
+        - approved
+        - :need:`wf_qx_gc_maintain_overlay`
 
 .. workflow:: Plan and perform compliance audit
    :id: wf_qx_gc_compliance_audit
@@ -87,28 +128,49 @@ Governance & Compliance Workflows
    :supported_by: rl_qx_gc_project_lead, rl_qx_qa_quality_office
    :input: wp_qx_gc_project_tailoring, wp_qx_qa_qms_plan, wp_qx_gc_safety_plan
    :output: wp_qx_gc_audit_report
+   :achieves: oc_qx_gc_compliance_evidenced
    :contains: gd_temp_qx_gc_audit_report
+   :exercises: cap_qx_gc_conformance_audit
 
    .. list-table:: Activities (RWE)
       :header-rows: 1
-      :widths: 5 70 25
+      :widths: 5 50 20 25
 
       * - #
         - Activity
         - Performed by
+        - Capability
       * - 1
         - Select scope from the tailoring record (areas, integrity levels)
         - :need:`rl_qx_gc_compliance_auditor`
+        - :need:`cap_qx_gc_conformance_audit`
       * - 2
         - Run `qpm lint-needs` on the project needs.json for objective evidence
         - :need:`rl_qx_gc_compliance_auditor`
+        -
       * - 3
         - Interview and sample work products
         - :need:`rl_qx_gc_compliance_auditor`
+        - :need:`cap_qx_gc_conformance_audit`
       * - 4
         - Record each finding as a gc_finding need linked (affects) to the item
         - :need:`rl_qx_gc_compliance_auditor`
+        - :need:`cap_qx_gc_conformance_audit`
       * - 5
         - Approve the audit report
         - :need:`rl_qx_gc_head`
+        -
+
+   **Gate.** This workflow cannot be approved until every work product below has reached its minimum status.
+
+   .. list-table:: Gate (entry criteria)
+      :header-rows: 1
+      :widths: 40 20 40
+
+      * - Work product
+        - Minimum status
+        - Produced by
+      * - :need:`wp_qx_gc_project_tailoring`
+        - approved
+        - :need:`wf_qx_gc_tailor_project`
 

@@ -5,13 +5,18 @@ work_products:
   status: draft
   purpose: "The question to be decided, who is affected and the date a decision is needed."
   origin: external
+  internal: true
 - id: wp_qx_dec_options_analysis
   title: "Options Analysis"
   status: draft
   purpose: "Decision criteria, options considered and the evaluation of each against the criteria."
   template: gd_temp_qx_dec_options_template
+  complies:
+  - std_req_iso15288_633
 - id: wp_qx_dec_decision_record
   title: "Decision Record"
   status: draft
   purpose: "The decision taken, its rationale, the options rejected, the owner and the date."
   template: gd_temp_qx_dec_record_template
+  complies:
+  - std_req_iso15288_633

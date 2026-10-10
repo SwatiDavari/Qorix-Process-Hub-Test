@@ -8,7 +8,7 @@ Engineering
 
 .. tab-set::
 
-   .. tab-item:: Table
+   .. tab-item:: Grouped register
 
       .. rubric:: Plan and control
 
@@ -178,212 +178,589 @@ Engineering
            - 2
            - :bdg-secondary:`draft`
 
-   .. tab-item:: Cards
-
-      .. rubric:: Plan and control
-
-      .. grid:: 1 2 3 3
-         :gutter: 2
-
-         .. grid-item-card:: Decision Management
-            :link: qx_assembly_decision_management
-            :link-type: ref
-
-            :bdg-secondary:`draft`
-
-            :bdg-primary:`15288 6.3.3`
-
-            Take significant decisions from analysed alternatives and keep the decision, its rationale and its owner on record.
-
-            +++
-            Owner: Decision Owner · 2 workflows · 3 work products
-
-         .. grid-item-card:: Measurement and Metrics
-            :link: qx_assembly_measurement
-            :link-type: ref
-
-            :bdg-secondary:`draft`
-
-            :bdg-primary:`15288 6.3.7` :bdg-info:`MAN.6`
-
-            Define the measures the organisation needs, collect them consistently and report them to the people who decide.
-
-            +++
-            Owner: Metrics Analyst · 2 workflows · 3 work products
-
-         .. grid-item-card:: Project Planning and Control
-            :link: qx_assembly_project_planning
-            :link-type: ref
-
-            :bdg-secondary:`draft`
-
-            :bdg-primary:`15288 6.3.1-6.3.2` :bdg-info:`MAN.3`
-
-            Plan a project's scope, schedule, resources and responsibilities, and control progress against that plan.
-
-            +++
-            Owner: Project Manager · 2 workflows · 3 work products
-
-         .. grid-item-card:: Risk Management
-            :link: qx_assembly_risk_management
-            :link-type: ref
-
-            :bdg-secondary:`draft`
-
-            :bdg-primary:`15288 6.3.4` :bdg-info:`MAN.5`
-
-            Identify, analyse, treat and monitor risks to projects and to the organisation level processes.
-
-            +++
-            Owner: Risk Manager · 2 workflows · 3 work products
-
-
-      .. rubric:: Requirements and verification
-
-      .. grid:: 1 2 3 3
-         :gutter: 2
-
-         .. grid-item-card:: Problem Resolution
-            :link: qx_assembly_problem_resolution
-            :link-type: ref
-
-            :bdg-secondary:`draft`
-
-            :bdg-info:`SUP.9`
-
-            Record problems from any source, analyse their cause and take them to verified resolution.
-
-            +++
-            Owner: Problem Manager · 2 workflows · 3 work products
-
-         .. grid-item-card:: Requirements Management and Traceability
-            :link: qx_assembly_requirements_management
-            :link-type: ref
-
-            :bdg-secondary:`draft` :bdg-light:`PRD / REQ`
-
-            :bdg-primary:`15288 6.4.2-6.4.3` :bdg-info:`SYS.2` :bdg-info:`SWE.1`
-
-            Define stakeholder and system requirements once, keep them agreed and trace them both ways to what they come from and what satisfies them.
-
-            +++
-            Owner: Requirements Engineer · 2 workflows · 3 work products
-
-         .. grid-item-card:: Verification and Reviews
-            :link: qx_assembly_verification_reviews
-            :link-type: ref
-
-            :bdg-secondary:`draft` :bdg-light:`TST`
-
-            :bdg-primary:`15288 6.4.9`
-
-            Plan verification of work products against their criteria and carry out reviews that record findings and close them.
-
-            +++
-            Owner: Review Lead · 2 workflows · 3 work products
-
-
-      .. rubric:: Control and release
-
-      .. grid:: 1 2 3 3
-         :gutter: 2
-
-         .. grid-item-card:: Change Management
-            :link: qx_assembly_change_management
-            :link-type: ref
-
-            :bdg-secondary:`draft`
-
-            :bdg-primary:`15288 6.3.5` :bdg-info:`SUP.10` :bdg-dark-line:`ISO 26262-8 cl. 8`
-
-            Request, analyse, approve and track changes to work products and products.
-
-            +++
-            Owner: Change Manager · 1 workflow · 2 work products
-
-         .. grid-item-card:: Configuration Management
-            :link: qx_assembly_configuration_management
-            :link-type: ref
-
-            :bdg-secondary:`draft`
-
-            :bdg-primary:`15288 6.3.5` :bdg-info:`SUP.8` :bdg-dark-line:`ISO 26262-8 cl. 7`
-
-            Identify, baseline and control configuration items so every release is reproducible.
-
-            +++
-            Owner: Configuration Manager · 3 workflows · 4 work products
-
-         .. grid-item-card:: Information and Documentation Management
-            :link: qx_assembly_information_management
-            :link-type: ref
-
-            :bdg-secondary:`draft` :bdg-light:`DOC`
-
-            :bdg-primary:`15288 6.3.6`
-
-            Decide which information the organisation keeps, keep it current and retrievable, and protect it as its classification requires.
-
-            +++
-            Owner: Documentation Owner · 2 workflows · 3 work products
-
-         .. grid-item-card:: Release Management
-            :link: qx_assembly_release_management
-            :link-type: ref
-
-            :bdg-secondary:`draft`
-
-            :bdg-primary:`15288 6.4.10` :bdg-info:`SPL.2` :bdg-dark-line:`ISO 26262-4 cl. 11`
-
-            Release a baselined, audited organisation level configuration so every project applies a known, reproducible version.
-
-            +++
-            Owner: Release Manager · 1 workflow · 1 work product
-
-         .. grid-item-card:: Supplier and Acquisition Management
-            :link: qx_assembly_supplier_management
-            :link-type: ref
-
-            :bdg-secondary:`draft`
-
-            :bdg-primary:`15288 6.1.1-6.1.2` :bdg-info:`ACQ.4`
-
-            Agree what is acquired from suppliers, put the agreement in writing and monitor the supplier against it.
-
-            +++
-            Owner: Supplier Manager · 2 workflows · 3 work products
-
-
-      .. rubric:: Assure and improve
-
-      .. grid:: 1 2 3 3
-         :gutter: 2
-
-         .. grid-item-card:: Process Improvement and Tailoring
-            :link: qx_assembly_process_improvement
-            :link-type: ref
-
-            :bdg-secondary:`draft`
-
-            :bdg-primary:`15288 Annex A` :bdg-info:`PIM.3`
-
-            Turn audit findings, metrics and feedback into process improvements, and record how a project tailors the processes and why.
-
-            +++
-            Owner: Process Improvement Lead · 2 workflows · 4 work products
-
-         .. grid-item-card:: Quality Assurance
-            :link: qx_assembly_quality_assurance
-            :link-type: ref
-
-            :bdg-secondary:`draft`
-
-            :bdg-primary:`15288 6.3.8` :bdg-info:`SUP.1` :bdg-dark-line:`ISO 9001` :bdg-dark-line:`IATF 16949`
-
-            Quality management system and quality assurance: make sure processes are followed and work products meet their criteria.
-
-            +++
-            Owner: Quality Office · 2 workflows · 2 work products
+   .. tab-item:: Standards coverage
+
+      .. list-table::
+         :header-rows: 1
+         :class: qx-matrix
+
+         * - Process
+           - 15288 6.1.1-6.1.2
+           - 15288 6.3.1-6.3.2
+           - 15288 6.3.3
+           - 15288 6.3.4
+           - 15288 6.3.5
+           - 15288 6.3.6
+           - 15288 6.3.7
+           - 15288 6.3.8
+           - 15288 6.4.10
+           - 15288 6.4.2-6.4.3
+           - 15288 6.4.9
+           - 15288 Annex A
+           - ACQ.4
+           - MAN.3
+           - MAN.5
+           - MAN.6
+           - PIM.3
+           - SPL.2
+           - SUP.1
+           - SUP.10
+           - SUP.8
+           - SUP.9
+           - SWE.1
+           - SYS.2
+           - IATF 16949
+           - ISO 26262-4 cl. 11
+           - ISO 26262-8 cl. 7
+           - ISO 26262-8 cl. 8
+           - ISO 9001
+         * - :ref:`Decision Management <qx_assembly_decision_management>`
+           -
+           -
+           - ●
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+         * - :ref:`Measurement and Metrics <qx_assembly_measurement>`
+           -
+           -
+           -
+           -
+           -
+           -
+           - ●
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           - ●
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+         * - :ref:`Project Planning and Control <qx_assembly_project_planning>`
+           -
+           - ●
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           - ●
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+         * - :ref:`Risk Management <qx_assembly_risk_management>`
+           -
+           -
+           -
+           - ●
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           - ●
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+         * - :ref:`Problem Resolution <qx_assembly_problem_resolution>`
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           - ●
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+         * - :ref:`Requirements Management and Traceability <qx_assembly_requirements_management>`
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           - ●
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           - ●
+           - ●
+           -
+           -
+           -
+           -
+           -
+         * - :ref:`Verification and Reviews <qx_assembly_verification_reviews>`
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           - ●
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+         * - :ref:`Change Management <qx_assembly_change_management>`
+           -
+           -
+           -
+           -
+           - ●
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           - ●
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           - ●
+           -
+         * - :ref:`Configuration Management <qx_assembly_configuration_management>`
+           -
+           -
+           -
+           -
+           - ●
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           - ●
+           -
+           -
+           -
+           -
+           -
+           - ●
+           -
+           -
+         * - :ref:`Information and Documentation Management <qx_assembly_information_management>`
+           -
+           -
+           -
+           -
+           -
+           - ●
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+         * - :ref:`Release Management <qx_assembly_release_management>`
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           - ●
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           - ●
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           - ●
+           -
+           -
+           -
+         * - :ref:`Supplier and Acquisition Management <qx_assembly_supplier_management>`
+           - ●
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           - ●
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+         * - :ref:`Process Improvement and Tailoring <qx_assembly_process_improvement>`
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           - ●
+           -
+           -
+           -
+           -
+           - ●
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+         * - :ref:`Quality Assurance <qx_assembly_quality_assurance>`
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           - ●
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           -
+           - ●
+           -
+           -
+           -
+           -
+           -
+           - ●
+           -
+           -
+           -
+           - ●
+
+   .. tab-item:: Completeness
+
+      .. list-table::
+         :header-rows: 1
+         :class: qx-scorecard
+
+         * - Process
+           - Outcomes
+           - Capabilities
+           - Workflows
+           - With gates
+           - Work products
+           - Roles
+           - Templates
+         * - :ref:`Decision Management <qx_assembly_decision_management>`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`1 / 2`
+           - :bdg-success:`3`
+           - :bdg-success:`1`
+           - :bdg-success:`2`
+         * - :ref:`Measurement and Metrics <qx_assembly_measurement>`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`1 / 2`
+           - :bdg-success:`3`
+           - :bdg-success:`1`
+           - :bdg-success:`2`
+         * - :ref:`Project Planning and Control <qx_assembly_project_planning>`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`1 / 2`
+           - :bdg-success:`3`
+           - :bdg-success:`1`
+           - :bdg-success:`2`
+         * - :ref:`Risk Management <qx_assembly_risk_management>`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`1 / 2`
+           - :bdg-success:`3`
+           - :bdg-success:`1`
+           - :bdg-success:`2`
+         * - :ref:`Problem Resolution <qx_assembly_problem_resolution>`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`1 / 2`
+           - :bdg-success:`3`
+           - :bdg-success:`1`
+           - :bdg-success:`2`
+         * - :ref:`Requirements Management and Traceability <qx_assembly_requirements_management>`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`1 / 2`
+           - :bdg-success:`3`
+           - :bdg-success:`1`
+           - :bdg-success:`2`
+         * - :ref:`Verification and Reviews <qx_assembly_verification_reviews>`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`1 / 2`
+           - :bdg-success:`3`
+           - :bdg-success:`1`
+           - :bdg-success:`2`
+         * - :ref:`Change Management <qx_assembly_change_management>`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`1`
+           - :bdg-success:`1 / 1`
+           - :bdg-success:`2`
+           - :bdg-success:`1`
+           - :bdg-success:`2`
+         * - :ref:`Configuration Management <qx_assembly_configuration_management>`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`3`
+           - :bdg-success:`1 / 3`
+           - :bdg-success:`4`
+           - :bdg-success:`1`
+           - :bdg-success:`4`
+         * - :ref:`Information and Documentation Management <qx_assembly_information_management>`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`1 / 2`
+           - :bdg-success:`3`
+           - :bdg-success:`1`
+           - :bdg-success:`2`
+         * - :ref:`Release Management <qx_assembly_release_management>`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`1`
+           - :bdg-success:`1 / 1`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+         * - :ref:`Supplier and Acquisition Management <qx_assembly_supplier_management>`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`1 / 2`
+           - :bdg-success:`3`
+           - :bdg-success:`1`
+           - :bdg-success:`2`
+         * - :ref:`Process Improvement and Tailoring <qx_assembly_process_improvement>`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`2 / 2`
+           - :bdg-success:`4`
+           - :bdg-success:`1`
+           - :bdg-success:`2`
+         * - :ref:`Quality Assurance <qx_assembly_quality_assurance>`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`2`
+           - :bdg-success:`1 / 2`
+           - :bdg-success:`2`
+           - :bdg-success:`1`
+           - :bdg-success:`2`
 
 .. toctree::
    :hidden:

@@ -19,6 +19,7 @@ Information and Documentation Management Work Products
    :status: draft
    :version: 1
    :tags: information_management
+   :complies: std_req_iso15288_636
    :typed_by: gd_temp_qx_info_plan_template
 
    **Purpose:** Information to be kept, with owner, form, classification and retention.
@@ -28,6 +29,7 @@ Information and Documentation Management Work Products
    :status: draft
    :version: 1
    :tags: information_management
+   :complies: std_req_iso15288_636
    :typed_by: gd_temp_qx_info_register_template
 
    **Purpose:** Register of controlled documents with owner, version, classification and location.

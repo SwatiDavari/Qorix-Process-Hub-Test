@@ -19,6 +19,7 @@ Configuration Management Workflows
    :supported_by: rl_qx_saf_safety_office, rl_qx_sec_security_office
    :input: wp_qx_cfg_qms_report
    :output: wp_qx_cfg_policies
+   :achieves: oc_qx_cfg_items_controlled
 
    At least once per year, the Configuration Manager reviews the process description against the applicable standards, assesses the maturity level of every process area against the criteria, and turns improvement inputs into changes to the process description.
 

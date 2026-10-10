@@ -5,13 +5,18 @@ work_products:
   status: draft
   purpose: "Problem as first reported, with source, date and evidence."
   origin: external
+  internal: true
 - id: wp_qx_prb_problem_record
   title: "Problem Record"
   status: draft
   purpose: "Analysed problem with severity, cause, impact, owner and status."
   template: gd_temp_qx_prb_record_template
+  complies:
+  - std_req_aspice_40_sup_9
 - id: wp_qx_prb_resolution_report
   title: "Resolution Report"
   status: draft
   purpose: "Action taken, verification of the fix and closure date."
   template: gd_temp_qx_prb_resolution_template
+  complies:
+  - std_req_aspice_40_sup_9

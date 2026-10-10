@@ -19,27 +19,47 @@ Infrastructure Workflows
    :supported_by: rl_qx_saf_safety_office
    :input: wp_qx_infra_tool_requirements, wp_qx_gc_process_overlay
    :output: wp_qx_infra_toolchain_baseline, wp_qx_infra_tool_verification_report
+   :achieves: oc_qx_infra_tools_controlled
    :has: doc_concept_qx_infra_infra
+   :exercises: cap_qx_infra_baseline_control, cap_qx_infra_tool_qualification
 
    .. list-table:: Activities (RWE)
       :header-rows: 1
-      :widths: 5 70 25
+      :widths: 5 50 20 25
 
       * - #
         - Activity
         - Performed by
+        - Capability
       * - 1
         - Propose version bump (Bazel module / pip lock)
         - :need:`rl_qx_infra_engineer`
+        - :need:`cap_qx_infra_baseline_control`
       * - 2
         - Run framework self-tests and compose all reference projects
         - :need:`rl_qx_infra_engineer`
+        - :need:`cap_qx_infra_baseline_control`
       * - 3
         - Update tool verification report (TCL / TD)
         - :need:`rl_qx_infra_engineer`
+        - :need:`cap_qx_infra_tool_qualification`
       * - 4
         - Approve and release the baseline
         - :need:`rl_qx_infra_lead`
+        - :need:`cap_qx_infra_baseline_control`
+
+   **Gate.** This workflow cannot be approved until every work product below has reached its minimum status.
+
+   .. list-table:: Gate (entry criteria)
+      :header-rows: 1
+      :widths: 40 20 40
+
+      * - Work product
+        - Minimum status
+        - Produced by
+      * - :need:`wp_qx_infra_tool_requirements`
+        - approved
+        - outside these assemblies
 
 .. workflow:: Onboard a project repository
    :id: wf_qx_infra_onboard_repo
@@ -50,22 +70,41 @@ Infrastructure Workflows
    :approved_by: rl_qx_gc_project_lead
    :input: wp_qx_infra_toolchain_baseline, wp_qx_gc_project_tailoring
    :output: wp_qx_infra_repo_baseline
+   :achieves: oc_qx_infra_repo_ready
    :contains: gd_temp_qx_infra_repo_onboarding
+   :exercises: cap_qx_infra_repo_onboarding
 
    .. list-table:: Activities (RWE)
       :header-rows: 1
-      :widths: 5 70 25
+      :widths: 5 50 20 25
 
       * - #
         - Activity
         - Performed by
+        - Capability
       * - 1
         - Add bazel_dep on qorix_process_framework and call qorix_docs()
         - :need:`rl_qx_infra_engineer`
+        - :need:`cap_qx_infra_repo_onboarding`
       * - 2
         - Add CI workflow (docs build + qpm lint-needs)
         - :need:`rl_qx_infra_engineer`
+        - :need:`cap_qx_infra_repo_onboarding`
       * - 3
         - Confirm first green build
         - :need:`rl_qx_gc_project_lead`
+        - :need:`cap_qx_infra_repo_onboarding`
+
+   **Gate.** This workflow cannot be approved until every work product below has reached its minimum status.
+
+   .. list-table:: Gate (entry criteria)
+      :header-rows: 1
+      :widths: 40 20 40
+
+      * - Work product
+        - Minimum status
+        - Produced by
+      * - :need:`wp_qx_infra_toolchain_baseline`
+        - approved
+        - :need:`wf_qx_infra_maintain_toolchain`
 

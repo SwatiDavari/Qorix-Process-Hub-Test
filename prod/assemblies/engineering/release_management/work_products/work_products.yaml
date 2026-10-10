@@ -5,3 +5,6 @@ work_products:
   status: draft
   purpose: Announces the released organisation level baseline to projects, with the changes it contains and any open points.
   template: gd_temp_qx_rel_release_notice_template
+  complies:
+  - std_req_aspice_40_spl_2
+  - std_req_iso15288_6410

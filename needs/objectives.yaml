@@ -1,0 +1,69 @@
+# Qorix business objectives, in technology neutral wording. An objective names no standard, integrity level, tool or
+# product domain; those bind through the policy it drives. Targets are set by Qorix and stay TBD until approved.
+objectives:
+  - id: obj_qx_gc_safety_first
+    title: Safety is never traded against schedule
+    status: draft
+    statement: Every safety-related product meets its required level of safety without schedule or budget pressure overriding safety work.
+    measure: Share of safety-related projects with an approved tailoring record before product-level safety work starts.
+    target: TBD
+    scope: GLOB
+    owner: rl_qx_gc_head
+    anchor: Annex E.4, critical quality characteristics
+    drives: [pol_qx_saf_safety]
+    delivered_by: [safety]
+  - id: obj_qx_gc_process_capability
+    title: Every project runs at an independently assessed, sustained process capability
+    status: draft
+    statement: Each project reaches and keeps the process capability the organisation targets, confirmed by an independent assessment.
+    measure: Assessed capability level per project, against the organisation's target level.
+    target: TBD
+    scope: GLOB
+    owner: rl_qx_gc_head
+    anchor: 6.2.5 quality objectives; Annex C, process reference model for assessment
+    drives: [pol_qx_qa_quality]
+    delivered_by: [quality_assurance]
+  - id: obj_qx_gc_security_continuous
+    title: Security is a continuous duty, not a one-time gate
+    status: draft
+    statement: Security is managed continuously across governance, culture, tools, audit and monitoring, not checked once at a product gate.
+    measure: Share of in-scope projects with a current security management and monitoring record.
+    target: TBD
+    scope: GLOB
+    owner: rl_qx_gc_head
+    anchor: Annex E.4, critical quality characteristics
+    drives: [pol_qx_sec_cybersecurity]
+    delivered_by: [security]
+  - id: obj_qx_gc_tailor_not_fork
+    title: One process framework, tailored and never forked
+    status: draft
+    statement: Projects adapt the organisation process only by recorded, approved tailoring, never by keeping a private copy.
+    measure: Share of projects on an approved tailoring record, and the count of unapproved deviations.
+    target: TBD
+    scope: GLOB
+    owner: rl_qx_gc_head
+    anchor: Annex A, tailoring process
+    drives: [pol_qx_qa_quality, pol_qx_saf_safety]
+    delivered_by: [governance_compliance]
+  - id: obj_qx_gc_skills_available
+    title: Skills the projects need are available when they are needed
+    status: draft
+    statement: The skills projects need are identified, provided and kept current, so no project starts work without them.
+    measure: Share of roles with current competence evidence.
+    target: TBD
+    scope: GLOB
+    owner: rl_qx_gc_head
+    anchor: 6.2.4 outcomes a to c
+    drives: [pol_qx_saf_safety, pol_qx_qa_quality, pol_qx_sec_cybersecurity]
+    delivered_by: [training]
+  - id: obj_qx_gc_process_shareable
+    title: The process base can be shared and adopted outside Qorix without rewriting
+    status: draft
+    statement: Process content carries no organisation-specific or tool-specific wording, so another organisation can adopt it as it is.
+    measure: Share of hub content with no organisation-specific or tool-specific wording.
+    target: TBD
+    scope: GLOB
+    owner: rl_qx_gc_head
+    anchor: none, Qorix specific
+    drives: []
+    delivered_by: [governance_compliance]

@@ -18,3 +18,4 @@ work_products:
   title: Training Path
   origin: external
   purpose: The trainings a person plans to take for a role, agreed with their line manager.
+  internal: true

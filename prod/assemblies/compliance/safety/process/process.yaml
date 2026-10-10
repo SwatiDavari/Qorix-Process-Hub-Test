@@ -20,3 +20,35 @@ getting_started: |-
 
   Four strands make up this area: (1) maintaining the Functional Safety Management System, (2) performing independent assessments, (3) managing safety anomalies, and (4) tailoring rules for project-level safety plans.
 concepts: []
+outcomes:
+- id: oc_qx_saf_management_maintained
+  title: The safety management system is current and approved
+  status: draft
+  statement: The organisation safety management system is reviewed, updated and approved at least once a year, and projects work to its current version.
+  complies: [std_wp_iso26262_management_551]
+- id: oc_qx_saf_anomalies_handled
+  title: A safety anomaly in an organisation level asset is analysed, corrected and notified
+  status: draft
+  statement: A safety anomaly in an organisation level asset is analysed, corrected and notified to every affected project.
+  complies: [std_wp_iso26262_management_551]
+- id: oc_qx_saf_independence_assured
+  title: Safety activities are assessed independently
+  status: draft
+  statement: Safety activities are assessed by someone independent of the people who performed them, and the findings are recorded.
+  complies: [std_wp_iso26262_management_551, std_req_iso15288_638]
+capabilities:
+- id: cap_qx_saf_management_review
+  title: Safety management review
+  status: draft
+  description: Review the safety management system against its standard and its metrics and decide what changes.
+  realizes: [oc_qx_saf_management_maintained]
+- id: cap_qx_saf_anomaly_handling
+  title: Anomaly handling
+  status: draft
+  description: Route, analyse, correct and notify a safety anomaly.
+  realizes: [oc_qx_saf_anomalies_handled]
+- id: cap_qx_saf_independent_assessment
+  title: Independent assessment
+  status: draft
+  description: Evaluate safety activities independently of their performers and record the findings.
+  realizes: [oc_qx_saf_independence_assured]

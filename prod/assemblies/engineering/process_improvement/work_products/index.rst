@@ -19,6 +19,7 @@ Process Improvement and Tailoring Work Products
    :status: draft
    :version: 1
    :tags: process_improvement
+   :complies: std_req_iso15288_annex_a, std_req_aspice_40_pim_3
    :typed_by: gd_temp_qx_pim_plan_template
 
    **Purpose:** Selected improvements with owner, date, expected effect and evidence.
@@ -38,6 +39,7 @@ Process Improvement and Tailoring Work Products
    :status: draft
    :version: 1
    :tags: process_improvement
+   :complies: std_req_iso15288_annex_a, std_req_aspice_40_iic_15_54
    :typed_by: gd_temp_qx_pim_tailoring_template
 
    **Purpose:** Parts of the organisation level process the project narrows, with rationale and approval.

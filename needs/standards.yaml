@@ -39,3 +39,8 @@ standards:
   - {id: std_req_aspice_40_sup_9, standard: "Automotive SPICE 4.0", clause: "SUP.9", title: "Problem resolution management"}
   - {id: std_req_aspice_40_acq_4, standard: "Automotive SPICE 4.0", clause: "ACQ.4", title: "Supplier monitoring"}
   - {id: std_req_aspice_40_pim_3, standard: "Automotive SPICE 4.0", clause: "PIM.3", title: "Process improvement"}
+  - {id: std_req_iso15288_625, standard: "ISO/IEC/IEEE 15288:2023", clause: "6.2.5", title: "Quality management process"}
+  - {id: std_req_iso15288_621, standard: "ISO/IEC/IEEE 15288:2023", clause: "6.2.1", title: "Life cycle model management process"}
+  - {id: std_req_iso15288_622, standard: "ISO/IEC/IEEE 15288:2023", clause: "6.2.2", title: "Infrastructure management process"}
+  - {id: std_req_iso15288_624, standard: "ISO/IEC/IEEE 15288:2023", clause: "6.2.4", title: "Human resource management process"}
+  - {id: std_req_iso15288_6411, standard: "ISO/IEC/IEEE 15288:2023", clause: "6.4.11", title: "Validation process"}

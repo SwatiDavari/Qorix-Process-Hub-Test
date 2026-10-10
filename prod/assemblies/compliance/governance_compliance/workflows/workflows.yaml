@@ -23,12 +23,20 @@ workflows:
     by: rl_qx_gc_process_owner
   - step: Edit operations in the Qorix tier
     by: rl_qx_gc_process_owner
+    capability: cap_qx_gc_process_release
   - step: CI composes all projects; any project that no longer composes blocks the merge
     by: rl_qx_infra_engineer
   - step: Review safety / security / quality impact
     by: rl_qx_saf_safety_office
+    capability: cap_qx_gc_process_release
   - step: Approve and tag a framework release
     by: rl_qx_gc_head
+    capability: cap_qx_gc_process_release
+  achieves:
+  - oc_qx_gc_process_consistent
+  gate:
+  - wp: wp_qx_gc_process_improvement_report
+    min_status: approved
 - id: wf_qx_gc_tailor_project
   title: Tailor process for a project
   responsible: rl_qx_gc_project_lead
@@ -51,10 +59,18 @@ workflows:
     by: rl_qx_gc_project_lead
   - step: Add narrowing operations with a rationale each
     by: rl_qx_gc_project_lead
+    capability: cap_qx_gc_tailoring_review
   - step: '`qpm compose` must pass; generated tailoring report is reviewed'
     by: rl_qx_saf_safety_office
+    capability: cap_qx_gc_tailoring_review
   - step: Approve the tailoring (merge to main)
     by: rl_qx_gc_head
+    capability: cap_qx_gc_tailoring_review
+  achieves:
+  - oc_qx_gc_tailoring_controlled
+  gate:
+  - wp: wp_qx_gc_process_overlay
+    min_status: approved
 - id: wf_qx_gc_compliance_audit
   title: Plan and perform compliance audit
   responsible: rl_qx_gc_compliance_auditor
@@ -73,11 +89,20 @@ workflows:
   activities:
   - step: Select scope from the tailoring record (areas, integrity levels)
     by: rl_qx_gc_compliance_auditor
+    capability: cap_qx_gc_conformance_audit
   - step: Run `qpm lint-needs` on the project needs.json for objective evidence
     by: rl_qx_gc_compliance_auditor
   - step: Interview and sample work products
     by: rl_qx_gc_compliance_auditor
+    capability: cap_qx_gc_conformance_audit
   - step: Record each finding as a gc_finding need linked (affects) to the item
     by: rl_qx_gc_compliance_auditor
+    capability: cap_qx_gc_conformance_audit
   - step: Approve the audit report
     by: rl_qx_gc_head
+
+  achieves:
+  - oc_qx_gc_compliance_evidenced
+  gate:
+  - wp: wp_qx_gc_project_tailoring
+    min_status: approved

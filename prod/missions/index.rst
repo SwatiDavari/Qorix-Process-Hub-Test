@@ -40,3 +40,9 @@ Every identifier follows ``<type>_qx_<assembly code>_<name>``, for example
 ``wf_qx_gc_tailor_project``, ``wp_qx_saf_safety_tailoring`` or
 ``rl_qx_qa_quality_office``. Identifiers never contain a double underscore; the
 generator rejects any that do.
+
+.. toctree::
+   :hidden:
+
+   objectives
+   objective_register

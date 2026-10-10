@@ -6,18 +6,28 @@ work_products:
   purpose: Quality management system status report input to process management reviews.
   template: gd_temp_qx_cfg_qms_report_template
   origin: external
+  internal: true
 - id: wp_qx_cfg_policies
   title: Policies
   status: draft
   purpose: Updated process policies and plans as output of process management activities.
   template: gd_temp_qx_cfg_policy_template
+  complies:
+  - std_req_aspice_40_sup_8
+  - std_req_iso15288_635
 - id: wp_qx_cfg_config_item_list
   title: Configuration Item List
   status: draft
   purpose: List of organisation level configuration items under control, with owner and version.
   template: gd_temp_qx_cfg_config_item_list_template
+  complies:
+  - std_req_aspice_40_sup_8
+  - std_req_iso15288_635
 - id: wp_qx_cfg_baseline
   title: Baseline Record
   status: draft
   purpose: Frozen, versioned set of configuration items that reflects all approved changes. Input to release.
   template: gd_temp_qx_cfg_baseline_template
+  complies:
+  - std_req_aspice_40_sup_8
+  - std_req_iso15288_635

@@ -12,6 +12,9 @@ work_products:
 
     **Consumed by:** Workflow *Conduct Organisation Level Internal Audit*
   template: gd_temp_qx_qa_qms_plan_template
+  complies:
+  - std_req_aspice_40_sup_1
+  - std_req_iso15288_625
 - id: wp_qx_qa_audit_report
   title: Audit Report
   status: draft
@@ -23,3 +26,7 @@ work_products:
 
     **Consumed by:** Workflow *Maintain Quality Management System*
   template: gd_temp_qx_qa_audit_report_template
+  complies:
+  - std_wp_iso26262_management_551
+  - std_req_iso15288_638
+  - std_req_aspice_40_sup_1

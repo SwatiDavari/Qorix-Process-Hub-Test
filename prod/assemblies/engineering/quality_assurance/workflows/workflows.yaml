@@ -54,6 +54,8 @@ workflows:
     min_status: approved
   output:
   - wp_qx_qa_qms_plan
+  achieves:
+  - oc_qx_qa_compliance_assured
   description: |-
     At least once per year, the Quality Office reviews aggregated internal audit
     findings and quality metrics and updates the QMS accordingly.

@@ -72,6 +72,7 @@ Quality Assurance Workflows
    :supported_by: rl_qx_saf_safety_office, rl_qx_sec_security_office
    :input: wp_qx_qa_audit_report
    :output: wp_qx_qa_qms_plan
+   :achieves: oc_qx_qa_compliance_assured
 
    At least once per year, the Quality Office reviews aggregated internal audit
    findings and quality metrics and updates the QMS accordingly.

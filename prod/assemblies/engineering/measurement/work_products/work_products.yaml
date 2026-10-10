@@ -5,13 +5,20 @@ work_products:
   status: draft
   purpose: "What a decision maker needs to know and why."
   origin: external
+  internal: true
 - id: wp_qx_meas_metrics_plan
   title: "Metrics Plan"
   status: draft
   purpose: "Defined metrics with information need, source, interval, owner and target."
   template: gd_temp_qx_meas_plan_template
+  complies:
+  - std_req_iso15288_637
+  - std_req_aspice_40_man_6
 - id: wp_qx_meas_metrics_report
   title: "Metrics Report"
   status: draft
   purpose: "Metric values for the period with trend and interpretation."
   template: gd_temp_qx_meas_report_template
+  complies:
+  - std_req_iso15288_637
+  - std_req_aspice_40_man_6

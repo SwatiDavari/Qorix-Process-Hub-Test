@@ -24,6 +24,51 @@ Provide and keep qualified the docs-as-code toolchain (Bazel, Sphinx-needs, qpm)
    content; they reference a framework version and add only their tailoring. Tool
    changes are qualified once, centrally.
 
+.. outcome:: Tools are identified, versioned and qualified before projects rely on them
+   :id: oc_qx_infra_tools_controlled
+   :status: draft
+   :version: 1
+   :tags: infrastructure
+   :complies: std_wp_isosae21434_org_management_554, std_req_iso15288_622, std_req_aspice_40_iic_13_55
+
+   Every tool used to produce or check work products is identified, versioned and qualified for its intended use before projects rely on its results.
+
+.. outcome:: A project repository is ready before project work starts
+   :id: oc_qx_infra_repo_ready
+   :status: draft
+   :version: 1
+   :tags: infrastructure
+   :complies: std_req_iso15288_622, std_req_aspice_40_iic_13_55
+
+   A project repository reaches a verified, reproducible build with the organisation process applied before project work starts.
+
+.. capability:: Tool qualification
+   :id: cap_qx_infra_tool_qualification
+   :status: draft
+   :version: 1
+   :tags: infrastructure
+   :realizes: oc_qx_infra_tools_controlled
+
+   Establish the confidence a tool deserves for its intended use and record the evidence.
+
+.. capability:: Baseline control
+   :id: cap_qx_infra_baseline_control
+   :status: draft
+   :version: 1
+   :tags: infrastructure
+   :realizes: oc_qx_infra_tools_controlled, oc_qx_infra_repo_ready
+
+   Version, test and release the set of tools and their configuration as one baseline.
+
+.. capability:: Repository onboarding
+   :id: cap_qx_infra_repo_onboarding
+   :status: draft
+   :version: 1
+   :tags: infrastructure
+   :realizes: oc_qx_infra_repo_ready
+
+   Apply the organisation process and build checks to a project repository and confirm a first clean build.
+
 .. toctree::
    :maxdepth: 1
 

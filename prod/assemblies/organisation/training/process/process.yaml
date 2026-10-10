@@ -22,3 +22,25 @@ concepts:
   body: |
     Each role has required trainings (`training` needs linked with `qualifies`). The
     competence matrix is generated from those links; records prove completion.
+outcomes:
+- id: oc_qx_trn_competence_defined
+  title: The competence each role needs is defined and recorded
+  status: draft
+  statement: The competence every role needs is defined, and each person current competence against it is recorded.
+  complies: [std_wp_iso26262_management_552, std_wp_isosae21434_org_management_552, std_req_iso15288_624]
+- id: oc_qx_trn_training_delivered
+  title: Training that closes a competence gap is delivered and recorded
+  status: draft
+  statement: Training that closes a competence gap is developed, delivered and recorded, and kept current when the organisation process changes.
+  complies: [std_wp_iso26262_management_552, std_wp_isosae21434_org_management_552, std_req_aspice_40_iic_06_04, std_req_iso15288_624]
+capabilities:
+- id: cap_qx_trn_competence_mapping
+  title: Competence mapping
+  status: draft
+  description: Define the competence each role needs and record each person current competence.
+  realizes: [oc_qx_trn_competence_defined]
+- id: cap_qx_trn_training_delivery
+  title: Training delivery
+  status: draft
+  description: Develop training material from the process, deliver it and record completion.
+  realizes: [oc_qx_trn_training_delivered]

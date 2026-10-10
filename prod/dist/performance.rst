@@ -23,7 +23,7 @@ Element types by origin
 =======================
 
 * qorix-base: 52
-* qorix: 4
+* qorix: 6
 
 Operations log
 ==============
@@ -120,6 +120,22 @@ Operations log
      - extend_element_type
      - ``workflow``
      - A workflow achieves outcomes and exercises capabilities through its activities.
+   * - qorix
+     - add_relation_type
+     - ``drives``
+     - -
+   * - qorix
+     - add_relation_type
+     - ``contributes_to``
+     - -
+   * - qorix
+     - add_element_type
+     - ``policy``
+     - An organisation level policy: the why behind a discipline's detailed requirements. It names the standard clauses it rests on through `complies` and drives the outcomes of the processes that carry it out, so a policy is traceable down to workflows and up to the objectives that drive it.
+   * - qorix
+     - add_element_type
+     - ``objective``
+     - A business objective in technology neutral wording. It drives policies and sits at the top of the chain objective, policy, process, outcome, capability, work product. A project objective contributes to an organisation objective.
    * - performance
      - exclude_element_type
      - ``gc_finding``

@@ -19,6 +19,7 @@ Risk Management Work Products
    :status: draft
    :version: 1
    :tags: risk_management
+   :complies: std_req_iso15288_634, std_req_aspice_40_man_5
    :typed_by: gd_temp_qx_risk_register_template
 
    **Purpose:** Identified risks with rating, owner, treatment and status.
@@ -28,6 +29,7 @@ Risk Management Work Products
    :status: draft
    :version: 1
    :tags: risk_management
+   :complies: std_req_iso15288_634, std_req_aspice_40_man_5
    :typed_by: gd_temp_qx_risk_report_template
 
    **Purpose:** Risk position for the review period: new, changed and closed risks and open treatments.

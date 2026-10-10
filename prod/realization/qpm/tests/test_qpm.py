@@ -12,7 +12,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(ROOT / "prod" / "realization" / "qpm"))
 
-from qpm import catalog, reports  # noqa: E402
+from qpm import catalog, registers, reports  # noqa: E402
 from qpm.adapters import sphinx_needs  # noqa: E402
 from qpm.compose import compose  # noqa: E402
 from qpm.model import QpmError, dump_yaml, load_yaml  # noqa: E402
@@ -261,6 +261,7 @@ def test_part_of_cycle_is_detected():
 def test_outcome_needs_workflow_capability_and_clause():
     areas = catalog.load_catalog(ASSEMBLIES)
     _wf(areas, "wf_qx_qa_internal_audit")["achieves"] = []
+    _wf(areas, "wf_qx_qa_maintain_qms")["achieves"] = []
     assert "no workflow achieves this outcome" in _errs(areas)
     areas = catalog.load_catalog(ASSEMBLIES)
     _area(areas, "quality_assurance")["capabilities"] = []
@@ -334,3 +335,101 @@ def test_iso15288_ids_match_the_standard_id_pattern():
 
 if __name__ == "__main__":
     sys.exit(pytest.main([__file__, "-q"]))
+
+
+# ---------------------------------------------------------------- objectives, policies, minimum definition
+def _reg():
+    areas = catalog.load_catalog(ASSEMBLIES)
+    stds = catalog.load_standards(STANDARDS)
+    objs, pols = registers.load_registers(STANDARDS)
+    return copy.deepcopy(areas), stds, copy.deepcopy(objs), copy.deepcopy(pols)
+
+
+def _rerrs(areas, stds, objs, pols):
+    return "\n".join(registers.check_registers(objs, pols, areas, stds)[0])
+
+
+def test_registers_are_consistent():
+    areas, stds, objs, pols = _reg()
+    assert objs and pols
+    assert registers.check_registers(objs, pols, areas, stds)[0] == []
+
+
+def test_objective_must_be_technology_neutral():
+    areas, stds, objs, pols = _reg()
+    objs[0]["statement"] = "Meet ASIL D under ISO 26262 using Bazel."
+    e = _rerrs(areas, stds, objs, pols)
+    assert "ASIL" in e and "ISO" in e and "Bazel" in e
+
+
+def test_objective_needs_owner_measure_and_resolving_links():
+    areas, stds, objs, pols = _reg()
+    objs[0]["owner"] = "rl_qx_nobody"
+    objs[0]["measure"] = ""
+    objs[0]["drives"] = ["pol_qx_x_missing"]
+    objs[0]["delivered_by"] = ["no_such_assembly"]
+    e = _rerrs(areas, stds, objs, pols)
+    for frag in ("unknown role", "missing measure", "unknown policy", "unknown assembly"):
+        assert frag in e, frag
+
+
+def test_project_objective_must_contribute_to_a_glob_objective():
+    areas, stds, objs, pols = _reg()
+    objs[0]["scope"] = "PROJECT"
+    assert "must contribute_to" in _rerrs(areas, stds, objs, pols)
+    objs[0]["contributes_to"] = [objs[1]["id"]]
+    assert "must contribute_to" not in _rerrs(areas, stds, objs, pols)
+    objs[2]["contributes_to"] = [objs[1]["id"]]
+    assert "GLOB objective cannot contribute_to" in _rerrs(areas, stds, objs, pols)
+
+
+def test_policy_needs_an_objective_and_resolving_links():
+    areas, stds, objs, pols = _reg()
+    for o in objs:
+        o["drives"] = [d for d in o.get("drives") or [] if d != pols[0]["id"]]
+    assert "no objective drives this policy" in _rerrs(areas, stds, objs, pols)
+    pols[0]["drives"] = ["oc_qx_missing"]
+    pols[0]["standards"] = ["std_req_nope"]
+    pols[0]["work_product"] = "wp_qx_qa_qms_plan"
+    e = _rerrs(areas, stds, objs, pols)
+    assert "unresolved outcome" in e and "unresolved standard" in e and "belongs to" in e
+
+
+def test_objective_without_policy_is_only_a_warning():
+    areas, stds, objs, pols = _reg()
+    errs, warns = registers.check_registers(objs, pols, areas, stds)
+    assert errs == [] and any("drives no policy" in w for w in warns)
+
+
+def test_minimum_definition_holds_for_every_assembly():
+    assert registers.check_minimum(catalog.load_catalog(ASSEMBLIES)) == []
+
+
+def test_minimum_definition_detects_gaps():
+    areas = copy.deepcopy(catalog.load_catalog(ASSEMBLIES))
+    a = _area(areas, "safety")
+    a["outcomes"] = []
+    a["capabilities"] = []
+    for w in a["workflows"]:
+        w["gate"] = []
+    a["workproducts"][0].pop("complies", None)
+    a["workproducts"][0].pop("internal", None)
+    e = "\n".join(registers.check_minimum(areas))
+    for frag in ("at least one outcome", "at least one capability", "at least one workflow with an entry gate", "complies clause or internal"):
+        assert frag in e, frag
+
+
+def test_rendered_registers_are_current():
+    areas = catalog.load_catalog(ASSEMBLIES)
+    stds = catalog.load_standards(STANDARDS)
+    objs, pols = registers.load_registers(STANDARDS)
+    files = registers.render_registers(objs, pols, areas, stds)
+    assert set(files) == {"missions/objective_register.rst", "policies/register.rst"}
+    for rel, txt in files.items():
+        assert (ROOT / "prod" / rel).read_text(encoding="utf-8") == txt, rel
+
+
+def test_overlay_adds_objective_and_policy_types():
+    m = compose([BASE, OVERLAY])
+    assert {"objective", "policy"} <= set(m["element_types"])
+    assert m["element_types"]["objective"]["relations"]["drives"]["targets"] == ["policy"]

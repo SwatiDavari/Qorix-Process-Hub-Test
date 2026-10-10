@@ -12,6 +12,8 @@ workflows:
   - wp_qx_cfg_qms_report
   output:
   - wp_qx_cfg_policies
+  achieves:
+  - oc_qx_cfg_items_controlled
   description: At least once per year, the Configuration Manager reviews the process description against the applicable standards, assesses the maturity level of every process area against the criteria, and turns
     improvement inputs into changes to the process description.
 

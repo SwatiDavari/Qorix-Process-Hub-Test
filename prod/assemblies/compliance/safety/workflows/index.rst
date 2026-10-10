@@ -19,8 +19,48 @@ Safety Workflows
    :supported_by: rl_qx_qa_quality_office
    :input: wp_qx_qa_audit_report
    :output: wp_qx_saf_platform_mgmt, wp_qx_saf_policies
+   :achieves: oc_qx_saf_management_maintained
+   :exercises: cap_qx_saf_management_review
 
    The Safety Office reviews the Functional Safety Management System at least once per year against ISO 26262 and quality metrics, and updates the FSMS document. The Head of G&C approves changes to the organisation level safety baseline.
+
+   .. list-table:: Activities (RWE)
+      :header-rows: 1
+      :widths: 5 50 20 25
+
+      * - #
+        - Activity
+        - Performed by
+        - Capability
+      * - 1
+        - Review the management system against its standard and its metrics
+        - :need:`rl_qx_saf_safety_office`
+        - :need:`cap_qx_saf_management_review`
+      * - 2
+        - Update the management system document and the policies
+        - :need:`rl_qx_saf_safety_office`
+        - :need:`cap_qx_saf_management_review`
+      * - 3
+        - Check the update against the audit findings
+        - :need:`rl_qx_qa_quality_office`
+        -
+      * - 4
+        - Approve changes to the organisation level safety baseline
+        - :need:`rl_qx_gc_head`
+        -
+
+   **Gate.** This workflow cannot be approved until every work product below has reached its minimum status.
+
+   .. list-table:: Gate (entry criteria)
+      :header-rows: 1
+      :widths: 40 20 40
+
+      * - Work product
+        - Minimum status
+        - Produced by
+      * - :need:`wp_qx_qa_audit_report`
+        - approved
+        - :need:`wf_qx_saf_independent_assessment`, :need:`wf_qx_qa_internal_audit`
 
 .. workflow:: Manage Organisation Level Safety Anomaly
    :id: wf_qx_saf_safety_anomaly
@@ -32,8 +72,52 @@ Safety Workflows
    :supported_by: rl_qx_sec_security_office
    :input: wp_qx_saf_policies
    :output: wp_qx_saf_safety_anomaly_report
+   :achieves: oc_qx_saf_anomalies_handled
+   :exercises: cap_qx_saf_anomaly_handling
 
    The Safety Office routes a reported safety anomaly in an organisation level asset, coordinates its analysis and correction, and ensures notification to affected projects. The Head of G&C approves any resulting policy change.
+
+   .. list-table:: Activities (RWE)
+      :header-rows: 1
+      :widths: 5 50 20 25
+
+      * - #
+        - Activity
+        - Performed by
+        - Capability
+      * - 1
+        - Record the anomaly and route it to the owner of the affected asset
+        - :need:`rl_qx_saf_safety_office`
+        - :need:`cap_qx_saf_anomaly_handling`
+      * - 2
+        - Analyse the anomaly and agree the correction
+        - :need:`rl_qx_saf_safety_office`
+        - :need:`cap_qx_saf_anomaly_handling`
+      * - 3
+        - Support the analysis where the anomaly has security implications
+        - :need:`rl_qx_sec_security_office`
+        -
+      * - 4
+        - Notify every affected project
+        - :need:`rl_qx_saf_safety_office`
+        - :need:`cap_qx_saf_anomaly_handling`
+      * - 5
+        - Approve any resulting policy change
+        - :need:`rl_qx_gc_head`
+        -
+
+   **Gate.** This workflow cannot be approved until every work product below has reached its minimum status.
+
+   .. list-table:: Gate (entry criteria)
+      :header-rows: 1
+      :widths: 40 20 40
+
+      * - Work product
+        - Minimum status
+        - Produced by
+      * - :need:`wp_qx_saf_policies`
+        - approved
+        - :need:`wf_qx_saf_maintain_fsms`
 
 .. workflow:: Perform Independent Functional Safety Assessment
    :id: wf_qx_saf_independent_assessment
@@ -45,6 +129,50 @@ Safety Workflows
    :supported_by: rl_qx_saf_safety_office
    :input: wp_qx_saf_safety_tailoring
    :output: wp_qx_qa_audit_report
+   :achieves: oc_qx_saf_independence_assured
+   :exercises: cap_qx_saf_independent_assessment
 
    An independent assessor evaluates whether Qorix's functional safety activities achieve the objectives of ISO 26262. The assessment covers process compliance and product-level safety cases. Findings are recorded as an assessment report.
+
+   .. list-table:: Activities (RWE)
+      :header-rows: 1
+      :widths: 5 50 20 25
+
+      * - #
+        - Activity
+        - Performed by
+        - Capability
+      * - 1
+        - Plan the assessment scope from the tailoring record
+        - :need:`rl_qx_saf_independent_assessor`
+        - :need:`cap_qx_saf_independent_assessment`
+      * - 2
+        - Evaluate process compliance and the product level safety cases
+        - :need:`rl_qx_saf_independent_assessor`
+        - :need:`cap_qx_saf_independent_assessment`
+      * - 3
+        - Provide the evidence the assessor asks for
+        - :need:`rl_qx_saf_safety_office`
+        -
+      * - 4
+        - Record the findings in the assessment report
+        - :need:`rl_qx_saf_independent_assessor`
+        - :need:`cap_qx_saf_independent_assessment`
+      * - 5
+        - Approve the assessment report
+        - :need:`rl_qx_gc_head`
+        -
+
+   **Gate.** This workflow cannot be approved until every work product below has reached its minimum status.
+
+   .. list-table:: Gate (entry criteria)
+      :header-rows: 1
+      :widths: 40 20 40
+
+      * - Work product
+        - Minimum status
+        - Produced by
+      * - :need:`wp_qx_saf_safety_tailoring`
+        - approved
+        - :need:`wf_qx_gc_tailor_project`
 

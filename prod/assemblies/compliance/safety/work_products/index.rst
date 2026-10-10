@@ -9,6 +9,7 @@ Safety Work Products
    :status: draft
    :version: 1
    :tags: safety
+   :complies: std_wp_iso26262_management_551
    :typed_by: gd_temp_qx_saf_fsms_template
 
    **Purpose:** The Functional Safety Management System document covering Qorix's organisation level safety activities, objectives, and process tailoring rules.
@@ -18,6 +19,7 @@ Safety Work Products
    :status: draft
    :version: 1
    :tags: safety
+   :complies: std_req_iso15288_annex_a, std_req_aspice_40_iic_15_54
    :typed_by: gd_temp_qx_saf_tailoring_template
 
    **Purpose:** Tailoring rules for project-level safety plans derived from the organisation level FSMS.
@@ -27,6 +29,7 @@ Safety Work Products
    :status: draft
    :version: 1
    :tags: safety
+   :complies: std_wp_iso26262_management_551
    :typed_by: gd_temp_qx_saf_anomaly_template
 
    **Purpose:** Record of a safety anomaly, its analysis, resolution, and notification to affected projects.
@@ -36,6 +39,7 @@ Safety Work Products
    :status: draft
    :version: 1
    :tags: safety
+   :complies: std_wp_iso26262_management_551
    :typed_by: gd_temp_qx_saf_fsms_template
 
    **Purpose:** Organisation level safety policies updated as output of safety management activities.

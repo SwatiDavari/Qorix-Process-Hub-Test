@@ -20,10 +20,17 @@ workflows:
   activities:
   - step: Derive methods and coverage targets per ASIL / CAL
     by: rl_qx_val_validation_lead
+    capability: cap_qx_val_test_policy_definition
   - step: Align with the verification plan
     by: rl_qx_val_test_community
+    capability: cap_qx_val_test_policy_definition
   - step: Approve the policy
     by: rl_qx_gc_head
+  achieves:
+  - oc_qx_val_policy_set
+  gate:
+  - wp: wp_qx_val_verification_plan
+    min_status: proposed
 - id: wf_qx_val_qualify_test_system
   title: Specify and qualify test system
   responsible: rl_qx_val_validation_engineer
@@ -41,10 +48,17 @@ workflows:
   activities:
   - step: Specify the test system and its configuration baseline
     by: rl_qx_val_validation_engineer
+    capability: cap_qx_val_test_system_qualification
   - step: Classify and qualify (tool confidence level)
     by: rl_qx_val_validation_engineer
+    capability: cap_qx_val_test_system_qualification
   - step: Approve for use
     by: rl_qx_val_validation_lead
+  achieves:
+  - oc_qx_val_test_systems_qualified
+  gate:
+  - wp: wp_qx_val_test_policy
+    min_status: approved
 - id: wf_qx_val_execute_validation
   title: Execute product validation
   responsible: rl_qx_val_validation_engineer
@@ -60,7 +74,15 @@ workflows:
   activities:
   - step: Plan validation scope from stakeholder requirements
     by: rl_qx_val_validation_engineer
+    capability: cap_qx_val_validation_execution
   - step: Execute on qualified test systems
     by: rl_qx_val_validation_engineer
+    capability: cap_qx_val_validation_execution
   - step: Approve the validation report
     by: rl_qx_val_validation_lead
+
+  achieves:
+  - oc_qx_val_product_validated
+  gate:
+  - wp: wp_qx_val_test_system_spec
+    min_status: approved

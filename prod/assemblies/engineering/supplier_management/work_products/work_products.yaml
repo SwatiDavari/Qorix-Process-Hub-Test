@@ -5,13 +5,21 @@ work_products:
   status: draft
   purpose: "What is to be acquired, why and by when."
   origin: external
+  internal: true
 - id: wp_qx_sup_agreement
   title: "Supplier Agreement"
   status: draft
   purpose: "Agreed requirements, deliverables, acceptance criteria and process obligations."
   template: gd_temp_qx_sup_agreement_template
+  complies:
+  - std_req_iso15288_611
+  - std_req_iso15288_612
+  - std_req_aspice_40_acq_4
 - id: wp_qx_sup_supplier_review
   title: "Supplier Review"
   status: draft
   purpose: "Supplier progress, deliverable status, deviations and actions for the period."
   template: gd_temp_qx_sup_review_template
+  complies:
+  - std_req_iso15288_611
+  - std_req_aspice_40_acq_4

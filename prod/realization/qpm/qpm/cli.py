@@ -11,7 +11,7 @@ import argparse
 import sys
 from pathlib import Path
 
-from . import catalog, reports
+from . import catalog, registers, reports
 from .adapters import sphinx_needs
 from .compose import compose
 from .model import QpmError, dump_json, dump_yaml, load_yaml
@@ -68,13 +68,20 @@ def main(argv: list[str] | None = None) -> int:
             areas = catalog.load_catalog(a.areas)
             stds = catalog.load_standards(a.standards)
             errs = catalog.check_catalog(areas, stds)
+            objs, pols = registers.load_registers(a.standards)
+            rerrs, rwarns = registers.check_registers(objs, pols, areas, stds)
+            errs += rerrs + registers.check_minimum(areas)
+            for w in rwarns:
+                print(f"warning: {w}", file=sys.stderr)
             if errs:
                 print("process catalog errors:\n  " + "\n  ".join(errs), file=sys.stderr)
                 return 1
             if a.cmd == "check-process":
                 print(f"process catalog OK ({len(areas)} assemblies)")
                 return 0
-            return _write_tree(catalog.render_catalog(areas, stds), Path(a.out_dir), a.check)
+            files = catalog.render_catalog(areas, stds)
+            files.update(registers.render_registers(objs, pols, areas, stds))
+            return _write_tree(files, Path(a.out_dir), a.check)
         elif a.cmd == "lint-needs":
             problems = reports.lint_needs(compose(a.tier), a.needs_json)
             for p in problems:

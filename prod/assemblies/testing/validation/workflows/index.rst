@@ -19,25 +19,44 @@ Validation Workflows
    :supported_by: rl_qx_saf_safety_office, rl_qx_sec_security_office, rl_qx_val_test_community
    :input: wp_qx_gc_process_overlay, wp_qx_val_verification_plan
    :output: wp_qx_val_test_policy
+   :achieves: oc_qx_val_policy_set
    :contains: gd_temp_qx_val_test_policy
    :has: doc_concept_qx_val_validation
+   :exercises: cap_qx_val_test_policy_definition
 
    .. list-table:: Activities (RWE)
       :header-rows: 1
-      :widths: 5 70 25
+      :widths: 5 50 20 25
 
       * - #
         - Activity
         - Performed by
+        - Capability
       * - 1
         - Derive methods and coverage targets per ASIL / CAL
         - :need:`rl_qx_val_validation_lead`
+        - :need:`cap_qx_val_test_policy_definition`
       * - 2
         - Align with the verification plan
         - :need:`rl_qx_val_test_community`
+        - :need:`cap_qx_val_test_policy_definition`
       * - 3
         - Approve the policy
         - :need:`rl_qx_gc_head`
+        -
+
+   **Gate.** This workflow cannot be approved until every work product below has reached its minimum status.
+
+   .. list-table:: Gate (entry criteria)
+      :header-rows: 1
+      :widths: 40 20 40
+
+      * - Work product
+        - Minimum status
+        - Produced by
+      * - :need:`wp_qx_val_verification_plan`
+        - proposed
+        - outside these assemblies
 
 .. workflow:: Specify and qualify test system
    :id: wf_qx_val_qualify_test_system
@@ -49,24 +68,43 @@ Validation Workflows
    :supported_by: rl_qx_infra_engineer
    :input: wp_qx_val_test_policy, wp_qx_infra_toolchain_baseline
    :output: wp_qx_val_test_system_spec, wp_qx_infra_tool_verification_report
+   :achieves: oc_qx_val_test_systems_qualified
    :contains: gd_temp_qx_val_test_system
+   :exercises: cap_qx_val_test_system_qualification
 
    .. list-table:: Activities (RWE)
       :header-rows: 1
-      :widths: 5 70 25
+      :widths: 5 50 20 25
 
       * - #
         - Activity
         - Performed by
+        - Capability
       * - 1
         - Specify the test system and its configuration baseline
         - :need:`rl_qx_val_validation_engineer`
+        - :need:`cap_qx_val_test_system_qualification`
       * - 2
         - Classify and qualify (tool confidence level)
         - :need:`rl_qx_val_validation_engineer`
+        - :need:`cap_qx_val_test_system_qualification`
       * - 3
         - Approve for use
         - :need:`rl_qx_val_validation_lead`
+        -
+
+   **Gate.** This workflow cannot be approved until every work product below has reached its minimum status.
+
+   .. list-table:: Gate (entry criteria)
+      :header-rows: 1
+      :widths: 40 20 40
+
+      * - Work product
+        - Minimum status
+        - Produced by
+      * - :need:`wp_qx_val_test_policy`
+        - approved
+        - :need:`wf_qx_val_define_test_policy`
 
 .. workflow:: Execute product validation
    :id: wf_qx_val_execute_validation
@@ -78,21 +116,40 @@ Validation Workflows
    :supported_by: rl_qx_saf_safety_office
    :input: wp_qx_val_stakeholder_requirements, wp_qx_val_test_policy, wp_qx_val_test_system_spec
    :output: wp_qx_val_validation_report
+   :achieves: oc_qx_val_product_validated
+   :exercises: cap_qx_val_validation_execution
 
    .. list-table:: Activities (RWE)
       :header-rows: 1
-      :widths: 5 70 25
+      :widths: 5 50 20 25
 
       * - #
         - Activity
         - Performed by
+        - Capability
       * - 1
         - Plan validation scope from stakeholder requirements
         - :need:`rl_qx_val_validation_engineer`
+        - :need:`cap_qx_val_validation_execution`
       * - 2
         - Execute on qualified test systems
         - :need:`rl_qx_val_validation_engineer`
+        - :need:`cap_qx_val_validation_execution`
       * - 3
         - Approve the validation report
         - :need:`rl_qx_val_validation_lead`
+        -
+
+   **Gate.** This workflow cannot be approved until every work product below has reached its minimum status.
+
+   .. list-table:: Gate (entry criteria)
+      :header-rows: 1
+      :widths: 40 20 40
+
+      * - Work product
+        - Minimum status
+        - Produced by
+      * - :need:`wp_qx_val_test_system_spec`
+        - approved
+        - :need:`wf_qx_val_qualify_test_system`
 

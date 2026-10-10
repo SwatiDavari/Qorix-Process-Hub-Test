@@ -17,12 +17,21 @@ workflows:
   activities:
   - step: Propose version bump (Bazel module / pip lock)
     by: rl_qx_infra_engineer
+    capability: cap_qx_infra_baseline_control
   - step: Run framework self-tests and compose all reference projects
     by: rl_qx_infra_engineer
+    capability: cap_qx_infra_baseline_control
   - step: Update tool verification report (TCL / TD)
     by: rl_qx_infra_engineer
+    capability: cap_qx_infra_tool_qualification
   - step: Approve and release the baseline
     by: rl_qx_infra_lead
+    capability: cap_qx_infra_baseline_control
+  achieves:
+  - oc_qx_infra_tools_controlled
+  gate:
+  - wp: wp_qx_infra_tool_requirements
+    min_status: approved
 - id: wf_qx_infra_onboard_repo
   title: Onboard a project repository
   responsible: rl_qx_infra_engineer
@@ -37,7 +46,16 @@ workflows:
   activities:
   - step: Add bazel_dep on qorix_process_framework and call qorix_docs()
     by: rl_qx_infra_engineer
+    capability: cap_qx_infra_repo_onboarding
   - step: Add CI workflow (docs build + qpm lint-needs)
     by: rl_qx_infra_engineer
+    capability: cap_qx_infra_repo_onboarding
   - step: Confirm first green build
     by: rl_qx_gc_project_lead
+    capability: cap_qx_infra_repo_onboarding
+
+  achieves:
+  - oc_qx_infra_repo_ready
+  gate:
+  - wp: wp_qx_infra_toolchain_baseline
+    min_status: approved

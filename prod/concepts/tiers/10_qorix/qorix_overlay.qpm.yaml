@@ -177,3 +177,47 @@ operations:
       achieves: {required: false, targets: [outcome]}
       exercises: {required: false, targets: [capability]}
     rationale: A workflow achieves outcomes and exercises capabilities through its activities.
+
+  # ------------------------------------------------------------ objectives, policies (top of the digital thread)
+  - op: add_relation_type
+    name: drives
+    forward: drives
+    reverse: driven by
+  - op: add_relation_type
+    name: contributes_to
+    forward: contributes to
+    reverse: receives contribution from
+  - op: add_element_type
+    name: policy
+    rationale: >
+      An organisation level policy: the why behind a discipline's detailed requirements. It names the
+      standard clauses it rests on through `complies` and drives the outcomes of the processes that carry
+      it out, so a policy is traceable down to workflows and up to the objectives that drive it.
+    definition:
+      title: Policy
+      prefix: pol_
+      id_parts: 1
+      tags: []
+      attributes:
+        status: {required: true, enum: [valid, draft, proposed, approved, released, deprecated, retired]}
+      relations:
+        complies: {required: false, targets: [std_wp, std_req]}
+        drives: {required: false, targets: [outcome]}
+      presentation: {color: "#FFE6CC"}
+  - op: add_element_type
+    name: objective
+    rationale: >
+      A business objective in technology neutral wording. It drives policies and sits at the top of the
+      chain objective, policy, process, outcome, capability, work product. A project objective
+      contributes to an organisation objective.
+    definition:
+      title: Objective
+      prefix: obj_
+      id_parts: 1
+      tags: []
+      attributes:
+        status: {required: true, enum: [valid, draft, proposed, approved, released, deprecated, retired]}
+      relations:
+        drives: {required: false, targets: [policy]}
+        contributes_to: {required: false, targets: [objective]}
+      presentation: {color: "#FFF2CC"}

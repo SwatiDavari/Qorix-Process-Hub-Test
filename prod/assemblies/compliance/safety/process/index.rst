@@ -24,6 +24,60 @@ Functional safety management: plan, perform and assess the safety activities ISO
 
    Four strands make up this area: (1) maintaining the Functional Safety Management System, (2) performing independent assessments, (3) managing safety anomalies, and (4) tailoring rules for project-level safety plans.
 
+.. outcome:: The safety management system is current and approved
+   :id: oc_qx_saf_management_maintained
+   :status: draft
+   :version: 1
+   :tags: safety
+   :complies: std_wp_iso26262_management_551
+
+   The organisation safety management system is reviewed, updated and approved at least once a year, and projects work to its current version.
+
+.. outcome:: A safety anomaly in an organisation level asset is analysed, corrected and notified
+   :id: oc_qx_saf_anomalies_handled
+   :status: draft
+   :version: 1
+   :tags: safety
+   :complies: std_wp_iso26262_management_551
+
+   A safety anomaly in an organisation level asset is analysed, corrected and notified to every affected project.
+
+.. outcome:: Safety activities are assessed independently
+   :id: oc_qx_saf_independence_assured
+   :status: draft
+   :version: 1
+   :tags: safety
+   :complies: std_wp_iso26262_management_551, std_req_iso15288_638
+
+   Safety activities are assessed by someone independent of the people who performed them, and the findings are recorded.
+
+.. capability:: Safety management review
+   :id: cap_qx_saf_management_review
+   :status: draft
+   :version: 1
+   :tags: safety
+   :realizes: oc_qx_saf_management_maintained
+
+   Review the safety management system against its standard and its metrics and decide what changes.
+
+.. capability:: Anomaly handling
+   :id: cap_qx_saf_anomaly_handling
+   :status: draft
+   :version: 1
+   :tags: safety
+   :realizes: oc_qx_saf_anomalies_handled
+
+   Route, analyse, correct and notify a safety anomaly.
+
+.. capability:: Independent assessment
+   :id: cap_qx_saf_independent_assessment
+   :status: draft
+   :version: 1
+   :tags: safety
+   :realizes: oc_qx_saf_independence_assured
+
+   Evaluate safety activities independently of their performers and record the findings.
+
 .. toctree::
    :maxdepth: 1
 

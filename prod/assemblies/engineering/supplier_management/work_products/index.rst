@@ -19,6 +19,7 @@ Supplier and Acquisition Management Work Products
    :status: draft
    :version: 1
    :tags: supplier_management
+   :complies: std_req_iso15288_611, std_req_iso15288_612, std_req_aspice_40_acq_4
    :typed_by: gd_temp_qx_sup_agreement_template
 
    **Purpose:** Agreed requirements, deliverables, acceptance criteria and process obligations.
@@ -28,6 +29,7 @@ Supplier and Acquisition Management Work Products
    :status: draft
    :version: 1
    :tags: supplier_management
+   :complies: std_req_iso15288_611, std_req_aspice_40_acq_4
    :typed_by: gd_temp_qx_sup_review_template
 
    **Purpose:** Supplier progress, deliverable status, deviations and actions for the period.

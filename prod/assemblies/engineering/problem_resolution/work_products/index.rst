@@ -19,6 +19,7 @@ Problem Resolution Work Products
    :status: draft
    :version: 1
    :tags: problem_resolution
+   :complies: std_req_aspice_40_sup_9
    :typed_by: gd_temp_qx_prb_record_template
 
    **Purpose:** Analysed problem with severity, cause, impact, owner and status.
@@ -28,6 +29,7 @@ Problem Resolution Work Products
    :status: draft
    :version: 1
    :tags: problem_resolution
+   :complies: std_req_aspice_40_sup_9
    :typed_by: gd_temp_qx_prb_resolution_template
 
    **Purpose:** Action taken, verification of the fix and closure date.

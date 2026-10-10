@@ -5,20 +5,29 @@ work_products:
   purpose: Test objectives, methods and coverage targets per ASIL / CAL and test level.
   concept: doc_concept_qx_val_validation
   template: gd_temp_qx_val_test_policy
+  complies:
+  - std_req_iso15288_6411
 - id: wp_qx_val_test_system_spec
   title: Test System Specification and Qualification
   purpose: Definition, configuration baseline and qualification evidence of each test system.
   concept: doc_concept_qx_val_validation
   template: gd_temp_qx_val_test_system
+  complies:
+  - std_req_iso15288_6411
+  - std_wp_isosae21434_org_management_554
 - id: wp_qx_val_validation_report
   title: Validation Report
   purpose: Evidence that the released product meets its stakeholder requirements in the target environment.
   concept: doc_concept_qx_val_validation
+  complies:
+  - std_req_iso15288_6411
 - id: wp_qx_val_verification_plan
   title: Verification Plan
   origin: external
   purpose: The project's verification plan the test policy must align with.
+  internal: true
 - id: wp_qx_val_stakeholder_requirements
   title: Stakeholder Requirements
   origin: external
   purpose: The stakeholder requirements a product is validated against.
+  internal: true

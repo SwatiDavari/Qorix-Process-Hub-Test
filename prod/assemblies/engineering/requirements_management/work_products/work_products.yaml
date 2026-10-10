@@ -5,13 +5,23 @@ work_products:
   status: draft
   purpose: "Needs and constraints stated by customers, regulators and internal stakeholders."
   origin: external
+  internal: true
 - id: wp_qx_req_requirements_spec
   title: "Requirements Specification"
   status: draft
   purpose: "Agreed set of requirements for the scope in question, each with identifier, attributes and verification criterion."
   template: gd_temp_qx_req_spec_template
+  complies:
+  - std_req_iso15288_642
+  - std_req_iso15288_643
+  - std_req_aspice_40_sys_2
+  - std_req_aspice_40_swe_1
 - id: wp_qx_req_traceability_record
   title: "Traceability Record"
   status: draft
   purpose: "Links from needs to requirements to design and verification, with gaps listed."
   template: gd_temp_qx_req_trace_template
+  complies:
+  - std_req_iso15288_643
+  - std_req_aspice_40_sys_2
+  - std_req_aspice_40_swe_1

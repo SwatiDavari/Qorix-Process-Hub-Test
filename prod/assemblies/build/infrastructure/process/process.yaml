@@ -23,3 +23,30 @@ concepts:
     One framework module (Bazel `bazel_dep`) per release. Projects never copy process
     content; they reference a framework version and add only their tailoring. Tool
     changes are qualified once, centrally.
+outcomes:
+- id: oc_qx_infra_tools_controlled
+  title: Tools are identified, versioned and qualified before projects rely on them
+  status: draft
+  statement: Every tool used to produce or check work products is identified, versioned and qualified for its intended use before projects rely on its results.
+  complies: [std_wp_isosae21434_org_management_554, std_req_iso15288_622, std_req_aspice_40_iic_13_55]
+- id: oc_qx_infra_repo_ready
+  title: A project repository is ready before project work starts
+  status: draft
+  statement: A project repository reaches a verified, reproducible build with the organisation process applied before project work starts.
+  complies: [std_req_iso15288_622, std_req_aspice_40_iic_13_55]
+capabilities:
+- id: cap_qx_infra_tool_qualification
+  title: Tool qualification
+  status: draft
+  description: Establish the confidence a tool deserves for its intended use and record the evidence.
+  realizes: [oc_qx_infra_tools_controlled]
+- id: cap_qx_infra_baseline_control
+  title: Baseline control
+  status: draft
+  description: Version, test and release the set of tools and their configuration as one baseline.
+  realizes: [oc_qx_infra_tools_controlled, oc_qx_infra_repo_ready]
+- id: cap_qx_infra_repo_onboarding
+  title: Repository onboarding
+  status: draft
+  description: Apply the organisation process and build checks to a project repository and confirm a first clean build.
+  realizes: [oc_qx_infra_repo_ready]

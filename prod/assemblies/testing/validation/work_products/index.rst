@@ -9,6 +9,7 @@ Validation Work Products
    :status: valid
    :version: 1
    :tags: validation
+   :complies: std_req_iso15288_6411
    :has: doc_concept_qx_val_validation
    :typed_by: gd_temp_qx_val_test_policy
 
@@ -19,6 +20,7 @@ Validation Work Products
    :status: valid
    :version: 1
    :tags: validation
+   :complies: std_req_iso15288_6411, std_wp_isosae21434_org_management_554
    :has: doc_concept_qx_val_validation
    :typed_by: gd_temp_qx_val_test_system
 
@@ -29,6 +31,7 @@ Validation Work Products
    :status: valid
    :version: 1
    :tags: validation
+   :complies: std_req_iso15288_6411
    :has: doc_concept_qx_val_validation
 
    **Purpose:** Evidence that the released product meets its stakeholder requirements in the target environment.

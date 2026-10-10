@@ -20,6 +20,7 @@ Configuration Management Work Products
    :status: draft
    :version: 1
    :tags: configuration_management
+   :complies: std_req_aspice_40_sup_8, std_req_iso15288_635
    :typed_by: gd_temp_qx_cfg_policy_template
 
    **Purpose:** Updated process policies and plans as output of process management activities.
@@ -29,6 +30,7 @@ Configuration Management Work Products
    :status: draft
    :version: 1
    :tags: configuration_management
+   :complies: std_req_aspice_40_sup_8, std_req_iso15288_635
    :typed_by: gd_temp_qx_cfg_config_item_list_template
 
    **Purpose:** List of organisation level configuration items under control, with owner and version.
@@ -38,6 +40,7 @@ Configuration Management Work Products
    :status: draft
    :version: 1
    :tags: configuration_management
+   :complies: std_req_aspice_40_sup_8, std_req_iso15288_635
    :typed_by: gd_temp_qx_cfg_baseline_template
 
    **Purpose:** Frozen, versioned set of configuration items that reflects all approved changes. Input to release.

@@ -19,6 +19,7 @@ Infrastructure Work Products
    :status: valid
    :version: 1
    :tags: infrastructure
+   :complies: std_req_iso15288_622, std_req_aspice_40_iic_13_55
    :has: doc_concept_qx_infra_infra
    :typed_by: gd_temp_qx_infra_repo_onboarding
 
@@ -39,6 +40,7 @@ Infrastructure Work Products
    :status: valid
    :version: 1
    :tags: infrastructure
+   :complies: std_wp_isosae21434_org_management_554, std_req_iso15288_622, std_req_aspice_40_iic_13_55, std_req_iso15288_6411
    :has: doc_concept_qx_infra_infra
 
    **Purpose:** Evidence that a tool or test system is qualified for its intended use (tool confidence level).

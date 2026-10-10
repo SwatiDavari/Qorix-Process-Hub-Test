@@ -19,6 +19,7 @@ Requirements Management and Traceability Work Products
    :status: draft
    :version: 1
    :tags: requirements_management
+   :complies: std_req_iso15288_642, std_req_iso15288_643, std_req_aspice_40_sys_2, std_req_aspice_40_swe_1
    :typed_by: gd_temp_qx_req_spec_template
 
    **Purpose:** Agreed set of requirements for the scope in question, each with identifier, attributes and verification criterion.
@@ -28,6 +29,7 @@ Requirements Management and Traceability Work Products
    :status: draft
    :version: 1
    :tags: requirements_management
+   :complies: std_req_iso15288_643, std_req_aspice_40_sys_2, std_req_aspice_40_swe_1
    :typed_by: gd_temp_qx_req_trace_template
 
    **Purpose:** Links from needs to requirements to design and verification, with gaps listed.

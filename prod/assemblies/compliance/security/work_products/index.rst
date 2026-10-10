@@ -9,6 +9,7 @@ Security Work Products
    :status: draft
    :version: 1
    :tags: security
+   :complies: std_wp_isosae21434_org_management_551
    :typed_by: gd_temp_qx_sec_csms_template
 
    **Purpose:** The Cybersecurity Management System document covering Qorix's organisation level cybersecurity activities, objectives, and incident response procedures.
@@ -18,6 +19,7 @@ Security Work Products
    :status: draft
    :version: 1
    :tags: security
+   :complies: std_wp_isosae21434_org_management_551
    :typed_by: gd_temp_qx_sec_incident_template
 
    **Purpose:** Record of a security incident: description, affected systems/projects, timeline, response actions, lessons learned.

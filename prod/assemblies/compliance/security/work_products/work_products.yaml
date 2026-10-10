@@ -6,9 +6,13 @@ work_products:
   purpose: The Cybersecurity Management System document covering Qorix's organisation level cybersecurity
     activities, objectives, and incident response procedures.
   template: gd_temp_qx_sec_csms_template
+  complies:
+  - std_wp_isosae21434_org_management_551
 - id: wp_qx_sec_incident_report
   title: Incident Report
   status: draft
   purpose: 'Record of a security incident: description, affected systems/projects, timeline, response
     actions, lessons learned.'
   template: gd_temp_qx_sec_incident_template
+  complies:
+  - std_wp_isosae21434_org_management_551

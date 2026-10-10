@@ -23,6 +23,42 @@ Make sure every person holding a process role is qualified for it, and keep the 
    Each role has required trainings (``training`` needs linked with ``qualifies``). The
    competence matrix is generated from those links; records prove completion.
 
+.. outcome:: The competence each role needs is defined and recorded
+   :id: oc_qx_trn_competence_defined
+   :status: draft
+   :version: 1
+   :tags: training
+   :complies: std_wp_iso26262_management_552, std_wp_isosae21434_org_management_552, std_req_iso15288_624
+
+   The competence every role needs is defined, and each person current competence against it is recorded.
+
+.. outcome:: Training that closes a competence gap is delivered and recorded
+   :id: oc_qx_trn_training_delivered
+   :status: draft
+   :version: 1
+   :tags: training
+   :complies: std_wp_iso26262_management_552, std_wp_isosae21434_org_management_552, std_req_aspice_40_iic_06_04, std_req_iso15288_624
+
+   Training that closes a competence gap is developed, delivered and recorded, and kept current when the organisation process changes.
+
+.. capability:: Competence mapping
+   :id: cap_qx_trn_competence_mapping
+   :status: draft
+   :version: 1
+   :tags: training
+   :realizes: oc_qx_trn_competence_defined
+
+   Define the competence each role needs and record each person current competence.
+
+.. capability:: Training delivery
+   :id: cap_qx_trn_training_delivery
+   :status: draft
+   :version: 1
+   :tags: training
+   :realizes: oc_qx_trn_training_delivered
+
+   Develop training material from the process, deliver it and record completion.
+
 .. toctree::
    :maxdepth: 1
 

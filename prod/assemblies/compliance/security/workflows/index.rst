@@ -19,8 +19,52 @@ Security Workflows
    :supported_by: rl_qx_saf_safety_office
    :input: wp_qx_sec_policies
    :output: wp_qx_sec_incident_report
+   :achieves: oc_qx_sec_incidents_handled
+   :exercises: cap_qx_sec_incident_coordination
 
    The Cybersecurity Office coordinates the response to a security incident that crosses projects or meets the threshold for organisation level handling. The Safety Office supports where a security incident has safety implications. An incident report is produced and shared with affected projects.
+
+   .. list-table:: Activities (RWE)
+      :header-rows: 1
+      :widths: 5 50 20 25
+
+      * - #
+        - Activity
+        - Performed by
+        - Capability
+      * - 1
+        - Confirm the incident meets the threshold for organisation level handling
+        - :need:`rl_qx_sec_security_office`
+        - :need:`cap_qx_sec_incident_coordination`
+      * - 2
+        - Coordinate containment and correction across the affected projects
+        - :need:`rl_qx_sec_security_office`
+        - :need:`cap_qx_sec_incident_coordination`
+      * - 3
+        - Support the response where the incident has safety implications
+        - :need:`rl_qx_saf_safety_office`
+        -
+      * - 4
+        - Issue the incident report to the affected projects
+        - :need:`rl_qx_sec_security_office`
+        - :need:`cap_qx_sec_incident_coordination`
+      * - 5
+        - Approve the incident report
+        - :need:`rl_qx_gc_head`
+        -
+
+   **Gate.** This workflow cannot be approved until every work product below has reached its minimum status.
+
+   .. list-table:: Gate (entry criteria)
+      :header-rows: 1
+      :widths: 40 20 40
+
+      * - Work product
+        - Minimum status
+        - Produced by
+      * - :need:`wp_qx_sec_policies`
+        - approved
+        - :need:`wf_qx_sec_maintain_csms`
 
 .. workflow:: Maintain Cybersecurity Management System
    :id: wf_qx_sec_maintain_csms
@@ -32,6 +76,46 @@ Security Workflows
    :supported_by: rl_qx_qa_quality_office
    :input: wp_qx_sec_incident_report
    :output: wp_qx_sec_policies
+   :achieves: oc_qx_sec_management_maintained
+   :exercises: cap_qx_sec_management_review
 
    The Cybersecurity Office reviews the Cybersecurity Management System at least once per year against ISO/SAE 21434 and updates it based on incident reports and threat intelligence. The Head of G&C approves changes to the organisation level security baseline.
+
+   .. list-table:: Activities (RWE)
+      :header-rows: 1
+      :widths: 5 50 20 25
+
+      * - #
+        - Activity
+        - Performed by
+        - Capability
+      * - 1
+        - Review the management system against its standard, the incident reports and threat information
+        - :need:`rl_qx_sec_security_office`
+        - :need:`cap_qx_sec_management_review`
+      * - 2
+        - Update the management system document
+        - :need:`rl_qx_sec_security_office`
+        - :need:`cap_qx_sec_management_review`
+      * - 3
+        - Check the update against the audit findings
+        - :need:`rl_qx_qa_quality_office`
+        -
+      * - 4
+        - Approve changes to the organisation level security baseline
+        - :need:`rl_qx_gc_head`
+        -
+
+   **Gate.** This workflow cannot be approved until every work product below has reached its minimum status.
+
+   .. list-table:: Gate (entry criteria)
+      :header-rows: 1
+      :widths: 40 20 40
+
+      * - Work product
+        - Minimum status
+        - Produced by
+      * - :need:`wp_qx_sec_incident_report`
+        - proposed
+        - :need:`wf_qx_sec_incident_response`
 

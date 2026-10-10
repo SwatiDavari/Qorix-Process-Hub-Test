@@ -286,3 +286,38 @@ ISO/IEC/IEEE 15288:2023
 
    Clause: Annex A
 
+.. std_req:: Quality management process
+   :id: std_req_iso15288_625
+   :status: valid
+   :version: 1
+
+   Clause: 6.2.5
+
+.. std_req:: Life cycle model management process
+   :id: std_req_iso15288_621
+   :status: valid
+   :version: 1
+
+   Clause: 6.2.1
+
+.. std_req:: Infrastructure management process
+   :id: std_req_iso15288_622
+   :status: valid
+   :version: 1
+
+   Clause: 6.2.2
+
+.. std_req:: Human resource management process
+   :id: std_req_iso15288_624
+   :status: valid
+   :version: 1
+
+   Clause: 6.2.4
+
+.. std_req:: Validation process
+   :id: std_req_iso15288_6411
+   :status: valid
+   :version: 1
+
+   Clause: 6.4.11
+

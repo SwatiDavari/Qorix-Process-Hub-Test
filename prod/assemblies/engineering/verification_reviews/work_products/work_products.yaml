@@ -5,13 +5,18 @@ work_products:
   status: draft
   purpose: "The work product to be verified, in the version submitted for review."
   origin: external
+  internal: true
 - id: wp_qx_vnr_verification_plan
   title: "Verification Plan"
   status: draft
   purpose: "Criteria, method, reviewers and schedule for verifying the work product."
   template: gd_temp_qx_vnr_plan_template
+  complies:
+  - std_req_iso15288_649
 - id: wp_qx_vnr_review_record
   title: "Review Record"
   status: draft
   purpose: "Findings, owners, dates and closure status of the review."
   template: gd_temp_qx_vnr_record_template
+  complies:
+  - std_req_iso15288_649

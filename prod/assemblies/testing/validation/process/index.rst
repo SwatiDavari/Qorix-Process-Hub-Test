@@ -24,6 +24,60 @@ Set the organisation-wide test policy, qualify the test systems it relies on, an
    (HIL, SIL, target rigs) are configuration items with their own qualification.
    Validation closes the loop from stakeholder requirements to the released product.
 
+.. outcome:: Validation methods and coverage targets are defined before validation starts
+   :id: oc_qx_val_policy_set
+   :status: draft
+   :version: 1
+   :tags: validation
+   :complies: std_req_iso15288_6411
+
+   Validation methods and coverage targets are defined for each level of required assurance and aligned with the verification plan before any validation starts.
+
+.. outcome:: Test systems are qualified before their results are relied on
+   :id: oc_qx_val_test_systems_qualified
+   :status: draft
+   :version: 1
+   :tags: validation
+   :complies: std_req_iso15288_6411, std_wp_isosae21434_org_management_554
+
+   Every system used to run validation is specified and qualified for its use before its results are relied on.
+
+.. outcome:: A product is validated against its stakeholder requirements and the result is reported
+   :id: oc_qx_val_product_validated
+   :status: draft
+   :version: 1
+   :tags: validation
+   :complies: std_req_iso15288_6411
+
+   A product is validated against its stakeholder requirements on qualified test systems, and the result is reported.
+
+.. capability:: Test policy definition
+   :id: cap_qx_val_test_policy_definition
+   :status: draft
+   :version: 1
+   :tags: validation
+   :realizes: oc_qx_val_policy_set
+
+   Derive validation methods and coverage targets for each level of assurance and align them with the verification plan.
+
+.. capability:: Test system qualification
+   :id: cap_qx_val_test_system_qualification
+   :status: draft
+   :version: 1
+   :tags: validation
+   :realizes: oc_qx_val_test_systems_qualified
+
+   Specify a test system and establish the confidence it deserves for its intended use.
+
+.. capability:: Validation execution
+   :id: cap_qx_val_validation_execution
+   :status: draft
+   :version: 1
+   :tags: validation
+   :realizes: oc_qx_val_product_validated
+
+   Plan validation from stakeholder requirements, run it on qualified test systems and report the result.
+
 .. toctree::
    :maxdepth: 1
 

@@ -19,25 +19,44 @@ Training Workflows
    :supported_by: rl_qx_gc_process_owner
    :input: wp_qx_gc_process_overlay, wp_qx_trn_training_path
    :output: wp_qx_trn_competence_matrix
+   :achieves: oc_qx_trn_competence_defined
    :contains: gd_temp_qx_trn_competence_matrix
    :has: doc_concept_qx_trn_training
+   :exercises: cap_qx_trn_competence_mapping
 
    .. list-table:: Activities (RWE)
       :header-rows: 1
-      :widths: 5 70 25
+      :widths: 5 50 20 25
 
       * - #
         - Activity
         - Performed by
+        - Capability
       * - 1
         - For every role in the resolved process, define required trainings
         - :need:`rl_qx_gc_process_owner`
+        - :need:`cap_qx_trn_competence_mapping`
       * - 2
         - Generate / update the matrix
         - :need:`rl_qx_trn_training_coordinator`
+        - :need:`cap_qx_trn_competence_mapping`
       * - 3
         - Approve
         - :need:`rl_qx_gc_head`
+        -
+
+   **Gate.** This workflow cannot be approved until every work product below has reached its minimum status.
+
+   .. list-table:: Gate (entry criteria)
+      :header-rows: 1
+      :widths: 40 20 40
+
+      * - Work product
+        - Minimum status
+        - Produced by
+      * - :need:`wp_qx_gc_process_overlay`
+        - approved
+        - :need:`wf_qx_gc_maintain_overlay`
 
 .. workflow:: Develop and deliver training
    :id: wf_qx_trn_deliver_training
@@ -48,18 +67,36 @@ Training Workflows
    :approved_by: rl_qx_gc_process_owner
    :input: wp_qx_gc_process_overlay, wp_qx_trn_competence_matrix
    :output: wp_qx_trn_training_material, wp_qx_trn_competence_matrix
+   :achieves: oc_qx_trn_training_delivered
+   :exercises: cap_qx_trn_training_delivery
 
    .. list-table:: Activities (RWE)
       :header-rows: 1
-      :widths: 5 70 25
+      :widths: 5 50 20 25
 
       * - #
         - Activity
         - Performed by
+        - Capability
       * - 1
         - Update material when the overlay changes
         - :need:`rl_qx_gc_process_owner`
+        - :need:`cap_qx_trn_training_delivery`
       * - 2
         - Deliver and record completion
         - :need:`rl_qx_trn_training_coordinator`
+        - :need:`cap_qx_trn_training_delivery`
+
+   **Gate.** This workflow cannot be approved until every work product below has reached its minimum status.
+
+   .. list-table:: Gate (entry criteria)
+      :header-rows: 1
+      :widths: 40 20 40
+
+      * - Work product
+        - Minimum status
+        - Produced by
+      * - :need:`wp_qx_trn_competence_matrix`
+        - approved
+        - :need:`wf_qx_trn_maintain_competence`, :need:`wf_qx_trn_deliver_training`
 

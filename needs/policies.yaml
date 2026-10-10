@@ -1,0 +1,30 @@
+# Qorix policies: the organisation level "why" behind each discipline. Source statements: governance/policies in qorix-gnc.
+# An objective drives a policy, a policy drives outcomes. Add a policy here before an objective references it.
+policies:
+  - id: pol_qx_saf_safety
+    title: Safety policy
+    page: safety
+    status: draft
+    scope: Every project developing or maintaining a safety-related system, whatever its integrity level.
+    standards: [std_wp_iso26262_management_551]
+    work_product: wp_qx_saf_policies
+    assembly: safety
+    drives: [oc_qx_saf_management_maintained, oc_qx_saf_anomalies_handled, oc_qx_saf_independence_assured, oc_qx_trn_competence_defined, oc_qx_trn_training_delivered]
+  - id: pol_qx_qa_quality
+    title: Quality policy
+    page: quality
+    status: draft
+    scope: Every project under the organisation process umbrella.
+    standards: [std_req_aspice_40_sup_1, std_req_iso15288_625, std_req_iso15288_638]
+    work_product: wp_qx_qa_qms_plan
+    assembly: quality_assurance
+    drives: [oc_qx_qa_compliance_assured, oc_qx_gc_tailoring_controlled, oc_qx_trn_competence_defined, oc_qx_trn_training_delivered]
+  - id: pol_qx_sec_cybersecurity
+    title: Cybersecurity policy
+    page: cybersecurity
+    status: draft
+    scope: Every project developing or maintaining a system, component or software with security relevance.
+    standards: [std_wp_isosae21434_org_management_551]
+    work_product: wp_qx_sec_policies
+    assembly: security
+    drives: [oc_qx_sec_incidents_handled, oc_qx_sec_management_maintained, oc_qx_trn_competence_defined, oc_qx_trn_training_delivered]

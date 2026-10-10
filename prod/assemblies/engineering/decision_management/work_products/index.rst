@@ -19,6 +19,7 @@ Decision Management Work Products
    :status: draft
    :version: 1
    :tags: decision_management
+   :complies: std_req_iso15288_633
    :typed_by: gd_temp_qx_dec_options_template
 
    **Purpose:** Decision criteria, options considered and the evaluation of each against the criteria.
@@ -28,6 +29,7 @@ Decision Management Work Products
    :status: draft
    :version: 1
    :tags: decision_management
+   :complies: std_req_iso15288_633
    :typed_by: gd_temp_qx_dec_record_template
 
    **Purpose:** The decision taken, its rationale, the options rejected, the owner and the date.

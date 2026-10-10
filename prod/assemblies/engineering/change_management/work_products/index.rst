@@ -9,6 +9,7 @@ Change Management Work Products
    :status: draft
    :version: 1
    :tags: change_management
+   :complies: std_req_aspice_40_sup_10, std_req_iso15288_635, std_req_iso15288_633
    :typed_by: gd_temp_qx_cm_policy_template
 
    **Purpose:** Organisation level policies updated as the output of change management activities.
@@ -18,6 +19,7 @@ Change Management Work Products
    :status: draft
    :version: 1
    :tags: change_management
+   :complies: std_req_aspice_40_sup_10, std_req_iso15288_635, std_req_iso15288_633
    :typed_by: gd_temp_qx_cm_change_package_template
 
    **Purpose:** Approved set of changes to organisation level work products, with the impact analysis and approval record. Input to baselining in Configuration Management.

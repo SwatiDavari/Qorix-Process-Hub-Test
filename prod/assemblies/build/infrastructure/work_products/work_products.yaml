@@ -12,11 +12,20 @@ work_products:
   purpose: A project repo wired to the framework (MODULE.bazel, BUILD, tailoring, CI).
   concept: doc_concept_qx_infra_infra
   template: gd_temp_qx_infra_repo_onboarding
+  complies:
+  - std_req_iso15288_622
+  - std_req_aspice_40_iic_13_55
 - id: wp_qx_infra_tool_requirements
   title: Tool Requirements
   origin: external
   purpose: Requirements on the process tools, from the areas that use them.
+  internal: true
 - id: wp_qx_infra_tool_verification_report
   title: Tool Verification Report
   purpose: Evidence that a tool or test system is qualified for its intended use (tool confidence level).
   concept: doc_concept_qx_infra_infra
+  complies:
+  - std_wp_isosae21434_org_management_554
+  - std_req_iso15288_622
+  - std_req_aspice_40_iic_13_55
+  - std_req_iso15288_6411

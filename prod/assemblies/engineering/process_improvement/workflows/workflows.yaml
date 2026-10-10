@@ -13,6 +13,9 @@ workflows:
   - oc_qx_pim_improvements_planned
   output:
   - wp_qx_pim_improvement_plan
+  gate:
+  - wp: wp_qx_pim_improvement_input
+    min_status: proposed
   description: "The Process Improvement Lead collects findings, metrics and feedback, selects improvements and plans them with owners and dates. The Quality Office checks that each improvement ties back to evidence. The Head of G&C approves the plan."
   activities:
   - step: "Collect audit findings, metrics and feedback"
@@ -38,6 +41,9 @@ workflows:
   - oc_qx_pim_tailoring_justified
   output:
   - wp_qx_pim_tailoring_record
+  gate:
+  - wp: wp_qx_pim_project_profile
+    min_status: approved
   description: "The Process Improvement Lead takes the project profile and records which parts of the organisation level process the project narrows and why. The Quality Office checks that the tailoring only narrows. The Head of G&C approves the record."
   activities:
   - step: "Compare the project profile with the organisation level process"

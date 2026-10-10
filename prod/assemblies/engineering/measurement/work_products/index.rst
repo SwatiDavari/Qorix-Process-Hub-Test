@@ -19,6 +19,7 @@ Measurement and Metrics Work Products
    :status: draft
    :version: 1
    :tags: measurement
+   :complies: std_req_iso15288_637, std_req_aspice_40_man_6
    :typed_by: gd_temp_qx_meas_plan_template
 
    **Purpose:** Defined metrics with information need, source, interval, owner and target.
@@ -28,6 +29,7 @@ Measurement and Metrics Work Products
    :status: draft
    :version: 1
    :tags: measurement
+   :complies: std_req_iso15288_637, std_req_aspice_40_man_6
    :typed_by: gd_temp_qx_meas_report_template
 
    **Purpose:** Metric values for the period with trend and interpretation.

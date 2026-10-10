@@ -24,6 +24,42 @@ Cybersecurity management: plan, perform and assess the cybersecurity activities 
 
    The process covers: (1) maintaining the Cybersecurity Management System, and (2) coordinating organisation level incident response.
 
+.. outcome:: An incident that crosses projects is coordinated and reported
+   :id: oc_qx_sec_incidents_handled
+   :status: draft
+   :version: 1
+   :tags: security
+   :complies: std_wp_isosae21434_org_management_551
+
+   A security incident that crosses projects is coordinated, contained and reported to every affected project.
+
+.. outcome:: The security management system is current and approved
+   :id: oc_qx_sec_management_maintained
+   :status: draft
+   :version: 1
+   :tags: security
+   :complies: std_wp_isosae21434_org_management_551, std_wp_isosae21434_org_management_555
+
+   The organisation security management system is reviewed at least once a year against incidents and threat information, and approved.
+
+.. capability:: Incident coordination
+   :id: cap_qx_sec_incident_coordination
+   :status: draft
+   :version: 1
+   :tags: security
+   :realizes: oc_qx_sec_incidents_handled
+
+   Confirm an incident, coordinate containment and correction across projects and report it.
+
+.. capability:: Security management review
+   :id: cap_qx_sec_management_review
+   :status: draft
+   :version: 1
+   :tags: security
+   :realizes: oc_qx_sec_management_maintained
+
+   Review the security management system against its standard, incidents and threat information and decide what changes.
+
 .. toctree::
    :maxdepth: 1
 

@@ -129,6 +129,19 @@ html[data-theme="dark"] { --qx-card-title: #d3c8fb; }
   background: transparent !important;
   color: var(--qx-ink) !important;
 }
+/* card footer (owner / counts): same light tint as the card, with a divider, so the text stays readable */
+.sd-card .sd-card-footer {
+  background: transparent !important;
+  border-top: 1px solid var(--qx-purple-line) !important;
+  color: var(--qx-ink) !important;
+  font-size: 0.85rem;
+}
+.sd-card .sd-card-footer p,
+.sd-card .sd-card-footer a {
+  background: transparent !important;
+  color: var(--qx-ink) !important;
+  font-size: inherit;
+}
 .sd-card .sd-card-title,
 .sd-card .sd-card-title a {
   color: var(--qx-card-title) !important;
@@ -147,3 +160,13 @@ html[data-theme="dark"] { --qx-card-title: #d3c8fb; }
   overflow-wrap: anywhere;
 }
 .bd-article table.docutils { width: 100%; }
+
+/* Engineering cluster tabs: standards coverage matrix and completeness scorecard */
+table.qx-matrix th:not(:first-child) {
+  writing-mode: vertical-rl; transform: rotate(180deg); white-space: nowrap; text-align: left;
+  vertical-align: bottom; padding: 0.4rem 0.3rem; font-size: 0.78rem;
+}
+table.qx-matrix td:not(:first-child), table.qx-scorecard td:not(:first-child), table.qx-scorecard th:not(:first-child) {
+  text-align: center; color: var(--qx-purple); padding: 0.4rem 0.3rem;
+}
+.bd-article .sd-tab-set > .sd-tab-content table.qx-matrix { min-width: 0; }

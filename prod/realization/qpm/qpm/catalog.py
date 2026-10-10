@@ -500,8 +500,55 @@ def _table(areas: list[dict[str, Any]], owners: dict[str, str]) -> str:
     return out + "\n"
 
 
+def _std_family(x: str) -> int:
+    return 0 if x.startswith("ISO/IEC/IEEE 15288") else 1 if x.startswith("ASPICE 4.0 ") else 2
+
+
+def _std_short(x: str) -> str:
+    x = " ".join(x.split())
+    if x.startswith("ISO/IEC/IEEE 15288"):
+        return ("15288 " + x[len("ISO/IEC/IEEE 15288"):].strip()).strip()
+    if x.startswith("ASPICE 4.0 "):
+        return x[len("ASPICE 4.0 "):]
+    return x
+
+
+def _matrix(areas: list[dict[str, Any]], owners: dict[str, str]) -> str:
+    """Standards coverage: one row per process, one column per standard clause the cluster cites."""
+    cols = sorted({x for a in areas for x in a["area"].get("standards") or []}, key=lambda x: (_std_family(x), x))
+    out = (".. list-table::\n   :header-rows: 1\n   :class: qx-matrix\n\n   * - Process\n"
+           + "".join(f"     - {_std_short(c)}\n" for c in cols))
+    for a in areas:
+        have = set(a["area"].get("standards") or [])
+        out += f"   * - :ref:`{a['area']['title']} <qx_assembly_{a['area']['id']}>`\n"
+        out += "".join(f"     - {'●' if c in have else ''}\n".replace("     - \n", "     -\n") for c in cols)
+    return out + "\n"
+
+
+def _score(n: int, ok: bool | None = None) -> str:
+    return f":bdg-{'success' if (n >= 1 if ok is None else ok) else 'danger'}:`{n}`"
+
+
+def _scorecard(areas: list[dict[str, Any]], owners: dict[str, str]) -> str:
+    """Completeness against the minimum definition; recomputed from the YAML on every render."""
+    out = (".. list-table::\n   :header-rows: 1\n   :class: qx-scorecard\n\n"
+           "   * - Process\n     - Outcomes\n     - Capabilities\n     - Workflows\n     - With gates\n"
+           "     - Work products\n     - Roles\n     - Templates\n")
+    for a in areas:
+        wfs = a.get("workflows") or []
+        gated = sum(1 for w in wfs if w.get("gate"))
+        out += (f"   * - :ref:`{a['area']['title']} <qx_assembly_{a['area']['id']}>`\n"
+                f"     - {_score(len(a.get('outcomes') or []))}\n     - {_score(len(a.get('capabilities') or []))}\n"
+                f"     - {_score(len(wfs))}\n"
+                f"     - :bdg-{'success' if gated >= 1 else 'danger'}:`{gated} / {len(wfs)}`\n"
+                f"     - {_score(len(a.get('workproducts') or []))}\n     - {_score(len(a.get('roles') or []))}\n"
+                f"     - {_score(len(a.get('templates') or []))}\n")
+    return out + "\n"
+
+
 def _cluster_body(cluster: str, areas: list[dict[str, Any]], owners: dict[str, str]) -> str:
-    """Cluster content: plain card grid, or (when the cluster defines groups) Table / Cards tabs grouped by group."""
+    """Cluster content: plain card grid, or (when the cluster defines groups) tabular tabs:
+    grouped register, standards coverage matrix and completeness scorecard."""
     groups = CLUSTER_GROUPS.get(cluster)
     if not groups:
         return _grid([_card(a, owners) for a in areas])
@@ -509,10 +556,11 @@ def _cluster_body(cluster: str, areas: list[dict[str, Any]], owners: dict[str, s
     for a in sorted(areas, key=lambda x: x["area"]["title"]):
         by.setdefault(a["area"].get("group") or "Other", []).append(a)
     order = [g for g in groups if g in by] + [g for g in by if g not in groups]
-    tables = "".join(f".. rubric:: {g}\n\n{_table(by[g], owners)}" for g in order)
-    cards = "".join(f".. rubric:: {g}\n\n{_grid([_card(a, owners) for a in by[g]])}\n" for g in order)
-    return (".. tab-set::\n\n   .. tab-item:: Table\n\n" + _indent(tables, 6) + "\n\n"
-            "   .. tab-item:: Cards\n\n" + _indent(cards, 6) + "\n\n")
+    flat = [a for g in order for a in by[g]]
+    register = "".join(f".. rubric:: {g}\n\n{_table(by[g], owners)}" for g in order)
+    return (".. tab-set::\n\n   .. tab-item:: Grouped register\n\n" + _indent(register, 6) + "\n\n"
+            "   .. tab-item:: Standards coverage\n\n" + _indent(_matrix(flat, owners), 6) + "\n\n"
+            "   .. tab-item:: Completeness\n\n" + _indent(_scorecard(flat, owners), 6) + "\n\n")
 
 
 def _cluster_page(cluster: str, areas: list[dict[str, Any]], owners: dict[str, str]) -> str:

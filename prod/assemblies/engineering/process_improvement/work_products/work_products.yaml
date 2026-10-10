@@ -5,18 +5,26 @@ work_products:
   status: draft
   purpose: "Audit findings, metrics, problem records and feedback that point to a process change."
   origin: external
+  internal: true
 - id: wp_qx_pim_improvement_plan
   title: "Improvement Plan"
   status: draft
   purpose: "Selected improvements with owner, date, expected effect and evidence."
   template: gd_temp_qx_pim_plan_template
+  complies:
+  - std_req_iso15288_annex_a
+  - std_req_aspice_40_pim_3
 - id: wp_qx_pim_project_profile
   title: "Project Profile"
   status: draft
   purpose: "The project's safety level, cybersecurity level, size and constraints."
   origin: external
+  internal: true
 - id: wp_qx_pim_tailoring_record
   title: "Tailoring Record"
   status: draft
   purpose: "Parts of the organisation level process the project narrows, with rationale and approval."
   template: gd_temp_qx_pim_tailoring_template
+  complies:
+  - std_req_iso15288_annex_a
+  - std_req_aspice_40_iic_15_54

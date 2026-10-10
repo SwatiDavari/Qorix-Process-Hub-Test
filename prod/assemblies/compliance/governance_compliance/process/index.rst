@@ -24,6 +24,60 @@ Own the Qorix Process Hub: maintain the Qorix process overlay, approve project t
    (2) the Qorix overlay, which may only add or widen (superset rule); (3) the
    project tailoring, which may only narrow and must justify each narrowing. The resolved model is generated, never hand-edited.
 
+.. outcome:: The organisation process set is consistent with policy and released after impact review
+   :id: oc_qx_gc_process_consistent
+   :status: draft
+   :version: 1
+   :tags: governance_compliance
+   :complies: std_req_iso15288_621, std_req_aspice_40_iic_10_00
+
+   The organisation process set is defined, kept consistent with the organisation policies and objectives, and released only after its impact on safety, security and quality is reviewed.
+
+.. outcome:: Every project departure from the organisation process is recorded and approved
+   :id: oc_qx_gc_tailoring_controlled
+   :status: draft
+   :version: 1
+   :tags: governance_compliance
+   :complies: std_req_iso15288_annex_a, std_req_aspice_40_iic_15_54
+
+   Every departure of a project from the organisation process is recorded with a rationale and approved before the project relies on it.
+
+.. outcome:: Project conformance to its recorded tailoring is checked and reported
+   :id: oc_qx_gc_compliance_evidenced
+   :status: draft
+   :version: 1
+   :tags: governance_compliance
+   :complies: std_req_aspice_40_iic_15_13, std_req_iso15288_638
+
+   Conformance of each project to its recorded tailoring is checked against objective evidence and the findings are reported.
+
+.. capability:: Process release
+   :id: cap_qx_gc_process_release
+   :status: draft
+   :version: 1
+   :tags: governance_compliance
+   :realizes: oc_qx_gc_process_consistent
+
+   Review the impact of a change, approve it and publish a version of the organisation process.
+
+.. capability:: Tailoring review
+   :id: cap_qx_gc_tailoring_review
+   :status: draft
+   :version: 1
+   :tags: governance_compliance
+   :realizes: oc_qx_gc_tailoring_controlled
+
+   Check that a tailoring only narrows the organisation process and carries a rationale for each narrowing.
+
+.. capability:: Conformance audit
+   :id: cap_qx_gc_conformance_audit
+   :status: draft
+   :version: 1
+   :tags: governance_compliance
+   :realizes: oc_qx_gc_compliance_evidenced
+
+   Sample work products against the recorded tailoring and record each finding against the item it affects.
+
 .. toctree::
    :maxdepth: 1
 
