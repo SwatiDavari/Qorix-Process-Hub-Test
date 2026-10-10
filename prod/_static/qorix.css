@@ -220,3 +220,12 @@ html[data-theme="dark"] {
 .bd-content table.qx-reg .sd-bg-danger { background: var(--qx-nobg) !important; color: var(--qx-no) !important; border-radius: 10px; }
 .bd-content table.qx-reg .sd-bg-secondary, .bd-content table.qx-reg .sd-bg-dark, .bd-content table.qx-reg .sd-bg-light {
   background: transparent !important; color: var(--qx-ink) !important; border-color: var(--qx-edge); }
+
+/* header "More" menu: selected and hovered items keep white text on the Qorix purple (the engine's light hover made them unreadable) */
+.bd-header .dropdown-menu .dropdown-item:hover,
+.bd-header .dropdown-menu .dropdown-item:focus,
+.bd-header .dropdown-menu .dropdown-item.active,
+.bd-header .dropdown-menu .nav-item.current > .dropdown-item {
+  background-color: var(--qx-purple) !important;
+  color: #ffffff !important;
+}

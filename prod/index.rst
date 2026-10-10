@@ -4,65 +4,56 @@ Qorix Process Hub
 The Qorix Process Hub is the system of interest: one set of Qorix processes, defined once in a
 technology-neutral model, that every Qorix project inherits and narrows in its own tailoring.
 
-.. tab-set::
-   :class: qx-tabs
+.. grid:: 1 2 3 3
+   :gutter: 2
 
-   .. tab-item:: Overview
+   .. grid-item-card:: Needs
+      :link: qx_needs
+      :link-type: ref
 
-      .. grid:: 1 2 3 3
-         :gutter: 2
+      What the hub must satisfy: the standard clauses Qorix work products comply with.
 
-         .. grid-item-card:: Needs
-            :link: qx_needs
-            :link-type: ref
+   .. grid-item-card:: Policies
+      :link: qx_policies
+      :link-type: ref
 
-            What the hub must satisfy: the standard clauses Qorix work products comply with.
+      Organisation level safety, quality and cybersecurity policies, and where each lives in the hub.
 
-         .. grid-item-card:: Policies
-            :link: qx_policies
-            :link-type: ref
+   .. grid-item-card:: Missions
+      :link: qx_missions
+      :link-type: ref
 
-            Organisation level safety, quality and cybersecurity policies, and where each lives in the hub.
+      Why the hub exists, how it is structured and how identifiers are formed.
 
-         .. grid-item-card:: Missions
-            :link: qx_missions
-            :link-type: ref
+   .. grid-item-card:: Concepts
+      :link: qx_concepts
+      :link-type: ref
 
-            Why the hub exists, how it is structured and how identifiers are formed.
+      The process model, tiering, metamodel and workflow model.
 
-         .. grid-item-card:: Concepts
-            :link: qx_concepts
-            :link-type: ref
+   .. grid-item-card:: Realization
+      :link: qx_realization
+      :link-type: ref
 
-            The process model, tiering, metamodel and workflow model.
+      How the hub is built: the qpm tool, the docs build macro and the checks.
 
-         .. grid-item-card:: Realization
-            :link: qx_realization
-            :link-type: ref
+   .. grid-item-card:: Assemblies
+      :link: qx_assemblies
+      :link-type: ref
 
-            How the hub is built: the qpm tool, the docs build macro and the checks.
+      The Qorix processes, grouped into cluster assemblies.
 
-         .. grid-item-card:: Assemblies
-            :link: qx_assemblies
-            :link-type: ref
+   .. grid-item-card:: Dist
+      :link: qx_dist
+      :link-type: ref
 
-            The Qorix processes, grouped into cluster assemblies.
+      One distribution per project: its composed process and tailoring report.
 
-         .. grid-item-card:: Dist
-            :link: qx_dist
-            :link-type: ref
+   .. grid-item-card:: Guide
+      :link: qx_guide
+      :link-type: ref
 
-            One distribution per project: its composed process and tailoring report.
-
-   .. tab-item:: Process Hub Guide
-
-      .. grid:: 1 1 1 1
-
-         .. grid-item-card:: Process Hub Guide
-            :link: qx_guide
-            :link-type: ref
-
-            How to read, reuse and change a process, the element types, relations, artifact kinds and abbreviations.
+      How to read, reuse and change a process, the element types, relations, artifact kinds and abbreviations.
 
 .. toctree::
    :hidden:
