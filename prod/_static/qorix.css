@@ -221,9 +221,21 @@ html[data-theme="dark"] {
 .bd-content table.qx-reg .sd-bg-secondary, .bd-content table.qx-reg .sd-bg-dark, .bd-content table.qx-reg .sd-bg-light {
   background: transparent !important; color: var(--qx-ink) !important; border-color: var(--qx-edge); }
 
-/* header "More" menu: hovered and selected items keep the engine's own light highlight; only the text turns dark so it stays readable */
+/* header "More" menu and table hover: the engine dark purple is not used; the menu is a plain page-coloured panel with dark text */
+.bd-header .dropdown-menu {
+  background-color: var(--pst-color-background, #ffffff) !important;
+  border: 1px solid var(--qx-purple-line) !important;
+}
+.bd-header .dropdown-menu .dropdown-item,
 .bd-header .dropdown-menu .dropdown-item:hover,
 .bd-header .dropdown-menu .dropdown-item:focus,
 .bd-header .dropdown-menu .dropdown-item.active {
-  color: #2d1942 !important;
+  color: var(--qx-ink) !important;
 }
+:root, html[data-theme="dark"] { --pst-color-table-row-hover-bg: var(--qx-purple-tint); }
+/* search shortcut keys and heading anchors: neutral instead of the engine's dark purple */
+kbd, .kbd-shortcut__modifier, .kbd-shortcut__key, .search-button__wrapper .btn.rounded-pill {
+  background-color: #f3f4f5 !important; color: var(--qx-ink) !important; border-color: #f3f4f5 !important;
+}
+.bd-content a.headerlink, .bd-content a.headerlink:hover { color: var(--qx-muted) !important; border-color: transparent; }
+#pst-back-to-top { background-color: #f3f4f5 !important; color: var(--qx-ink) !important; border: 1px solid var(--qx-purple-line) !important; }
