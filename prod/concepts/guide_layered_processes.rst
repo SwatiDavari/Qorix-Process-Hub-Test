@@ -4,8 +4,8 @@ Guide: Layered Common Processes
 ###############################
 
 How to define a common process once and repeat it at lower scopes, with outcomes, capabilities and
-gates. The concept is in :ref:`qx_common_processes`. The pilot used as the example is Change
-Management at feature scope, ``change_management_feat``, which is part of ``change_management``.
+gates. The concept is in :ref:`qx_common_processes`. No assembly uses a lower
+scope yet; the Change Management examples below show how one would be added later.
 
 When to use what
 ================
@@ -85,7 +85,7 @@ Follow them in this order. Run ``qpm check-process`` after each step.
    for each work product.
 
 #. **Repeat the process one scope down.** Create a new assembly folder, for example
-   ``prod/assemblies/engineering/change_management_feat/``, with the five subcomponents. In its
+   ``prod/assemblies/engineering/change_management_feat/`` (example name), with the five subcomponents. In its
    ``process.yaml`` set::
 
       scope: FEAT
@@ -93,11 +93,11 @@ Follow them in this order. Run ``qpm check-process`` after each step.
 
    Rules for the child:
 
-   * Reuse the parent's outcomes and capabilities. Do not copy them. The pilot's workflow
+   * Reuse the parent's outcomes and capabilities. Do not copy them. The child workflow
      ``achieves`` ``oc_qx_cm_changes_authorised`` and exercises ``cap_qx_cm_impact_analysis``.
    * Use its own assembly code in the ids (``cmf`` here) and its own roles where the performer differs.
-   * Make at least one output work product an input of a workflow in the parent. In the pilot,
-     ``wp_qx_cmf_feature_change_package`` is an input of ``wf_qx_cm_manage_org_change``.
+   * Make at least one output work product an input of a workflow in the parent. For example, a feature
+     change package would be an input of ``wf_qx_cm_manage_org_change``.
    * The parent is exactly one scope above: FEAT under GLOB, COMP under FEAT, UNIT under COMP.
 
 #. **Regenerate and test.** Run ``bash prod/realization/regen.sh`` and
@@ -149,7 +149,6 @@ What is still open
 
 * The 15288 and ASPICE clauses in ``needs/standards.yaml`` come from the authors' knowledge of the
   standards. Check them against your copy before you rely on them.
-* The pilot repeats Change Management at feature scope. The getting-started text of the
-  organisation level process says a project's own change management is out of its scope. Decide
-  whether feature level change belongs in the hub, then amend one of the two texts.
+* The organisation process hub holds organisation level processes only. Lower scopes stay out until
+  you decide they belong here.
 * COMP and UNIT scope are supported by the checks but not yet used by any assembly.

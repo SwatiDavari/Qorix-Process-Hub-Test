@@ -11,7 +11,6 @@ Request, analyse, approve and track changes to work products and products.
 * **Assembly:** Engineering / Change Management (code ``cm``)
 * **Status:** :bdg-secondary:`draft`
 * **Enabler / Scope / Layer:** - / GLOB / -
-* **Parts:** :ref:`qx_assembly_change_management_feat`
 * **Owner:** :need:`rl_qx_qa_quality_office`
 * **Standards:** ISO 26262-8 cl. 8, ASPICE 4.0 SUP.10
 

@@ -208,24 +208,37 @@ def _wf(areas, wid):
     return next(w for a in areas for w in a["workflows"] if w["id"] == wid)
 
 
-def test_part_of_pilot_is_consistent():
+def _with_child(areas):
+    """Add an in-memory FEAT assembly under change_management (none exists in the hub)."""
+    areas.append({
+        "area": dict(next(a for a in areas if a["area"]["id"] == "change_management")["area"],
+                     id="cm_child", code="cmc", scope="FEAT", part_of="change_management"),
+        "workflows": [dict(_wf(areas, "wf_qx_cm_manage_org_change"), id="wf_qx_cmc_child", activities=[], achieves=[],
+                           gate=[], input=["wp_qx_cm_policies"], output=["wp_qx_cmc_out"])],
+        "workproducts": [], "outcomes": [], "capabilities": [], "templates": [], "roles": [],
+    })
+    _wf(areas, "wf_qx_cm_manage_org_change")["input"].append("wp_qx_cmc_out")
+    return areas
+
+
+def test_hub_has_only_glob_assemblies():
     areas = catalog.load_catalog(ASSEMBLIES)
-    child = _area(areas, "change_management_feat")["area"]
-    assert child["scope"] == "FEAT" and child["part_of"] == "change_management"
+    assert {a["area"].get("scope") for a in areas} == {"GLOB"}
+    assert _errs(areas) == ""
 
 
 def test_part_of_needs_a_parent_one_scope_up():
-    areas = catalog.load_catalog(ASSEMBLIES)
-    _area(areas, "change_management_feat")["area"]["part_of"] = None
+    areas = _with_child(catalog.load_catalog(ASSEMBLIES))
+    _area(areas, "cm_child")["area"]["part_of"] = None
     assert "must be part_of an assembly one scope up" in _errs(areas)
-    areas = catalog.load_catalog(ASSEMBLIES)
-    _area(areas, "change_management_feat")["area"]["scope"] = "UNIT"
+    areas = _with_child(catalog.load_catalog(ASSEMBLIES))
+    _area(areas, "cm_child")["area"]["scope"] = "UNIT"
     assert "exactly one scope above" in _errs(areas)
 
 
 def test_part_of_unknown_parent_and_glob_with_parent():
-    areas = catalog.load_catalog(ASSEMBLIES)
-    _area(areas, "change_management_feat")["area"]["part_of"] = "nowhere"
+    areas = _with_child(catalog.load_catalog(ASSEMBLIES))
+    _area(areas, "cm_child")["area"]["part_of"] = "nowhere"
     assert "unknown assembly" in _errs(areas)
     areas = catalog.load_catalog(ASSEMBLIES)
     _area(areas, "change_management")["area"]["part_of"] = "quality_assurance"
@@ -233,14 +246,14 @@ def test_part_of_unknown_parent_and_glob_with_parent():
 
 
 def test_part_of_interface_must_be_consumed_by_parent():
-    areas = catalog.load_catalog(ASSEMBLIES)
-    _wf(areas, "wf_qx_cm_manage_org_change")["input"].remove("wp_qx_cmf_feature_change_package")
+    areas = _with_child(catalog.load_catalog(ASSEMBLIES))
+    _wf(areas, "wf_qx_cm_manage_org_change")["input"].remove("wp_qx_cmc_out")
     assert "broken interface" in _errs(areas)
 
 
 def test_part_of_cycle_is_detected():
-    areas = catalog.load_catalog(ASSEMBLIES)
-    _area(areas, "change_management")["area"]["part_of"] = "change_management_feat"
+    areas = _with_child(catalog.load_catalog(ASSEMBLIES))
+    _area(areas, "change_management")["area"]["part_of"] = "cm_child"
     errs = _errs(areas)
     assert "cycle" in errs
 
@@ -265,13 +278,6 @@ def test_capability_must_be_exercised_and_resolve():
     areas = catalog.load_catalog(ASSEMBLIES)
     _wf(areas, "wf_qx_qa_internal_audit")["activities"][0]["capability"] = "cap_qx_qa_missing"
     assert "unresolved capability" in _errs(areas)
-
-
-def test_capability_is_reused_across_scopes():
-    areas = catalog.load_catalog(ASSEMBLIES)
-    cap = "cap_qx_cm_impact_analysis"
-    users = {w["id"] for a in areas for w in a["workflows"] for x in w.get("activities") or [] if x.get("capability") == cap}
-    assert {"wf_qx_cm_manage_org_change", "wf_qx_cmf_manage_feature_change"} <= users
 
 
 def test_gate_inputs_and_status_are_checked():
@@ -313,8 +319,8 @@ def test_workflow_needs_an_input():
 
 def test_id_length_is_limited():
     areas = catalog.load_catalog(ASSEMBLIES)
-    a = _area(areas, "change_management_feat")
-    a["templates"][0]["id"] = "gd_temp_qx_cmf_" + "x" * 40
+    a = _area(areas, "change_management")
+    a["templates"][0]["id"] = "gd_temp_qx_cm_" + "x" * 40
     assert "the maximum is 45" in _errs(areas)
 
 

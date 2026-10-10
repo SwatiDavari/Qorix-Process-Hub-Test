@@ -1,8 +1,0 @@
-# Change Management at feature scope (engineering/change_management_feat)  -  roles.
-roles:
-- id: rl_qx_cmf_feature_owner
-  title: Feature Owner
-  description: |-
-    The feature owner raises and analyses changes to one feature.
-
-    **Responsible for:** Manage Feature Level Change.

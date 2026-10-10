@@ -17,7 +17,7 @@ Change Management Workflows
    :responsible: rl_qx_qa_quality_office
    :approved_by: rl_qx_gc_head
    :supported_by: rl_qx_saf_safety_office, rl_qx_sec_security_office
-   :input: wp_qx_qa_audit_report, wp_qx_cfg_config_item_list, wp_qx_cmf_feature_change_package
+   :input: wp_qx_qa_audit_report, wp_qx_cfg_config_item_list
    :output: wp_qx_cm_policies, wp_qx_cm_change_package
    :achieves: oc_qx_cm_changes_authorised, oc_qx_cm_changes_traceable
    :exercises: cap_qx_cm_impact_analysis, cap_qx_cm_change_authorisation

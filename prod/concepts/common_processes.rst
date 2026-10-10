@@ -6,8 +6,7 @@ Common Processes
 .. note::
 
    Status: **concept, partly implemented**. The ``part_of`` composition, the Outcome and Capability
-   element types and the gate are in the hub and checked by ``qpm check-process``. A pilot (Change
-   Management at feature scope) uses them. Most of the common processes listed below are not yet
+   element types and the gate are in the hub and checked by ``qpm check-process``. Only organisation level (GLOB) assemblies exist today. Most of the common processes listed below are not yet
    assemblies. How to author them is in :ref:`qx_guide_layered_processes`.
 
 Every software development, whatever the technology, domain or product, needs the same small set
@@ -126,8 +125,8 @@ Two classification axes run through every assembly. They are independent and can
    REQ  ->  ARC  ->  DES  ->  IMP  ->  INT
    requirements  architecture  design  implementation  integration
 
-Replication rule (implemented, pilot)
--------------------------------------
+Replication rule (implemented, not yet used)
+---------------------------------------------
 
 #. **Same shape at every scope.** A process at COMP scope has the same five subcomponents as the
    same process at GLOB scope.
@@ -300,7 +299,7 @@ Open points
 
 * Write the missing common processes as assemblies, in the order given in the guide.
 * Fill the cluster "Common" with the cross-cutting management processes (it exists and is empty).
-* Replicate the pilot to COMP and UNIT scope where a process needs it.
+* Replicate a process to FEAT, COMP and UNIT scope where it needs it. Nothing is replicated yet.
 * Confirm the applicability tables above with the process owners.
 * Check the 15288 and ASPICE clause entries in ``needs/standards.yaml`` against your copy of each standard,
   and add the remaining clauses.

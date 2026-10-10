@@ -1,6 +1,0 @@
-# Change Management at feature scope (engineering/change_management_feat)  -  templates and guidance.
-templates:
-- id: gd_temp_qx_cmf_feature_change_template
-  title: Feature Change Package Template
-  status: draft
-  description: 'Template for the feature change package covering: feature, change description, impact analysis, affected organisation level work products, approval.'

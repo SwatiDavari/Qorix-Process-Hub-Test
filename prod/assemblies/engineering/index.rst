@@ -17,14 +17,6 @@ Engineering
 
       Request, analyse, approve and track changes to work products and products.
 
-   .. grid-item-card:: Change Management (Feature)
-      :link: qx_assembly_change_management_feat
-      :link-type: ref
-
-      :bdg-secondary:`draft` :bdg-light:`- / FEAT / -`
-
-      Change management applied to one feature, one scope below the organisation level process.
-
    .. grid-item-card:: Configuration Management
       :link: qx_assembly_configuration_management
       :link-type: ref
@@ -53,7 +45,6 @@ Engineering
    :hidden:
 
    /assemblies/engineering/change_management/process/index
-   /assemblies/engineering/change_management_feat/process/index
    /assemblies/engineering/configuration_management/process/index
    /assemblies/engineering/quality_assurance/process/index
    /assemblies/engineering/release_management/process/index
