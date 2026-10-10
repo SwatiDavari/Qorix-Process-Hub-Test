@@ -9,6 +9,7 @@ assembly:
   layer: '-'
   status: draft
   owner: rl_qx_vnr_review_lead
+  group: Requirements and verification
   purpose: "Plan verification of work products against their criteria and carry out reviews that record findings and close them."
   standards:
   - "ISO/IEC/IEEE 15288 6.4.9"

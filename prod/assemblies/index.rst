@@ -30,143 +30,422 @@ Compliance
       :link: qx_assembly_governance_compliance
       :link-type: ref
 
-      :bdg-secondary:`draft` :bdg-light:`- / GLOB / -`
+      :bdg-secondary:`draft`
+
+      :bdg-info:`PIM.3 / SUP.1 / MAN.3` :bdg-dark-line:`ISO 26262-2` :bdg-dark-line:`ISO/SAE 21434 cl. 5-6`
 
       Own the Qorix Process Hub: maintain the Qorix process overlay, approve project tailoring, and run compliance audits.
+
+      +++
+      Owner: Head of Governance & Compliance · 3 workflows · 7 work products
 
    .. grid-item-card:: Safety
       :link: qx_assembly_safety
       :link-type: ref
 
-      :bdg-secondary:`draft` :bdg-light:`SAF / GLOB / -`
+      :bdg-secondary:`draft` :bdg-light:`SAF`
+
+      :bdg-dark-line:`ISO 26262-2` :bdg-dark-line:`ISO 26262-8`
 
       Functional safety management: plan, perform and assess the safety activities ISO 26262 requires for Qorix products.
+
+      +++
+      Owner: Functional Safety Office · 3 workflows · 4 work products
 
    .. grid-item-card:: Security
       :link: qx_assembly_security
       :link-type: ref
 
-      :bdg-secondary:`draft` :bdg-light:`SEC / GLOB / -`
+      :bdg-secondary:`draft` :bdg-light:`SEC`
+
+      :bdg-dark-line:`ISO/SAE 21434`
 
       Cybersecurity management: plan, perform and assess the cybersecurity activities ISO/SAE 21434 requires for Qorix products.
+
+      +++
+      Owner: Cybersecurity Office · 2 workflows · 2 work products
 
 Engineering
 ===========
 
-.. grid:: 1 2 3 3
-   :gutter: 2
+.. tab-set::
 
-   .. grid-item-card:: Change Management
-      :link: qx_assembly_change_management
-      :link-type: ref
+   .. tab-item:: Table
 
-      :bdg-secondary:`draft` :bdg-light:`- / GLOB / -`
+      .. rubric:: Plan and control
 
-      Request, analyse, approve and track changes to work products and products.
+      .. list-table::
+         :header-rows: 1
+         :widths: 26 16 26 9 12 11
 
-   .. grid-item-card:: Configuration Management
-      :link: qx_assembly_configuration_management
-      :link-type: ref
+         * - Process
+           - Owner
+           - Standards
+           - Workflows
+           - Work products
+           - Status
+         * - :ref:`Decision Management <qx_assembly_decision_management>`
+           - Decision Owner
+           - :bdg-primary:`15288 6.3.3`
+           - 2
+           - 3
+           - :bdg-secondary:`draft`
+         * - :ref:`Measurement and Metrics <qx_assembly_measurement>`
+           - Metrics Analyst
+           - :bdg-primary:`15288 6.3.7`
 
-      :bdg-secondary:`draft` :bdg-light:`- / GLOB / -`
+             :bdg-info:`MAN.6`
+           - 2
+           - 3
+           - :bdg-secondary:`draft`
+         * - :ref:`Project Planning and Control <qx_assembly_project_planning>`
+           - Project Manager
+           - :bdg-primary:`15288 6.3.1-6.3.2`
 
-      Identify, baseline and control configuration items so every release is reproducible.
+             :bdg-info:`MAN.3`
+           - 2
+           - 3
+           - :bdg-secondary:`draft`
+         * - :ref:`Risk Management <qx_assembly_risk_management>`
+           - Risk Manager
+           - :bdg-primary:`15288 6.3.4`
 
-   .. grid-item-card:: Decision Management
-      :link: qx_assembly_decision_management
-      :link-type: ref
+             :bdg-info:`MAN.5`
+           - 2
+           - 3
+           - :bdg-secondary:`draft`
 
-      :bdg-secondary:`draft` :bdg-light:`- / GLOB / -`
+      .. rubric:: Requirements and verification
 
-      Take significant decisions from analysed alternatives and keep the decision, its rationale and its owner on record.
+      .. list-table::
+         :header-rows: 1
+         :widths: 26 16 26 9 12 11
 
-   .. grid-item-card:: Information and Documentation Management
-      :link: qx_assembly_information_management
-      :link-type: ref
+         * - Process
+           - Owner
+           - Standards
+           - Workflows
+           - Work products
+           - Status
+         * - :ref:`Problem Resolution <qx_assembly_problem_resolution>`
+           - Problem Manager
+           - :bdg-info:`SUP.9`
+           - 2
+           - 3
+           - :bdg-secondary:`draft`
+         * - :ref:`Requirements Management and Traceability <qx_assembly_requirements_management>`
+           - Requirements Engineer
+           - :bdg-primary:`15288 6.4.2-6.4.3`
 
-      :bdg-secondary:`draft` :bdg-light:`DOC / GLOB / -`
+             :bdg-info:`SYS.2`
 
-      Decide which information the organisation keeps, keep it current and retrievable, and protect it as its classification requires.
+             :bdg-info:`SWE.1`
+           - 2
+           - 3
+           - :bdg-secondary:`draft`
+         * - :ref:`Verification and Reviews <qx_assembly_verification_reviews>`
+           - Review Lead
+           - :bdg-primary:`15288 6.4.9`
+           - 2
+           - 3
+           - :bdg-secondary:`draft`
 
-   .. grid-item-card:: Measurement and Metrics
-      :link: qx_assembly_measurement
-      :link-type: ref
+      .. rubric:: Control and release
 
-      :bdg-secondary:`draft` :bdg-light:`- / GLOB / -`
+      .. list-table::
+         :header-rows: 1
+         :widths: 26 16 26 9 12 11
 
-      Define the measures the organisation needs, collect them consistently and report them to the people who decide.
+         * - Process
+           - Owner
+           - Standards
+           - Workflows
+           - Work products
+           - Status
+         * - :ref:`Change Management <qx_assembly_change_management>`
+           - Change Manager
+           - :bdg-primary:`15288 6.3.5`
 
-   .. grid-item-card:: Problem Resolution
-      :link: qx_assembly_problem_resolution
-      :link-type: ref
+             :bdg-info:`SUP.10`
 
-      :bdg-secondary:`draft` :bdg-light:`- / GLOB / -`
+             :bdg-dark-line:`ISO 26262-8 cl. 8`
+           - 1
+           - 2
+           - :bdg-secondary:`draft`
+         * - :ref:`Configuration Management <qx_assembly_configuration_management>`
+           - Configuration Manager
+           - :bdg-primary:`15288 6.3.5`
 
-      Record problems from any source, analyse their cause and take them to verified resolution.
+             :bdg-info:`SUP.8`
 
-   .. grid-item-card:: Process Improvement and Tailoring
-      :link: qx_assembly_process_improvement
-      :link-type: ref
+             :bdg-dark-line:`ISO 26262-8 cl. 7`
+           - 3
+           - 4
+           - :bdg-secondary:`draft`
+         * - :ref:`Information and Documentation Management <qx_assembly_information_management>`
+           - Documentation Owner
+           - :bdg-primary:`15288 6.3.6`
+           - 2
+           - 3
+           - :bdg-secondary:`draft`
+         * - :ref:`Release Management <qx_assembly_release_management>`
+           - Release Manager
+           - :bdg-primary:`15288 6.4.10`
 
-      :bdg-secondary:`draft` :bdg-light:`- / GLOB / -`
+             :bdg-info:`SPL.2`
 
-      Turn audit findings, metrics and feedback into process improvements, and record how a project tailors the processes and why.
+             :bdg-dark-line:`ISO 26262-4 cl. 11`
+           - 1
+           - 1
+           - :bdg-secondary:`draft`
+         * - :ref:`Supplier and Acquisition Management <qx_assembly_supplier_management>`
+           - Supplier Manager
+           - :bdg-primary:`15288 6.1.1-6.1.2`
 
-   .. grid-item-card:: Project Planning and Control
-      :link: qx_assembly_project_planning
-      :link-type: ref
+             :bdg-info:`ACQ.4`
+           - 2
+           - 3
+           - :bdg-secondary:`draft`
 
-      :bdg-secondary:`draft` :bdg-light:`- / GLOB / -`
+      .. rubric:: Assure and improve
 
-      Plan a project's scope, schedule, resources and responsibilities, and control progress against that plan.
+      .. list-table::
+         :header-rows: 1
+         :widths: 26 16 26 9 12 11
 
-   .. grid-item-card:: Quality Assurance
-      :link: qx_assembly_quality_assurance
-      :link-type: ref
+         * - Process
+           - Owner
+           - Standards
+           - Workflows
+           - Work products
+           - Status
+         * - :ref:`Process Improvement and Tailoring <qx_assembly_process_improvement>`
+           - Process Improvement Lead
+           - :bdg-primary:`15288 Annex A`
 
-      :bdg-secondary:`draft` :bdg-light:`- / GLOB / -`
+             :bdg-info:`PIM.3`
+           - 2
+           - 4
+           - :bdg-secondary:`draft`
+         * - :ref:`Quality Assurance <qx_assembly_quality_assurance>`
+           - Quality Office
+           - :bdg-primary:`15288 6.3.8`
 
-      Quality management system and quality assurance: make sure processes are followed and work products meet their criteria.
+             :bdg-info:`SUP.1`
 
-   .. grid-item-card:: Release Management
-      :link: qx_assembly_release_management
-      :link-type: ref
+             :bdg-dark-line:`ISO 9001`
 
-      :bdg-secondary:`draft` :bdg-light:`- / GLOB / -`
+             :bdg-dark-line:`IATF 16949`
+           - 2
+           - 2
+           - :bdg-secondary:`draft`
 
-      Release a baselined, audited organisation level configuration so every project applies a known, reproducible version.
+   .. tab-item:: Cards
 
-   .. grid-item-card:: Requirements Management and Traceability
-      :link: qx_assembly_requirements_management
-      :link-type: ref
+      .. rubric:: Plan and control
 
-      :bdg-secondary:`draft` :bdg-light:`PRD / GLOB / REQ`
+      .. grid:: 1 2 3 3
+         :gutter: 2
 
-      Define stakeholder and system requirements once, keep them agreed and trace them both ways to what they come from and what satisfies them.
+         .. grid-item-card:: Decision Management
+            :link: qx_assembly_decision_management
+            :link-type: ref
 
-   .. grid-item-card:: Risk Management
-      :link: qx_assembly_risk_management
-      :link-type: ref
+            :bdg-secondary:`draft`
 
-      :bdg-secondary:`draft` :bdg-light:`- / GLOB / -`
+            :bdg-primary:`15288 6.3.3`
 
-      Identify, analyse, treat and monitor risks to projects and to the organisation level processes.
+            Take significant decisions from analysed alternatives and keep the decision, its rationale and its owner on record.
 
-   .. grid-item-card:: Supplier and Acquisition Management
-      :link: qx_assembly_supplier_management
-      :link-type: ref
+            +++
+            Owner: Decision Owner · 2 workflows · 3 work products
 
-      :bdg-secondary:`draft` :bdg-light:`- / GLOB / -`
+         .. grid-item-card:: Measurement and Metrics
+            :link: qx_assembly_measurement
+            :link-type: ref
 
-      Agree what is acquired from suppliers, put the agreement in writing and monitor the supplier against it.
+            :bdg-secondary:`draft`
 
-   .. grid-item-card:: Verification and Reviews
-      :link: qx_assembly_verification_reviews
-      :link-type: ref
+            :bdg-primary:`15288 6.3.7` :bdg-info:`MAN.6`
 
-      :bdg-secondary:`draft` :bdg-light:`TST / GLOB / -`
+            Define the measures the organisation needs, collect them consistently and report them to the people who decide.
 
-      Plan verification of work products against their criteria and carry out reviews that record findings and close them.
+            +++
+            Owner: Metrics Analyst · 2 workflows · 3 work products
+
+         .. grid-item-card:: Project Planning and Control
+            :link: qx_assembly_project_planning
+            :link-type: ref
+
+            :bdg-secondary:`draft`
+
+            :bdg-primary:`15288 6.3.1-6.3.2` :bdg-info:`MAN.3`
+
+            Plan a project's scope, schedule, resources and responsibilities, and control progress against that plan.
+
+            +++
+            Owner: Project Manager · 2 workflows · 3 work products
+
+         .. grid-item-card:: Risk Management
+            :link: qx_assembly_risk_management
+            :link-type: ref
+
+            :bdg-secondary:`draft`
+
+            :bdg-primary:`15288 6.3.4` :bdg-info:`MAN.5`
+
+            Identify, analyse, treat and monitor risks to projects and to the organisation level processes.
+
+            +++
+            Owner: Risk Manager · 2 workflows · 3 work products
+
+
+      .. rubric:: Requirements and verification
+
+      .. grid:: 1 2 3 3
+         :gutter: 2
+
+         .. grid-item-card:: Problem Resolution
+            :link: qx_assembly_problem_resolution
+            :link-type: ref
+
+            :bdg-secondary:`draft`
+
+            :bdg-info:`SUP.9`
+
+            Record problems from any source, analyse their cause and take them to verified resolution.
+
+            +++
+            Owner: Problem Manager · 2 workflows · 3 work products
+
+         .. grid-item-card:: Requirements Management and Traceability
+            :link: qx_assembly_requirements_management
+            :link-type: ref
+
+            :bdg-secondary:`draft` :bdg-light:`PRD / REQ`
+
+            :bdg-primary:`15288 6.4.2-6.4.3` :bdg-info:`SYS.2` :bdg-info:`SWE.1`
+
+            Define stakeholder and system requirements once, keep them agreed and trace them both ways to what they come from and what satisfies them.
+
+            +++
+            Owner: Requirements Engineer · 2 workflows · 3 work products
+
+         .. grid-item-card:: Verification and Reviews
+            :link: qx_assembly_verification_reviews
+            :link-type: ref
+
+            :bdg-secondary:`draft` :bdg-light:`TST`
+
+            :bdg-primary:`15288 6.4.9`
+
+            Plan verification of work products against their criteria and carry out reviews that record findings and close them.
+
+            +++
+            Owner: Review Lead · 2 workflows · 3 work products
+
+
+      .. rubric:: Control and release
+
+      .. grid:: 1 2 3 3
+         :gutter: 2
+
+         .. grid-item-card:: Change Management
+            :link: qx_assembly_change_management
+            :link-type: ref
+
+            :bdg-secondary:`draft`
+
+            :bdg-primary:`15288 6.3.5` :bdg-info:`SUP.10` :bdg-dark-line:`ISO 26262-8 cl. 8`
+
+            Request, analyse, approve and track changes to work products and products.
+
+            +++
+            Owner: Change Manager · 1 workflow · 2 work products
+
+         .. grid-item-card:: Configuration Management
+            :link: qx_assembly_configuration_management
+            :link-type: ref
+
+            :bdg-secondary:`draft`
+
+            :bdg-primary:`15288 6.3.5` :bdg-info:`SUP.8` :bdg-dark-line:`ISO 26262-8 cl. 7`
+
+            Identify, baseline and control configuration items so every release is reproducible.
+
+            +++
+            Owner: Configuration Manager · 3 workflows · 4 work products
+
+         .. grid-item-card:: Information and Documentation Management
+            :link: qx_assembly_information_management
+            :link-type: ref
+
+            :bdg-secondary:`draft` :bdg-light:`DOC`
+
+            :bdg-primary:`15288 6.3.6`
+
+            Decide which information the organisation keeps, keep it current and retrievable, and protect it as its classification requires.
+
+            +++
+            Owner: Documentation Owner · 2 workflows · 3 work products
+
+         .. grid-item-card:: Release Management
+            :link: qx_assembly_release_management
+            :link-type: ref
+
+            :bdg-secondary:`draft`
+
+            :bdg-primary:`15288 6.4.10` :bdg-info:`SPL.2` :bdg-dark-line:`ISO 26262-4 cl. 11`
+
+            Release a baselined, audited organisation level configuration so every project applies a known, reproducible version.
+
+            +++
+            Owner: Release Manager · 1 workflow · 1 work product
+
+         .. grid-item-card:: Supplier and Acquisition Management
+            :link: qx_assembly_supplier_management
+            :link-type: ref
+
+            :bdg-secondary:`draft`
+
+            :bdg-primary:`15288 6.1.1-6.1.2` :bdg-info:`ACQ.4`
+
+            Agree what is acquired from suppliers, put the agreement in writing and monitor the supplier against it.
+
+            +++
+            Owner: Supplier Manager · 2 workflows · 3 work products
+
+
+      .. rubric:: Assure and improve
+
+      .. grid:: 1 2 3 3
+         :gutter: 2
+
+         .. grid-item-card:: Process Improvement and Tailoring
+            :link: qx_assembly_process_improvement
+            :link-type: ref
+
+            :bdg-secondary:`draft`
+
+            :bdg-primary:`15288 Annex A` :bdg-info:`PIM.3`
+
+            Turn audit findings, metrics and feedback into process improvements, and record how a project tailors the processes and why.
+
+            +++
+            Owner: Process Improvement Lead · 2 workflows · 4 work products
+
+         .. grid-item-card:: Quality Assurance
+            :link: qx_assembly_quality_assurance
+            :link-type: ref
+
+            :bdg-secondary:`draft`
+
+            :bdg-primary:`15288 6.3.8` :bdg-info:`SUP.1` :bdg-dark-line:`ISO 9001` :bdg-dark-line:`IATF 16949`
+
+            Quality management system and quality assurance: make sure processes are followed and work products meet their criteria.
+
+            +++
+            Owner: Quality Office · 2 workflows · 2 work products
 
 Build
 =====
@@ -178,9 +457,14 @@ Build
       :link: qx_assembly_infrastructure
       :link-type: ref
 
-      :bdg-secondary:`draft` :bdg-light:`BLD / GLOB / -`
+      :bdg-secondary:`draft` :bdg-light:`BLD`
+
+      :bdg-info:`PIM.3` :bdg-dark-line:`ISO 26262-8 cl. 11` :bdg-dark-line:`ISO/SAE 21434 cl. 5.4.5`
 
       Provide and keep qualified the docs-as-code toolchain (Bazel, Sphinx-needs, qpm), the repository baseline and CI that every Qorix project consumes.
+
+      +++
+      Owner: Infrastructure Lead · 2 workflows · 4 work products
 
 Testing
 =======
@@ -192,9 +476,14 @@ Testing
       :link: qx_assembly_validation
       :link-type: ref
 
-      :bdg-secondary:`draft` :bdg-light:`TST / GLOB / -`
+      :bdg-secondary:`draft` :bdg-light:`TST`
+
+      :bdg-info:`SYS.5 / VAL.1` :bdg-dark-line:`ISO 26262-4 cl. 8` :bdg-dark-line:`ISO 26262-8 cl. 9`
 
       Set the organisation-wide test policy, qualify the test systems it relies on, and validate products against stakeholder requirements.
+
+      +++
+      Owner: Validation Lead · 3 workflows · 5 work products
 
 Organisation
 ============
@@ -206,9 +495,14 @@ Organisation
       :link: qx_assembly_training
       :link-type: ref
 
-      :bdg-secondary:`draft` :bdg-light:`- / GLOB / -`
+      :bdg-secondary:`draft`
+
+      :bdg-info:`(training material)` :bdg-dark-line:`ISO 26262-2 cl. 5.4.5` :bdg-dark-line:`ISO/SAE 21434 cl. 5.4.4`
 
       Make sure every person holding a process role is qualified for it, and keep the evidence (competence matrix, training records) assessor-ready.
+
+      +++
+      Owner: Training Coordinator · 2 workflows · 3 work products
 
 .. toctree::
    :hidden:

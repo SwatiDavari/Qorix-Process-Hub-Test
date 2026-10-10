@@ -9,12 +9,14 @@ assembly:
   layer: '-'
   status: draft
   owner: rl_qx_qa_quality_office
+  group: Assure and improve
   purpose: 'Quality management system and quality assurance: make sure processes are followed and work
     products meet their criteria.'
   standards:
   - ISO 9001
   - IATF 16949
   - ASPICE 4.0 SUP.1
+  - ISO/IEC/IEEE 15288 6.3.8
   tier: qorix
 concepts:
 - id: doc_concept_qx_qa_process

@@ -9,10 +9,12 @@ assembly:
   layer: '-'
   status: draft
   owner: rl_qx_rel_release_manager
+  group: Control and release
   purpose: Release a baselined, audited organisation level configuration so every project applies a known, reproducible version.
   standards:
   - ISO 26262-4 cl. 11
   - ASPICE 4.0 SPL.2
+  - ISO/IEC/IEEE 15288 6.4.10
   tier: qorix
 getting_started: |-
   This describes how an organisation level baseline is released to projects.

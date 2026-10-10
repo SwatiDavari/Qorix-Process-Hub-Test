@@ -12,7 +12,7 @@ Quality management system and quality assurance: make sure processes are followe
 * **Status:** :bdg-secondary:`draft`
 * **Enabler / Scope / Layer:** - / GLOB / -
 * **Owner:** :need:`rl_qx_qa_quality_office`
-* **Standards:** ISO 9001, IATF 16949, ASPICE 4.0 SUP.1
+* **Standards:** ISO 9001, IATF 16949, ASPICE 4.0 SUP.1, ISO/IEC/IEEE 15288 6.3.8
 
 .. doc_concept:: Quality Assurance Process
    :id: doc_concept_qx_qa_process

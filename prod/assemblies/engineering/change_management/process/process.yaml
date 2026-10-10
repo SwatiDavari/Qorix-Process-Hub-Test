@@ -9,10 +9,12 @@ assembly:
   layer: '-'
   status: draft
   owner: rl_qx_cm_change_manager
+  group: Control and release
   purpose: Request, analyse, approve and track changes to work products and products.
   standards:
   - ISO 26262-8 cl. 8
   - ASPICE 4.0 SUP.10
+  - ISO/IEC/IEEE 15288 6.3.5
   tier: qorix
 getting_started: |-
   This describes how to get started with change management at organisation level — how to change something every project applies.

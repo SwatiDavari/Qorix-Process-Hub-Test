@@ -9,6 +9,7 @@ assembly:
   layer: '-'
   status: draft
   owner: rl_qx_plan_project_manager
+  group: Plan and control
   purpose: "Plan a project's scope, schedule, resources and responsibilities, and control progress against that plan."
   standards:
   - "ISO/IEC/IEEE 15288 6.3.1-6.3.2"

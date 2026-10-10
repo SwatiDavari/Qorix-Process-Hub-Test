@@ -9,6 +9,7 @@ assembly:
   layer: '-'
   status: draft
   owner: rl_qx_info_documentation_owner
+  group: Control and release
   purpose: "Decide which information the organisation keeps, keep it current and retrievable, and protect it as its classification requires."
   standards:
   - "ISO/IEC/IEEE 15288 6.3.6"

@@ -12,7 +12,7 @@ Identify, baseline and control configuration items so every release is reproduci
 * **Status:** :bdg-secondary:`draft`
 * **Enabler / Scope / Layer:** - / GLOB / -
 * **Owner:** :need:`rl_qx_cfg_config_manager`
-* **Standards:** ISO 26262-8 cl. 7, ASPICE 4.0 SUP.8
+* **Standards:** ISO 26262-8 cl. 7, ASPICE 4.0 SUP.8, ISO/IEC/IEEE 15288 6.3.5
 
 .. doc_getstrt:: Getting started on Configuration Management
    :id: doc_getstrt_qx_cfg_getting_started

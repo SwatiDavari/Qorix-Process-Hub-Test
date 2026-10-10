@@ -9,6 +9,7 @@ assembly:
   layer: '-'
   status: draft
   owner: rl_qx_meas_metrics_analyst
+  group: Plan and control
   purpose: "Define the measures the organisation needs, collect them consistently and report them to the people who decide."
   standards:
   - "ISO/IEC/IEEE 15288 6.3.7"

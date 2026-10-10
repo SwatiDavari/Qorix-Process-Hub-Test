@@ -13,25 +13,40 @@ Compliance
       :link: qx_assembly_governance_compliance
       :link-type: ref
 
-      :bdg-secondary:`draft` :bdg-light:`- / GLOB / -`
+      :bdg-secondary:`draft`
+
+      :bdg-info:`PIM.3 / SUP.1 / MAN.3` :bdg-dark-line:`ISO 26262-2` :bdg-dark-line:`ISO/SAE 21434 cl. 5-6`
 
       Own the Qorix Process Hub: maintain the Qorix process overlay, approve project tailoring, and run compliance audits.
+
+      +++
+      Owner: Head of Governance & Compliance · 3 workflows · 7 work products
 
    .. grid-item-card:: Safety
       :link: qx_assembly_safety
       :link-type: ref
 
-      :bdg-secondary:`draft` :bdg-light:`SAF / GLOB / -`
+      :bdg-secondary:`draft` :bdg-light:`SAF`
+
+      :bdg-dark-line:`ISO 26262-2` :bdg-dark-line:`ISO 26262-8`
 
       Functional safety management: plan, perform and assess the safety activities ISO 26262 requires for Qorix products.
+
+      +++
+      Owner: Functional Safety Office · 3 workflows · 4 work products
 
    .. grid-item-card:: Security
       :link: qx_assembly_security
       :link-type: ref
 
-      :bdg-secondary:`draft` :bdg-light:`SEC / GLOB / -`
+      :bdg-secondary:`draft` :bdg-light:`SEC`
+
+      :bdg-dark-line:`ISO/SAE 21434`
 
       Cybersecurity management: plan, perform and assess the cybersecurity activities ISO/SAE 21434 requires for Qorix products.
+
+      +++
+      Owner: Cybersecurity Office · 2 workflows · 2 work products
 
 .. toctree::
    :hidden:
