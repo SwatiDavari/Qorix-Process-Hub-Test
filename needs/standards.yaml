@@ -44,3 +44,68 @@ standards:
   - {id: std_req_iso15288_622, standard: "ISO/IEC/IEEE 15288:2023", clause: "6.2.2", title: "Infrastructure management process"}
   - {id: std_req_iso15288_624, standard: "ISO/IEC/IEEE 15288:2023", clause: "6.2.4", title: "Human resource management process"}
   - {id: std_req_iso15288_6411, standard: "ISO/IEC/IEEE 15288:2023", clause: "6.4.11", title: "Validation process"}
+
+  # ISO/SAE 21434 clauses used by the CSMS assemblies. Clause titles are group titles; verify against the standard text.
+  - {id: std_req_isosae21434_assessment_153, standard: "ISO/SAE 21434:2021", clause: "15.3", title: "Asset identification"}
+  - {id: std_req_isosae21434_assessment_154, standard: "ISO/SAE 21434:2021", clause: "15.4", title: "Threat scenario identification"}
+  - {id: std_req_isosae21434_assessment_155, standard: "ISO/SAE 21434:2021", clause: "15.5", title: "Impact rating"}
+  - {id: std_req_isosae21434_assessment_156, standard: "ISO/SAE 21434:2021", clause: "15.6", title: "Attack path analysis"}
+  - {id: std_req_isosae21434_assessment_157, standard: "ISO/SAE 21434:2021", clause: "15.7", title: "Attack feasibility rating"}
+  - {id: std_req_isosae21434_assessment_158, standard: "ISO/SAE 21434:2021", clause: "15.8", title: "Risk value determination"}
+  - {id: std_req_isosae21434_assessment_159, standard: "ISO/SAE 21434:2021", clause: "15.9", title: "Risk treatment decision-making"}
+  - {id: std_req_isosae21434_concept_93, standard: "ISO/SAE 21434:2021", clause: "9.3", title: "Item definition"}
+  - {id: std_req_isosae21434_concept_94, standard: "ISO/SAE 21434:2021", clause: "9.4", title: "Cybersecurity goals"}
+  - {id: std_req_isosae21434_concept_95, standard: "ISO/SAE 21434:2021", clause: "9.5", title: "Cybersecurity concept"}
+  - {id: std_req_isosae21434_continual_83, standard: "ISO/SAE 21434:2021", clause: "8.3", title: "Cybersecurity monitoring"}
+  - {id: std_req_isosae21434_continual_84, standard: "ISO/SAE 21434:2021", clause: "8.4", title: "Cybersecurity event evaluation"}
+  - {id: std_req_isosae21434_continual_85, standard: "ISO/SAE 21434:2021", clause: "8.5", title: "Vulnerability analysis"}
+  - {id: std_req_isosae21434_continual_86, standard: "ISO/SAE 21434:2021", clause: "8.6", title: "Vulnerability management"}
+  - {id: std_req_isosae21434_development_1041, standard: "ISO/SAE 21434:2021", clause: "10.4.1", title: "Design"}
+  - {id: std_req_isosae21434_development_1042, standard: "ISO/SAE 21434:2021", clause: "10.4.2", title: "Integration and verification"}
+  - {id: std_req_isosae21434_distributed_741, standard: "ISO/SAE 21434:2021", clause: "7.4.1", title: "Supplier capability assessment"}
+  - {id: std_req_isosae21434_distributed_742, standard: "ISO/SAE 21434:2021", clause: "7.4.2", title: "Request for quotation"}
+  - {id: std_req_isosae21434_distributed_743, standard: "ISO/SAE 21434:2021", clause: "7.4.3", title: "Alignment of responsibilities"}
+  - {id: std_req_isosae21434_operations_133, standard: "ISO/SAE 21434:2021", clause: "13.3", title: "Cybersecurity incident response"}
+  - {id: std_req_isosae21434_operations_134, standard: "ISO/SAE 21434:2021", clause: "13.4", title: "Updates"}
+  - {id: std_req_isosae21434_org_management_541, standard: "ISO/SAE 21434:2021", clause: "5.4.1", title: "Cybersecurity governance"}
+  - {id: std_req_isosae21434_org_management_542, standard: "ISO/SAE 21434:2021", clause: "5.4.2", title: "Cybersecurity culture"}
+  - {id: std_req_isosae21434_org_management_544, standard: "ISO/SAE 21434:2021", clause: "5.4.4", title: "Management systems"}
+  - {id: std_req_isosae21434_org_management_545, standard: "ISO/SAE 21434:2021", clause: "5.4.5", title: "Tool management"}
+  - {id: std_req_isosae21434_org_management_546, standard: "ISO/SAE 21434:2021", clause: "5.4.6", title: "Information security management"}
+  - {id: std_req_isosae21434_org_management_547, standard: "ISO/SAE 21434:2021", clause: "5.4.7", title: "Organizational cybersecurity audit"}
+  - {id: std_req_isosae21434_project_dependent_641, standard: "ISO/SAE 21434:2021", clause: "6.4.1", title: "Cybersecurity responsibilities"}
+  - {id: std_req_isosae21434_project_dependent_642, standard: "ISO/SAE 21434:2021", clause: "6.4.2", title: "Cybersecurity planning"}
+  - {id: std_req_isosae21434_project_dependent_643, standard: "ISO/SAE 21434:2021", clause: "6.4.3", title: "Tailoring of the cybersecurity activities"}
+  - {id: std_req_isosae21434_project_dependent_647, standard: "ISO/SAE 21434:2021", clause: "6.4.7", title: "Cybersecurity case"}
+  - {id: std_req_isosae21434_project_dependent_648, standard: "ISO/SAE 21434:2021", clause: "6.4.8", title: "Cybersecurity assessment"}
+  - {id: std_req_isosae21434_project_dependent_649, standard: "ISO/SAE 21434:2021", clause: "6.4.9", title: "Release for post-development"}
+  - {id: std_req_isosae21434_validation_114, standard: "ISO/SAE 21434:2021", clause: "11.4", title: "Cybersecurity validation"}
+  - {id: std_wp_isosae21434_assessment_15331, standard: "ISO/SAE 21434:2021", clause: "15.3.3.1 (work product)", title: "Asset identification: work product"}
+  - {id: std_wp_isosae21434_assessment_15332, standard: "ISO/SAE 21434:2021", clause: "15.3.3.2 (work product)", title: "Asset identification: work product"}
+  - {id: std_wp_isosae21434_assessment_15431, standard: "ISO/SAE 21434:2021", clause: "15.4.3.1 (work product)", title: "Threat scenario identification: work product"}
+  - {id: std_wp_isosae21434_assessment_15531, standard: "ISO/SAE 21434:2021", clause: "15.5.3.1 (work product)", title: "Impact rating: work product"}
+  - {id: std_wp_isosae21434_assessment_15631, standard: "ISO/SAE 21434:2021", clause: "15.6.3.1 (work product)", title: "Attack path analysis: work product"}
+  - {id: std_wp_isosae21434_assessment_15731, standard: "ISO/SAE 21434:2021", clause: "15.7.3.1 (work product)", title: "Attack feasibility rating: work product"}
+  - {id: std_wp_isosae21434_assessment_15831, standard: "ISO/SAE 21434:2021", clause: "15.8.3.1 (work product)", title: "Risk value determination: work product"}
+  - {id: std_wp_isosae21434_assessment_15931, standard: "ISO/SAE 21434:2021", clause: "15.9.3.1 (work product)", title: "Risk treatment decision-making: work product"}
+  - {id: std_wp_isosae21434_concept_9331, standard: "ISO/SAE 21434:2021", clause: "9.3.3.1 (work product)", title: "Clause 9.3.3.1"}
+  - {id: std_wp_isosae21434_concept_9432, standard: "ISO/SAE 21434:2021", clause: "9.4.3.2 (work product)", title: "Clause 9.4.3.2"}
+  - {id: std_wp_isosae21434_concept_9433, standard: "ISO/SAE 21434:2021", clause: "9.4.3.3 (work product)", title: "Clause 9.4.3.3"}
+  - {id: std_wp_isosae21434_concept_9434, standard: "ISO/SAE 21434:2021", clause: "9.4.3.4 (work product)", title: "Clause 9.4.3.4"}
+  - {id: std_wp_isosae21434_concept_9531, standard: "ISO/SAE 21434:2021", clause: "9.5.3.1 (work product)", title: "Clause 9.5.3.1"}
+  - {id: std_wp_isosae21434_concept_9532, standard: "ISO/SAE 21434:2021", clause: "9.5.3.2 (work product)", title: "Clause 9.5.3.2"}
+  - {id: std_wp_isosae21434_continual_8331, standard: "ISO/SAE 21434:2021", clause: "8.3.3.1 (work product)", title: "Clause 8.3.3.1"}
+  - {id: std_wp_isosae21434_continual_8332, standard: "ISO/SAE 21434:2021", clause: "8.3.3.2 (work product)", title: "Clause 8.3.3.2"}
+  - {id: std_wp_isosae21434_continual_8333, standard: "ISO/SAE 21434:2021", clause: "8.3.3.3 (work product)", title: "Clause 8.3.3.3"}
+  - {id: std_wp_isosae21434_continual_8431, standard: "ISO/SAE 21434:2021", clause: "8.4.3.1 (work product)", title: "Clause 8.4.3.1"}
+  - {id: std_wp_isosae21434_continual_8531, standard: "ISO/SAE 21434:2021", clause: "8.5.3.1 (work product)", title: "Clause 8.5.3.1"}
+  - {id: std_wp_isosae21434_continual_8631, standard: "ISO/SAE 21434:2021", clause: "8.6.3.1 (work product)", title: "Clause 8.6.3.1"}
+  - {id: std_wp_isosae21434_development_1051, standard: "ISO/SAE 21434:2021", clause: "10.5.1 (work product)", title: "Clause 10.5.1"}
+  - {id: std_wp_isosae21434_development_1052, standard: "ISO/SAE 21434:2021", clause: "10.5.2 (work product)", title: "Clause 10.5.2"}
+  - {id: std_wp_isosae21434_development_1053, standard: "ISO/SAE 21434:2021", clause: "10.5.3 (work product)", title: "Clause 10.5.3"}
+  - {id: std_wp_isosae21434_development_1054, standard: "ISO/SAE 21434:2021", clause: "10.5.4 (work product)", title: "Clause 10.5.4"}
+  - {id: std_wp_isosae21434_development_1055, standard: "ISO/SAE 21434:2021", clause: "10.5.5 (work product)", title: "Clause 10.5.5"}
+  - {id: std_wp_isosae21434_development_1056, standard: "ISO/SAE 21434:2021", clause: "10.5.6 (work product)", title: "Clause 10.5.6"}
+  - {id: std_wp_isosae21434_development_1057, standard: "ISO/SAE 21434:2021", clause: "10.5.7 (work product)", title: "Clause 10.5.7"}
+  - {id: std_wp_isosae21434_maintenance_13331, standard: "ISO/SAE 21434:2021", clause: "13.3.3.1 (work product)", title: "Cybersecurity incident response: work product"}
+  - {id: std_wp_isosae21434_validation_1151, standard: "ISO/SAE 21434:2021", clause: "11.5.1 (work product)", title: "Clause 11.5.1"}

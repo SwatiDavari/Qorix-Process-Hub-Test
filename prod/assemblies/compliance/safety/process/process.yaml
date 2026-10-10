@@ -15,6 +15,7 @@ assembly:
   - ISO 26262-2
   - ISO 26262-8
   tier: qorix
+  group: "Safety"
 getting_started: |-
   This describes how to get started with the parts of functional safety management that belong to the organisation rather than to a project — ISO 26262-2 clause 5 "Overall safety management".
 

@@ -1,0 +1,29 @@
+# Cybersecurity Management Plan (compliance/security/csms_mgmt_plan)  -  work products.
+work_products:
+- id: wp_qx_csplan_cs_plan
+  title: CS Plan
+  kind: plan
+  status: draft
+  purpose: Cybersecurity plan is a project level work product that defines the cybersecurity activities
+    and governance framework for the project. The plan provides traceability between ISO/SAE 21434 requirements
+    and project execution. \ It is maintained under configuration control and updated iteratively to reflect
+    lifecycle progress and changes (clauses 6.4.3, 6.4.6).
+  concept: doc_concept_qx_csplan_process
+  complies: &id001
+  - std_req_isosae21434_project_dependent_641
+  - std_req_isosae21434_project_dependent_642
+  - std_req_isosae21434_project_dependent_643
+- id: wp_qx_csplan_cs_plan_2
+  title: Cybersecurity Plan
+  kind: plan
+  status: draft
+  purpose: 'Purpose: The Cybersecurity Plan documents the planned cybersecurity activities and governance
+    framework for the project. Usage: It is used as: Contributors: CSMS Support: The plan provides traceability
+    between ISO/SAE 21434 requirements and project execution. Template Placeholder: TBD-template-cybersecurity-plan
+    NOTE: Cybersecurity plan shall be infused inside Product/Project development plan. It shall not be
+    a standalone document. It shall be maintained under configuration control and updated iteratively
+    to reflect lifecycle progress and changes (clauses 6.4.3, 6.4.6). A coordination artifact; A progress
+    tracking reference; An audit and assessment input; Product/Project Manager; Cybersecurity Architect/Lead;
+    Engineering stakeholders.'
+  concept: doc_concept_qx_csplan_process
+  complies: *id001

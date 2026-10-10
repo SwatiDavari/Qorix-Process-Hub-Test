@@ -1,0 +1,5 @@
+# Cybersecurity Operations and Maintenance (compliance/security/csms_operations)  -  roles.
+roles:
+- id: rl_qx_csops_cs_monitoring_team
+  title: Cybersecurity Monitoring Team
+  description: The Cybersecurity Monitoring Team role in Cybersecurity Operations and Maintenance.

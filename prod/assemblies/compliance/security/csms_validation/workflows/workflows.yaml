@@ -1,0 +1,178 @@
+# Cybersecurity Validation (compliance/security/csms_validation)  -  workflows.
+workflows:
+- id: wf_qx_csval_define_risk_treatment_val
+  title: Define Risk Treatment Validation Strategy
+  status: draft
+  responsible: rl_qx_csver_cs_ver_engineer
+  approved_by: rl_qx_csver_cs_test_architect
+  supported_by:
+  - rl_qx_csitem_software_architect_lead_engineer
+  input:
+  - wp_qx_csitem_cs_item_comp_def
+  - wp_qx_csgoal_cs_goals
+  - wp_qx_csgoal_cs_claims
+  - wp_qx_cscon_cs_concept
+  output:
+  - wp_qx_csval_risk_treatment_val_strategy
+  achieves:
+  - oc_qx_csval_cs_val
+  gate:
+  - wp: wp_qx_csitem_cs_item_comp_def
+    min_status: approved
+  contains:
+  - gd_req_qx_csval_rationale_for_selection_of
+  - gd_temp_qx_csval_cs_val_spec_template
+  description: The cybersecurity plan and validation inputs are studied, the objective of validation is
+    finalized, and a risk treatment validation strategy is developed, recorded in Risk Treatment Validation
+    Strategy.
+  activities:
+  - step: The cybersecurity plan and validation inputs are studied, the objective of validation is finalized,
+      and a risk treatment validation strategy is developed, recorded in Risk Treatment Validation Strategy
+    by: rl_qx_csver_cs_ver_engineer
+    capability: cap_qx_csval_cs_val
+  - step: Contribute to risk treatment validation strategy
+    by: rl_qx_csitem_software_architect_lead_engineer
+  - step: Approve risk treatment validation strategy
+    by: rl_qx_csver_cs_test_architect
+- id: wf_qx_csval_prepare_val_test_case_spec
+  title: Prepare Validation Test Case Specification
+  status: draft
+  responsible: rl_qx_csver_cs_ver_engineer
+  approved_by: rl_qx_csver_cs_test_architect
+  supported_by:
+  - rl_qx_csitem_software_architect_lead_engineer
+  - rl_qx_csitem_cs_product_owner
+  input:
+  - wp_qx_csval_risk_treatment_val_strategy
+  output:
+  - wp_qx_csval_val_test_case_spec
+  achieves:
+  - oc_qx_csval_cs_val
+  contains:
+  - gd_req_qx_csval_threat_scenario
+  - gd_temp_qx_csval_cs_val_spec_template
+  description: Validation cases are derived against the cybersecurity goals and against the UNECE R155
+    Annex 5 threat listing, and the resulting specification is reviewed and reworked, recorded in Validation
+    Test Case Specification.
+  activities:
+  - step: Validation cases are derived against the cybersecurity goals and against the UNECE R155 Annex
+      5 threat listing, and the resulting specification is reviewed and reworked, recorded in Validation
+      Test Case Specification
+    by: rl_qx_csver_cs_ver_engineer
+    capability: cap_qx_csval_cs_val
+  - step: Contribute to validation test case specification
+    by: rl_qx_csitem_software_architect_lead_engineer
+  - step: Contribute to validation test case specification
+    by: rl_qx_csitem_cs_product_owner
+  - step: Approve validation test case specification
+    by: rl_qx_csver_cs_test_architect
+- id: wf_qx_csval_execute_val_and_penetration
+  title: Execute Validation and Penetration Testing
+  status: draft
+  responsible: rl_qx_csver_cs_ver_engineer
+  approved_by: rl_qx_csver_cs_test_architect
+  supported_by:
+  - rl_qx_csitem_software_architect_lead_engineer
+  input:
+  - wp_qx_csval_val_test_case_spec
+  output:
+  - wp_qx_csval_val_test_report
+  - wp_qx_csval_penetration_test_report_internal
+  achieves:
+  - oc_qx_csval_cs_val
+  contains:
+  - gd_req_qx_csval_achievement_of_cs_goals
+  - gd_req_qx_csval_penetration_testing_of
+  description: Validation test cases from Validation Test Case Specification are executed in a controlled,
+    repeatable manner and results are recorded in Validation Test Report; cases indicated for penetration
+    testing proceed through planning, preparation, discovery, presentation, attack / test execution, and
+    evaluation, and are recorded in Penetration Test Report (Internal / External).
+  activities:
+  - step: Validation test cases from Validation Test Case Specification are executed in a controlled,
+      repeatable manner and results are recorded in Validation Test Report; cases indicated for penetration
+      testing proceed through planning, preparation, discovery,
+    by: rl_qx_csver_cs_ver_engineer
+    capability: cap_qx_csval_cs_val
+  - step: Contribute to validation test report
+    by: rl_qx_csitem_software_architect_lead_engineer
+  - step: Approve validation test report, penetration test report (internal / external)
+    by: rl_qx_csver_cs_test_architect
+- id: wf_qx_csval_summarize_review_and_baseline
+  title: Summarize, Review, and Baseline Validation Report
+  status: draft
+  responsible: rl_qx_csver_cs_ver_engineer
+  approved_by: rl_qx_csver_cs_test_architect
+  supported_by:
+  - rl_qx_csitem_cs_product_owner
+  - rl_qx_csitem_software_architect_lead_engineer
+  - rl_qx_csitem_cs_manager
+  input:
+  - wp_qx_csval_val_test_report
+  - wp_qx_csval_penetration_test_report_internal
+  output:
+  - wp_qx_csval_cs_val_report
+  achieves:
+  - oc_qx_csval_cs_val
+  contains:
+  - gd_req_qx_csval_traceability_of_val_results
+  - gd_chklst_qx_csval_cs_val_checklist
+  description: Results from Validation Test Report and Penetration Test Report (Internal / External) are
+    summarized, bidirectional traceability between cybersecurity goals, the validation strategy / specification,
+    and results is established and confirmed consistent, and the consolidated Cybersecurity Validation
+    Report is produced.
+  activities:
+  - step: Results from Validation Test Report and Penetration Test Report (Internal / External) are summarized,
+      bidirectional traceability between cybersecurity goals, the validation strategy / specification,
+      and results is established and confirmed consistent, and the
+    by: rl_qx_csver_cs_ver_engineer
+    capability: cap_qx_csval_cs_val
+  - step: Contribute to cybersecurity validation report
+    by: rl_qx_csitem_cs_product_owner
+  - step: Contribute to cybersecurity validation report
+    by: rl_qx_csitem_software_architect_lead_engineer
+  - step: Contribute to cybersecurity validation report
+    by: rl_qx_csitem_cs_manager
+  - step: Approve cybersecurity validation report
+    by: rl_qx_csver_cs_test_architect
+- id: wf_qx_csval_external_cs_val_via_penetration
+  title: External cybersecurity validation via penetration testing vendor
+  status: draft
+  responsible: rl_qx_csval_cs_penetration_test_vendor
+  approved_by: rl_qx_gc_head
+  supported_by:
+  - rl_qx_csitem_cs_product_owner
+  - rl_qx_csitem_software_architect_lead_engineer
+  - rl_qx_csver_cs_test_architect
+  - rl_qx_csitem_cs_manager
+  input:
+  - wp_qx_cstara_tara_record
+  - wp_qx_csgoal_cs_goals
+  - wp_qx_csgoal_cs_claims
+  output:
+  - wp_qx_csval_cs_val_report
+  achieves:
+  - oc_qx_csval_cs_val
+  gate:
+  - wp: wp_qx_cstara_tara_record
+    min_status: approved
+  contains:
+  - gd_req_qx_csval_traceability_of_val_results
+  - gd_chklst_qx_csval_cs_val_checklist
+  description: Results from TARA Record and cybersecurity goals (CS Goals) and cybersecurity claims (CS
+    Claims) are used as input by external penetration testing vendor to perform validation activities
+    that includes - Test case preparation - Test execution - Test results reporting - Possible mitigation
+    recommendations
+  activities:
+  - step: Results from TARA Record and cybersecurity goals (CS Goals) and cybersecurity claims (CS Claims)
+      are used as input by external penetration testing vendor to perform validation activities that includes
+      - Test case preparation - Test execution - Test results
+    by: rl_qx_csval_cs_penetration_test_vendor
+    capability: cap_qx_csval_cs_val
+  - step: Contribute to cybersecurity validation report
+    by: rl_qx_csitem_cs_product_owner
+  - step: Contribute to cybersecurity validation report
+    by: rl_qx_csitem_software_architect_lead_engineer
+  - step: Contribute to cybersecurity validation report
+    by: rl_qx_csver_cs_test_architect
+  - step: Approve cybersecurity validation report
+    by: rl_qx_gc_head

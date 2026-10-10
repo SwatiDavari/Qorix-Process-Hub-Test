@@ -1,0 +1,29 @@
+# Cybersecurity Item Definition (compliance/security/csms_item_definition)  -  templates and guidance.
+templates:
+- id: gd_guidl_qx_csitem_item_def
+  title: Item Definition
+  status: draft
+  description: Item Definition
+- id: gd_req_qx_csitem_item_boundary_functions_and
+  title: Item boundary, functions and preliminary architecture
+  status: draft
+  description: The item boundary, item functions, and preliminary architecture (including security-relevant
+    states and modes) shall be identified and documented in CS Item / Component Definition.
+- id: gd_req_qx_csitem_operational_environment
+  title: Operational environment relevant to cybersecurity
+  status: draft
+  description: Information about the operational environment of the item relevant to cybersecurity, including
+    interfaces, connectivity, and known threats/ vulnerabilities of similar or reused items, shall be
+    described in CS Item / Component Definition.
+- id: gd_chklst_qx_csitem_item_def_quality_check
+  title: Item Definition Quality Check Checklist
+  status: draft
+  description: Item Definition Quality Check Checklist
+- id: gd_chklst_qx_csitem_item_def_review_checklist
+  title: Item Definition Review Checklist
+  status: draft
+  description: Item Definition Review Checklist
+- id: gd_guidl_qx_csitem_item_def_2
+  title: Item Definition
+  status: draft
+  description: Item Definition

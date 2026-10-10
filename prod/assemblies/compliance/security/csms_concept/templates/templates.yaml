@@ -1,0 +1,40 @@
+# Cybersecurity Concept (compliance/security/csms_concept)  -  templates and guidance.
+templates:
+- id: gd_guidl_qx_cscon_cs_concept
+  title: Cybersecurity Concept
+  status: draft
+  description: Cybersecurity Concept
+- id: gd_req_qx_cscon_cs_controls_and_interactions
+  title: Cybersecurity controls and interactions
+  status: draft
+  description: Cybersecurity controls and their interactions to achieve the cybersecurity goals shall
+    be identified and described in Cybersecurity Concept.
+- id: gd_req_qx_cscon_cs_reqs_of_item_and
+  title: Cybersecurity requirements of item and operational environment
+  status: draft
+  description: Cybersecurity requirements of the item and requirements on the operational environment
+    shall be defined for the cybersecurity goals and recorded in Cybersecurity Concept.
+- id: gd_req_qx_cscon_allocation_of_cs_reqs
+  title: Allocation of cybersecurity requirements
+  status: draft
+  description: Cybersecurity requirements shall be allocated to one or more modules of the item / component,
+    with CAL inherited from the corresponding cybersecurity goal (the highest CAL where a requirement
+    realizes more than one goal).
+- id: gd_req_qx_cscon_ver_of_cs_concept
+  title: Verification of cybersecurity concept
+  status: draft
+  description: The cybersecurity concept shall be verified to confirm completeness, correctness, and consistency
+    with respect to cybersecurity goals, and consistency with respect to cybersecurity claims, and recorded
+    in Verification Report for Cybersecurity Concept.
+- id: gd_temp_qx_cscon_cs_concept_template
+  title: CS Concept Template
+  status: draft
+  description: CS Concept Template
+- id: gd_guidl_qx_cscon_cs_concept_template
+  title: CS Concept Template Guidelines
+  status: draft
+  description: CS Concept Template Guidelines
+- id: gd_chklst_qx_cscon_cs_concept_ver_checklist
+  title: CS Concept Verification Checklist
+  status: draft
+  description: CS Concept Verification Checklist

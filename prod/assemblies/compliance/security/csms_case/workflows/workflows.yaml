@@ -1,0 +1,23 @@
+# Cybersecurity Case (compliance/security/csms_case)  -  workflows.
+workflows:
+- id: wf_qx_cscase_cs_case
+  title: Cybersecurity Case
+  status: draft
+  responsible: rl_qx_sec_security_office
+  approved_by: rl_qx_gc_head
+  input:
+  - wp_qx_sec_policies
+  output:
+  - wp_qx_cscase_cs_case_record
+  achieves:
+  - oc_qx_cscase_cs_case
+  gate:
+  - wp: wp_qx_sec_policies
+    min_status: approved
+  description: Perform cybersecurity case.
+  activities:
+  - step: Cybersecurity Case
+    by: rl_qx_sec_security_office
+    capability: cap_qx_cscase_cs_case
+  - step: Approve cybersecurity case record
+    by: rl_qx_gc_head

@@ -1,0 +1,36 @@
+# Cybersecurity Case (compliance/security/csms_case)  -  process: identity, classification, concepts.
+assembly:
+  id: csms_case
+  code: cscase
+  cluster: compliance
+  title: Cybersecurity Case
+  enabler: SEC
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_sec_security_office
+  purpose: A cybersecurity case collects the arguments and evidence that the cybersecurity goals are achieved.
+  standards:
+  - ISO/SAE 21434
+  tier: qorix
+  group: Security
+concepts:
+- id: doc_concept_qx_cscase_process
+  title: Cybersecurity Case Concept
+  body: Cybersecurity Case follows ISO/SAE 21434 clause 6.4.7.
+outcomes:
+- id: oc_qx_cscase_cs_case
+  title: The cybersecurity case argues that cybersecurity goals are achieved
+  status: draft
+  statement: A cybersecurity case collects the arguments and evidence that the cybersecurity goals are
+    achieved.
+  complies:
+  - std_req_isosae21434_project_dependent_647
+capabilities:
+- id: cap_qx_cscase_cs_case
+  title: Cybersecurity Case
+  status: draft
+  description: A cybersecurity case collects the arguments and evidence that the cybersecurity goals are
+    achieved.
+  realizes:
+  - oc_qx_cscase_cs_case

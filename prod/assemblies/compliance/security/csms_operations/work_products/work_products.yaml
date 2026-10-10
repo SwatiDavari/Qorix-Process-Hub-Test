@@ -1,0 +1,30 @@
+# Cybersecurity Operations and Maintenance (compliance/security/csms_operations)  -  work products.
+work_products:
+- id: wp_qx_csops_incident_mgmt_master_plan
+  title: Incident Management Master Plan
+  kind: plan
+  status: draft
+  purpose: Plan prepared once, before the start of the maintenance phase, covering the incident response
+    / cybersecurity monitoring team and RASIC, the classification and channels for internal and external
+    communication, the tooling and method for incident data collection and analysis, the backup and recovery
+    procedure, and the guidelines for defining, prioritizing, containing, eradicating, and recovering
+    from a cybersecurity incident. Structured per Incident Management Master Plan Template.
+  concept: doc_concept_qx_csops_process
+  template: gd_temp_qx_csops_incident_mgmt_master_plan
+  complies:
+  - std_req_isosae21434_operations_133
+  - std_req_isosae21434_operations_134
+- id: wp_qx_csops_cs_incident_response_plan
+  title: Cybersecurity Incident Response Plan
+  kind: plan
+  status: draft
+  purpose: Plan created for each cybersecurity incident, covering the reporter's details, incident severity
+    and priority, affected feature or component, loss incurred, related incidents and vulnerabilities,
+    root cause investigation, impact analysis, action plan with remedial actions and responsible persons,
+    closure criteria, and the resulting artifacts, such as the implementation fix and verification report.
+    Structured per Cybersecurity Incident Response Plan Template and closed per Cybersecurity Incident
+    Response Plan Closure Checklist.
+  concept: doc_concept_qx_csops_process
+  template: gd_temp_qx_csops_cs_incident_response_plan
+  complies:
+  - std_wp_isosae21434_maintenance_13331

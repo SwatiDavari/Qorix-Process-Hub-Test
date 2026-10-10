@@ -1,0 +1,11 @@
+# Cybersecurity Management Systems (compliance/security/csms_mgmt_systems)  -  work products.
+work_products:
+- id: wp_qx_csmgmt_cs_mgmt_systems_record
+  title: Cybersecurity Management Systems Record
+  kind: record
+  status: draft
+  purpose: Record of the cybersecurity management systems activities.
+  concept: doc_concept_qx_csmgmt_process
+  complies:
+  - std_req_isosae21434_org_management_544
+  - std_req_isosae21434_org_management_546

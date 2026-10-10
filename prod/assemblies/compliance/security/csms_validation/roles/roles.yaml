@@ -1,0 +1,5 @@
+# Cybersecurity Validation (compliance/security/csms_validation)  -  roles.
+roles:
+- id: rl_qx_csval_cs_penetration_test_vendor
+  title: Cybersecurity Penetration Test Vendor
+  description: The Cybersecurity Penetration Test Vendor role in Cybersecurity Validation.

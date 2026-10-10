@@ -1,0 +1,14 @@
+# Cybersecurity Management Plan (compliance/security/csms_mgmt_plan)  -  roles.
+roles:
+- id: rl_qx_csplan_product_project_manager
+  title: Product/Project Manager
+  description: Owns the Cybersecurity Plan; Assigns and communicates responsibilities; Tracks execution
+    and progress; Ensures alignment with ISO/SAE 21434; Maintains the plan under configuration control.
+- id: rl_qx_csplan_cs_architect_lead
+  title: Cybersecurity Architect/Lead
+  description: Defines cybersecurity activities; Supports reuse and relevance analysis; Advises on tailoring
+    decisions; Ensures technical adequacy of planning.
+- id: rl_qx_csplan_system_and_comp_engineers
+  title: System and Component Engineers
+  description: Provide technical inputs; Execute assigned cybersecurity activities; Support documentation
+    and evidence creation.

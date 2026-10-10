@@ -1,0 +1,10 @@
+# Cybersecurity Case (compliance/security/csms_case)  -  work products.
+work_products:
+- id: wp_qx_cscase_cs_case_record
+  title: Cybersecurity Case Record
+  kind: evidence
+  status: draft
+  purpose: Record of the cybersecurity case activities.
+  concept: doc_concept_qx_cscase_process
+  complies:
+  - std_req_isosae21434_project_dependent_647

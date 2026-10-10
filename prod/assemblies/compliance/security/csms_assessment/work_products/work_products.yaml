@@ -1,0 +1,11 @@
+# Cybersecurity Assessment (compliance/security/csms_assessment)  -  work products.
+work_products:
+- id: wp_qx_csassm_cs_assm_record
+  title: Cybersecurity Assessment Record
+  kind: evidence
+  status: draft
+  purpose: Record of the cybersecurity assessment activities.
+  concept: doc_concept_qx_csassm_process
+  complies:
+  - std_req_isosae21434_project_dependent_648
+  - std_req_isosae21434_project_dependent_649

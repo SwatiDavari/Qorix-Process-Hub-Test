@@ -1,0 +1,282 @@
+# Cybersecurity Operations and Maintenance (compliance/security/csms_operations)  -  workflows.
+workflows:
+- id: wf_qx_csops_prepare_cs_incident_mgmt
+  title: Prepare Cybersecurity Incident Management
+  status: draft
+  responsible: rl_qx_csops_cs_monitoring_team
+  approved_by: rl_qx_csitem_cs_manager
+  supported_by:
+  - rl_qx_csitem_product_project_manager
+  input:
+  - wp_qx_cstara_tara_record
+  output:
+  - wp_qx_csops_incident_mgmt_master_plan
+  achieves:
+  - oc_qx_csops_cs_operations_and_maintenance
+  gate:
+  - wp: wp_qx_cstara_tara_record
+    min_status: approved
+  contains:
+  - gd_temp_qx_csops_incident_mgmt_master_plan
+  description: The incident response / cybersecurity monitoring team, incident monitoring systems, communication
+    channels, backup and recovery setup, and severity and priority guidelines are established before the
+    start of the maintenance phase. The outcome is recorded in the incident management master plan, a
+    prerequisite for handling any subsequent cybersecurity incident.
+  activities:
+  - step: The incident response / cybersecurity monitoring team, incident monitoring systems, communication
+      channels, backup and recovery setup, and severity and priority guidelines are established before
+      the start of the maintenance phase
+    by: rl_qx_csops_cs_monitoring_team
+    capability: cap_qx_csops_cs_operations_and_maintenance
+  - step: Contribute to incident management master plan
+    by: rl_qx_csitem_product_project_manager
+  - step: Approve incident management master plan
+    by: rl_qx_csitem_cs_manager
+- id: wf_qx_csops_detect_log_and_triage_cs_incident
+  title: Detect, Log and Triage Cybersecurity Incident
+  status: draft
+  responsible: rl_qx_csops_cs_monitoring_team
+  approved_by: rl_qx_csitem_cs_manager
+  supported_by:
+  - rl_qx_csitem_cs_product_owner
+  input:
+  - wp_qx_csops_incident_mgmt_master_plan
+  output:
+  - wp_qx_csops_incident_mgmt_master_plan
+  achieves:
+  - oc_qx_csops_cs_operations_and_maintenance
+  description: 'Incident data is gathered from field reports, customer notifications, or continuous monitoring,
+    and assessed against the criteria and guidelines established in the incident management master plan.
+    An event is classified as a cybersecurity incident when it involves actual or suspected exploitation
+    of a vulnerability, unauthorized access, or unexpected behavior with a plausible cybersecurity cause,
+    and is traceable to an asset or threat scenario considered in the item / component TARA. All analysis
+    must be logged back to incident tracking system for further action. .. note:: 1. Where classification
+    is uncertain, the event is provisionally logged as a candidate incident until triage confirms or rejects
+    it. A valid incident is logged in the incident tracking system, categorized by severity and priority
+    per Severity-based response timeline, and handed to Software Architect / Lead Engineer for response
+    planning, subject to Cybersecurity Manager compliance approval. 2. Incidents logged by product / project
+    team through customer interactions or inputs shall also be considered for analysis.'
+  activities:
+  - step: Incident data is gathered from field reports, customer notifications, or continuous monitoring,
+      and assessed against the criteria and guidelines established in the incident management master plan
+    by: rl_qx_csops_cs_monitoring_team
+    capability: cap_qx_csops_cs_operations_and_maintenance
+  - step: Contribute to incident management master plan
+    by: rl_qx_csitem_cs_product_owner
+  - step: Approve incident management master plan
+    by: rl_qx_csitem_cs_manager
+- id: wf_qx_csops_prepare_cs_incident_response_plan
+  title: Prepare Cybersecurity Incident Response Plan
+  status: draft
+  responsible: rl_qx_csitem_software_architect_lead_engineer
+  approved_by: rl_qx_csitem_cs_manager
+  supported_by:
+  - rl_qx_csops_cs_monitoring_team
+  - rl_qx_csitem_product_project_manager
+  input:
+  - wp_qx_csops_incident_mgmt_master_plan
+  output:
+  - wp_qx_csops_cs_incident_response_plan
+  achieves:
+  - oc_qx_csops_cs_operations_and_maintenance
+  contains:
+  - gd_temp_qx_csops_cs_incident_response_plan
+  - gd_chklst_qx_csops_cs_incident_response_plan
+  description: The cybersecurity incident response plan is drafted using the plan template and using triage
+    analysis recorded back in incident tracking system, capturing the reporter's details, the affected
+    feature or component, an initial vulnerability analysis, and proposed remedial actions. A response
+    plan meeting is scheduled with the incident response / cybersecurity monitoring team, the incident
+    initiator, and, where the incident affects a customer, the customer's representative, to agree the
+    remedial action plan. The finalized plan is communicated to all stakeholders identified during preparation.
+  activities:
+  - step: The cybersecurity incident response plan is drafted using the plan template and using triage
+      analysis recorded back in incident tracking system, capturing the reporter's details, the affected
+      feature or component, an initial vulnerability analysis, and
+    by: rl_qx_csitem_software_architect_lead_engineer
+    capability: cap_qx_csops_cs_operations_and_maintenance
+  - step: Contribute to cybersecurity incident response plan
+    by: rl_qx_csops_cs_monitoring_team
+  - step: Contribute to cybersecurity incident response plan
+    by: rl_qx_csitem_product_project_manager
+  - step: Approve cybersecurity incident response plan
+    by: rl_qx_csitem_cs_manager
+- id: wf_qx_csops_contain_cs_incident
+  title: Contain Cybersecurity Incident
+  status: draft
+  responsible: rl_qx_csitem_software_architect_lead_engineer
+  approved_by: rl_qx_csitem_cs_manager
+  supported_by:
+  - rl_qx_csops_cs_monitoring_team
+  - rl_qx_csitem_cs_product_owner
+  - rl_qx_csitem_system_architect
+  input:
+  - wp_qx_csops_cs_incident_response_plan
+  output:
+  - wp_qx_csops_cs_incident_response_plan
+  achieves:
+  - oc_qx_csops_cs_operations_and_maintenance
+  description: Affected systems / components are isolated, compromised accounts and access tokens are
+    disabled, and network segmentation is applied to limit the spread of the incident. A vulnerability
+    analysis confirms that the proposed containment action does not introduce a new vulnerability before
+    it is implemented, and progress is communicated to the incident response team and stakeholders.
+  activities:
+  - step: Affected systems / components are isolated, compromised accounts and access tokens are disabled,
+      and network segmentation is applied to limit the spread of the incident
+    by: rl_qx_csitem_software_architect_lead_engineer
+    capability: cap_qx_csops_cs_operations_and_maintenance
+  - step: Contribute to cybersecurity incident response plan
+    by: rl_qx_csops_cs_monitoring_team
+  - step: Contribute to cybersecurity incident response plan
+    by: rl_qx_csitem_cs_product_owner
+  - step: Contribute to cybersecurity incident response plan
+    by: rl_qx_csitem_system_architect
+  - step: Approve cybersecurity incident response plan
+    by: rl_qx_csitem_cs_manager
+- id: wf_qx_csops_eradicate_root_cause_of_cs
+  title: Eradicate Root Cause of Cybersecurity Incident
+  status: draft
+  responsible: rl_qx_csitem_software_architect_lead_engineer
+  approved_by: rl_qx_csitem_cs_manager
+  supported_by:
+  - rl_qx_csops_cs_monitoring_team
+  - rl_qx_csitem_cs_product_owner
+  - rl_qx_csitem_system_architect
+  input:
+  - wp_qx_csops_cs_incident_response_plan
+  output:
+  - wp_qx_csops_cs_incident_response_plan
+  achieves:
+  - oc_qx_csops_cs_operations_and_maintenance
+  description: The root cause of the incident is identified using log and forensic analysis, and a corrective
+    action, such as a security patch or a compensating control, is defined. Where eradication requires
+    a software update, a change request is raised in the change management procedure (tracked via a change
+    request, per ) and executed accordingly, and a vulnerability analysis confirms that the update does
+    not introduce a new vulnerability.
+  activities:
+  - step: The root cause of the incident is identified using log and forensic analysis, and a corrective
+      action, such as a security patch or a compensating control, is defined
+    by: rl_qx_csitem_software_architect_lead_engineer
+    capability: cap_qx_csops_cs_operations_and_maintenance
+  - step: Contribute to cybersecurity incident response plan
+    by: rl_qx_csops_cs_monitoring_team
+  - step: Contribute to cybersecurity incident response plan
+    by: rl_qx_csitem_cs_product_owner
+  - step: Contribute to cybersecurity incident response plan
+    by: rl_qx_csitem_system_architect
+  - step: Approve cybersecurity incident response plan
+    by: rl_qx_csitem_cs_manager
+- id: wf_qx_csops_recover_and_restore_operation
+  title: Recover and Restore Operation
+  status: draft
+  responsible: rl_qx_csitem_software_architect_lead_engineer
+  approved_by: rl_qx_csitem_cs_manager
+  supported_by:
+  - rl_qx_csver_cs_ver_engineer
+  - rl_qx_csitem_product_project_manager
+  - rl_qx_csitem_system_architect
+  input:
+  - wp_qx_csops_cs_incident_response_plan
+  output:
+  - wp_qx_csops_cs_incident_response_plan
+  achieves:
+  - oc_qx_csops_cs_operations_and_maintenance
+  description: Affected systems, networks, and data are restored to a known-good operational state through
+    reinstallation, backup restoration, or reconfiguration. Restoration is verified through testing before
+    the incident is handed over for closure, and progress is communicated to the incident response team
+    and stakeholders.
+  activities:
+  - step: Affected systems, networks, and data are restored to a known-good operational state through
+      reinstallation, backup restoration, or reconfiguration
+    by: rl_qx_csitem_software_architect_lead_engineer
+    capability: cap_qx_csops_cs_operations_and_maintenance
+  - step: Contribute to cybersecurity incident response plan
+    by: rl_qx_csver_cs_ver_engineer
+  - step: Contribute to cybersecurity incident response plan
+    by: rl_qx_csitem_product_project_manager
+  - step: Contribute to cybersecurity incident response plan
+    by: rl_qx_csitem_system_architect
+  - step: Approve cybersecurity incident response plan
+    by: rl_qx_csitem_cs_manager
+- id: wf_qx_csops_validate_and_close_cs_incident
+  title: Validate and Close Cybersecurity Incident
+  status: draft
+  responsible: rl_qx_csver_cs_ver_engineer
+  approved_by: rl_qx_csitem_cs_manager
+  supported_by:
+  - rl_qx_csitem_product_project_manager
+  input:
+  - wp_qx_csops_cs_incident_response_plan
+  output:
+  - wp_qx_csops_cs_incident_response_plan
+  achieves:
+  - oc_qx_csops_cs_operations_and_maintenance
+  contains:
+  - gd_chklst_qx_csops_cs_incident_response_plan
+  description: Remedial actions are validated per the applicable test strategy, confirming that the incident
+    is resolved and that no new vulnerability has been introduced. Closure is subject to Cybersecurity
+    Incident Response Plan Closure Checklist and, where the incident affects a customer, to the customer's
+    confirmation that the vulnerability has been removed. The incident status is updated to closed and
+    communicated to all stakeholders.
+  activities:
+  - step: Remedial actions are validated per the applicable test strategy, confirming that the incident
+      is resolved and that no new vulnerability has been introduced
+    by: rl_qx_csver_cs_ver_engineer
+    capability: cap_qx_csops_cs_operations_and_maintenance
+  - step: Contribute to cybersecurity incident response plan
+    by: rl_qx_csitem_product_project_manager
+  - step: Approve cybersecurity incident response plan
+    by: rl_qx_csitem_cs_manager
+- id: wf_qx_csops_conduct_post_incident_review
+  title: Conduct Post-Incident Review
+  status: draft
+  responsible: rl_qx_csitem_cs_manager
+  approved_by: rl_qx_csitem_product_project_manager
+  input:
+  - wp_qx_csops_cs_incident_response_plan
+  output:
+  - wp_qx_csops_incident_mgmt_master_plan
+  achieves:
+  - oc_qx_csops_cs_operations_and_maintenance
+  description: Lessons learned are captured, and the incident management master plan and related procedures
+    are updated as an improvement opportunity. Also, findings indicating a systemic weakness in the cybersecurity
+    management system are considered for continual improvement process
+  activities:
+  - step: Lessons learned are captured, and the incident management master plan and related procedures
+      are updated as an improvement opportunity
+    by: rl_qx_csitem_cs_manager
+    capability: cap_qx_csops_cs_operations_and_maintenance
+  - step: Approve incident management master plan
+    by: rl_qx_csitem_product_project_manager
+- id: wf_qx_csops_perform_cs_update
+  title: Perform Cybersecurity Update
+  status: draft
+  responsible: rl_qx_csitem_product_project_manager
+  approved_by: rl_qx_csitem_cs_manager
+  supported_by:
+  - rl_qx_csitem_software_architect_lead_engineer
+  - rl_qx_csitem_cs_product_owner
+  input:
+  - wp_qx_csops_cs_incident_response_plan
+  output:
+  - wp_qx_csops_cs_incident_response_plan
+  achieves:
+  - oc_qx_csops_cs_operations_and_maintenance
+  description: An update to the item or a component, whether triggered by a cybersecurity incident, a
+    stakeholder request, a new feature, or a regulatory change, is executed per the standard change management
+    procedure (tracked via a change request, per ). Cybersecurity impact analysis confirms that the update
+    introduces no new vulnerability, all applicable work products are revised in accordance with the change,
+    and relevant verification and validation activities are completed before release. Prerequisite — the
+    release for post-development report (WP-06-04) [To be linked to WP-06-04] is available to support
+    the update.
+  activities:
+  - step: An update to the item or a component, whether triggered by a cybersecurity incident, a stakeholder
+      request, a new feature, or a regulatory change, is executed per the standard change management procedure
+      (tracked via a change request, per )
+    by: rl_qx_csitem_product_project_manager
+    capability: cap_qx_csops_cs_operations_and_maintenance
+  - step: Contribute to cybersecurity incident response plan
+    by: rl_qx_csitem_software_architect_lead_engineer
+  - step: Contribute to cybersecurity incident response plan
+    by: rl_qx_csitem_cs_product_owner
+  - step: Approve cybersecurity incident response plan
+    by: rl_qx_csitem_cs_manager

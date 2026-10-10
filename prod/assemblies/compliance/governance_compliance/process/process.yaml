@@ -16,6 +16,7 @@ assembly:
   - ISO/SAE 21434 cl. 5-6
   - ASPICE 4.0 PIM.3 / SUP.1 / MAN.3
   tier: qorix
+  group: "Governance and compliance"
 concepts:
 - id: doc_concept_qx_gc_process
   title: Qorix Process Tiering Concept

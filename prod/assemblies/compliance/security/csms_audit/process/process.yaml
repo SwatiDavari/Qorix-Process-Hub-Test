@@ -1,0 +1,34 @@
+# Cybersecurity Audit (compliance/security/csms_audit)  -  process: identity, classification, concepts.
+assembly:
+  id: csms_audit
+  code: csaud
+  cluster: compliance
+  title: Cybersecurity Audit
+  enabler: SEC
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_sec_security_office
+  purpose: An organisational cybersecurity audit is planned, performed and reported.
+  standards:
+  - ISO/SAE 21434
+  tier: qorix
+  group: Security
+concepts:
+- id: doc_concept_qx_csaud_process
+  title: Cybersecurity Audit Concept
+  body: Cybersecurity Audit follows ISO/SAE 21434 clause 5.4.7.
+outcomes:
+- id: oc_qx_csaud_cs_audit
+  title: The cybersecurity process is audited at organisation level
+  status: draft
+  statement: An organisational cybersecurity audit is planned, performed and reported.
+  complies:
+  - std_req_isosae21434_org_management_547
+capabilities:
+- id: cap_qx_csaud_cs_audit
+  title: Cybersecurity Audit
+  status: draft
+  description: An organisational cybersecurity audit is planned, performed and reported.
+  realizes:
+  - oc_qx_csaud_cs_audit

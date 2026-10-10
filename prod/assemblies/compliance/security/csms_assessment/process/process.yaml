@@ -1,0 +1,38 @@
+# Cybersecurity Assessment (compliance/security/csms_assessment)  -  process: identity, classification, concepts.
+assembly:
+  id: csms_assessment
+  code: csassm
+  cluster: compliance
+  title: Cybersecurity Assessment
+  enabler: SEC
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_sec_security_office
+  purpose: A cybersecurity assessment is performed and the item is released for post-development on its
+    result.
+  standards:
+  - ISO/SAE 21434
+  tier: qorix
+  group: Security
+concepts:
+- id: doc_concept_qx_csassm_process
+  title: Cybersecurity Assessment Concept
+  body: Cybersecurity Assessment follows ISO/SAE 21434 clause 6.4.8, 6.4.9.
+outcomes:
+- id: oc_qx_csassm_cs_assm
+  title: Cybersecurity is assessed before release
+  status: draft
+  statement: A cybersecurity assessment is performed and the item is released for post-development on
+    its result.
+  complies:
+  - std_req_isosae21434_project_dependent_648
+  - std_req_isosae21434_project_dependent_649
+capabilities:
+- id: cap_qx_csassm_cs_assm
+  title: Cybersecurity Assessment
+  status: draft
+  description: A cybersecurity assessment is performed and the item is released for post-development on
+    its result.
+  realizes:
+  - oc_qx_csassm_cs_assm

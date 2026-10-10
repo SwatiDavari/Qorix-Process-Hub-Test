@@ -1,0 +1,74 @@
+# Cybersecurity Item Definition (compliance/security/csms_item_definition)  -  workflows.
+workflows:
+- id: wf_qx_csitem_create_maintain_cs_item_comp_def
+  title: Create / Maintain Cybersecurity Item / Component Definition
+  status: draft
+  responsible: rl_qx_csitem_system_architect
+  approved_by: rl_qx_csitem_cs_product_owner
+  supported_by:
+  - rl_qx_csitem_cs_manager
+  - rl_qx_csitem_software_architect_lead_engineer
+  - rl_qx_csitem_product_project_manager
+  input:
+  - wp_qx_csitem_consortium_regulatory_sources
+  - wp_qx_req_stakeholder_needs
+  output:
+  - wp_qx_csitem_cs_item_comp_def
+  - wp_qx_csitem_cs_item_comp_def_review_record
+  achieves:
+  - oc_qx_csitem_cs_item_def
+  gate:
+  - wp: wp_qx_csitem_consortium_regulatory_sources
+    min_status: approved
+  contains:
+  - gd_guidl_qx_csitem_item_def
+  - gd_req_qx_csitem_item_boundary_functions_and
+  - gd_req_qx_csitem_operational_environment
+  - gd_chklst_qx_csitem_item_def_review_checklist
+  description: Cybersecurity item definition work-product must be created and maintained for respective
+    product / project. The technical review against Item Definition Review Checklist is recorded in CS
+    Item / Component Definition Review Record.
+  activities:
+  - step: Cybersecurity item definition work-product must be created and maintained for respective product
+      / project
+    by: rl_qx_csitem_system_architect
+    capability: cap_qx_csitem_cs_item_def
+  - step: Contribute to cs item / component definition
+    by: rl_qx_csitem_cs_manager
+  - step: Contribute to cs item / component definition
+    by: rl_qx_csitem_software_architect_lead_engineer
+  - step: Contribute to cs item / component definition
+    by: rl_qx_csitem_product_project_manager
+  - step: Approve cs item / component definition, cs item / component definition review record
+    by: rl_qx_csitem_cs_product_owner
+- id: wf_qx_csitem_quality_check_of_cs_item_comp
+  title: Quality Check of Cybersecurity Item / Component Definition
+  status: draft
+  responsible: rl_qx_qa_quality_office
+  approved_by: rl_qx_csitem_product_project_manager
+  supported_by:
+  - rl_qx_csitem_cs_product_owner
+  - rl_qx_csitem_system_architect
+  input:
+  - wp_qx_csitem_cs_item_comp_def
+  - wp_qx_csitem_cs_item_comp_def_review_record
+  output:
+  - wp_qx_csitem_cs_item_comp_def_review_record
+  achieves:
+  - oc_qx_csitem_cs_item_def
+  contains:
+  - gd_chklst_qx_csitem_item_def_quality_check
+  description: Before each baseline, the Quality Manager confirms that the item definition was produced,
+    reviewed and approved as defined by this process. The result is added to CS Item / Component Definition
+    Review Record.
+  activities:
+  - step: Before each baseline, the Quality Manager confirms that the item definition was produced, reviewed
+      and approved as defined by this process
+    by: rl_qx_qa_quality_office
+    capability: cap_qx_csitem_cs_item_def
+  - step: Contribute to cs item / component definition review record
+    by: rl_qx_csitem_cs_product_owner
+  - step: Contribute to cs item / component definition review record
+    by: rl_qx_csitem_system_architect
+  - step: Approve cs item / component definition review record
+    by: rl_qx_csitem_product_project_manager

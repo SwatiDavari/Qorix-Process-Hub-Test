@@ -1,0 +1,12 @@
+# Cybersecurity Culture (compliance/security/csms_culture)  -  work products.
+work_products:
+- id: wp_qx_cscult_cs_culture_record
+  title: Cybersecurity Culture Record
+  kind: record
+  status: draft
+  purpose: '1. WP-05-02: Evidence of Competence Management, Awareness Management, and Continuous Improvement
+    This work product provides objective evidence that the organization has established and maintains
+    an effective cybersecurity culture.'
+  concept: doc_concept_qx_cscult_process
+  complies:
+  - std_req_isosae21434_org_management_542

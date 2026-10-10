@@ -1,0 +1,98 @@
+# Cybersecurity Concept (compliance/security/csms_concept)  -  workflows.
+workflows:
+- id: wf_qx_cscon_study_inputs_analyze_goals_and
+  title: Study Inputs, Analyze Goals and Identify Controls
+  status: draft
+  responsible: rl_qx_csgoal_engineer
+  approved_by: rl_qx_csitem_cs_product_owner
+  supported_by:
+  - rl_qx_csitem_software_architect_lead_engineer
+  input:
+  - wp_qx_csitem_cs_item_comp_def
+  - wp_qx_csgoal_cs_goals
+  - wp_qx_csgoal_cs_claims
+  output:
+  - wp_qx_cscon_cs_concept
+  achieves:
+  - oc_qx_cscon_cs_concept
+  gate:
+  - wp: wp_qx_csitem_cs_item_comp_def
+    min_status: approved
+  contains:
+  - gd_req_qx_cscon_cs_controls_and_interactions
+  description: The item definition, cybersecurity goals, and cybersecurity claims are studied together
+    with stakeholder / consortium requirements, and cybersecurity controls are identified for each cybersecurity
+    goal.
+  activities:
+  - step: The item definition, cybersecurity goals, and cybersecurity claims are studied together with
+      stakeholder / consortium requirements, and cybersecurity controls are identified for each cybersecurity
+      goal
+    by: rl_qx_csgoal_engineer
+    capability: cap_qx_cscon_cs_concept
+  - step: Contribute to cybersecurity concept
+    by: rl_qx_csitem_software_architect_lead_engineer
+  - step: Approve cybersecurity concept
+    by: rl_qx_csitem_cs_product_owner
+- id: wf_qx_cscon_derive_and_allocate_cs_reqs
+  title: Derive and Allocate Cybersecurity Requirements
+  status: draft
+  responsible: rl_qx_csgoal_engineer
+  approved_by: rl_qx_csitem_cs_product_owner
+  supported_by:
+  - rl_qx_csitem_software_architect_lead_engineer
+  input:
+  - wp_qx_csgoal_cs_goals
+  - wp_qx_csgoal_cs_claims
+  output:
+  - wp_qx_cscon_cs_concept
+  achieves:
+  - oc_qx_cscon_cs_concept
+  gate:
+  - wp: wp_qx_csgoal_cs_goals
+    min_status: approved
+  contains:
+  - gd_req_qx_cscon_cs_reqs_of_item_and
+  - gd_req_qx_cscon_allocation_of_cs_reqs
+  - gd_temp_qx_cscon_cs_concept_template
+  description: Cybersecurity requirements are derived from the identified controls and mechanisms, allocated
+    to modules of the item / component with CAL inherited from the related cybersecurity goals, and traced
+    back to cybersecurity goals and stakeholder / consortium requirements.
+  activities:
+  - step: Cybersecurity requirements are derived from the identified controls and mechanisms, allocated
+      to modules of the item / component with CAL inherited from the related cybersecurity goals, and
+      traced back to cybersecurity goals and stakeholder / consortium
+    by: rl_qx_csgoal_engineer
+    capability: cap_qx_cscon_cs_concept
+  - step: Contribute to cybersecurity concept
+    by: rl_qx_csitem_software_architect_lead_engineer
+  - step: Approve cybersecurity concept
+    by: rl_qx_csitem_cs_product_owner
+- id: wf_qx_cscon_review_and_rework_cs_concept
+  title: Review and Rework Cybersecurity Concept
+  status: draft
+  responsible: rl_qx_csitem_software_architect_lead_engineer
+  approved_by: rl_qx_csitem_cs_product_owner
+  supported_by:
+  - rl_qx_csgoal_engineer
+  input:
+  - wp_qx_cscon_cs_concept
+  output:
+  - wp_qx_cscon_ver_report_for_cs_concept
+  achieves:
+  - oc_qx_cscon_cs_concept
+  contains:
+  - gd_chklst_qx_cscon_cs_concept_ver_checklist
+  - gd_req_qx_cscon_ver_of_cs_concept
+  description: The cybersecurity concept is reviewed against the verification checklist for completeness,
+    correctness, and consistency with cybersecurity goals and consistency with cybersecurity claims, reworked
+    as needed, then approved, baselined, and communicated to stakeholders.
+  activities:
+  - step: The cybersecurity concept is reviewed against the verification checklist for completeness, correctness,
+      and consistency with cybersecurity goals and consistency with cybersecurity claims, reworked as
+      needed, then approved, baselined, and communicated to
+    by: rl_qx_csitem_software_architect_lead_engineer
+    capability: cap_qx_cscon_cs_concept
+  - step: Contribute to verification report for cybersecurity concept
+    by: rl_qx_csgoal_engineer
+  - step: Approve verification report for cybersecurity concept
+    by: rl_qx_csitem_cs_product_owner

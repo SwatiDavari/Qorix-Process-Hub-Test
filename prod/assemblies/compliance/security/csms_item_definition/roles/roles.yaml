@@ -1,0 +1,17 @@
+# Cybersecurity Item Definition (compliance/security/csms_item_definition)  -  roles.
+roles:
+- id: rl_qx_csitem_cs_manager
+  title: Cybersecurity Manager
+  description: The Cybersecurity Manager role in Cybersecurity Item Definition.
+- id: rl_qx_csitem_system_architect
+  title: System Architect
+  description: The System Architect role in Cybersecurity Item Definition.
+- id: rl_qx_csitem_software_architect_lead_engineer
+  title: Software Architect / Lead Engineer
+  description: The Software Architect / Lead Engineer role in Cybersecurity Item Definition.
+- id: rl_qx_csitem_cs_product_owner
+  title: Cybersecurity Product Owner
+  description: The Cybersecurity Product Owner role in Cybersecurity Item Definition.
+- id: rl_qx_csitem_product_project_manager
+  title: Product/Project Manager
+  description: The Product/Project Manager role in Cybersecurity Item Definition.

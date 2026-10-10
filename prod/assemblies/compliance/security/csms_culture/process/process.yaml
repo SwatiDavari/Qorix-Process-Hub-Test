@@ -1,0 +1,141 @@
+# Cybersecurity Culture (compliance/security/csms_culture)  -  process: identity, classification, concepts.
+assembly:
+  id: csms_culture
+  code: cscult
+  cluster: compliance
+  title: Cybersecurity Culture
+  enabler: SEC
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_sec_security_office
+  purpose: Cybersecurity culture represents the collective knowledge, beliefs, perceptions, attitudes,
+    assumptions, norms, and values of individuals regarding cybersecurity, and how these elements manifest
+    in daily behaviors when interacting with information
+  standards:
+  - ISO/SAE 21434
+  tier: qorix
+  group: Security
+getting_started: '**Purpose**
+
+
+  The purpose of the Cybersecurity Culture process is to institute, foster, and sustain an organizational
+  culture that consistently supports effective cybersecurity risk management across the automotive product
+  lifecycle. This process ensures that cybersecurity is embedded in everyday behavior, decision-making,
+  and engineering practices through competence management, awareness management, and continuous improvement.
+
+
+  **Organizational Scope and Applicability**
+
+
+  This process applies to all organizational units, roles, and individuals that contribute to or influence
+  cybersecurity-related activities, including management, engineering, product/project teams, and supporting
+  functions. It is applicable across all automotive products and services governed by the Cybersecurity
+  Management System (CSMS).
+
+
+  **Lifecycle Relevance**
+
+
+  Cybersecurity culture is a cross-cutting organizational capability and is relevant throughout the entire
+  product lifecycle, including concept, development, production, operation, maintenance, and decommissioning
+  phases. It provides the human and organizational foundation necessary for effective execution of all
+  other CSMS processes.
+
+
+  **Preconditions and Dependencies**
+
+
+  No formal prerequisites are required to initiate this process. However, it is supported by and aligned
+  with existing Quality Management, Information Security, and Data Privacy standards within the organization.
+  The process interfaces closely with competence management, awareness programs, audit activities, and
+  management review mechanisms.
+
+
+  **Governance and Compliance Context**
+
+
+  This process fulfills ISO/SAE 21434 clause 5.4.2 requirements related to fostering a cybersecurity culture,
+  ensuring personnel competence and awareness, and instituting continuous improvement. It provides evidence
+  for organizational capability and commitment during internal assessments and external audits.
+
+
+  **Tailoring**
+
+
+  The process can be tailored based on organizational size, structure, and execution strategy (For example,
+  Component-out-of-context approach). Implementation should consider existing cultural initiatives and
+  leverage organizational strengths while addressing identified gaps. A phased approach to implementation
+  shall be followed, starting with leadership engagement and progressing to organization-wide awareness
+  and competence development activities.'
+concepts:
+- id: doc_concept_qx_cscult_process
+  title: Cybersecurity Culture Concept
+  body: '**Cybersecurity Culture Fundamentals**
+
+
+    Cybersecurity culture represents the collective knowledge, beliefs, perceptions, attitudes, assumptions,
+    norms, and values of individuals regarding cybersecurity, and how these elements manifest in daily
+    behaviors when interacting with information technologies and the automotive-related landscape.
+
+
+    **Value-Based Cultural Pillars**
+
+
+    The cybersecurity culture is established and maintained through four interrelated value dimensions:
+
+
+    1. Engineering Values: Cybersecurity is treated as a primary engineering quality attribute. Assets
+    are protected against identified threat scenarios through risk-based security controls applied continuously
+    across the lifecycle. Secure-by-design, defense-in-depth, and attack surface reduction principles
+    are integral to system and software engineering practices, with cybersecurity and safety prioritized
+    over cost and performance trade-offs.
+
+
+    2. Process Values: Organizational processes define clear roles, responsibilities, and decision accountability.
+    Traceability of decisions, effective checks, and systematic data collection enable transparency and
+    continuous improvement of cybersecurity performance indicators. Active support for cybersecurity is
+    maintained by awareness of evolving threats, technologies, and industry practices.
+
+
+    3. Management Values: Management ensures activities are executed in alignment with confidentiality,
+    integrity, and availability objectives. Progress is tracked against plans, budgets, and schedules,
+    while key performance indicators (KPIs) are defined, monitored, and used to steer improvements.
+
+
+    4. Executive Support and Awareness: Executive leadership actively supports cybersecurity initiatives,
+    allocates necessary resources, and ensures that cybersecurity considerations are integrated into strategic
+    business decisions.
+
+
+    **Continuous Improvement Orientation**
+
+
+    Cybersecurity culture is not static. It evolves through structured improvement initiatives triggered
+    by audits, emerging risks, regulatory changes, and lessons learned. Improvements are systematically
+    identified, planned, implemented, evaluated, and institutionalized.
+
+
+    **Interfaces with Other Processes**
+
+
+    This process interfaces with competence management, training and awareness, product/project management,
+    cybersecurity engineering, audit, and management review processes. It provides the cultural and behavioral
+    foundation that enables these processes to function effectively and consistently.'
+outcomes:
+- id: oc_qx_cscult_cs_culture
+  title: A cybersecurity culture is established and maintained
+  status: draft
+  statement: Cybersecurity awareness, competence and continual learning are established, maintained and
+    evidenced for all personnel.
+  complies:
+  - std_req_isosae21434_org_management_542
+capabilities:
+- id: cap_qx_cscult_cs_culture
+  title: Cybersecurity Culture
+  status: draft
+  description: Cybersecurity culture represents the collective knowledge, beliefs, perceptions, attitudes,
+    assumptions, norms, and values of individuals regarding cybersecurity, and how these elements manifest
+    in daily behaviors when interacting with information
+  realizes:
+  - oc_qx_cscult_cs_culture

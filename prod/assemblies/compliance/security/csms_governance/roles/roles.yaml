@@ -1,0 +1,28 @@
+# Cybersecurity Governance (compliance/security/csms_governance)  -  roles.
+roles:
+- id: rl_qx_csgov_executive_mgmt
+  title: Executive Management
+  description: 'Executive management is responsible for: Executive management accountability cannot be
+    tailored out. It is a fundamental requirement of effective cybersecurity governance. Executive management
+    must actively engage in cybersecurity governance to ensure organizational alignment and compliance
+    with ISO/SAE 21434. Defining and endorsing cybersecurity policies; Demonstrating commitment to cybersecurity
+    objectives; Ensuring timely allocation of resources; Supporting continuous competence development.'
+- id: rl_qx_csgov_governance_and_compliance_group
+  title: Governance and Compliance Group
+  description: 'Governance and compliance group is responsible for: Establishing and maintaining governance
+    processes; Ensuring alignment with ISO/SAE 21434; Coordinating cybersecurity activities across products/projects;
+    Supporting audits and assessments.'
+- id: rl_qx_csgov_product_project_mgmt
+  title: Product/Project Management
+  description: 'Product/project managers are responsible for: Planning and tracking cybersecurity activities;
+    Ensuring governance requirements are applied at product/project level; Coordinating cross-disciplinary
+    decision-making; Reporting cybersecurity status and risks.'
+- id: rl_qx_csgov_engineering_roles
+  title: Engineering Roles
+  description: 'System, software, and hardware engineers contribute by: Applying governance rules within
+    engineering activities; Integrating cybersecurity requirements into designs; Participating in risk
+    management and validation activities.'
+- id: rl_qx_csgov_support_functions
+  title: Support Functions
+  description: Functions such as training, recruitment, and infrastructure support cybersecurity governance
+    by enabling competence development, tooling, and secure development environments.

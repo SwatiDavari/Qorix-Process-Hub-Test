@@ -1,0 +1,158 @@
+# Cybersecurity Tool Management (compliance/security/csms_tool_management)  -  process: identity, classification, concepts.
+assembly:
+  id: csms_tool_management
+  code: cstool
+  cluster: compliance
+  title: Cybersecurity Tool Management
+  enabler: SEC
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_sec_security_office
+  purpose: The evaluation above (ISO 26262-8 clause 11, TCL) judges whether a tool's *output* can be trusted
+    for safety purposes; it does not by itself address whether the tool itself can be tampered with ISO/SAE
+    21434:2021 clause 5.4.5 separately requires that "tools
+  standards:
+  - ISO/SAE 21434
+  tier: qorix
+  group: Security
+getting_started: '**Purpose**
+
+
+  - *Ensuring Trustworthiness*: Tools used for cybersecurity activities, such as software development,
+  testing, or vulnerability analysis, must be reliable and free from flaws that could introduce new risks.
+
+  - *Compliance with Industry Standards*: To ensure that the tools meet the requirements outlined in ISO
+  21434 for effective cybersecurity.
+
+  - *Audit and Traceability*: It ensures that all changes made to the system can be traced back to their
+  origin, providing a clear record of who did what, and when.
+
+
+  **Scope and Applicability**
+
+
+  The key components of tool management include:
+
+
+  - *Tool Selection*: It is essential to choose tools that align with the cybersecurity objectives of
+  the project. The tools should be proven and capable of performing the necessary tasks without exposing
+  the system to unnecessary risks.
+
+  - *Tool Validation and Verification*: Tools need to be validated to ensure they perform as expected
+  and meet the cybersecurity requirements. This involves testing and verification of the tools themselves
+  to confirm that they do not introduce any security risks.
+
+  - *Tool Maintenance*: Regular maintenance is crucial to ensure tools remain up-to-date, secure, and
+  capable of handling the latest threats. This includes applying updates or patches to the tools whenever
+  needed.
+
+  - *Tool Documentation*: Proper documentation is essential to provide a record of the tools'' usage,
+  configuration, and changes over time. This documentation is necessary for audits, compliance checks,
+  and future improvements.
+
+  - *Tool Usage Guidelines*: Clear guidelines for using the tools are essential to ensure that all cybersecurity
+  activities are conducted according to the same standards and best practices.
+
+
+  **Tool Management Lifecycle**
+
+
+  Implementing effective tool management involves a structured approach. Here is a step-by-step guide:
+
+
+  - *Inventory and Classification*: Begin by identifying all the tools used in the cybersecurity activities.
+  This includes tools for software development, penetration testing, vulnerability scanning, and more.
+  Classify the tools based on their criticality to the cybersecurity process.
+
+  - *Risk Assessment of Tools*: Assess the potential cybersecurity risks associated with each tool. This
+  includes evaluating whether the tool itself could introduce vulnerabilities or if it could be exploited
+  by attackers.
+
+  - *Train Staff and Establish Guidelines*: Ensure all staff members involved in cybersecurity activities
+  are trained to use the tools correctly and securely. Develop guidelines that outline the correct usage,
+  configuration, and maintenance procedures.
+
+  - *Monitor and Audit*: Regularly monitor the tools and conduct audits to ensure they are being used
+  correctly and remain compliant with ISO 21434 requirements. Any issues should be addressed promptly
+  to minimize cybersecurity risks.
+
+
+  **General Workflow**
+
+
+  The main workflow is described in org_tool_management_workflow.'
+concepts:
+- id: doc_concept_qx_cstool_process
+  title: Cybersecurity Tool Management Concept
+  body: '**Core Concept**
+
+
+    The evaluation above (ISO 26262-8 clause 11, TCL) judges whether a tool''s *output* can be trusted
+    for safety purposes; it does not by itself address whether the tool itself can be tampered with ISO/SAE
+    21434:2021 clause 5.4.5 separately requires that "tools that can influence the cybersecurity of an
+    item or component shall be managed", covering:
+
+
+    - protection against unintended or unauthorized use of the tool,
+
+    - access control for tool users,
+
+    - authentication of the tool itself (e.g. verifying a compiler or flashing tool has not been tampered
+    with before it is trusted to build or project a safety/security relevant product).
+
+
+    **Best practices**
+
+
+    - Tools shared across more than one Qorix project are evaluated once, at organisation level, and the
+    resulting evaluation is made available to every project that reuses the tool after the license checks.
+
+    - A project that reuses an organisation level qualified tool records, in its own tool management plan,
+    that it reuses the organisation level evaluation and confirms that its usage context (tool impact,
+    tool error detection) matches the one the organisation level evaluation assumed; if it does not match,
+    the project performs its own supplementary evaluation.
+
+    - Tool-vendor qualification (evaluating the vendor providing a commercial tool, as distinct from evaluating
+    the tool itself) is an organisation level activity owned by the Project team, so that vendor-level
+    risk (e.g. vendor''s own quality/security practices) is assessed once and reused, where the tool vendor
+    is also a contracted supplier.
+
+    - The qualification method (validation of software tool) and the identification/evaluation/qualification/approval
+    workflow stay as defined at project level, in the project''s own tool management plan under the PDP;
+    this policy only adds the organisation level reuse and vendor-qualification layer around it.
+
+
+    **ASPICE Alignment**
+
+
+    This process supports: *ASPICE 3.1.1*: Process Group: Engineering, Process Area: Software Tool Qualification
+    (SWE.4). Tailoring Information ---------------------
+
+
+    Concept depth may vary depending on whether:
+
+
+    - The tool used that the project level is completed out of scope.
+
+    - The tool is a commercial off-the-shelf (COTS) tool with known history and a proven track record
+    of reliability.
+
+    - The tool is reused with known history and a proven track record of reliability.'
+outcomes:
+- id: oc_qx_cstool_cs_tool_mgmt
+  title: Cybersecurity tools are managed and fit for use
+  status: draft
+  statement: Tools used for cybersecurity activities are identified, controlled and shown to be suitable
+    for their intended use.
+  complies:
+  - std_req_isosae21434_org_management_545
+capabilities:
+- id: cap_qx_cstool_cs_tool_mgmt
+  title: Cybersecurity Tool Management
+  status: draft
+  description: The evaluation above (ISO 26262-8 clause 11, TCL) judges whether a tool's *output* can
+    be trusted for safety purposes; it does not by itself address whether the tool itself can be tampered
+    with ISO/SAE 21434:2021 clause 5.4.5 separately requires that "tools
+  realizes:
+  - oc_qx_cstool_cs_tool_mgmt

@@ -1,0 +1,27 @@
+# Cybersecurity Tool Management (compliance/security/csms_tool_management)  -  workflows.
+workflows:
+- id: wf_qx_cstool_qualify_a_tool_at_organisation
+  title: Qualify a Tool at Organisation Level
+  status: draft
+  responsible: rl_qx_csitem_cs_product_owner
+  approved_by: rl_qx_csitem_software_architect_lead_engineer
+  supported_by:
+  - rl_qx_csitem_product_project_manager
+  input:
+  - wp_qx_csplan_cs_plan
+  output:
+  - wp_qx_cstool_organisation_level_qualified
+  achieves:
+  - oc_qx_cstool_cs_tool_mgmt
+  gate:
+  - wp: wp_qx_csplan_cs_plan
+    min_status: approved
+  description: ''
+  activities:
+  - step: Qualify a Tool at Organisation Level
+    by: rl_qx_csitem_cs_product_owner
+    capability: cap_qx_cstool_cs_tool_mgmt
+  - step: Contribute to organisation level qualified tool list
+    by: rl_qx_csitem_product_project_manager
+  - step: Approve organisation level qualified tool list
+    by: rl_qx_csitem_software_architect_lead_engineer

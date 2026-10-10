@@ -1,0 +1,6 @@
+# Cybersecurity Tool Management (compliance/security/csms_tool_management)  -  templates and guidance.
+templates:
+- id: gd_temp_qx_cstool_qualified_tool_list
+  title: Qualified Tool List Template Guidelines
+  status: draft
+  description: Qualified Tool List Template Guidelines

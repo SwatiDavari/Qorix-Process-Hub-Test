@@ -1,0 +1,57 @@
+# Cybersecurity Development (compliance/security/csms_development)  -  work products.
+work_products:
+- id: wp_qx_csdev_cs_specs
+  title: Cybersecurity Specifications
+  kind: requirement
+  status: draft
+  purpose: Document covering system cybersecurity requirements, system architecture, software cybersecurity
+    requirements, and software architecture and detailed design, refined incrementally by Define System
+    Cybersecurity Requirements, Develop System Architectural Design, Define Software Cybersecurity Requirements,
+    and Develop Software Architecture, Design, and Coding Guidelines.
+  concept: doc_concept_qx_csdev_process
+  template: gd_temp_qx_csdev_cs_specs_template
+  complies:
+  - std_wp_isosae21434_development_1051
+- id: wp_qx_csdev_cs_reqs_for_post_development
+  title: Cybersecurity Requirements for Post-Development
+  kind: requirement
+  status: draft
+  purpose: Procedures to ensure cybersecurity after development of the item / component, covering its
+    operation, maintenance, and end-of-life phases and the operating environment (e.g. secure key handling,
+    production line security), where applicable.
+  concept: doc_concept_qx_csdev_process
+  complies:
+  - std_wp_isosae21434_development_1052
+- id: wp_qx_csdev_documentation_of_modelling
+  title: Documentation of Modelling, Design, and Programming Language Guidelines
+  kind: material
+  status: draft
+  purpose: Evaluation of the selected modelling, design, or programming language against the secure-implementation
+    suitability criteria, and the design, modelling, and coding guidelines that close any identified gap.
+    Maintained as part of the Cybersecurity Plan (WP-06-01); see CS Language and Coding Guideline Reference
+    Template.
+  concept: doc_concept_qx_csdev_process
+  complies:
+  - std_wp_isosae21434_development_1053
+- id: wp_qx_csdev_ver_report_for_the_cs_specs
+  title: Verification Report for the Cybersecurity Specifications
+  kind: report
+  status: draft
+  purpose: Record of the bidirectional traceability and consistency review performed between cybersecurity
+    requirements and architectural elements at each refinement step (system and software), confirming
+    completeness, correctness, and consistency with higher levels of architectural abstraction.
+  concept: doc_concept_qx_csdev_process
+  complies:
+  - std_wp_isosae21434_development_1054
+- id: wp_qx_csdev_weaknesses_found_during_product
+  title: Weaknesses Found During Product Development
+  kind: record
+  status: draft
+  purpose: Weaknesses and vulnerabilities identified during architectural design analysis and software
+    implementation, consolidating code review, MISRA, CERT-C / CERT-C++, CWE, SBOM, and FOSS findings.
+    Maintained as part of the Vulnerability Report (WP-08-06); see CS Weaknesses Found During Development
+    Reference Template.
+  concept: doc_concept_qx_csdev_process
+  template: gd_temp_qx_csdev_cs_weaknesses_found_during
+  complies:
+  - std_wp_isosae21434_development_1055

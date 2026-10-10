@@ -1,0 +1,321 @@
+# Cybersecurity Development (compliance/security/csms_development)  -  process: identity, classification, concepts.
+assembly:
+  id: csms_development
+  code: csdev
+  cluster: compliance
+  title: Cybersecurity Development
+  enabler: SEC
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_sec_security_office
+  purpose: The cybersecurity concept (Clause 9.5) states the high-level cybersecurity requirements and
+    controls for the item / component; the cybersecurity development process refines them into system
+    and software requirements, allocates them to an architectural design,
+  standards:
+  - ISO/SAE 21434
+  tier: qorix
+  group: Security
+getting_started: '**Purpose**
+
+
+  The purpose of the Cybersecurity Development process is to define system-level and software-level cybersecurity
+  requirements, design and implement the cybersecurity architecture that realizes them, and produce evidence
+  that the resulting specifications are complete, correct, and consistent before the item / component
+  proceeds to integration and verification. This process ensures that:
+
+
+  - Cybersecurity requirements derived in the concept phase are refined into system and software requirements
+  and allocated to architectural elements.
+
+  - Modelling, design, and programming languages are evaluated for their suitability for secure implementation,
+  and gaps are closed by guidelines and the development environment.
+
+  - Established and trusted design and implementation principles are applied, and the architectural design
+  and implementation are analyzed for weaknesses.
+
+  - Cybersecurity requirements for the item / component''s post-development phases (operation, maintenance,
+  decommissioning) are specified where applicable.
+
+  - Evidence of compliance with secure coding guidelines is produced.
+
+  - Perform vulnerability analysis on the implemented item / component and produce a report of the findings.
+
+
+  This process directly supports compliance with ISO/SAE 21434 Clause 10.4.1 and ASPICE SEC.2 (Cybersecurity
+  Implementation), and provides the baselined cybersecurity specifications consumed by cybersecurity integration
+  and verification (Clause 10.4.2, ).
+
+
+  **Organizational Scope and Applicability**
+
+
+  This process applies to every item / component for which cybersecurity requirements have been derived
+  in the concept phase, whether developed in full context or out-of-context. For a component developed
+  out-of-context, system-level activities (system requirement specification and system architectural design)
+  are not in scope; the corresponding cybersecurity requirements and architecture are derived directly
+  from the cybersecurity concept and item / component definition at software level.
+
+
+  **Lifecycle Relevance**
+
+
+  Cybersecurity development follows the cybersecurity concept (Clause 9.5) and item / component definition
+  (Clause 9.3), and precedes:
+
+
+  - Cybersecurity integration and verification (ISO/SAE 21434 Clause 10.4.2, ).
+
+  - Vulnerability management under continual cybersecurity activities (ISO/SAE 21434 Clause 8): Weaknesses
+  found during development (Weaknesses Found During Product Development) are logged directly into the
+  vulnerability report (WP-08-06).
+
+
+  Development is repeated whenever the cybersecurity concept, the item / component definition, or a higher-level
+  cybersecurity requirement changes.
+
+
+  **Preconditions and Dependencies**
+
+
+  Typical preconditions include:
+
+
+  - Baselined item / component definition (CS Item / Component Definition).
+
+  - Baselined cybersecurity concept (Cybersecurity Concept), cybersecurity goals (CS Goals), and cybersecurity
+  claims (CS Claims).
+
+  - Known weaknesses and vulnerabilities of reused components, where available.
+
+  - Already established cybersecurity controls, where available.
+
+
+  **Governance and Compliance Context**
+
+
+  This process:
+
+
+  - Fulfills ISO/SAE 21434 Clause 10.4.1 requirements (RQ-10-01, RQ-10-02, RQ-10-03, RQ-10-04, RQ-10-05,
+  RC-10-06, RQ-10-07, RQ-10-08).
+
+  - Consumes the cybersecurity concept (Clause 9.5) and item / component definition (Clause 9.3).
+
+  - Provides mandatory input to cybersecurity integration and verification (Clause 10.4.2).
+
+
+  **General Workflow**
+
+
+  Cybersecurity requirements are first derived and allocated at system level, then refined into the system
+  architectural design; software-level requirements and architecture follow the same pattern, ending in
+  implementation and unit-level security analysis.
+
+
+  **Tooling Support**
+
+
+  All required tools used during Cybersecurity Product Development shall be mentioned in Product Management
+  Plan document.'
+concepts:
+- id: doc_concept_qx_csdev_process
+  title: Cybersecurity Development Concept
+  body: '**Motivation**
+
+
+    The cybersecurity concept (Clause 9.5) states the high-level cybersecurity requirements and controls
+    for the item / component; the cybersecurity development process refines them into system and software
+    requirements, allocates them to an architectural design, and implements that design. It provides the
+    cybersecurity specifications, secure coding guidelines, secure design principles for architecture,
+    and vulnerability analysis records that cybersecurity integration and verification (Clause 10.4.2)
+    subsequently confirms. Without this process, cybersecurity controls identified in the concept phase
+    remain undesigned and unimplemented, leaving the item / component''s digital assets without an actual
+    implemented defense against unauthorized access, manipulation, or denial of service.
+
+
+    Inputs considered for Cybersecurity Development include
+
+
+    - ISO/SAE 21434 Clause 10.4.1 (Requirements, architectural design and implementation).
+
+    - ASPICE SEC.2 (Cybersecurity Implementation).
+
+    - Cybersecurity item / component definition (Clause 9.3).
+
+    - Cybersecurity goals and claims (Clause 9.4).
+
+    - Cybersecurity concept (Clause 9.5).
+
+    - Secure design principles derived from NIST Special Publication 800-160 Volume 1 (CS Secure Design
+    Principles).
+
+    - Secure Coding Practices (CS Secure Coding Guideline).
+
+
+    **Input Artifacts**
+
+
+    - Item / component definition (CS Item / Component Definition).
+
+    - Cybersecurity goals (CS Goals) and cybersecurity claims (CS Claims).
+
+    - Cybersecurity concept (Cybersecurity Concept).
+
+    - Already established cybersecurity controls, where available.
+
+    - Known weaknesses and vulnerabilities of reused components, where available.
+
+    - Secure Design Principles and Secure Coding Guidelines (Documentation of Modelling, Design, and Programming
+    Language Guidelines).
+
+
+    **Approach**
+
+
+    Element Hierarchy
+
+
+    Cybersecurity development refines cybersecurity requirements and architecture through four levels,
+    each building on the previous one''s baselined output:
+
+
+    1. System-level cybersecurity requirements, derived from the cybersecurity concept (Define System
+    Cybersecurity Requirements). 2. System-level architectural design, allocating the system requirements
+    to architectural elements and cybersecurity controls (Develop System Architectural Design). 3. Software-level
+    cybersecurity requirements, derived from the system specification (Define Software Cybersecurity Requirements).
+    4. Software-level architectural design, detailed design, and implementation (Develop Software Architecture,
+    Design, and Coding Guidelines, Implement Software Units and Perform Security Analysis).
+
+
+    All four levels produce content of a single work product as cybersecurity specifications (Cybersecurity
+    Specifications), reflecting that ISO/SAE 21434 treats system requirements, system architecture, software
+    requirements, and software architecture / detailed design as one work product (WP-10-01).
+
+
+    Requirements Engineering Principles
+
+
+    Cybersecurity requirements at every level follow the requirement engineering principles of IEEE/ISO/IEC
+    29148- each requirement is verifiable, states something the system must do or possess to satisfy a
+    stakeholder need, is qualified by measurable conditions and constraints, and describes system performance.
+    Non-functional requirements — auditability, compliance, security monitoring, and performance under
+    attack — are identified alongside functional requirements. Requirements contradicting stakeholder
+    requirements are aligned with stakeholders, with the alignment recorded as evidence.
+
+
+    Architectural Design and Language Selection
+
+
+    The architectural design allocates cybersecurity requirements to architectural elements, either by
+    adapting existing elements or introducing new ones, and selects cybersecurity controls to avoid, detect,
+    counteract, or mitigate cybersecurity risks. Refinement step could add, adapt, or rework elements
+    and defines interfaces between them.
+
+
+    Before design or implementation begins, the modelling, design, or programming language is evaluated
+    for suitability for secure implementation, considering:
+
+
+    - Unambiguous syntax and semantics, so that the language is accurately understood and implemented,
+    and provides its intended level of security.
+
+    - Support for modularity, abstraction, and encapsulation, reducing the risk of vulnerabilities from
+    unmanageable, monolithic components.
+
+    - Support for structured constructs, enabling an objective, criteria-based language selection decision.
+
+    - Support for secure design and implementation techniques: input validation and sanitization, memory
+    safety and error handling, authentication and access control, encryption and data protection, and
+    secure coding practices and standards.
+
+    - Ability to integrate existing components, reducing development time and cost.
+
+    - Resilience against vulnerabilities from improper use, evaluated against common weakness classes
+    (buffer overflows, injection, code injection).
+
+
+    Any gap identified against these criteria is closed by design, modelling, or coding guidelines and
+    by the development environment (Documentation of Modelling, Design, and Programming Language Guidelines),
+    rather than by a language change alone.
+
+
+    Weakness Avoidance and Analysis
+
+
+    Established and trusted design and implementation principles are applied to avoid or minimize the
+    introduction of weakness (RC-10-06). The architectural design is analyzed for weaknesses at every
+    refinement step, including the integration of third-party and open-source components, and findings
+    are recorded in Weaknesses Found During Product Development. Evaluation criteria for alternative architectures
+    (modularity, maintainability, expandability, scalability, reliability, security, usability) are defined
+    up front and the chosen architecture''s rationale is recorded.
+
+
+    Verification of Specifications
+
+
+    At every refinement step, bidirectional traceability is established between the cybersecurity requirements
+    and the corresponding architectural elements, and consistency between them is confirmed and demonstrated
+    by review records (Verification Report for the Cybersecurity Specifications). This is the mechanism
+    by which completeness, correctness, and consistency of the cybersecurity specifications with higher
+    levels of architectural abstraction is verified (RQ-10-08).
+
+
+    Software Implementation and Unit-Level Analysis
+
+
+    Software units are developed per the architectural design and the applicable secure coding guidelines
+    (secure design principles, and Rust / C++ / C / other language guidelines, see guidance_cs_development).
+    Implementation is supported by static and dynamic code analysis and by code review, and the resulting
+    weakness and vulnerability findings (code review, MISRA, CERT-C / CERT-C++, CWE, SBOM, FOSS, and architectural
+    vulnerability analysis reports) are recorded in Weaknesses Found During Product Development.
+
+
+    Post-Development Requirements
+
+
+    Where applicable, procedures to ensure cybersecurity after development of the component — for its
+    operation, maintenance, and end-of-life phases, and for the environment (e.g. secure handling of keys
+    outside the ECU, production line security) — are specified alongside the system requirements and recorded
+    in Cybersecurity Requirements for Post-Development.
+
+
+    **ASPICE Alignment**
+
+
+    This process supports:
+
+
+    - SEC.2 outcomes by deriving system architecture, software / hardware requirements, software / hardware
+    architecture and detailed design, coding guidelines, and source code from the cybersecurity requirements
+    identified in SEC.1 (concept), and by producing the vulnerability / weakness analysis evidence (MISRA,
+    CERT, CWE, dynamic analysis) required before integration.
+
+
+    **Tailoring Information**
+
+
+    - For a component developed out-of-context, system-level activities (Define System Cybersecurity Requirements,
+    Develop System Architectural Design) are not applicable; software-level requirements and architecture
+    are derived directly from the cybersecurity concept and item / component definition.
+
+    - Where a modelling, design, or programming language gap exists against the criteria above, the gap-closing
+    guideline or development-environment control shall be documented; it is not sufficient to note the
+    gap without a mitigation.'
+outcomes:
+- id: oc_qx_csdev_cs_development
+  title: Cybersecurity requirements are designed and implemented
+  status: draft
+  statement: Product-level cybersecurity requirements are specified, designed and implemented in the components.
+  complies:
+  - std_req_isosae21434_development_1041
+  - std_req_isosae21434_development_1042
+capabilities:
+- id: cap_qx_csdev_cs_development
+  title: Cybersecurity Development
+  status: draft
+  description: The cybersecurity concept (Clause 9.5) states the high-level cybersecurity requirements
+    and controls for the item / component; the cybersecurity development process refines them into system
+    and software requirements, allocates them to an architectural design,
+  realizes:
+  - oc_qx_csdev_cs_development

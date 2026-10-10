@@ -1,0 +1,196 @@
+# Cybersecurity Development (compliance/security/csms_development)  -  workflows.
+workflows:
+- id: wf_qx_csdev_define_system_cs_reqs
+  title: Define System Cybersecurity Requirements
+  status: draft
+  responsible: rl_qx_csgoal_engineer
+  approved_by: rl_qx_csitem_system_architect
+  supported_by:
+  - rl_qx_csitem_cs_product_owner
+  input:
+  - wp_qx_cscon_cs_concept
+  - wp_qx_csitem_cs_item_comp_def
+  output:
+  - wp_qx_csdev_cs_specs
+  - wp_qx_csdev_cs_reqs_for_post_development
+  achieves:
+  - oc_qx_csdev_cs_development
+  gate:
+  - wp: wp_qx_cscon_cs_concept
+    min_status: approved
+  contains:
+  - gd_req_qx_csdev_derivation_of_cs_reqs
+  - gd_req_qx_csdev_post_development_cs
+  - gd_temp_qx_csdev_cs_specs_template
+  - gd_temp_qx_csdev_cs_post_development_reqs
+  description: Functional and non-functional cybersecurity requirements for the item / component and its
+    operating environment are derived from the cybersecurity concept, recorded in Cybersecurity Specifications,
+    and where applicable, procedures to ensure cybersecurity after development are specified in Cybersecurity
+    Requirements for Post-Development.
+  activities:
+  - step: Functional and non-functional cybersecurity requirements for the item / component and its operating
+      environment are derived from the cybersecurity concept, recorded in Cybersecurity Specifications,
+      and where applicable, procedures to ensure cybersecurity
+    by: rl_qx_csgoal_engineer
+    capability: cap_qx_csdev_cs_development
+  - step: Contribute to cybersecurity specifications
+    by: rl_qx_csitem_cs_product_owner
+  - step: Approve cybersecurity specifications, cybersecurity requirements for post-development
+    by: rl_qx_csitem_system_architect
+- id: wf_qx_csdev_develop_system_architectural
+  title: Develop System Architectural Design
+  status: draft
+  responsible: rl_qx_csitem_system_architect
+  approved_by: rl_qx_csitem_cs_product_owner
+  supported_by:
+  - rl_qx_csitem_software_architect_lead_engineer
+  - rl_qx_csitem_cs_manager
+  input:
+  - wp_qx_csdev_cs_specs
+  output:
+  - wp_qx_csdev_cs_specs
+  - wp_qx_csdev_documentation_of_modelling
+  - wp_qx_csdev_weaknesses_found_during_product
+  - wp_qx_csdev_ver_report_for_the_cs_specs
+  achieves:
+  - oc_qx_csdev_cs_development
+  contains:
+  - gd_req_qx_csdev_allocation_of_cs_reqs
+  - gd_req_qx_csdev_evaluation_of_modelling
+  - gd_req_qx_csdev_closure_of_language_and
+  - gd_req_qx_csdev_application_of_trusted
+  - gd_req_qx_csdev_weakness_analysis_of_the
+  - gd_req_qx_csdev_ver_of_the_cs_specs
+  - gd_guidl_qx_csdev_cs_secure_design_principles
+  - gd_chklst_qx_csdev_cs_arch_design_ver
+  - gd_chklst_qx_csdev_cs_arch_vulnerability
+  description: System cybersecurity requirements are allocated to elements of the system architectural
+    design, cybersecurity controls are selected, the design is refined and its interfaces defined, and
+    the design is analyzed for weaknesses, with results recorded in Cybersecurity Specifications and Weaknesses
+    Found During Product Development.
+  activities:
+  - step: System cybersecurity requirements are allocated to elements of the system architectural design,
+      cybersecurity controls are selected, the design is refined and its interfaces defined, and the design
+      is analyzed for weaknesses, with results recorded in
+    by: rl_qx_csitem_system_architect
+    capability: cap_qx_csdev_cs_development
+  - step: Contribute to cybersecurity specifications
+    by: rl_qx_csitem_software_architect_lead_engineer
+  - step: Contribute to cybersecurity specifications
+    by: rl_qx_csitem_cs_manager
+  - step: Approve cybersecurity specifications, documentation of modelling, design, and programming language
+      guidelines, weaknesses found during product development, verification report for the cybersecurity
+      specifications
+    by: rl_qx_csitem_cs_product_owner
+- id: wf_qx_csdev_define_software_cs_reqs
+  title: Define Software Cybersecurity Requirements
+  status: draft
+  responsible: rl_qx_csgoal_engineer
+  approved_by: rl_qx_csitem_software_architect_lead_engineer
+  supported_by:
+  - rl_qx_csitem_system_architect
+  input:
+  - wp_qx_csdev_cs_specs
+  - wp_qx_csitem_cs_item_comp_def
+  output:
+  - wp_qx_csdev_cs_specs
+  achieves:
+  - oc_qx_csdev_cs_development
+  contains:
+  - gd_req_qx_csdev_derivation_of_cs_reqs
+  description: Software-level cybersecurity requirements are allocated to the software elements of the
+    system and their interfaces, categorized and analyzed for correctness and verifiability, and recorded
+    in Cybersecurity Specifications.
+  activities:
+  - step: Software-level cybersecurity requirements are allocated to the software elements of the system
+      and their interfaces, categorized and analyzed for correctness and verifiability, and recorded in
+      Cybersecurity Specifications
+    by: rl_qx_csgoal_engineer
+    capability: cap_qx_csdev_cs_development
+  - step: Contribute to cybersecurity specifications
+    by: rl_qx_csitem_system_architect
+  - step: Approve cybersecurity specifications
+    by: rl_qx_csitem_software_architect_lead_engineer
+- id: wf_qx_csdev_develop_software_arch_design_and
+  title: Develop Software Architecture, Design, and Coding Guidelines
+  status: draft
+  responsible: rl_qx_csitem_software_architect_lead_engineer
+  approved_by: rl_qx_csitem_cs_product_owner
+  supported_by:
+  - rl_qx_csitem_system_architect
+  - rl_qx_csitem_cs_manager
+  input:
+  - wp_qx_csdev_cs_specs
+  output:
+  - wp_qx_csdev_cs_specs
+  - wp_qx_csdev_documentation_of_modelling
+  - wp_qx_csdev_weaknesses_found_during_product
+  - wp_qx_csdev_ver_report_for_the_cs_specs
+  achieves:
+  - oc_qx_csdev_cs_development
+  contains:
+  - gd_req_qx_csdev_allocation_of_cs_reqs
+  - gd_req_qx_csdev_evaluation_of_modelling
+  - gd_req_qx_csdev_closure_of_language_and
+  - gd_req_qx_csdev_application_of_trusted
+  - gd_req_qx_csdev_weakness_analysis_of_the
+  - gd_req_qx_csdev_ver_of_the_cs_specs
+  - gd_temp_qx_csdev_cs_language_and_coding
+  - gd_guidl_qx_csdev_cs_secure_design_principles
+  - gd_chklst_qx_csdev_cs_arch_design_ver
+  - gd_chklst_qx_csdev_cs_arch_vulnerability
+  description: Design, modelling, or programming notations are selected and evaluated for suitability
+    for secure implementation, gaps are closed by design and coding guidelines recorded in Documentation
+    of Modelling, Design, and Programming Language Guidelines, and the software architectural design is
+    developed and allocated the software requirements, recorded in Cybersecurity Specifications.
+  activities:
+  - step: Design, modelling, or programming notations are selected and evaluated for suitability for secure
+      implementation, gaps are closed by design and coding guidelines recorded in Documentation of Modelling,
+      Design, and Programming Language Guidelines, and the
+    by: rl_qx_csitem_software_architect_lead_engineer
+    capability: cap_qx_csdev_cs_development
+  - step: Contribute to cybersecurity specifications
+    by: rl_qx_csitem_system_architect
+  - step: Contribute to cybersecurity specifications
+    by: rl_qx_csitem_cs_manager
+  - step: Approve cybersecurity specifications, documentation of modelling, design, and programming language
+      guidelines, weaknesses found during product development, verification report for the cybersecurity
+      specifications
+    by: rl_qx_csitem_cs_product_owner
+- id: wf_qx_csdev_implement_software_units_and
+  title: Implement Software Units and Perform Security Analysis
+  status: draft
+  responsible: rl_qx_csgoal_engineer
+  approved_by: rl_qx_csitem_software_architect_lead_engineer
+  supported_by:
+  - rl_qx_csitem_cs_product_owner
+  input:
+  - wp_qx_csdev_cs_specs
+  - wp_qx_csdev_documentation_of_modelling
+  output:
+  - wp_qx_csdev_weaknesses_found_during_product
+  achieves:
+  - oc_qx_csdev_cs_development
+  contains:
+  - gd_req_qx_csdev_application_of_trusted
+  - gd_temp_qx_csdev_cs_weaknesses_found_during
+  - gd_guidl_qx_csdev_cs_secure_coding_guidelin_2
+  - gd_guidl_qx_csdev_cs_secure_coding_guidelin_3
+  - gd_guidl_qx_csdev_cs_secure_coding_guidelin_4
+  - gd_guidl_qx_csdev_cs_secure_coding_guidelin_5
+  - gd_chklst_qx_csdev_cs_impl_code_quality
+  description: Software units are developed per the software architectural design following the applicable
+    coding guidelines, code reviews and static / dynamic analysis are performed, and the resulting findings
+    — code review, MISRA, CERT-C / CERT-C++, CWE, SBOM, FOSS, and residual architectural weaknesses —
+    are consolidated per CS Implementation Code Quality Checklist and recorded in Weaknesses Found During
+    Product Development.
+  activities:
+  - step: Software units are developed per the software architectural design following the applicable
+      coding guidelines, code reviews and static / dynamic analysis are performed, and the resulting findings
+      — code review, MISRA, CERT-C / CERT-C++, CWE, SBOM, FOSS, and
+    by: rl_qx_csgoal_engineer
+    capability: cap_qx_csdev_cs_development
+  - step: Contribute to weaknesses found during product development
+    by: rl_qx_csitem_cs_product_owner
+  - step: Approve weaknesses found during product development
+    by: rl_qx_csitem_software_architect_lead_engineer

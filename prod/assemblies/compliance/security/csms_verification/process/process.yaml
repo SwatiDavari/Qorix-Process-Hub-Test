@@ -1,0 +1,254 @@
+# Cybersecurity Verification (compliance/security/csms_verification)  -  process: identity, classification, concepts.
+assembly:
+  id: csms_verification
+  code: csver
+  cluster: compliance
+  title: Cybersecurity Verification
+  enabler: SEC
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_sec_security_office
+  purpose: The cybersecurity specification (Clause 10.4.1) states what the item / component must do to
+    satisfy its cybersecurity requirements; the cybersecurity verification process confirms that the implementation
+    and integration actually do it.
+  standards:
+  - ISO/SAE 21434
+  tier: qorix
+  group: Security
+getting_started: '**Purpose**
+
+
+  The purpose of the Cybersecurity Verification process is to confirm that the implementation and integration
+  of an item / component fulfil its cybersecurity specifications, and to identify remaining weaknesses
+  and vulnerabilities before the item / component proceeds to validation. This process ensures that:
+
+
+  - Integration and verification activities are specified considering the cybersecurity specifications,
+  intended configuration, and applicable modelling, design, and coding guidelines.
+
+  - Verification is performed at software integration level, and, where applicable, at system integration
+  level.
+
+  - Test coverage is evaluated against defined coverage metrics.
+
+  - Testing to minimize unidentified weaknesses and vulnerabilities, including fuzz testing, is performed
+  or a documented rationale is provided where it is not.
+
+
+  This process directly supports compliance with ISO/SAE 21434 Clause 10.4.2 and ASPICE SEC.3 (Cybersecurity
+  Integration and Verification), and provides evidence consumed by cybersecurity validation (Clause 11)
+  and ASPICE SEC.4 (cybersecurity validation).
+
+
+  **Organizational Scope and Applicability**
+
+
+  This process applies to every item / component for which a cybersecurity specification has been baselined,
+  whether developed in full context or out-of-context. For products / projects developed out-of-context,
+  validation of cybersecurity assumptions of use (AoUs) stated for the component is part of the verification
+  activities of this process.
+
+
+  **Lifecycle Relevance**
+
+
+  Cybersecurity verification follows cybersecurity specification (Clause 10.4.1) and precedes:
+
+
+  - Cybersecurity validation (ISO/SAE 21434 Clause 11)
+
+
+  Verification is repeated whenever the cybersecurity specification, the software architecture, or the
+  implementation of the item / component changes.
+
+
+  **Preconditions and Dependencies**
+
+
+  Typical preconditions include:
+
+
+  - Baselined cybersecurity specification (Clause 10.4.1).
+
+  - Baselined item definition (CS Item / Component Definition) and cybersecurity concept (Cybersecurity
+  Concept).
+
+  - Available software architectural design and software implementation.
+
+  - Known weaknesses and vulnerabilities of reused components, where available.
+
+
+  **Governance and Compliance Context**
+
+
+  This process:
+
+
+  - Fulfills ISO/SAE 21434 Clause 10.4.2 requirements (RQ-10-09, RQ-10-10, RQ-10-11, RC-10-12, RQ-10-13).
+
+  - Consumes the cybersecurity specification (Clause 10.4.1), item definition (Clause 9.3), and cybersecurity
+  concept (Clause 9.5).
+
+  - Provides mandatory input to cybersecurity validation (Clause 11).
+
+
+  **General Workflow**
+
+
+  **Tooling Support**
+
+
+  The tools used during verification activity must be included in Test Verification Plan document.'
+concepts:
+- id: doc_concept_qx_csver_process
+  title: Cybersecurity Verification Concept
+  body: '**Motivation**
+
+
+    The cybersecurity specification (Clause 10.4.1) states what the item / component must do to satisfy
+    its cybersecurity requirements; the cybersecurity verification process confirms that the implementation
+    and integration actually do it. It provides evidence that cybersecurity specifications are correctly
+    implemented, evaluates test coverage, and identifies weaknesses and vulnerabilities remaining in the
+    component before cybersecurity validation. Without this step, an implemented cybersecurity control
+    cannot be trusted to protect the item / component''s digital assets from unauthorized access, data
+    breaches, or malicious activity.
+
+
+    Inputs considered for Cybersecurity Verification include
+
+
+    - ISO/SAE 21434 Clause 10.4.2 (Cybersecurity Integration and Verification).
+
+    - ASPICE SEC.3 (Cybersecurity Integration and Verification).
+
+    - Cybersecurity specification produced under Clause 10.4.1.
+
+    - Cybersecurity concept (Clause 9.5)
+
+    - Cybersecurity Goals and Claims (Clause 9.4)
+
+    - Cybersecurity item / component definition (Clause 9.3).
+
+
+    **Input Artifacts**
+
+
+    - Cybersecurity specification (Clause 10.4.1 output; referenced as "WP-10-01" until a corresponding
+    need element is created under the Cybersecurity Specification process).
+
+    - Cybersecurity concept (Cybersecurity Concept).
+
+    - Cybersecurity goals (CS Goals) and cybersecurity claims (CS Claims).
+
+    - Item / component definition (CS Item / Component Definition).
+
+    - Software architectural design.
+
+    - Already established cybersecurity controls.
+
+    - Known weaknesses and vulnerabilities of reused components, where available.
+
+
+    **Approach**
+
+
+    Verification Levels
+
+
+    Cybersecurity verification is executed at software integration and verification level, and, where
+    applicable, at system integration and verification level. For an item / component developed out-of-context,
+    system level verification is not applicable; verification of the cybersecurity AoUs stated for the
+    component takes its place.
+
+
+    Cybersecurity Assurance Level (CAL) and Verification Rigor
+
+
+    The CAL assigned to the cybersecurity goal realized by the item / component determines the required
+    test methods and the degree of independence of the verification:
+
+
+    Software Integration and Verification
+
+
+    Software integration combines software units into software items, and up to the complete integrated
+    software, consistent with the software architectural design. Software integration verification provides
+    evidence that the integrated software items comply with the software architectural design, including
+    interfaces between software units and between software items.
+
+
+    The activity proceeds in four steps, executed in parallel to software integration (SWE.5):
+
+
+    1. Risk treatment verification strategy — a verification strategy is selected based on the CAL of
+    the realized cybersecurity goal(s), covering requirement-based and interface testing, fuzz testing,
+    testing with a simulated environment, and network / brute-force attack simulation as relevant. Gaps
+    identified during TARA, cybersecurity concept, or requirement / architecture analysis are aligned
+    with stakeholders and resolved before verification proceeds. 2. Specification for treatment verification
+    — test cases are derived per the selected strategy (requirement-based testing, equivalence class analysis,
+    boundary value analysis, error guessing), covering dataflow correctness, timing, data interpretation,
+    dynamic interaction, and resource consumption between software items. 3. Perform verification activities
+    — software units are integrated per the integration strategy, test cases are selected for sufficient
+    coverage, tests are executed and logged, and cybersecurity AoUs of components-out-of-context are validated.
+    4. Reporting — bidirectional traceability is established between cybersecurity requirements, refined
+    software architectural elements, and the verification specification (including test cases and results);
+    consistency is confirmed; results are summarized and communicated to affected parties.
+
+
+    Fuzz Testing
+
+
+    Fuzz testing supplements requirement-based testing by mutating valid inputs and observing the item''s
+    / component''s response, to surface weaknesses that structured testing does not reach.
+
+
+    The fuzz testing activity proceeds in four steps:
+
+
+    1. Interface & endpoint reconnaissance — every interface the item / component exposes or consumes
+    is enumerated (CAN PDUs, UDS services/sessions, TCP/IP & UDP ports/service instances, DoIP logical
+    addresses and routing activation types), producing an interface map used to target fuzz input. 2.
+    Positive test case generation — a baseline suite of valid, spec-conformant inputs is generated per
+    interface to characterize nominal behavior and derive fuzzing criteria (mutation seeds, boundary values,
+    state preconditions). 3. Mutator — fields of valid input are mutated and provided to the CUT; responses
+    are analyzed for crash, halt, or erroneous behavior. 4. Analysis and report generation — CUT behavior
+    for all inputs is analyzed; responses that are neither valid nor expected-negative are flagged as
+    anomalies and reported, together with the positive-suite log, in Vulnerability Analysis Report.
+
+
+    **ASPICE Alignment**
+
+
+    This process supports:
+
+
+    - SEC.3 outcomes by verifying that the implementation and integration of components fulfil the cybersecurity
+    specifications produced under SEC.1/SEC.2, and by reporting test coverage and residual weaknesses.
+
+
+    **Tailoring Information**
+
+
+    - For a component developed out-of-context, system integration and verification does not apply; verification
+    instead confirms the cybersecurity AoUs stated for the component.
+
+    - Fuzz testing scope and rigor scale with CAL as shown in the verification rigor table; where fuzz
+    testing per the CAL is not performed, a documented rationale is required (Rationale for omitted testing).'
+outcomes:
+- id: oc_qx_csver_cs_ver
+  title: The design is verified against the cybersecurity requirements
+  status: draft
+  statement: Integration and verification activities show that the implementation meets the cybersecurity
+    specifications.
+  complies:
+  - std_req_isosae21434_development_1042
+capabilities:
+- id: cap_qx_csver_cs_ver
+  title: Cybersecurity Verification
+  status: draft
+  description: The cybersecurity specification (Clause 10.4.1) states what the item / component must do
+    to satisfy its cybersecurity requirements; the cybersecurity verification process confirms that the
+    implementation and integration actually do it.
+  realizes:
+  - oc_qx_csver_cs_ver

@@ -1,0 +1,54 @@
+# Cybersecurity Verification (compliance/security/csms_verification)  -  templates and guidance.
+templates:
+- id: gd_chklst_qx_csver_cs_ver_checklist
+  title: CS Verification Checklist
+  status: draft
+  description: CS Verification Checklist
+- id: gd_guidl_qx_csver_cs_ver
+  title: Cybersecurity Verification
+  status: draft
+  description: Cybersecurity Verification
+- id: gd_req_qx_csver_impl_and_integration
+  title: Implementation and integration conformance
+  status: draft
+  description: Integration and verification activities shall verify that the implementation and integration
+    of components fulfil the defined cybersecurity specifications, and results shall be recorded in Verification
+    Report for the Refined Specifications.
+- id: gd_req_qx_csver_ver_spec_criteria
+  title: Verification specification criteria
+  status: draft
+  description: Integration and verification activities shall be specified in Integration and Verification
+    Specification considering the defined cybersecurity specifications, the intended configuration (if
+    applicable), sufficient capability to support the specified functionality, and conformance with the
+    applicable modelling, design, and coding guidelines.
+- id: gd_req_qx_csver_test_coverage_evaluation
+  title: Test coverage evaluation
+  status: draft
+  description: Where verification is performed by testing, test coverage shall be evaluated using defined
+    test coverage metrics to determine the sufficiency of the test activities, and the evaluation shall
+    be recorded in Verification Report for the Refined Specifications.
+- id: gd_req_qx_csver_minimization_of_unidentified
+  title: Minimization of unidentified weaknesses and vulnerabilities
+  status: draft
+  description: Testing, including fuzz testing scaled to the CAL of the realized cybersecurity goal(s),
+    should be performed to confirm that unidentified weaknesses and vulnerabilities remaining in the component
+    are minimized, and findings shall be recorded in Vulnerability Analysis Report.
+- id: gd_req_qx_csver_rationale_for_omitted_testing
+  title: Rationale for omitted testing
+  status: draft
+  description: Where testing per Minimization of unidentified weaknesses and vulnerabilities is not performed,
+    a documented rationale shall be provided and recorded in Integration and Verification Specification.
+- id: gd_req_qx_csver_traceability_of_ver_results
+  title: Traceability of verification results
+  status: draft
+  description: Bidirectional traceability shall be established between cybersecurity requirements, refined
+    software architectural elements, and the verification specification (including test cases and results),
+    and recorded in Integration and Verification Report.
+- id: gd_temp_qx_csver_cs_integration_and_ver_spec
+  title: CS Integration and Verification Specification Template
+  status: draft
+  description: CS Integration and Verification Specification Template
+- id: gd_guidl_qx_csver_cs_ver_template_guidelines
+  title: CS Verification Template Guidelines
+  status: draft
+  description: CS Verification Template Guidelines

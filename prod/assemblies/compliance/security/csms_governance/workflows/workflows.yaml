@@ -1,0 +1,156 @@
+# Cybersecurity Governance (compliance/security/csms_governance)  -  workflows.
+workflows:
+- id: wf_qx_csgov_governance_establishment
+  title: Governance Establishment
+  status: draft
+  responsible: rl_qx_csgov_governance_and_compliance_group
+  approved_by: rl_qx_csgov_executive_mgmt
+  supported_by:
+  - rl_qx_csgov_product_project_mgmt
+  - rl_qx_csgov_engineering_roles
+  - rl_qx_csgov_support_functions
+  input:
+  - wp_qx_sec_policies
+  output:
+  - wp_qx_csgov_cs_policy_rules_and_governance
+  achieves:
+  - oc_qx_csgov_cs_governance
+  gate:
+  - wp: wp_qx_sec_policies
+    min_status: approved
+  description: 'Governance Establishment: Define cybersecurity policies and governance rules; Approve
+    policies through management; Establish organizational roles and responsibilities.'
+  activities:
+  - step: Define cybersecurity policies and governance rules
+    by: rl_qx_csgov_governance_and_compliance_group
+    capability: cap_qx_csgov_cs_governance
+  - step: Approve policies through management
+    by: rl_qx_csgov_executive_mgmt
+    capability: cap_qx_csgov_cs_governance
+  - step: Establish organizational roles and responsibilities
+    by: rl_qx_csgov_governance_and_compliance_group
+    capability: cap_qx_csgov_cs_governance
+  - step: Approve cybersecurity policy, rules, and governance processes
+    by: rl_qx_csgov_executive_mgmt
+- id: wf_qx_csgov_governance_deployment
+  title: Governance Deployment
+  status: draft
+  responsible: rl_qx_csgov_governance_and_compliance_group
+  approved_by: rl_qx_csgov_executive_mgmt
+  supported_by:
+  - rl_qx_csgov_product_project_mgmt
+  - rl_qx_csgov_engineering_roles
+  - rl_qx_csgov_support_functions
+  input:
+  - wp_qx_csgov_cs_policy_rules_and_governance
+  output:
+  - wp_qx_csgov_cs_policy_rules_and_governance
+  achieves:
+  - oc_qx_csgov_cs_governance
+  description: 'Governance Deployment: Communicate policies across the organization; Integrate governance
+    into management systems; Allocate resources and competence development mechanisms.'
+  activities:
+  - step: Communicate policies across the organization
+    by: rl_qx_csgov_governance_and_compliance_group
+    capability: cap_qx_csgov_cs_governance
+  - step: Integrate governance into management systems
+    by: rl_qx_csgov_governance_and_compliance_group
+    capability: cap_qx_csgov_cs_governance
+  - step: Allocate resources and competence development mechanisms
+    by: rl_qx_csgov_governance_and_compliance_group
+    capability: cap_qx_csgov_cs_governance
+  - step: Approve cybersecurity policy, rules, and governance processes
+    by: rl_qx_csgov_executive_mgmt
+- id: wf_qx_csgov_operational_integration
+  title: Operational Integration
+  status: draft
+  responsible: rl_qx_csgov_governance_and_compliance_group
+  approved_by: rl_qx_csgov_executive_mgmt
+  supported_by:
+  - rl_qx_csgov_product_project_mgmt
+  - rl_qx_csgov_engineering_roles
+  - rl_qx_csgov_support_functions
+  input:
+  - wp_qx_csgov_cs_policy_rules_and_governance
+  output:
+  - wp_qx_csgov_cs_policy_rules_and_governance
+  achieves:
+  - oc_qx_csgov_cs_governance
+  description: Cybersecurity governance operates in parallel with Cybersecurity processes are integrated
+    with concept, development, validation, production, and post-development activities. Integration occurs
+    early to reduce risk of late-stage conflicts.
+  activities:
+  - step: System engineering
+    by: rl_qx_csgov_governance_and_compliance_group
+    capability: cap_qx_csgov_cs_governance
+  - step: Software engineering
+    by: rl_qx_csgov_governance_and_compliance_group
+    capability: cap_qx_csgov_cs_governance
+  - step: Safety engineering
+    by: rl_qx_csgov_governance_and_compliance_group
+    capability: cap_qx_csgov_cs_governance
+  - step: Approve cybersecurity policy, rules, and governance processes
+    by: rl_qx_csgov_executive_mgmt
+- id: wf_qx_csgov_lifecycle_oversight
+  title: Lifecycle Oversight
+  status: draft
+  responsible: rl_qx_csgov_governance_and_compliance_group
+  approved_by: rl_qx_csgov_executive_mgmt
+  supported_by:
+  - rl_qx_csgov_product_project_mgmt
+  - rl_qx_csgov_engineering_roles
+  - rl_qx_csgov_support_functions
+  input:
+  - wp_qx_csgov_cs_policy_rules_and_governance
+  output:
+  - wp_qx_csgov_cs_policy_rules_and_governance
+  achieves:
+  - oc_qx_csgov_cs_governance
+  description: Governance oversight is maintained throughout
+  activities:
+  - step: Concept and risk assessment
+    by: rl_qx_csgov_governance_and_compliance_group
+    capability: cap_qx_csgov_cs_governance
+  - step: Development and integration
+    by: rl_qx_csgov_governance_and_compliance_group
+    capability: cap_qx_csgov_cs_governance
+  - step: Validation and production readiness
+    by: rl_qx_csgov_governance_and_compliance_group
+    capability: cap_qx_csgov_cs_governance
+  - step: Operation, maintenance, and monitoring
+    by: rl_qx_csgov_governance_and_compliance_group
+    capability: cap_qx_csgov_cs_governance
+  - step: Decommissioning
+    by: rl_qx_csgov_governance_and_compliance_group
+    capability: cap_qx_csgov_cs_governance
+  - step: Approve cybersecurity policy, rules, and governance processes
+    by: rl_qx_csgov_executive_mgmt
+- id: wf_qx_csgov_continuous_improvement
+  title: Continuous Improvement
+  status: draft
+  responsible: rl_qx_csgov_governance_and_compliance_group
+  approved_by: rl_qx_csgov_executive_mgmt
+  supported_by:
+  - rl_qx_csgov_product_project_mgmt
+  - rl_qx_csgov_engineering_roles
+  - rl_qx_csgov_support_functions
+  input:
+  - wp_qx_csgov_cs_policy_rules_and_governance
+  output:
+  - wp_qx_csgov_cs_policy_rules_and_governance
+  achieves:
+  - oc_qx_csgov_cs_governance
+  description: 'Continuous Improvement: Collect feedback from monitoring and audits; Update policies and
+    governance mechanisms; Improve organizational cybersecurity maturity.'
+  activities:
+  - step: Collect feedback from monitoring and audits
+    by: rl_qx_csgov_governance_and_compliance_group
+    capability: cap_qx_csgov_cs_governance
+  - step: Update policies and governance mechanisms
+    by: rl_qx_csgov_governance_and_compliance_group
+    capability: cap_qx_csgov_cs_governance
+  - step: Improve organizational cybersecurity maturity
+    by: rl_qx_csgov_governance_and_compliance_group
+    capability: cap_qx_csgov_cs_governance
+  - step: Approve cybersecurity policy, rules, and governance processes
+    by: rl_qx_csgov_executive_mgmt

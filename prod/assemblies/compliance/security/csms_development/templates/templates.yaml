@@ -1,0 +1,113 @@
+# Cybersecurity Development (compliance/security/csms_development)  -  templates and guidance.
+templates:
+- id: gd_guidl_qx_csdev_cs_development
+  title: Cybersecurity Development
+  status: draft
+  description: Cybersecurity Development
+- id: gd_req_qx_csdev_derivation_of_cs_reqs
+  title: Derivation of cybersecurity requirements
+  status: draft
+  description: Cybersecurity requirements shall be defined at system level based on the high-level requirements
+    and controls identified in the concept process, and at software level based on the system requirements
+    and architecture, recorded in Cybersecurity Specifications.
+- id: gd_req_qx_csdev_allocation_of_cs_reqs
+  title: Allocation of cybersecurity requirements
+  status: draft
+  description: Cybersecurity requirements shall be allocated to elements of the system and software architectural
+    design, and the allocation shall be recorded in Cybersecurity Specifications.
+- id: gd_req_qx_csdev_post_development_cs
+  title: Post-development cybersecurity procedures
+  status: draft
+  description: Procedures to ensure cybersecurity after development of the item / component shall be specified,
+    where applicable, and recorded in Cybersecurity Requirements for Post-Development.
+- id: gd_req_qx_csdev_evaluation_of_modelling
+  title: Evaluation of modelling, design, and programming languages
+  status: draft
+  description: When selecting a programming language or design modelling notation, a qualitative evaluation
+    of its suitability for secure implementation shall be performed against the criteria described in
+    ISO/SAE 21434 section 10.4.1, and the evaluation shall be recorded in Documentation of Modelling,
+    Design, and Programming Language Guidelines.
+- id: gd_req_qx_csdev_closure_of_language_and
+  title: Closure of language and modelling gaps
+  status: draft
+  description: Any gap identified in the selected language or modelling notation against the criteria
+    of Evaluation of modelling, design, and programming languages shall be closed by appropriate design,
+    modelling, or coding guidelines and by the development environment, and recorded in Documentation
+    of Modelling, Design, and Programming Language Guidelines.
+- id: gd_req_qx_csdev_application_of_trusted
+  title: Application of trusted design and implementation principles
+  status: draft
+  description: Established and trusted design and implementation principles should be applied to avoid
+    or minimize the introduction of weakness, at architectural design and at implementation level.
+- id: gd_req_qx_csdev_weakness_analysis_of_the
+  title: Weakness analysis of the architectural design
+  status: draft
+  description: The architectural design shall be analyzed for weaknesses, including weaknesses introduced
+    by the integration of third-party and open-source components, and findings shall be recorded in Weaknesses
+    Found During Product Development.
+- id: gd_req_qx_csdev_ver_of_the_cs_specs
+  title: Verification of the cybersecurity specifications
+  status: draft
+  description: The defined cybersecurity specifications shall be verified for completeness, correctness,
+    and consistency with the cybersecurity specifications from higher levels of architectural abstraction,
+    and the verification shall be recorded in Verification Report for the Cybersecurity Specifications.
+- id: gd_guidl_qx_csdev_cs_secure_coding_guideline
+  title: CS Secure Coding Guideline
+  status: draft
+  description: CS Secure Coding Guideline
+- id: gd_guidl_qx_csdev_cs_secure_coding_guidelin_2
+  title: CS Secure Coding Guideline for Rust
+  status: draft
+  description: CS Secure Coding Guideline for Rust
+- id: gd_guidl_qx_csdev_cs_secure_coding_guidelin_3
+  title: CS Secure Coding Guideline for C++
+  status: draft
+  description: CS Secure Coding Guideline for C++
+- id: gd_guidl_qx_csdev_cs_secure_coding_guidelin_4
+  title: CS Secure Coding Guideline for C
+  status: draft
+  description: CS Secure Coding Guideline for C
+- id: gd_guidl_qx_csdev_cs_secure_coding_guidelin_5
+  title: CS Secure Coding Guideline for Other Languages
+  status: draft
+  description: CS Secure Coding Guideline for Other Languages
+- id: gd_guidl_qx_csdev_cs_secure_design_principles
+  title: CS Secure Design Principles
+  status: draft
+  description: CS Secure Design Principles
+- id: gd_chklst_qx_csdev_cs_specs_ver_checklist
+  title: CS Specifications Verification Checklist
+  status: draft
+  description: CS Specifications Verification Checklist
+- id: gd_chklst_qx_csdev_cs_arch_design_ver
+  title: CS Architecture Design Verification Checklist
+  status: draft
+  description: CS Architecture Design Verification Checklist
+- id: gd_chklst_qx_csdev_cs_arch_vulnerability
+  title: CS Architecture Vulnerability Analysis Checklist
+  status: draft
+  description: CS Architecture Vulnerability Analysis Checklist
+- id: gd_chklst_qx_csdev_cs_impl_code_quality
+  title: CS Implementation Code Quality Checklist
+  status: draft
+  description: CS Implementation Code Quality Checklist
+- id: gd_temp_qx_csdev_cs_specs_template
+  title: CS Specifications Template
+  status: draft
+  description: CS Specifications Template
+- id: gd_temp_qx_csdev_cs_post_development_reqs
+  title: CS Post-Development Requirements Template
+  status: draft
+  description: CS Post-Development Requirements Template
+- id: gd_temp_qx_csdev_cs_language_and_coding
+  title: CS Language and Coding Guideline Reference Template
+  status: draft
+  description: CS Language and Coding Guideline Reference Template
+- id: gd_temp_qx_csdev_cs_weaknesses_found_during
+  title: CS Weaknesses Found During Development Reference Template
+  status: draft
+  description: CS Weaknesses Found During Development Reference Template
+- id: gd_guidl_qx_csdev_cs_specs_template
+  title: Cybersecurity Specifications Template Guidelines
+  status: draft
+  description: Cybersecurity Specifications Template Guidelines

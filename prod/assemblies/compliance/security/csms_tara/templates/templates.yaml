@@ -1,0 +1,139 @@
+# Cybersecurity Threat Analysis and Risk Assessment (compliance/security/csms_tara)  -  templates and guidance.
+templates:
+- id: gd_chklst_qx_cstara_threat_analysis_and_risk
+  title: Threat Analysis and Risk Assessment Review Checklist
+  status: draft
+  description: Threat Analysis and Risk Assessment Review Checklist
+- id: gd_guidl_qx_cstara_threat_analysis_and_risk
+  title: Threat Analysis and Risk Assessment Methodology
+  status: draft
+  description: Threat Analysis and Risk Assessment Methodology
+- id: gd_guidl_qx_cstara_impact_and_attack
+  title: Impact and Attack Feasibility Rating Metrics
+  status: draft
+  description: Impact and Attack Feasibility Rating Metrics
+- id: gd_req_qx_cstara_damage_scenario
+  title: Damage scenario identification
+  status: draft
+  description: Damage scenarios shall be identified for every cybersecurity property compromise that could
+    adversely affect a road user, recorded in Damage Scenarios.
+- id: gd_req_qx_cstara_asset_identification_and_cs
+  title: Asset identification and cybersecurity property rating
+  status: draft
+  description: Assets shall be identified from the item's features and interfaces and rated against the
+    six cybersecurity properties; an asset shall be confirmed only where at least one property applies
+    and at least one damage scenario is associated with it, recorded in Assets with Cybersecurity Properties.
+- id: gd_req_qx_cstara_impact_category_rating
+  title: Impact category rating
+  status: draft
+  description: Every damage scenario shall be rated across the safety, financial, operational, and privacy
+    impact categories, using the scale defined in Impact and Attack Feasibility Rating Metrics.
+- id: gd_req_qx_cstara_weighted_impact_rating
+  title: Weighted impact rating
+  status: draft
+  description: The four impact category ratings of a damage scenario shall be combined into one weighted
+    impact value using the method of Impact and Attack Feasibility Rating Metrics, recorded in Impact
+    Ratings.
+- id: gd_req_qx_cstara_impact_rating_justification
+  title: Impact rating justification
+  status: draft
+  description: Every impact category rating that is not Negligible shall carry a written justification,
+    recorded alongside the rating in Impact Ratings.
+- id: gd_req_qx_cstara_independent_review_of
+  title: Independent review of impact rating
+  status: draft
+  description: Impact ratings may be reviewed by a person independent of the analyst who assigned them
+    before they are used in risk value determination.
+- id: gd_req_qx_cstara_threat_scenario
+  title: Threat scenario identification
+  status: draft
+  description: A threat scenario shall be identified for every asset / cybersecurity property / damage
+    scenario combination for which a plausible threat exists, recorded in Threat Scenarios.
+- id: gd_req_qx_cstara_attack_path_identification
+  title: Attack path identification
+  status: draft
+  description: At least one feasible attack path shall be identified for every threat scenario, described
+    by attack vector, attack layer, starting point, and method / mechanism, recorded in Attack Paths.
+- id: gd_req_qx_cstara_attack_path_to_threat
+  title: Attack path to threat scenario mapping
+  status: draft
+  description: Every identified attack path shall be mapped to the threat scenario(s) it realizes, and
+    an attack path already covering the same starting point and mechanism shall be reused rather than
+    duplicated.
+- id: gd_req_qx_cstara_consistent_attack
+  title: Consistent attack feasibility method
+  status: draft
+  description: Attack feasibility shall be rated for every attack path using one consistent method across
+    a given TARA, the attack-potential-based method of Impact and Attack Feasibility Rating Metrics.
+- id: gd_req_qx_cstara_attack_potential_factor
+  title: Attack potential factor rating
+  status: draft
+  description: Each attack path should be rated on the five attack potential factors (elapsed time, specialist
+    expertise, knowledge of the item, window of opportunity, equipment) defined in Impact and Attack Feasibility
+    Rating Metrics.
+- id: gd_req_qx_cstara_attack_potential_value
+  title: Attack potential value computation
+  status: draft
+  description: The Attack Potential Value of an attack path should be computed as the sum of its five
+    factor point values, recorded in Attack Feasibility Ratings.
+- id: gd_req_qx_cstara_attack_feasibility_rating
+  title: Attack feasibility rating band
+  status: draft
+  description: The Attack Potential Value of an attack path should be mapped to a qualitative Attack Feasibility
+    Rating using the fixed lookup table maintained per Impact and Attack Feasibility Rating Metrics.
+- id: gd_req_qx_cstara_governing_attack
+  title: Governing attack feasibility rating
+  status: draft
+  description: Where a threat scenario is realized by more than one attack path, the attack feasibility
+    rating carried forward to that threat scenario should be the most feasible of its attack paths.
+- id: gd_req_qx_cstara_risk_value_determination
+  title: Risk value determination via risk matrix
+  status: draft
+  description: The risk value of a threat scenario shall be determined by combining its weighted impact
+    rating and governing attack feasibility rating using the fixed risk matrix of Impact and Attack Feasibility
+    Rating Metrics.
+- id: gd_req_qx_cstara_risk_value_recording
+  title: Risk value recording
+  status: draft
+  description: The risk value of every threat scenario shall be recorded in Risk Values, traceable to
+    the impact rating and attack feasibility rating it was derived from.
+- id: gd_req_qx_cstara_risk_treatment_decision
+  title: Risk treatment decision
+  status: draft
+  description: A risk treatment decision — avoid, reduce, retain, or share/transfer — shall be made and
+    recorded with rationale for every threat scenario in Risk Treatment Decisions.
+- id: gd_req_qx_cstara_tara_update_triggers
+  title: TARA update triggers
+  status: draft
+  description: 'A change impact analysis shall be started against the baselined TARA Record on any of:
+    a change to item architecture, functionality, or operational environment; a new or changed cybersecurity
+    requirement received from an OEM, customer, regulation, supplier, or internal stakeholder; a confirmed
+    vulnerability not covered by an existing threat scenario or attack path. Cybersecurity requirements
+    derived from this TARA''s own cybersecurity goals are not a trigger. Where the change adds, changes,
+    or removes a function, interface, or operational environment element, CS Item / Component Definition
+    shall be updated and re-baselined before the TARA is re-analyzed (see tara_update_examples).'
+- id: gd_req_qx_cstara_tara_change_impact_analysis
+  title: TARA change impact analysis and closure
+  status: draft
+  description: Every change impact analysis shall be recorded in TARA Review Record (item 23 of Threat
+    Analysis and Risk Assessment Review Checklist) with the trigger, its source, the affected TARA records,
+    and the update decision with rationale, decided by Cybersecurity Product Owner and approved by Cybersecurity
+    Manager. Where an update is required, re-analysis shall start at the first TARA section that the change
+    touches and continue through the risk treatment decision, as defined in tara_update_rerun_scope. The
+    analysis shall close only when these records are updated, every changed risk treatment decision, CAL,
+    or goal / claim link is handed to Cybersecurity Goals and Claims with an Issue Tracking ID, and the
+    updated TARA Record is re-reviewed, quality checked, and re-baselined. Where no update is required,
+    the decision shall be recorded in a new version of TARA Review Record with only item 23 completed,
+    referring to the unchanged TARA baseline.
+- id: gd_chklst_qx_cstara_tara_quality_check
+  title: TARA Quality Check Checklist
+  status: draft
+  description: TARA Quality Check Checklist
+- id: gd_temp_qx_cstara_threat_analysis_and_risk
+  title: Threat Analysis and Risk Assessment Template
+  status: draft
+  description: Threat Analysis and Risk Assessment Template
+- id: gd_guidl_qx_cstara_tara_template_guideline
+  title: TARA Template Guideline
+  status: draft
+  description: TARA Template Guideline

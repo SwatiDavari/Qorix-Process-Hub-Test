@@ -1,0 +1,37 @@
+# Cybersecurity Culture (compliance/security/csms_culture)  -  workflows.
+workflows:
+- id: wf_qx_cscult_culture_establishment_and
+  title: Culture Establishment and Maintenance Flow
+  status: draft
+  responsible: rl_qx_cscult_cs_mgmt
+  approved_by: rl_qx_csgov_executive_mgmt
+  supported_by:
+  - rl_qx_cscult_product_project_managers
+  - rl_qx_cscult_cs_architects_and_technical
+  - rl_qx_cscult_all_personnel
+  input:
+  - wp_qx_sec_policies
+  output:
+  - wp_qx_cscult_cs_culture_record
+  achieves:
+  - oc_qx_cscult_cs_culture
+  gate:
+  - wp: wp_qx_sec_policies
+    min_status: approved
+  description: 1. Define Cultural Objectives Organizational cybersecurity values and expectations are
+    defined in alignment with CSMS objectives and ISO/SAE 21434 requirements. 2. Role and Competence Definition
+    Cybersecurity roles are identified, and required competences and awareness levels are specified. 3.
+    Training and Awareness Execution Training programs and awareness initiatives are planned and delivered
+    according to organizational training policies and product/project needs. 4. Assessment and Monitoring
+    Competence and awareness are assessed through evaluations, audits, and KPI monitoring to determine
+    effectiveness. 5. Improvement Identification Gaps, weaknesses, or new improvement opportunities are
+    identified based on assessments, audits, and emerging requirements. 6. Improvement Implementation
+    Improvement actions are planned, assigned, tracked, and implemented. 7. Institutionalization Successful
+    improvements are incorporated into standard practices, processes, and training content, reinforcing
+    the cybersecurity culture.
+  activities:
+  - step: Culture Establishment and Maintenance Flow
+    by: rl_qx_cscult_cs_mgmt
+    capability: cap_qx_cscult_cs_culture
+  - step: Approve cybersecurity culture record
+    by: rl_qx_csgov_executive_mgmt

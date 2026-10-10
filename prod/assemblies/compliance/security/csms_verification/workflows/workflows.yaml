@@ -1,0 +1,126 @@
+# Cybersecurity Verification (compliance/security/csms_verification)  -  workflows.
+workflows:
+- id: wf_qx_csver_define_risk_treatment_ver
+  title: Define Risk Treatment Verification Strategy and Specification
+  status: draft
+  responsible: rl_qx_csver_cs_ver_engineer
+  approved_by: rl_qx_csver_cs_test_architect
+  supported_by:
+  - rl_qx_csitem_software_architect_lead_engineer
+  input:
+  - wp_qx_cscon_cs_concept
+  - wp_qx_csitem_cs_item_comp_def
+  output:
+  - wp_qx_csver_integration_and_ver_spec
+  achieves:
+  - oc_qx_csver_cs_ver
+  gate:
+  - wp: wp_qx_cscon_cs_concept
+    min_status: approved
+  contains:
+  - gd_req_qx_csver_ver_spec_criteria
+  - gd_req_qx_csver_rationale_for_omitted_testing
+  - gd_temp_qx_csver_cs_integration_and_ver_spec
+  description: The verification strategy is selected based on the CAL of the realized cybersecurity goal(s)
+    and test cases are derived per the selected strategy, recorded in Integration and Verification Specification.
+  activities:
+  - step: The verification strategy is selected based on the CAL of the realized cybersecurity goal(s)
+      and test cases are derived per the selected strategy, recorded in Integration and Verification Specification
+    by: rl_qx_csver_cs_ver_engineer
+    capability: cap_qx_csver_cs_ver
+  - step: Contribute to integration and verification specification
+    by: rl_qx_csitem_software_architect_lead_engineer
+  - step: Approve integration and verification specification
+    by: rl_qx_csver_cs_test_architect
+- id: wf_qx_csver_perform_integration_and_ver
+  title: Perform Integration and Verification Testing
+  status: draft
+  responsible: rl_qx_csver_cs_ver_engineer
+  approved_by: rl_qx_csver_cs_test_architect
+  supported_by:
+  - rl_qx_csitem_software_architect_lead_engineer
+  input:
+  - wp_qx_csver_integration_and_ver_spec
+  output:
+  - wp_qx_csver_ver_report_for_the_refined_specs
+  achieves:
+  - oc_qx_csver_cs_ver
+  contains:
+  - gd_req_qx_csver_impl_and_integration
+  - gd_req_qx_csver_test_coverage_evaluation
+  description: Software units and items are integrated per the strategy, test cases are selected and executed,
+    and results are recorded in Verification Report for the Refined Specifications, including evaluation
+    of test coverage against the defined coverage metrics.
+  activities:
+  - step: Software units and items are integrated per the strategy, test cases are selected and executed,
+      and results are recorded in Verification Report for the Refined Specifications, including evaluation
+      of test coverage against the defined coverage metrics
+    by: rl_qx_csver_cs_ver_engineer
+    capability: cap_qx_csver_cs_ver
+  - step: Contribute to verification report for the refined specifications
+    by: rl_qx_csitem_software_architect_lead_engineer
+  - step: Approve verification report for the refined specifications
+    by: rl_qx_csver_cs_test_architect
+- id: wf_qx_csver_perform_fuzz_testing
+  title: Perform Fuzz Testing
+  status: draft
+  responsible: rl_qx_csver_cs_ver_engineer
+  approved_by: rl_qx_csver_cs_test_architect
+  supported_by:
+  - rl_qx_csitem_software_architect_lead_engineer
+  input:
+  - wp_qx_csver_integration_and_ver_spec
+  output:
+  - wp_qx_csver_vulnerability_analysis_report
+  achieves:
+  - oc_qx_csver_cs_ver
+  contains:
+  - gd_req_qx_csver_minimization_of_unidentified
+  description: Interfaces and endpoints of the component are enumerated, a positive test suite establishes
+    nominal behavior, mutated inputs are exercised against the component, and anomalous responses are
+    analyzed and reported in Vulnerability Analysis Report.
+  activities:
+  - step: Interfaces and endpoints of the component are enumerated, a positive test suite establishes
+      nominal behavior, mutated inputs are exercised against the component, and anomalous responses are
+      analyzed and reported in Vulnerability Analysis Report
+    by: rl_qx_csver_cs_ver_engineer
+    capability: cap_qx_csver_cs_ver
+  - step: Contribute to vulnerability analysis report
+    by: rl_qx_csitem_software_architect_lead_engineer
+  - step: Approve vulnerability analysis report
+    by: rl_qx_csver_cs_test_architect
+- id: wf_qx_csver_establish_traceability_and
+  title: Establish Traceability and Report Verification Results
+  status: draft
+  responsible: rl_qx_csver_cs_ver_engineer
+  approved_by: rl_qx_csver_cs_test_architect
+  supported_by:
+  - rl_qx_csitem_software_architect_lead_engineer
+  - rl_qx_csitem_cs_manager
+  input:
+  - wp_qx_csver_ver_report_for_the_refined_specs
+  - wp_qx_csver_vulnerability_analysis_report
+  - wp_qx_csver_integration_and_ver_spec
+  output:
+  - wp_qx_csver_integration_and_ver_report
+  achieves:
+  - oc_qx_csver_cs_ver
+  contains:
+  - gd_req_qx_csver_traceability_of_ver_results
+  - gd_chklst_qx_csver_cs_ver_checklist
+  description: Bidirectional traceability is established between cybersecurity requirements, refined software
+    architectural elements, and the verification specification (test cases and results); consistency is
+    confirmed, findings are reviewed against the verification checklist, and results are summarized in
+    Integration and Verification Report for communication to affected parties.
+  activities:
+  - step: Bidirectional traceability is established between cybersecurity requirements, refined software
+      architectural elements, and the verification specification (test cases and results); consistency
+      is confirmed, findings are reviewed against the verification
+    by: rl_qx_csver_cs_ver_engineer
+    capability: cap_qx_csver_cs_ver
+  - step: Contribute to integration and verification report
+    by: rl_qx_csitem_software_architect_lead_engineer
+  - step: Contribute to integration and verification report
+    by: rl_qx_csitem_cs_manager
+  - step: Approve integration and verification report
+    by: rl_qx_csver_cs_test_architect

@@ -1,0 +1,42 @@
+# Cybersecurity Management Plan (compliance/security/csms_mgmt_plan)  -  workflows.
+workflows:
+- id: wf_qx_csplan_cs_mgmt_plan
+  title: Cybersecurity Management Plan
+  status: draft
+  responsible: rl_qx_csplan_cs_architect_lead
+  approved_by: rl_qx_csplan_product_project_manager
+  supported_by:
+  - rl_qx_csplan_system_and_comp_engineers
+  input:
+  - wp_qx_sec_policies
+  output:
+  - wp_qx_csplan_cs_plan
+  - wp_qx_csplan_cs_plan_2
+  achieves:
+  - oc_qx_csplan_cs_mgmt_plan
+  gate:
+  - wp: wp_qx_sec_policies
+    min_status: approved
+  description: Cybersecurity planning translates ISO/SAE 21434 requirements into a concrete, product/project-specific
+    execution framework.
+  activities:
+  - step: All required cybersecurity activities are identified
+    by: rl_qx_csplan_cs_architect_lead
+    capability: cap_qx_csplan_cs_mgmt_plan
+  - step: Responsibilities are assigned and communicated
+    by: rl_qx_csplan_cs_architect_lead
+    capability: cap_qx_csplan_cs_mgmt_plan
+  - step: Dependencies and sequencing are understood
+    by: rl_qx_csplan_cs_architect_lead
+    capability: cap_qx_csplan_cs_mgmt_plan
+  - step: Required resources and work products are planned
+    by: rl_qx_csplan_cs_architect_lead
+    capability: cap_qx_csplan_cs_mgmt_plan
+  - step: Management activities
+    by: rl_qx_csplan_cs_architect_lead
+    capability: cap_qx_csplan_cs_mgmt_plan
+  - step: Engineering and analysis activities
+    by: rl_qx_csplan_cs_architect_lead
+    capability: cap_qx_csplan_cs_mgmt_plan
+  - step: Approve cs plan, cybersecurity plan
+    by: rl_qx_csplan_product_project_manager

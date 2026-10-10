@@ -1,0 +1,23 @@
+# Cybersecurity Management Systems (compliance/security/csms_mgmt_systems)  -  workflows.
+workflows:
+- id: wf_qx_csmgmt_cs_mgmt_systems
+  title: Cybersecurity Management Systems
+  status: draft
+  responsible: rl_qx_sec_security_office
+  approved_by: rl_qx_gc_head
+  input:
+  - wp_qx_sec_policies
+  output:
+  - wp_qx_csmgmt_cs_mgmt_systems_record
+  achieves:
+  - oc_qx_csmgmt_cs_mgmt_systems
+  gate:
+  - wp: wp_qx_sec_policies
+    min_status: approved
+  description: Perform cybersecurity management systems.
+  activities:
+  - step: Cybersecurity Management Systems
+    by: rl_qx_sec_security_office
+    capability: cap_qx_csmgmt_cs_mgmt_systems
+  - step: Approve cybersecurity management systems record
+    by: rl_qx_gc_head

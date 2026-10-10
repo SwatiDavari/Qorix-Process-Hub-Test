@@ -1,0 +1,10 @@
+# Cybersecurity Audit (compliance/security/csms_audit)  -  work products.
+work_products:
+- id: wp_qx_csaud_cs_audit_record
+  title: Cybersecurity Audit Record
+  kind: evidence
+  status: draft
+  purpose: Record of the cybersecurity audit activities.
+  concept: doc_concept_qx_csaud_process
+  complies:
+  - std_req_isosae21434_org_management_547

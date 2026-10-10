@@ -1,0 +1,50 @@
+# Cybersecurity Validation (compliance/security/csms_validation)  -  work products.
+work_products:
+- id: wp_qx_csval_risk_treatment_val_strategy
+  title: Risk Treatment Validation Strategy
+  kind: analysis
+  status: draft
+  purpose: Objective, validation methods, techniques and tools, work products / processes under validation,
+    schedule, and rationale for the validation activities selected for the item / component.
+  concept: doc_concept_qx_csval_process
+  template: gd_temp_qx_csval_cs_val_spec_template
+  complies: &id001
+  - std_req_isosae21434_validation_114
+- id: wp_qx_csval_val_test_case_spec
+  title: Validation Test Case Specification
+  kind: requirement
+  status: draft
+  purpose: Validation cases derived against the cybersecurity goals and against the UNECE R155 Annex 5
+    threat listing, including the classification of every threat scenario (not relevant, not in scope,
+    vulnerable, to be tested).
+  concept: doc_concept_qx_csval_process
+  template: gd_temp_qx_csval_cs_val_spec_template
+  complies: *id001
+- id: wp_qx_csval_val_test_report
+  title: Validation Test Report
+  kind: report
+  status: draft
+  purpose: Record of the validation test cases executed against Validation Test Case Specification, other
+    than penetration testing, including results, failures, and anomalies observed.
+  concept: doc_concept_qx_csval_process
+  complies: *id001
+- id: wp_qx_csval_penetration_test_report_internal
+  title: Penetration Test Report (Internal / External)
+  kind: report
+  status: draft
+  purpose: Penetration test description, vulnerabilities identified, attack feasibility, impact, and remediation
+    suggestions, per validation case indicated for penetration testing. This could be produced by an external
+    penetration testing vendor (if out-sourced)
+  concept: doc_concept_qx_csval_process
+  complies: *id001
+- id: wp_qx_csval_cs_val_report
+  title: Cybersecurity Validation Report
+  kind: report
+  status: draft
+  purpose: Consolidated cybersecurity validation report summarizing Validation Test Report and Penetration
+    Test Report (Internal / External), confirming achievement of the cybersecurity goals, validity of
+    the cybersecurity claims, and that no unreasonable risk remains, for communication to all affected
+    parties.
+  concept: doc_concept_qx_csval_process
+  complies:
+  - std_wp_isosae21434_validation_1151

@@ -1,0 +1,39 @@
+# Cybersecurity Distributed Activities (compliance/security/csms_distributed)  -  process: identity, classification, concepts.
+assembly:
+  id: csms_distributed
+  code: csdist
+  cluster: compliance
+  title: Cybersecurity Distributed Activities
+  enabler: SEC
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_sec_security_office
+  purpose: Suppliers are assessed, requests for quotation state the cybersecurity needs, and responsibilities
+    are aligned and recorded.
+  standards:
+  - ISO/SAE 21434
+  tier: qorix
+  group: Security
+concepts:
+- id: doc_concept_qx_csdist_process
+  title: Cybersecurity Distributed Activities Concept
+  body: Cybersecurity Distributed Activities follows ISO/SAE 21434 clause 7.4.1, 7.4.2, 7.4.3.
+outcomes:
+- id: oc_qx_csdist_cs_distributed_activities
+  title: Cybersecurity responsibilities with suppliers are agreed
+  status: draft
+  statement: Suppliers are assessed, requests for quotation state the cybersecurity needs, and responsibilities
+    are aligned and recorded.
+  complies:
+  - std_req_isosae21434_distributed_741
+  - std_req_isosae21434_distributed_742
+  - std_req_isosae21434_distributed_743
+capabilities:
+- id: cap_qx_csdist_cs_distributed_activities
+  title: Cybersecurity Distributed Activities
+  status: draft
+  description: Suppliers are assessed, requests for quotation state the cybersecurity needs, and responsibilities
+    are aligned and recorded.
+  realizes:
+  - oc_qx_csdist_cs_distributed_activities

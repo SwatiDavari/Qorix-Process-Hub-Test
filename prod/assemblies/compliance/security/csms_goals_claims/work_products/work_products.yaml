@@ -1,0 +1,37 @@
+# Cybersecurity Goals and Claims (compliance/security/csms_goals_claims)  -  work products.
+work_products:
+- id: wp_qx_csgoal_cs_goals
+  title: CS Goals
+  kind: requirement
+  status: draft
+  purpose: Cybersecurity goals derived for each threat scenario or damage scenario for which the risk
+    treatment decision is reducing the risk. Each goal states the cybersecurity property to protect and
+    the CAL determined from impact rating and attack vector.
+  concept: doc_concept_qx_csgoal_process
+  template: gd_temp_qx_csgoal_cs_goals_template
+  complies:
+  - std_wp_isosae21434_concept_9432
+- id: wp_qx_csgoal_cs_claims
+  title: CS Claims
+  kind: requirement
+  status: draft
+  purpose: Cybersecurity claims substantiating risk treatment decisions of sharing the risk or retaining
+    the risk, each with a verification plan (responsible person, verification criteria, periodicity, notification,
+    and failure handling). In scenarios where a claim is not verifiable, the rationale / justification
+    for exemption is documented.
+  concept: doc_concept_qx_csgoal_process
+  template: gd_temp_qx_csgoal_cs_claims_template
+  complies:
+  - std_wp_isosae21434_concept_9433
+- id: wp_qx_csgoal_cs_goals_and_claims_ver_report
+  title: CS Goals and Claims Verification Report
+  kind: report
+  status: draft
+  purpose: Verification record confirming correctness, completeness, and consistency of the item definition,
+    TARA, risk treatment decisions, and the derived cybersecurity goals and claims. Holds the completed
+    technical review checklists (CS Goals Verification Checklist, CS Claims Verification Checklist), findings
+    with Issue Tracking IDs and closure status, approvals, and the Quality Manager check result against
+    CS Goals and Claims Quality Check Checklist. Identifies the reviewed versions of CS Goals and CS Claims.
+  concept: doc_concept_qx_csgoal_process
+  complies:
+  - std_wp_isosae21434_concept_9434

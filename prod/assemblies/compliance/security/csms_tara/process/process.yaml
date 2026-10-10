@@ -1,0 +1,388 @@
+# Cybersecurity Threat Analysis and Risk Assessment (compliance/security/csms_tara)  -  process: identity, classification, concepts.
+assembly:
+  id: csms_tara
+  code: cstara
+  cluster: compliance
+  title: Cybersecurity Threat Analysis and Risk Assessment
+  enabler: SEC
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_sec_security_office
+  purpose: An item or component can be made to behave in ways its road users never consented to if a cybersecurity
+    property of one of its assets is compromised.
+  standards:
+  - ISO/SAE 21434
+  tier: qorix
+  group: Security
+getting_started: '**Purpose**
+
+
+  Threat Analysis and Risk Assessment (TARA) identifies the cybersecurity assets of an item or component,
+  determines how their compromise could damage road users, identifies the threats and attack paths that
+  could cause that compromise, rates how feasible each attack path is, derives a risk value for every
+  threat scenario, and decides how each risk is treated. TARA is the analytical core of the Cybersecurity
+  Management System (CSMS): every downstream cybersecurity goal, claim, specification, and monitoring
+  trigger traces back to a TARA finding.
+
+
+  This process implements ISO/SAE 21434 Clause 15 (Threat Analysis and Risk Assessment) and feeds Clause
+  9.4 (Cybersecurity Goals and Claims) directly.
+
+
+  **Organizational Scope and Applicability**
+
+
+  This process applies to every item or component subject to the organization''s CSMS, and is invoked:
+
+
+  - During concept and item definition, once item definition (CS Item / Component Definition) is available.
+
+  - On every change to item / component architecture, functionality, or operational environment.
+
+  - Whenever a new weakness, threat, or vulnerability is identified through Cybersecurity Continual Activities
+  (Perform Vulnerability Analysis) that is not already covered by an existing threat scenario or attack
+  path.
+
+  - Whenever a new or changed cybersecurity requirement is received from an OEM, customer, regulation,
+  supplier, or internal stakeholder.
+
+
+  After the first baseline, every such trigger enters the change impact analysis (Analyze Change Impact
+  on a Baselined TARA, TARA update triggers). The analysis decides whether the TARA is updated and, if
+  so, which TARA sections are re-analyzed: right from the first section (assets), the change touches through
+  the risk treatment decision, along the TARA traceability chain (see tara_update_rerun_scope and tara_update_examples).
+  A change to a function, interface, or the operational environment is made in the item definition first;
+  the TARA follows the new item definition baseline.
+
+
+  **Lifecycle Relevance**
+
+
+  TARA is first performed during concept and item definition and stays under review for the life of the
+  item or component:
+
+
+  - Initial TARA output (TARA Record) is the direct input to cybersecurity goal and claim derivation (Clause
+  9.3).
+
+  - Continual Activities (Clause 8) re-uses the asset, damage scenario, and attack path as defined in
+  TARA whenever it analyzes a newly reported weakness (see Perform Vulnerability Analysis), and reports
+  back where that analysis changes an existing threat scenario, attack path, or risk value.
+
+  - A risk treatment decision that is retain or share/transfer feeds cybersecurity claims directly; reduce
+  feeds cybersecurity goals and, from there, cybersecurity specifications and design.
+
+
+  **Preconditions and Dependencies**
+
+
+  Typical preconditions include:
+
+
+  - A draft or baselined item definition (CS Item / Component Definition), including the item''s features
+  and interfaces.
+
+  - Product / Project management plan and schedule for the TARA activity.
+
+  - Cybersecurity Plan with TARA scope, roles, and responsibilities defined.
+
+  - Where a baselined TARA is analyzed for change impact: the baselined TARA Record and the triggering
+  input — changed item definition, new or changed requirements (Stakeholder Needs, Consortium / regulatory
+  sources), or vulnerability analysis from Continual Activities.
+
+
+  **General Workflow**
+
+
+  Seven activities are performed in sequence, together producing every reviewed part of TARA Record:
+
+
+  - Identify Assets and Damage Scenarios,
+
+  - Rate Impact,
+
+  - Identify Threat Scenarios,
+
+  - Analyze Attack Paths,
+
+  - Rate Attack Feasibility,
+
+  - Determine Risk Value, and
+
+  - Decide Risk Treatment.
+
+
+  The reference workbook (Threat Analysis and Risk Assessment Template) groups several of these steps''
+  output fields onto shared worksheets rather than one worksheet per step — the table below shows exactly
+  which template section each step writes into, so the two never need to be reconciled by guesswork:
+
+
+  Before every baseline, the TARA is technically reviewed and approved by Cybersecurity Product Owner,
+  approved by Cybersecurity Manager, and quality checked by Quality Office in Quality Check of TARA (see
+  the Review Sequence in the workflow description). A baselined TARA is kept current through Analyze Change
+  Impact on a Baselined TARA.
+
+
+  Step-by-step guidance is provided by Threat Analysis and Risk Assessment Methodology; the impact and
+  attack feasibility rating calculations are described separately in Impact and Attack Feasibility Rating
+  Metrics, which the impact and feasibility steps consume.
+
+
+  **Governance and Compliance Context**
+
+
+  This process:
+
+
+  - Fulfills ISO/SAE 21434 Clause 15 requirements RQ-15-01 through RQ-15-17 and the associated recommendations,
+  and provides the impact- and attack-feasibility-rating basis referenced from Annex F and Annex G of
+  ISO/SAE 21434
+
+  - Provides the risk basis used to justify Cybersecurity Assurance Levels (CAL) assigned to cybersecurity
+  goals under Clause 9.4.
+
+  - Provides evidence expected under UNECE R155 Annex 5 and typical OEM / Tier 1 Cybersecurity Interface
+  Agreement (CIA) clauses for a Tier 2 supplier.
+
+  - Applies quality assurance (ASPICE SUP.1, ISO/SAE 21434 Clause 5.4.4) through the Quality Manager check
+  in Quality Check of TARA.
+
+
+  **Tailoring Information**
+
+
+  - Where an item / component is developed out-of-context, analysis is scoped to the item / component
+  and its assumed operational environment as stated in the item definition, rather than a full vehicle
+  system context; traceability to the system-level CSMS execution is maintained through the item definition.
+
+  - Rigor and depth of attack path analysis may be tailored to the criticality and connectivity exposure
+  of the item / component, and to the availability of prior TARA output for reused assets.
+
+
+  **Tooling Support**
+
+
+  - TARA workbook. TARA Record is currently maintained as a single structured spreadsheet (one section
+  per work product, one row per record) per Threat Analysis and Risk Assessment Template. Docs-as-code
+  publication of this process area does not require the workbook itself to be reused as tooling, provided
+  the same field structure is kept.
+
+  - Reference and lookup tables. The impact rating and attack feasibility rating scales described in Impact
+  and Attack Feasibility Rating Metrics are maintained as fixed lookup tables alongside the workbook and
+  are not modified per item / component.'
+concepts:
+- id: doc_concept_qx_cstara_process
+  title: Cybersecurity Threat Analysis and Risk Assessment Concept
+  body: '**Motivation**
+
+
+    An item or component can be made to behave in ways its road users never consented to if a cybersecurity
+    property of one of its assets is compromised. ISO/SAE 21434 Clause 15 requires that this be analyzed
+    systematically, before the item is built: which assets exist, what happens to road users if each is
+    compromised, how an attacker could realize that compromise, how feasible the attack actually is, and
+    what risk that combination represents. This concept describes how that analysis is structured so every
+    threat scenario stays traceable from asset to risk treatment decision.
+
+
+    **Core Concepts**
+
+
+    **Cybersecurity Asset**
+
+
+    A cybersecurity asset is anything belonging to the item or component whose compromise of a cybersecurity
+    property could lead to damage for a road user: a function, a service, stored or communicated data,
+    or an interface. An asset is identified from the item''s features and interfaces (see CS Item / Component
+    Definition) and is confirmed an asset only if at least one of the following properties applies to
+    it:
+
+
+    - Confidentiality
+
+    - Integrity
+
+    - Availability
+
+    - Authenticity
+
+    - Authorization
+
+    - Non-repudiation
+
+
+    An element with none of these properties applicable is recorded as considered and excluded, not silently
+    dropped.
+
+
+    **Damage Scenario**
+
+
+    A damage scenario describes the adverse consequence to a road user that follows from compromise of
+    one cybersecurity property of one asset. Damage scenarios are identified together with assets, because
+    the two are defined against each other: an asset is confirmed by the existence of at least one plausible
+    damage scenario tied to it.
+
+
+    **Threat Scenario**
+
+
+    A threat scenario describes how a threat could exploit a compromised cybersecurity property of an
+    asset to cause a damage scenario. Every threat scenario is uniquely identified and traced to exactly
+    one asset / property / damage scenario combination.
+
+
+    **Attack Path**
+
+
+    An attack path is a feasible sequence of actions that an attacker could take to realize a threat scenario.
+    One threat scenario may be realized by more than one attack path; where it is, the attack feasibility
+    rating governing the threat scenario is the least difficult (most feasible) of its attack paths.
+
+
+    **Risk**
+
+
+    Risk combines two independently rated quantities for a given threat scenario:
+
+
+    - The impact rating of its damage scenario (severity of consequence to the road user, across safety,
+    financial, operational, and privacy categories).
+
+    - The attack feasibility rating of the attack path(s) that realize it (difficulty of carrying out
+    the attack).
+
+
+    The combination is looked up in a fixed risk matrix, never computed ad hoc; see Impact and Attack
+    Feasibility Rating Metrics.
+
+
+    **Approach**
+
+
+    TARA is modeled as a seven-step pipeline, each step producing part of the consolidated TARA record
+    (TARA Record). The reference workbook groups several steps'' output fields onto shared worksheets
+    rather than giving each step its own — only threat scenario identification (step 3) gets a dedicated
+    section; see the Workflow Step → Template Section table in for the exact, current mapping:
+
+
+    1. Asset and damage scenario identification (Identify Assets and Damage Scenarios) — assets are derived
+    from the item''s features and interfaces, rated against the six cybersecurity properties, and paired
+    with damage scenarios. 2. Impact rating (Rate Impact) — each damage scenario is rated for safety,
+    financial, operational, and privacy impact and combined into one weighted impact value, independent
+    of how the damage scenario could be threatened. 3. Threat scenario identification (Identify Threat
+    Scenarios) — each asset / property / damage scenario combination is analyzed for how it could be threatened.
+    4. Attack path analysis (Analyze Attack Paths) — feasible attack paths are identified and mapped to
+    the threat scenarios they realize. 5. Attack feasibility rating (Rate Attack Feasibility) — each attack
+    path is rated using the attack-potential-based method, and the governing rating is carried up to its
+    threat scenario(s). 6. Risk value determination (Determine Risk Value) — weighted impact and governing
+    attack feasibility are combined via the risk matrix. 7. Risk treatment decision (Decide Risk Treatment)
+    — avoid, reduce, retain, or share/transfer is decided and recorded per threat scenario, with rationale
+    and a Cybersecurity Assurance Level (CAL) where applicable.
+
+
+    After the seven steps, the consolidated TARA passes technical review, approval, and quality check
+    before it is baselined (see Review Concept). A baselined TARA is kept current by a change impact analysis
+    (Analyze Change Impact on a Baselined TARA). A change to the item, a new or changed cybersecurity
+    requirement, or an uncovered vulnerability is analyzed to find the first TARA section it touches.
+    A change to a function, interface, or the operational environment is first made in the item definition,
+    which is re-baselined before the TARA is re-analyzed. Re-analysis starts at the first TARA section
+    it touches and continues through risk treatment (asset → damage scenario → threat scenario → attack
+    path → risk value → treatment decision). All other TARA sections keep their content and IDs. The updated
+    record then passes the same review gates before it is re-baselined. The start step per type of change
+    is defined in tara_update_rerun_scope, with worked examples in tara_update_examples.
+
+
+    **Relationship to Other Processes**
+
+
+    - Cybersecurity Item Definition (Clause 9.3): supplies the features, interfaces, and operational environment
+    TARA analyzes (CS Item / Component Definition).
+
+    - Cybersecurity Goals and Claims (Clause 9.4): consumes the risk treatment decision — reduce feeds
+    cybersecurity goals, retain / share-transfer feeds cybersecurity claims.
+
+    - Cybersecurity Continual Activities (Clause 8): reuses the asset, damage-scenario, and attack-path
+    basis established here when analyzing a newly reported weakness (Perform Vulnerability Analysis),
+    and reports back where a confirmed vulnerability revises an existing threat scenario or attack path
+    assumption.
+
+    - Cybersecurity Operations and Maintenance (Clause 13): the weighted impact rating method defined
+    here is reused, unchanged, to rate the severity of a field cybersecurity incident.
+
+
+    **Review Concept**
+
+
+    The TARA record passes two separate reviews before every baseline:
+
+
+    - Technical review (Cybersecurity Product Owner): Is the analysis correct, complete, and traceable?
+    Uses Threat Analysis and Risk Assessment Review Checklist.
+
+    - Quality check (Quality Office): Was the process followed? Uses TARA Quality Check Checklist. No
+    re-review of technical content.
+
+
+    Approval is given by Cybersecurity Product Owner and the project-allotted Cybersecurity Manager. Both
+    review results, the approvals, and — for an update — the change impact analysis are kept in TARA Review
+    Record. The Quality Manager is reused from the Quality House; no separate cybersecurity quality role
+    exists.
+
+
+    **Attack-Potential-Based Attack Feasibility (Annex G.2)**
+
+
+    Attack feasibility in TARA is rated with the attack-potential-based method of ISO/SAE 21434 Annex
+    G.2, distinct from the CVSS-based approach ISO/SAE 21434 Annex G.3 used by Cybersecurity Continual
+    Activities for a vulnerability discovered after release (see CVSS-Based Vulnerability Analysis and
+    Management). Both approaches feed the same risk value and risk treatment methods (Clause 15.8, 15.9);
+    See Impact and Attack Feasibility Rating Metrics for the full method.
+
+
+    **ASPICE Alignment**
+
+
+    This process supports:
+
+
+    - MAN.7 outcomes, by providing the risk basis project risk management draws on for cybersecurity risk.
+
+    - SEC.1-class outcomes in cybersecurity-tailored ASPICE assessment models, by providing traceable
+    threat scenario, attack path, and risk records.
+
+    - SUP.1 outcomes, by an independent quality check of the TARA record before each baseline.
+
+
+    **Tailoring Information**
+
+
+    - Where an item / component is developed out-of-context, analysis is scoped to the item / component
+    and its assumed operational environment as stated in the item definition, rather than a full vehicle
+    system context.
+
+    - Depth of attack path analysis may be tailored to the criticality and connectivity exposure of the
+    asset under analysis, and to whether a comparable attack path already exists in TARA Record for a
+    reused asset.'
+outcomes:
+- id: oc_qx_cstara_cs_threat_analysis_and_risk_assm
+  title: Threats are analysed and risk is rated and treated
+  status: draft
+  statement: Assets, damage scenarios, threat scenarios, attack paths and feasibility are analysed, risk
+    is rated and a treatment is decided for every threat.
+  complies:
+  - std_req_isosae21434_assessment_153
+  - std_req_isosae21434_assessment_154
+  - std_req_isosae21434_assessment_155
+  - std_req_isosae21434_assessment_156
+  - std_req_isosae21434_assessment_157
+  - std_req_isosae21434_assessment_158
+  - std_req_isosae21434_assessment_159
+capabilities:
+- id: cap_qx_cstara_cs_threat_analysis_and_risk
+  title: Cybersecurity Threat Analysis and Risk Assessment
+  status: draft
+  description: An item or component can be made to behave in ways its road users never consented to if
+    a cybersecurity property of one of its assets is compromised.
+  realizes:
+  - oc_qx_cstara_cs_threat_analysis_and_risk_assm

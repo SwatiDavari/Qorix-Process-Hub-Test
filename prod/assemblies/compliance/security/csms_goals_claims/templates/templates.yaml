@@ -1,0 +1,63 @@
+# Cybersecurity Goals and Claims (compliance/security/csms_goals_claims)  -  templates and guidance.
+templates:
+- id: gd_temp_qx_csgoal_cs_claims_template
+  title: CS Claims Template
+  status: draft
+  description: CS Claims Template
+- id: gd_guidl_qx_csgoal_cs_claims_template
+  title: CS Claims Template Guidelines
+  status: draft
+  description: CS Claims Template Guidelines
+- id: gd_chklst_qx_csgoal_cs_claims_ver_checklist
+  title: CS Claims Verification Checklist
+  status: draft
+  description: CS Claims Verification Checklist
+- id: gd_guidl_qx_csgoal_cs_goals_and_claims
+  title: Cybersecurity Goals and Claims
+  status: draft
+  description: Cybersecurity Goals and Claims
+- id: gd_req_qx_csgoal_tara_analysis_with_risk
+  title: TARA analysis with risk rank and CAL determined
+  status: draft
+  description: TARA analysis with risk rank and Cybersecurity Assurance Level (CAL) shall be determined
+    (based on the impact rating and attack vector of the corresponding threat scenario), and recorded
+    in CS Goals.
+- id: gd_req_qx_csgoal_risk_treatment_option
+  title: Risk treatment option determination
+  status: draft
+  description: Based on risk rank, a risk treatment option (reducing, sharing, retaining, or avoiding
+    the risk) shall be determined for each threat scenario and referenced when deriving CS Goals or CS
+    Claims.
+- id: gd_req_qx_csgoal_cs_goals_for_risk_reduction
+  title: Cybersecurity goals for risk reduction
+  status: draft
+  description: For all "reducing the risk" decisions, one or more corresponding cybersecurity goals shall
+    be specified in CS Goals.
+- id: gd_req_qx_csgoal_cs_claims_for_shared_or
+  title: Cybersecurity claims for shared or retained risk
+  status: draft
+  description: If the risk treatment decision is "sharing the risk" or "retaining the risk", one or more
+    corresponding cybersecurity claims, each with a documented verification plan, shall be specified in
+    CS Claims.
+- id: gd_req_qx_csgoal_ver_of_goals_and_claims
+  title: Verification of goals and claims
+  status: draft
+  description: A verification shall be performed to confirm correctness, completeness, and consistency
+    of the item definition, TARA, risk treatment decisions, and the cybersecurity goals and claims, and
+    recorded in CS Goals and Claims Verification Report.
+- id: gd_chklst_qx_csgoal_cs_goals_and_claims
+  title: CS Goals and Claims Quality Check Checklist
+  status: draft
+  description: CS Goals and Claims Quality Check Checklist
+- id: gd_temp_qx_csgoal_cs_goals_template
+  title: CS Goals Template
+  status: draft
+  description: CS Goals Template
+- id: gd_guidl_qx_csgoal_cs_goals_template
+  title: CS Goals Template Guidelines
+  status: draft
+  description: CS Goals Template Guidelines
+- id: gd_chklst_qx_csgoal_cs_goals_ver_checklist
+  title: CS Goals Verification Checklist
+  status: draft
+  description: CS Goals Verification Checklist

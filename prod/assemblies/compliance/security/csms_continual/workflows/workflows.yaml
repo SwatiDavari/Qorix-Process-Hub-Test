@@ -1,0 +1,204 @@
+# Cybersecurity Continual Activities (compliance/security/csms_continual)  -  workflows.
+workflows:
+- id: wf_qx_cscont_plan_and_prepare_cs_monitoring
+  title: Plan and Prepare Cybersecurity Monitoring
+  status: draft
+  responsible: rl_qx_csops_cs_monitoring_team
+  approved_by: rl_qx_csitem_cs_manager
+  supported_by:
+  - rl_qx_csitem_cs_product_owner
+  - rl_qx_csitem_software_architect_lead_engineer
+  - rl_qx_csitem_product_project_manager
+  input:
+  - wp_qx_csitem_cs_item_comp_def
+  - wp_qx_cstara_tara_record
+  output:
+  - wp_qx_cscont_sources_for_cs_info
+  - wp_qx_cscont_triggers_for_cs_info_triage
+  achieves:
+  - oc_qx_cscont_cs_continual_activities
+  gate:
+  - wp: wp_qx_csitem_cs_item_comp_def
+    min_status: approved
+  contains:
+  - gd_guidl_qx_cscont_cs_continual_activities
+  - gd_req_qx_cscont_sources_for_cs_info
+  - gd_req_qx_cscont_triggers_for_triage_of_cs
+  - gd_temp_qx_cscont_cs_monitoring_and
+  description: Inputs relevant to cybersecurity monitoring are studied, sources for collection of cybersecurity
+    information are selected and recorded in Sources for Cybersecurity Information, and triggers for triage
+    are defined and recorded in Triggers for Cybersecurity Information Triage.
+  activities:
+  - step: Inputs relevant to cybersecurity monitoring are studied, sources for collection of cybersecurity
+      information are selected and recorded in Sources for Cybersecurity Information, and triggers for
+      triage are defined and recorded in Triggers for Cybersecurity
+    by: rl_qx_csops_cs_monitoring_team
+    capability: cap_qx_cscont_cs_continual_activities
+  - step: Contribute to sources for cybersecurity information
+    by: rl_qx_csitem_cs_product_owner
+  - step: Contribute to sources for cybersecurity information
+    by: rl_qx_csitem_software_architect_lead_engineer
+  - step: Contribute to sources for cybersecurity information
+    by: rl_qx_csitem_product_project_manager
+  - step: Approve sources for cybersecurity information, triggers for cybersecurity information triage
+    by: rl_qx_csitem_cs_manager
+- id: wf_qx_cscont_collect_and_triage_cs_info
+  title: Collect and Triage Cybersecurity Information
+  status: draft
+  responsible: rl_qx_csgoal_engineer
+  approved_by: rl_qx_csops_cs_monitoring_team
+  supported_by:
+  - rl_qx_csitem_cs_product_owner
+  input:
+  - wp_qx_cscont_sources_for_cs_info
+  - wp_qx_cscont_triggers_for_cs_info_triage
+  output:
+  - wp_qx_cscont_cs_events
+  achieves:
+  - oc_qx_cscont_cs_continual_activities
+  contains:
+  - gd_req_qx_cscont_collection_and_triage_of_cs
+  description: Cybersecurity information is collected continuously from the selected sources and triaged
+    against the defined triggers; information matching a trigger is recorded as one or more cybersecurity
+    events in Cybersecurity Events.
+  activities:
+  - step: Cybersecurity information is collected continuously from the selected sources and triaged against
+      the defined triggers; information matching a trigger is recorded as one or more cybersecurity events
+      in Cybersecurity Events
+    by: rl_qx_csgoal_engineer
+    capability: cap_qx_cscont_cs_continual_activities
+  - step: Contribute to cybersecurity events
+    by: rl_qx_csitem_cs_product_owner
+  - step: Approve cybersecurity events
+    by: rl_qx_csops_cs_monitoring_team
+- id: wf_qx_cscont_evaluate_cs_events_for
+  title: Evaluate Cybersecurity Events for Weaknesses
+  status: draft
+  responsible: rl_qx_csgoal_engineer
+  approved_by: rl_qx_csitem_cs_manager
+  supported_by:
+  - rl_qx_csitem_software_architect_lead_engineer
+  input:
+  - wp_qx_cscont_cs_events
+  - wp_qx_csitem_cs_item_comp_def
+  - wp_qx_csdev_cs_specs
+  output:
+  - wp_qx_cscont_weaknesses_from_cs_events
+  achieves:
+  - oc_qx_cscont_cs_continual_activities
+  contains:
+  - gd_req_qx_cscont_evaluation_of_cs_events_for
+  description: Every cybersecurity event is evaluated to determine whether it presents a weakness (a defect
+    or characteristic that can lead to undesirable behavior) for the item or component, recorded in Weaknesses
+    from Cybersecurity Events.
+  activities:
+  - step: Every cybersecurity event is evaluated to determine whether it presents a weakness (a defect
+      or characteristic that can lead to undesirable behavior) for the item or component, recorded in
+      Weaknesses from Cybersecurity Events
+    by: rl_qx_csgoal_engineer
+    capability: cap_qx_cscont_cs_continual_activities
+  - step: Contribute to weaknesses from cybersecurity events
+    by: rl_qx_csitem_software_architect_lead_engineer
+  - step: Approve weaknesses from cybersecurity events
+    by: rl_qx_csitem_cs_manager
+- id: wf_qx_cscont_perform_vulnerability_analysis
+  title: Perform Vulnerability Analysis
+  status: draft
+  responsible: rl_qx_csgoal_engineer
+  approved_by: rl_qx_csitem_cs_product_owner
+  supported_by:
+  - rl_qx_csitem_software_architect_lead_engineer
+  input:
+  - wp_qx_cscont_weaknesses_from_cs_events
+  - wp_qx_csitem_cs_item_comp_def
+  - wp_qx_csdev_cs_specs
+  - wp_qx_cstara_tara_record
+  - wp_qx_csdev_weaknesses_found_during_product
+  - wp_qx_csver_vulnerability_analysis_report
+  - wp_qx_csval_penetration_test_report_internal
+  output:
+  - wp_qx_cscont_vulnerability_analysis
+  achieves:
+  - oc_qx_cscont_cs_continual_activities
+  contains:
+  - gd_guidl_qx_cscont_cvss_based_vulnerability
+  - gd_req_qx_cscont_analysis_of_weaknesses_for
+  - gd_req_qx_cscont_rationale_for_a_weakness
+  - gd_temp_qx_cscont_cs_monitoring_and
+  description: Each weakness is analyzed against the item / component definition and cybersecurity specifications
+    to assess whether it can be exploited, rated for attack feasibility using the CVSS-based method of
+    Annex G.3, and recorded in Vulnerability Analysis; where a weakness is not identified as a vulnerability,
+    a rationale is recorded.
+  activities:
+  - step: Each weakness is analyzed against the item / component definition and cybersecurity specifications
+      to assess whether it can be exploited, rated for attack feasibility using the CVSS-based method
+      of Annex G.3, and recorded in Vulnerability Analysis; where a
+    by: rl_qx_csgoal_engineer
+    capability: cap_qx_cscont_cs_continual_activities
+  - step: Contribute to vulnerability analysis
+    by: rl_qx_csitem_software_architect_lead_engineer
+  - step: Approve vulnerability analysis
+    by: rl_qx_csitem_cs_product_owner
+- id: wf_qx_cscont_manage_identified_vuln
+  title: Manage Identified Vulnerabilities
+  status: draft
+  responsible: rl_qx_csitem_product_project_manager
+  approved_by: rl_qx_csitem_cs_manager
+  supported_by:
+  - rl_qx_csgoal_engineer
+  input:
+  - wp_qx_cscont_vulnerability_analysis
+  output:
+  - wp_qx_cscont_vulnerability_report
+  - wp_qx_csgoal_cs_goals
+  - wp_qx_cscon_cs_concept
+  - wp_qx_csdev_cs_specs
+  - wp_qx_csgoal_cs_claims
+  achieves:
+  - oc_qx_cscont_cs_continual_activities
+  contains:
+  - gd_req_qx_cscont_mgmt_of_identified_vuln
+  - gd_chklst_qx_cscont_cs_continual_activities
+  description: Every identified vulnerability is risk-ranked and a risk treatment decision (avoid, reduce,
+    retain, or share/transfer) is made and recorded, using the risk ranking and risk treatment methods
+    reused from Clause 15, consolidated in Vulnerability Report.
+  activities:
+  - step: Every identified vulnerability is risk-ranked and a risk treatment decision (avoid, reduce,
+      retain, or share/transfer) is made and recorded, using the risk ranking and risk treatment methods
+      reused from Clause 15, consolidated in Vulnerability Report
+    by: rl_qx_csitem_product_project_manager
+    capability: cap_qx_cscont_cs_continual_activities
+  - step: Contribute to vulnerability report
+    by: rl_qx_csgoal_engineer
+  - step: Approve vulnerability report, cs goals, cybersecurity concept, cybersecurity specifications,
+      cs claims
+    by: rl_qx_csitem_cs_manager
+- id: wf_qx_cscont_validate_and_close_vulnerability
+  title: Validate and Close Vulnerability
+  status: draft
+  responsible: rl_qx_csitem_product_project_manager
+  approved_by: rl_qx_csitem_cs_manager
+  supported_by:
+  - rl_qx_csgoal_engineer
+  input:
+  - wp_qx_cscont_vulnerability_report
+  output:
+  - wp_qx_cscont_vulnerability_report
+  achieves:
+  - oc_qx_cscont_cs_continual_activities
+  contains:
+  - gd_req_qx_cscont_vulnerability_tracking
+  - gd_chklst_qx_cscont_cs_continual_activities
+  description: Treatment of the vulnerability is confirmed complete, absence of any new vulnerability
+    introduced by the treatment is confirmed, and closure is communicated to all affected stakeholders;
+    Vulnerability Report is updated to closed status.
+  activities:
+  - step: Treatment of the vulnerability is confirmed complete, absence of any new vulnerability introduced
+      by the treatment is confirmed, and closure is communicated to all affected stakeholders; Vulnerability
+      Report is updated to closed status
+    by: rl_qx_csitem_product_project_manager
+    capability: cap_qx_cscont_cs_continual_activities
+  - step: Contribute to vulnerability report
+    by: rl_qx_csgoal_engineer
+  - step: Approve vulnerability report
+    by: rl_qx_csitem_cs_manager

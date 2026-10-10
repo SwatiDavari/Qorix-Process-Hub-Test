@@ -1,0 +1,15 @@
+# Cybersecurity Governance (compliance/security/csms_governance)  -  work products.
+work_products:
+- id: wp_qx_csgov_cs_policy_rules_and_governance
+  title: Cybersecurity Policy, Rules, and Governance Processes
+  kind: policy
+  status: draft
+  purpose: 'This work product defines the organization''s cybersecurity intent, expectations, and governance
+    mechanisms. Purpose: Usage: Contributors: CSMS Assurance Contribution: Establish organizational direction
+    for cybersecurity; Provide binding rules and processes for engineering activities; Referenced throughout
+    all lifecycle phases; Used as audit and assessment evidence; Executive management; Cybersecurity management;
+    Quality management stakeholders; Demonstrates organizational commitment; Enables consistent and auditable
+    cybersecurity practices; Supports compliance with ISO/SAE 21434 Clause 5.4.1.'
+  concept: doc_concept_qx_csgov_process
+  complies:
+  - std_req_isosae21434_org_management_541

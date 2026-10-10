@@ -1,0 +1,31 @@
+# Cybersecurity Item Definition (compliance/security/csms_item_definition)  -  work products.
+work_products:
+- id: wp_qx_csitem_cs_item_comp_def
+  title: CS Item / Component Definition
+  kind: definition
+  status: draft
+  purpose: Cybersecurity item definition describe clear boundary, function list, operational interfaces
+    and initiate the security life-cycle.
+  concept: doc_concept_qx_csitem_process
+  complies:
+  - std_wp_isosae21434_concept_9331
+- id: wp_qx_csitem_cs_item_comp_def_review_record
+  title: CS Item / Component Definition Review Record
+  kind: report
+  status: draft
+  purpose: 'Completed review checklist for the item definition: technical review result, findings with
+    Issue Tracking IDs and closure status, approval, and the Quality Manager check result. Identifies
+    the reviewed version of CS Item / Component Definition.'
+  concept: doc_concept_qx_csitem_process
+  complies: &id001
+  - std_req_isosae21434_concept_93
+- id: wp_qx_csitem_consortium_regulatory_sources
+  title: Consortium / regulatory sources
+  kind: record
+  status: draft
+  purpose: 'Requirements the item shall conform to that do not come from a single customer: consortium
+    specifications (AUTOSAR Classic / Adaptive, Eclipse S-CORE), cybersecurity regulations of the target
+    markets. Basis for component-out-of-context middleware development.'
+  concept: doc_concept_qx_csitem_process
+  origin: external
+  complies: *id001

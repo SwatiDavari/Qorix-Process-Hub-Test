@@ -22,7 +22,8 @@ CLUSTERS = {"compliance": "Compliance", "engineering": "Engineering", "build": "
 
 # Optional grouping inside a cluster page: process.yaml `assembly.group` must be one of these, in this order.
 CLUSTER_GROUPS = {"engineering": ["Plan and control", "Requirements and verification", "Control and release",
-                                  "Assure and improve"]}
+                                  "Assure and improve"],
+                  "compliance": ["Governance and compliance", "Safety", "Security"]}
 
 
 # Assembly layout: prod/assemblies/<cluster>/<process>/<subcomponent>/<file>.yaml
@@ -39,6 +40,8 @@ SUBCOMPONENTS = ("process", "workflows", "work_products", "roles", "templates")
 ENABLERS = {"PRD", "TST", "BLD", "DOC", "SAF", "SEC", "-"}
 SCOPES = {"GLOB", "FEAT", "COMP", "UNIT", "-"}
 LAYERS = {"INT", "REQ", "ARC", "DES", "IMP", "-"}
+# templates.yaml also holds the other guidance types; the id prefix names the type
+GD_PREFIX = {"gd_temp_": "gd_temp", "gd_req_": "gd_req", "gd_guidl_": "gd_guidl", "gd_chklst_": "gd_chklst", "gd_meth_": "gd_method"}
 # ID scheme: <type>_qx_<assembly code>_<name>  - never a double underscore
 TYPE_PREFIX = {"workflows": "wf_", "work_products": "wp_", "roles": "rl_", "templates": "gd_temp_", "concepts": "doc_concept_",
                "outcomes": "oc_", "capabilities": "cap_"}
@@ -51,7 +54,8 @@ GATE_RANK = {"draft": 0, "proposed": 1, "approved": 2, "released": 3}
 def load_catalog(prod_dir: str | Path) -> list[dict[str, Any]]:
     """Load every assembly folder <cluster>/<process>/ below ``prod_dir`` into one catalog entry each."""
     areas = []
-    for f in sorted(Path(prod_dir).glob("*/*/process/process.yaml")):
+    found = sorted(set(Path(prod_dir).glob("*/*/process/process.yaml")) | set(Path(prod_dir).glob("*/*/*/process/process.yaml")))
+    for f in found:
         d = f.parent.parent
         doc: dict[str, Any] = {"_source": d.as_posix(), "_path": d.relative_to(prod_dir).as_posix()}
         for rel, key in ASSEMBLY_FILES.items():
@@ -68,8 +72,9 @@ def load_catalog(prod_dir: str | Path) -> list[dict[str, Any]]:
             else:
                 doc["workproducts" if key == "work_products" else key] = data.get(key) or []
         ar = doc["area"]
-        if ar.get("id") != d.name or ar.get("cluster") != d.parent.name:
-            raise QpmError(f"{d}: process.yaml id/cluster must equal the folder names ({d.parent.name}/{d.name})")
+        cluster_dir = d.relative_to(prod_dir).parts[0]
+        if ar.get("id") != d.name or ar.get("cluster") != cluster_dir:
+            raise QpmError(f"{d}: process.yaml id/cluster must equal the folder names ({cluster_dir}/.../{d.name})")
         areas.append(doc)
     if not areas:
         raise QpmError(f"no assemblies in {prod_dir}")
@@ -104,6 +109,8 @@ def check_catalog(areas: list[dict[str, Any]], standards: list[dict[str, Any]]) 
             errs.append(f"duplicate id {i} ({local[i]} / {a['area']['id']})")
         local[i] = a["area"]["id"]
         want = TYPE_PREFIX["work_products" if key == "workproducts" else key] + f"qx_{a['area'].get('code')}_"
+        if key == "templates" and any(i.startswith(f"{g}qx_{a['area'].get('code')}_") for g in GD_PREFIX):
+            continue
         if not i.startswith(want):
             errs.append(f"{a['area']['id']}.{i}: id must start with '{want}' (scheme <type>_qx_<code>_<name>)")
     for i in local:
@@ -439,7 +446,8 @@ def render_area(a: dict[str, Any], areas: list[dict[str, Any]] | None = None) ->
     # templates / guidance
     gd_txt = h + _hdr(f"{ar['title']} Templates", "#") + "\n"
     for t in a.get("templates") or []:
-        gd_txt += _need("gd_temp", t["title"], t["id"], t.get("status", "valid"), aid)
+        gd_type = next(v for k, v in GD_PREFIX.items() if t["id"].startswith(k))
+        gd_txt += _need(gd_type, t["title"], t["id"], t.get("status", "valid"), aid)
         if t.get("description"):
             gd_txt += _indent(_md(t["description"])) + "\n\n"
         if t.get("file"):

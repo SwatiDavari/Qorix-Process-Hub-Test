@@ -1,0 +1,69 @@
+# Cybersecurity Operations and Maintenance (compliance/security/csms_operations)  -  templates and guidance.
+templates:
+- id: gd_chklst_qx_csops_cs_incident_response_plan
+  title: Cybersecurity Incident Response Plan Closure Checklist
+  status: draft
+  description: Cybersecurity Incident Response Plan Closure Checklist
+- id: gd_temp_qx_csops_cs_incident_response_plan
+  title: Cybersecurity Incident Response Plan Template
+  status: draft
+  description: Cybersecurity Incident Response Plan Template
+- id: gd_guidl_qx_csops_cs_incident_response_plan
+  title: Cybersecurity Incident Response Plan Template Guidelines
+  status: draft
+  description: Cybersecurity Incident Response Plan Template Guidelines
+- id: gd_temp_qx_csops_incident_mgmt_master_plan
+  title: Incident Management Master Plan Template
+  status: draft
+  description: Incident Management Master Plan Template
+- id: gd_guidl_qx_csops_incident_mgmt_master_plan
+  title: Incident Management Master Plan Template Guidelines
+  status: draft
+  description: Incident Management Master Plan Template Guidelines
+- id: gd_guidl_qx_csops_cs_operations_and
+  title: Cybersecurity Operations and Maintenance
+  status: draft
+  description: Cybersecurity Operations and Maintenance
+- id: gd_req_qx_csops_incident_mgmt_master_plan
+  title: Incident management master plan established
+  status: draft
+  description: 'Before start of maintenance phase, incident management master plan shall be established
+    and recorded in Incident Management Master Plan, structured per Incident Management Master Plan Template,
+    as prerequisite for handling any cybersecurity incident .. note:: Internal process design requirement
+    — Clause 13 does not name this document. Serves as input to RQ-13-01, satisfied at the per-incident
+    level by Cybersecurity incident response plan per incident. No " link here.'
+- id: gd_req_qx_csops_cs_incident_response_plan
+  title: Cybersecurity incident response plan per incident
+  status: draft
+  description: For each cybersecurity incident, a cybersecurity incident response plan shall be created
+    and recorded in Cybersecurity Incident Response Plan.
+- id: gd_req_qx_csops_cs_incident_response_plan_2
+  title: Cybersecurity incident response plan implementation
+  status: draft
+  description: The cybersecurity incident response plan recorded in Cybersecurity Incident Response Plan
+    shall be implemented through containment, eradication, and recovery, with progress tracked against
+    the action plan and people in charge recorded in the plan.
+- id: gd_req_qx_csops_no_new_vulnerability_from
+  title: No new vulnerability from remedial action
+  status: draft
+  description: A remedial action taken for a cybersecurity incident, including a containment measure,
+    a patch, or a compensating control, shall be analyzed for new vulnerabilities before implementation,
+    and shall be modified where the analysis identifies one.
+- id: gd_req_qx_csops_severity_based_response
+  title: Severity-based response timeline
+  status: draft
+  description: A cybersecurity incident shall be assigned a severity, a priority, and a response timeline
+    at triage, per the service level agreement defined for the incident response process. Where the response
+    timeline elapses without Cybersecurity Manager taking the next planned action, the incident is escalated
+    per the escalation path defined for its severity.
+- id: gd_req_qx_csops_confirmed_closure_of_a_cs
+  title: Confirmed closure of a cybersecurity incident
+  status: draft
+  description: A cybersecurity incident shall be closed only once validation confirms the vulnerability
+    is removed, no new vulnerability has been introduced, and, where the incident affects a customer,
+    the customer has confirmed the resolution.
+- id: gd_req_qx_csops_conformant_update_development
+  title: Conformant update development
+  status: draft
+  description: Updates and update-related capabilities within the item shall be developed in accordance
+    with ISO/SAE 21434.

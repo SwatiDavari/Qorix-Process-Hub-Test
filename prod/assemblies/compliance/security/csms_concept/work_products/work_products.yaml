@@ -1,0 +1,24 @@
+# Cybersecurity Concept (compliance/security/csms_concept)  -  work products.
+work_products:
+- id: wp_qx_cscon_cs_concept
+  title: Cybersecurity Concept
+  kind: definition
+  status: draft
+  purpose: Cybersecurity controls, cybersecurity requirements of the item and its operational environment,
+    and the allocation of those requirements to modules of the item / component, with CAL inherited from
+    the related cybersecurity goals and traceability established to cybersecurity goals and stakeholder
+    / consortium requirements.
+  concept: doc_concept_qx_cscon_process
+  template: gd_temp_qx_cscon_cs_concept_template
+  complies:
+  - std_wp_isosae21434_concept_9531
+- id: wp_qx_cscon_ver_report_for_cs_concept
+  title: Verification Report for Cybersecurity Concept
+  kind: report
+  status: draft
+  purpose: Verification record confirming completeness, correctness, and consistency of the cybersecurity
+    concept and its high-level requirement derivation process with respect to cybersecurity goals, and
+    consistency with respect to cybersecurity claims.
+  concept: doc_concept_qx_cscon_process
+  complies:
+  - std_wp_isosae21434_concept_9532

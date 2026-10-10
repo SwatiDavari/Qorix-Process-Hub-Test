@@ -134,6 +134,20 @@ def test_catalog_is_consistent():
     assert catalog.check_catalog(areas, catalog.load_standards(STANDARDS)) == []
 
 
+def test_nested_csms_assemblies_load_under_security_group():
+    areas = catalog.load_catalog(ASSEMBLIES)
+    csms = [a["area"] for a in areas if a["area"]["id"].startswith("csms_")]
+    assert len(csms) == 18
+    assert all(a["cluster"] == "compliance" and a["group"] == "Security" for a in csms)
+    assert all(a.get("group") for a in (x["area"] for x in areas if x["area"]["cluster"] == "compliance"))
+
+
+def test_guidance_prefixes_are_typed():
+    areas = catalog.load_catalog(ASSEMBLIES)
+    kinds = {t["id"].split("_qx_")[0] for a in areas for t in a.get("templates") or []}
+    assert {"gd_req", "gd_guidl", "gd_chklst", "gd_temp"} <= kinds
+
+
 def test_catalog_detects_violations():
     areas = catalog.load_catalog(ASSEMBLIES)
     wf = next(x for x in areas if x["workflows"])["workflows"][0]

@@ -1,0 +1,12 @@
+# Cybersecurity Distributed Activities (compliance/security/csms_distributed)  -  work products.
+work_products:
+- id: wp_qx_csdist_cs_distributed_activities_record
+  title: Cybersecurity Distributed Activities Record
+  kind: record
+  status: draft
+  purpose: Record of the cybersecurity distributed activities activities.
+  concept: doc_concept_qx_csdist_process
+  complies:
+  - std_req_isosae21434_distributed_741
+  - std_req_isosae21434_distributed_742
+  - std_req_isosae21434_distributed_743

@@ -1,0 +1,38 @@
+# Cybersecurity Management Systems (compliance/security/csms_mgmt_systems)  -  process: identity, classification, concepts.
+assembly:
+  id: csms_mgmt_systems
+  code: csmgmt
+  cluster: compliance
+  title: Cybersecurity Management Systems
+  enabler: SEC
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_sec_security_office
+  purpose: The management systems the cybersecurity activities rely on, including information security
+    management, are in place and kept effective.
+  standards:
+  - ISO/SAE 21434
+  tier: qorix
+  group: Security
+concepts:
+- id: doc_concept_qx_csmgmt_process
+  title: Cybersecurity Management Systems Concept
+  body: Cybersecurity Management Systems follows ISO/SAE 21434 clause 5.4.4, 5.4.6.
+outcomes:
+- id: oc_qx_csmgmt_cs_mgmt_systems
+  title: Management systems support the cybersecurity activities
+  status: draft
+  statement: The management systems the cybersecurity activities rely on, including information security
+    management, are in place and kept effective.
+  complies:
+  - std_req_isosae21434_org_management_544
+  - std_req_isosae21434_org_management_546
+capabilities:
+- id: cap_qx_csmgmt_cs_mgmt_systems
+  title: Cybersecurity Management Systems
+  status: draft
+  description: The management systems the cybersecurity activities rely on, including information security
+    management, are in place and kept effective.
+  realizes:
+  - oc_qx_csmgmt_cs_mgmt_systems

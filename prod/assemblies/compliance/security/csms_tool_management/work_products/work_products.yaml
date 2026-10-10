@@ -1,0 +1,10 @@
+# Cybersecurity Tool Management (compliance/security/csms_tool_management)  -  work products.
+work_products:
+- id: wp_qx_cstool_organisation_level_qualified
+  title: Organisation Level Qualified Tool List
+  kind: record
+  status: draft
+  purpose: Organisation Level Qualified Tool List
+  concept: doc_concept_qx_cstool_process
+  complies:
+  - std_req_isosae21434_org_management_545

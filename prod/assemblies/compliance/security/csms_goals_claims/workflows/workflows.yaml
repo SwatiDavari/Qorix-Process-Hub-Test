@@ -1,0 +1,132 @@
+# Cybersecurity Goals and Claims (compliance/security/csms_goals_claims)  -  workflows.
+workflows:
+- id: wf_qx_csgoal_define_cs_goals
+  title: Define Cybersecurity Goals
+  status: draft
+  responsible: rl_qx_csgoal_engineer
+  approved_by: rl_qx_csitem_cs_product_owner
+  supported_by:
+  - rl_qx_csitem_cs_manager
+  input:
+  - wp_qx_csitem_cs_item_comp_def
+  output:
+  - wp_qx_csgoal_cs_goals
+  achieves:
+  - oc_qx_csgoal_cs_goals_and_claims
+  gate:
+  - wp: wp_qx_csitem_cs_item_comp_def
+    min_status: approved
+  contains:
+  - gd_guidl_qx_csgoal_cs_goals_and_claims
+  - gd_req_qx_csgoal_tara_analysis_with_risk
+  - gd_req_qx_csgoal_risk_treatment_option
+  - gd_req_qx_csgoal_cs_goals_for_risk_reduction
+  - gd_temp_qx_csgoal_cs_goals_template
+  description: Cybersecurity goals are derived for every "reducing the risk" decision recorded in TARA
+    and must be reviewed before use in downstream cybersecurity requirements.
+  activities:
+  - step: Cybersecurity goals are derived for every "reducing the risk" decision recorded in TARA and
+      must be reviewed before use in downstream cybersecurity requirements
+    by: rl_qx_csgoal_engineer
+    capability: cap_qx_csgoal_cs_goals_and_claims
+  - step: Contribute to cs goals
+    by: rl_qx_csitem_cs_manager
+  - step: Approve cs goals
+    by: rl_qx_csitem_cs_product_owner
+- id: wf_qx_csgoal_define_cs_claims
+  title: Define Cybersecurity Claims
+  status: draft
+  responsible: rl_qx_csgoal_engineer
+  approved_by: rl_qx_csitem_cs_product_owner
+  supported_by:
+  - rl_qx_csitem_cs_manager
+  input:
+  - wp_qx_csitem_cs_item_comp_def
+  output:
+  - wp_qx_csgoal_cs_claims
+  achieves:
+  - oc_qx_csgoal_cs_goals_and_claims
+  gate:
+  - wp: wp_qx_csitem_cs_item_comp_def
+    min_status: approved
+  contains:
+  - gd_guidl_qx_csgoal_cs_goals_and_claims
+  - gd_req_qx_csgoal_cs_claims_for_shared_or
+  - gd_temp_qx_csgoal_cs_claims_template
+  description: Cybersecurity claims are derived for every "sharing the risk" or "retaining the risk" decision
+    recorded in TARA, each with a documented verification plan or exemption justification, and must be
+    reviewed before use in downstream cybersecurity requirements.
+  activities:
+  - step: Cybersecurity claims are derived for every "sharing the risk" or "retaining the risk" decision
+      recorded in TARA, each with a documented verification plan or exemption justification, and must
+      be reviewed before use in downstream cybersecurity requirements
+    by: rl_qx_csgoal_engineer
+    capability: cap_qx_csgoal_cs_goals_and_claims
+  - step: Contribute to cs claims
+    by: rl_qx_csitem_cs_manager
+  - step: Approve cs claims
+    by: rl_qx_csitem_cs_product_owner
+- id: wf_qx_csgoal_review_and_rework_cs_goals_and
+  title: Review and Rework CS Goals and Claims
+  status: draft
+  responsible: rl_qx_csitem_software_architect_lead_engineer
+  approved_by: rl_qx_csitem_cs_product_owner
+  supported_by:
+  - rl_qx_csitem_cs_manager
+  - rl_qx_csgoal_engineer
+  input:
+  - wp_qx_csgoal_cs_goals
+  - wp_qx_csgoal_cs_claims
+  output:
+  - wp_qx_csgoal_cs_goals_and_claims_ver_report
+  achieves:
+  - oc_qx_csgoal_cs_goals_and_claims
+  contains:
+  - gd_req_qx_csgoal_ver_of_goals_and_claims
+  - gd_chklst_qx_csgoal_cs_goals_ver_checklist
+  - gd_chklst_qx_csgoal_cs_claims_ver_checklist
+  description: CS Goals and CS Claims are verified for correctness, completeness, and consistency before
+    being approved and baselined.
+  activities:
+  - step: CS Goals and CS Claims are verified for correctness, completeness, and consistency before being
+      approved and baselined
+    by: rl_qx_csitem_software_architect_lead_engineer
+    capability: cap_qx_csgoal_cs_goals_and_claims
+  - step: Contribute to cs goals and claims verification report
+    by: rl_qx_csitem_cs_manager
+  - step: Contribute to cs goals and claims verification report
+    by: rl_qx_csgoal_engineer
+  - step: Approve cs goals and claims verification report
+    by: rl_qx_csitem_cs_product_owner
+- id: wf_qx_csgoal_quality_check_of_cs_goals_and
+  title: Quality Check of CS Goals and Claims
+  status: draft
+  responsible: rl_qx_qa_quality_office
+  approved_by: rl_qx_csitem_product_project_manager
+  supported_by:
+  - rl_qx_csitem_software_architect_lead_engineer
+  - rl_qx_csgoal_engineer
+  input:
+  - wp_qx_csgoal_cs_goals
+  - wp_qx_csgoal_cs_claims
+  - wp_qx_csgoal_cs_goals_and_claims_ver_report
+  output:
+  - wp_qx_csgoal_cs_goals_and_claims_ver_report
+  achieves:
+  - oc_qx_csgoal_cs_goals_and_claims
+  contains:
+  - gd_chklst_qx_csgoal_cs_goals_and_claims
+  description: Before each baseline, the Quality Manager confirms that CS Goals and CS Claims were produced,
+    reviewed, and approved as defined by this process. The result is added to CS Goals and Claims Verification
+    Report.
+  activities:
+  - step: Before each baseline, the Quality Manager confirms that CS Goals and CS Claims were produced,
+      reviewed, and approved as defined by this process
+    by: rl_qx_qa_quality_office
+    capability: cap_qx_csgoal_cs_goals_and_claims
+  - step: Contribute to cs goals and claims verification report
+    by: rl_qx_csitem_software_architect_lead_engineer
+  - step: Contribute to cs goals and claims verification report
+    by: rl_qx_csgoal_engineer
+  - step: Approve cs goals and claims verification report
+    by: rl_qx_csitem_product_project_manager

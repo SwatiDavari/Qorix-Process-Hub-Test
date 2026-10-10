@@ -1,0 +1,18 @@
+# Cybersecurity Culture (compliance/security/csms_culture)  -  roles.
+roles:
+- id: rl_qx_cscult_cs_mgmt
+  title: Cybersecurity Management
+  description: Cybersecurity management defines role-specific competence requirements, oversees awareness
+    and training programs, and monitors cultural effectiveness through assessments and KPIs. They coordinate
+    improvement initiatives and report status to management.
+- id: rl_qx_cscult_product_project_managers
+  title: Product/Project Managers
+  description: The Product/Project Managers role in Cybersecurity Culture.
+- id: rl_qx_cscult_cs_architects_and_technical
+  title: Cybersecurity Architects and Technical Leads
+  description: These roles contribute to competence development by identifying relevant technical topics,
+    preparing training materials, and mentoring engineering teams in secure engineering practices.
+- id: rl_qx_cscult_all_personnel
+  title: All Personnel
+  description: All individuals are responsible for adhering to cybersecurity policies, participating in
+    required training and awareness activities, and applying cybersecurity principles in their daily work.

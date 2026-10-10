@@ -1,0 +1,5 @@
+# Cybersecurity Goals and Claims (compliance/security/csms_goals_claims)  -  roles.
+roles:
+- id: rl_qx_csgoal_engineer
+  title: Engineer
+  description: The Engineer role in Cybersecurity Goals and Claims.

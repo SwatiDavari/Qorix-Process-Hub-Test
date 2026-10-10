@@ -1,0 +1,48 @@
+# Cybersecurity Validation (compliance/security/csms_validation)  -  templates and guidance.
+templates:
+- id: gd_chklst_qx_csval_cs_val_checklist
+  title: CS Validation Checklist
+  status: draft
+  description: CS Validation Checklist
+- id: gd_guidl_qx_csval_cs_val
+  title: Cybersecurity Validation
+  status: draft
+  description: Cybersecurity Validation
+- id: gd_req_qx_csval_achievement_of_cs_goals
+  title: Achievement of cybersecurity goals, claims, and operational validity
+  status: draft
+  description: Validation activities at item / component level, considering the typical release configuration,
+    shall confirm adequacy of the cybersecurity goals with respect to the threat scenarios and corresponding
+    risks, achievement of the cybersecurity goals, validity of the cybersecurity claims, and validity
+    of operational-environment-dependent requirements, and results shall be recorded in Validation Test
+    Report or Penetration Test Report (Internal / External) as applicable.
+- id: gd_req_qx_csval_rationale_for_selection_of
+  title: Rationale for selection of validation activities
+  status: draft
+  description: A rationale for the selection of validation activities shall be provided and recorded in
+    Risk Treatment Validation Strategy, including any case where a CAL-indicated method is not applied
+    or where a validation case is covered by a cybersecurity verification result instead of being re-tested.
+- id: gd_req_qx_csval_threat_scenario
+  title: Threat-scenario classification
+  status: draft
+  description: Every threat scenario in the applicable UNECE R155 Annex 5 listing shall be classified
+    as not relevant, not in scope, vulnerable, or to be tested, and the classification shall be recorded
+    in Validation Test Case Specification.
+- id: gd_req_qx_csval_penetration_testing_of
+  title: Penetration testing of vulnerable and to-be-tested threat scenarios
+  status: draft
+  description: Threat scenarios classified as vulnerable or to be tested shall be exercised through penetration
+    testing to confirm exploitability, and findings shall be recorded in Penetration Test Report (Internal
+    / External). Where higher rigor, independence, or expertise is required for the CAL of the realized
+    cybersecurity goal(s), penetration testing may be delegated to Cybersecurity Penetration Test Vendor.
+- id: gd_req_qx_csval_traceability_of_val_results
+  title: Traceability of validation results
+  status: draft
+  description: Bidirectional traceability shall be established between the cybersecurity goals, the risk
+    treatment validation strategy / specification, and the validation results, consistency between them
+    shall be confirmed, and the summarized results shall be recorded in Cybersecurity Validation Report
+    for communication to all affected parties.
+- id: gd_temp_qx_csval_cs_val_spec_template
+  title: CS Validation Specification Template
+  status: draft
+  description: CS Validation Specification Template

@@ -11,7 +11,7 @@ Compliance
 
    .. tab-item:: Grouped register
 
-      .. list-table::
+      .. list-table:: Governance and compliance
          :header-rows: 1
          :widths: 26 16 26 9 12 11
          :class: qx-reg
@@ -32,12 +32,144 @@ Compliance
            - 3
            - 7
            - :bdg-secondary:`draft`
+
+      .. list-table:: Safety
+         :header-rows: 1
+         :widths: 26 16 26 9 12 11
+         :class: qx-reg
+
+         * - Process
+           - Owner
+           - Standards
+           - Workflows
+           - Work products
+           - Status
          * - :ref:`Safety <qx_assembly_safety>`
            - Functional Safety Office
            - :bdg-dark-line:`ISO 26262-2`
 
              :bdg-dark-line:`ISO 26262-8`
            - 3
+           - 4
+           - :bdg-secondary:`draft`
+
+      .. list-table:: Security
+         :header-rows: 1
+         :widths: 26 16 26 9 12 11
+         :class: qx-reg
+
+         * - Process
+           - Owner
+           - Standards
+           - Workflows
+           - Work products
+           - Status
+         * - :ref:`Cybersecurity Assessment <qx_assembly_csms_assessment>`
+           - Cybersecurity Office
+           - :bdg-dark-line:`ISO/SAE 21434`
+           - 1
+           - 1
+           - :bdg-secondary:`draft`
+         * - :ref:`Cybersecurity Audit <qx_assembly_csms_audit>`
+           - Cybersecurity Office
+           - :bdg-dark-line:`ISO/SAE 21434`
+           - 1
+           - 1
+           - :bdg-secondary:`draft`
+         * - :ref:`Cybersecurity Case <qx_assembly_csms_case>`
+           - Cybersecurity Office
+           - :bdg-dark-line:`ISO/SAE 21434`
+           - 1
+           - 1
+           - :bdg-secondary:`draft`
+         * - :ref:`Cybersecurity Concept <qx_assembly_csms_concept>`
+           - Cybersecurity Office
+           - :bdg-dark-line:`ISO/SAE 21434`
+           - 3
+           - 2
+           - :bdg-secondary:`draft`
+         * - :ref:`Cybersecurity Continual Activities <qx_assembly_csms_continual>`
+           - Cybersecurity Office
+           - :bdg-dark-line:`ISO/SAE 21434`
+           - 6
+           - 6
+           - :bdg-secondary:`draft`
+         * - :ref:`Cybersecurity Culture <qx_assembly_csms_culture>`
+           - Cybersecurity Office
+           - :bdg-dark-line:`ISO/SAE 21434`
+           - 1
+           - 1
+           - :bdg-secondary:`draft`
+         * - :ref:`Cybersecurity Development <qx_assembly_csms_development>`
+           - Cybersecurity Office
+           - :bdg-dark-line:`ISO/SAE 21434`
+           - 5
+           - 5
+           - :bdg-secondary:`draft`
+         * - :ref:`Cybersecurity Distributed Activities <qx_assembly_csms_distributed>`
+           - Cybersecurity Office
+           - :bdg-dark-line:`ISO/SAE 21434`
+           - 1
+           - 1
+           - :bdg-secondary:`draft`
+         * - :ref:`Cybersecurity Goals and Claims <qx_assembly_csms_goals_claims>`
+           - Cybersecurity Office
+           - :bdg-dark-line:`ISO/SAE 21434`
+           - 4
+           - 3
+           - :bdg-secondary:`draft`
+         * - :ref:`Cybersecurity Governance <qx_assembly_csms_governance>`
+           - Cybersecurity Office
+           - :bdg-dark-line:`ISO/SAE 21434`
+           - 5
+           - 1
+           - :bdg-secondary:`draft`
+         * - :ref:`Cybersecurity Item Definition <qx_assembly_csms_item_definition>`
+           - Cybersecurity Office
+           - :bdg-dark-line:`ISO/SAE 21434`
+           - 2
+           - 3
+           - :bdg-secondary:`draft`
+         * - :ref:`Cybersecurity Management Plan <qx_assembly_csms_mgmt_plan>`
+           - Cybersecurity Office
+           - :bdg-dark-line:`ISO/SAE 21434`
+           - 1
+           - 2
+           - :bdg-secondary:`draft`
+         * - :ref:`Cybersecurity Management Systems <qx_assembly_csms_mgmt_systems>`
+           - Cybersecurity Office
+           - :bdg-dark-line:`ISO/SAE 21434`
+           - 1
+           - 1
+           - :bdg-secondary:`draft`
+         * - :ref:`Cybersecurity Operations and Maintenance <qx_assembly_csms_operations>`
+           - Cybersecurity Office
+           - :bdg-dark-line:`ISO/SAE 21434`
+           - 9
+           - 2
+           - :bdg-secondary:`draft`
+         * - :ref:`Cybersecurity Threat Analysis and Risk Assessment <qx_assembly_csms_tara>`
+           - Cybersecurity Office
+           - :bdg-dark-line:`ISO/SAE 21434`
+           - 9
+           - 10
+           - :bdg-secondary:`draft`
+         * - :ref:`Cybersecurity Tool Management <qx_assembly_csms_tool_management>`
+           - Cybersecurity Office
+           - :bdg-dark-line:`ISO/SAE 21434`
+           - 1
+           - 1
+           - :bdg-secondary:`draft`
+         * - :ref:`Cybersecurity Validation <qx_assembly_csms_validation>`
+           - Cybersecurity Office
+           - :bdg-dark-line:`ISO/SAE 21434`
+           - 5
+           - 5
+           - :bdg-secondary:`draft`
+         * - :ref:`Cybersecurity Verification <qx_assembly_csms_verification>`
+           - Cybersecurity Office
+           - :bdg-dark-line:`ISO/SAE 21434`
+           - 4
            - 4
            - :bdg-secondary:`draft`
          * - :ref:`Security <qx_assembly_security>`
@@ -70,6 +202,114 @@ Compliance
            - ●
            - ●
            -
+           -
+         * - :ref:`Cybersecurity Assessment <qx_assembly_csms_assessment>`
+           -
+           -
+           -
+           - ●
+           -
+         * - :ref:`Cybersecurity Audit <qx_assembly_csms_audit>`
+           -
+           -
+           -
+           - ●
+           -
+         * - :ref:`Cybersecurity Case <qx_assembly_csms_case>`
+           -
+           -
+           -
+           - ●
+           -
+         * - :ref:`Cybersecurity Concept <qx_assembly_csms_concept>`
+           -
+           -
+           -
+           - ●
+           -
+         * - :ref:`Cybersecurity Continual Activities <qx_assembly_csms_continual>`
+           -
+           -
+           -
+           - ●
+           -
+         * - :ref:`Cybersecurity Culture <qx_assembly_csms_culture>`
+           -
+           -
+           -
+           - ●
+           -
+         * - :ref:`Cybersecurity Development <qx_assembly_csms_development>`
+           -
+           -
+           -
+           - ●
+           -
+         * - :ref:`Cybersecurity Distributed Activities <qx_assembly_csms_distributed>`
+           -
+           -
+           -
+           - ●
+           -
+         * - :ref:`Cybersecurity Goals and Claims <qx_assembly_csms_goals_claims>`
+           -
+           -
+           -
+           - ●
+           -
+         * - :ref:`Cybersecurity Governance <qx_assembly_csms_governance>`
+           -
+           -
+           -
+           - ●
+           -
+         * - :ref:`Cybersecurity Item Definition <qx_assembly_csms_item_definition>`
+           -
+           -
+           -
+           - ●
+           -
+         * - :ref:`Cybersecurity Management Plan <qx_assembly_csms_mgmt_plan>`
+           -
+           -
+           -
+           - ●
+           -
+         * - :ref:`Cybersecurity Management Systems <qx_assembly_csms_mgmt_systems>`
+           -
+           -
+           -
+           - ●
+           -
+         * - :ref:`Cybersecurity Operations and Maintenance <qx_assembly_csms_operations>`
+           -
+           -
+           -
+           - ●
+           -
+         * - :ref:`Cybersecurity Threat Analysis and Risk Assessment <qx_assembly_csms_tara>`
+           -
+           -
+           -
+           - ●
+           -
+         * - :ref:`Cybersecurity Tool Management <qx_assembly_csms_tool_management>`
+           -
+           -
+           -
+           - ●
+           -
+         * - :ref:`Cybersecurity Validation <qx_assembly_csms_validation>`
+           -
+           -
+           -
+           - ●
+           -
+         * - :ref:`Cybersecurity Verification <qx_assembly_csms_verification>`
+           -
+           -
+           -
+           - ●
            -
          * - :ref:`Security <qx_assembly_security>`
            -
@@ -108,6 +348,150 @@ Compliance
            - :bdg-success:`4`
            - :bdg-success:`2`
            - :bdg-success:`3`
+         * - :ref:`Cybersecurity Assessment <qx_assembly_csms_assessment>`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`1 / 1`
+           - :bdg-success:`1`
+           - :bdg-danger:`0`
+           - :bdg-danger:`0`
+         * - :ref:`Cybersecurity Audit <qx_assembly_csms_audit>`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`1 / 1`
+           - :bdg-success:`1`
+           - :bdg-danger:`0`
+           - :bdg-danger:`0`
+         * - :ref:`Cybersecurity Case <qx_assembly_csms_case>`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`1 / 1`
+           - :bdg-success:`1`
+           - :bdg-danger:`0`
+           - :bdg-danger:`0`
+         * - :ref:`Cybersecurity Concept <qx_assembly_csms_concept>`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`3`
+           - :bdg-success:`2 / 3`
+           - :bdg-success:`2`
+           - :bdg-danger:`0`
+           - :bdg-success:`8`
+         * - :ref:`Cybersecurity Continual Activities <qx_assembly_csms_continual>`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`6`
+           - :bdg-success:`1 / 6`
+           - :bdg-success:`6`
+           - :bdg-danger:`0`
+           - :bdg-success:`13`
+         * - :ref:`Cybersecurity Culture <qx_assembly_csms_culture>`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`1 / 1`
+           - :bdg-success:`1`
+           - :bdg-success:`4`
+           - :bdg-danger:`0`
+         * - :ref:`Cybersecurity Development <qx_assembly_csms_development>`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`5`
+           - :bdg-success:`1 / 5`
+           - :bdg-success:`5`
+           - :bdg-danger:`0`
+           - :bdg-success:`24`
+         * - :ref:`Cybersecurity Distributed Activities <qx_assembly_csms_distributed>`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`1 / 1`
+           - :bdg-success:`1`
+           - :bdg-danger:`0`
+           - :bdg-danger:`0`
+         * - :ref:`Cybersecurity Goals and Claims <qx_assembly_csms_goals_claims>`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`4`
+           - :bdg-success:`2 / 4`
+           - :bdg-success:`3`
+           - :bdg-success:`1`
+           - :bdg-success:`13`
+         * - :ref:`Cybersecurity Governance <qx_assembly_csms_governance>`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`5`
+           - :bdg-success:`1 / 5`
+           - :bdg-success:`1`
+           - :bdg-success:`5`
+           - :bdg-danger:`0`
+         * - :ref:`Cybersecurity Item Definition <qx_assembly_csms_item_definition>`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`2`
+           - :bdg-success:`1 / 2`
+           - :bdg-success:`3`
+           - :bdg-success:`5`
+           - :bdg-success:`6`
+         * - :ref:`Cybersecurity Management Plan <qx_assembly_csms_mgmt_plan>`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`1 / 1`
+           - :bdg-success:`2`
+           - :bdg-success:`3`
+           - :bdg-danger:`0`
+         * - :ref:`Cybersecurity Management Systems <qx_assembly_csms_mgmt_systems>`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`1 / 1`
+           - :bdg-success:`1`
+           - :bdg-danger:`0`
+           - :bdg-danger:`0`
+         * - :ref:`Cybersecurity Operations and Maintenance <qx_assembly_csms_operations>`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`9`
+           - :bdg-success:`1 / 9`
+           - :bdg-success:`2`
+           - :bdg-success:`1`
+           - :bdg-success:`13`
+         * - :ref:`Cybersecurity Threat Analysis and Risk Assessment <qx_assembly_csms_tara>`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`9`
+           - :bdg-success:`1 / 9`
+           - :bdg-success:`10`
+           - :bdg-danger:`0`
+           - :bdg-success:`25`
+         * - :ref:`Cybersecurity Tool Management <qx_assembly_csms_tool_management>`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`1 / 1`
+           - :bdg-success:`1`
+           - :bdg-danger:`0`
+           - :bdg-success:`1`
+         * - :ref:`Cybersecurity Validation <qx_assembly_csms_validation>`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`5`
+           - :bdg-success:`2 / 5`
+           - :bdg-success:`5`
+           - :bdg-success:`1`
+           - :bdg-success:`8`
+         * - :ref:`Cybersecurity Verification <qx_assembly_csms_verification>`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
+           - :bdg-success:`4`
+           - :bdg-success:`1 / 4`
+           - :bdg-success:`4`
+           - :bdg-success:`2`
+           - :bdg-success:`10`
          * - :ref:`Security <qx_assembly_security>`
            - :bdg-success:`2`
            - :bdg-success:`2`
@@ -122,4 +506,22 @@ Compliance
 
    /assemblies/compliance/governance_compliance/process/index
    /assemblies/compliance/safety/process/index
+   /assemblies/compliance/security/csms_assessment/process/index
+   /assemblies/compliance/security/csms_audit/process/index
+   /assemblies/compliance/security/csms_case/process/index
+   /assemblies/compliance/security/csms_concept/process/index
+   /assemblies/compliance/security/csms_continual/process/index
+   /assemblies/compliance/security/csms_culture/process/index
+   /assemblies/compliance/security/csms_development/process/index
+   /assemblies/compliance/security/csms_distributed/process/index
+   /assemblies/compliance/security/csms_goals_claims/process/index
+   /assemblies/compliance/security/csms_governance/process/index
+   /assemblies/compliance/security/csms_item_definition/process/index
+   /assemblies/compliance/security/csms_mgmt_plan/process/index
+   /assemblies/compliance/security/csms_mgmt_systems/process/index
+   /assemblies/compliance/security/csms_operations/process/index
+   /assemblies/compliance/security/csms_tara/process/index
+   /assemblies/compliance/security/csms_tool_management/process/index
+   /assemblies/compliance/security/csms_validation/process/index
+   /assemblies/compliance/security/csms_verification/process/index
    /assemblies/compliance/security/process/index

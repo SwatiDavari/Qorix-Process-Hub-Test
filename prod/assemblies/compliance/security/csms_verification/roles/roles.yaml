@@ -1,0 +1,8 @@
+# Cybersecurity Verification (compliance/security/csms_verification)  -  roles.
+roles:
+- id: rl_qx_csver_cs_ver_engineer
+  title: Cybersecurity Verification Engineer
+  description: The Cybersecurity Verification Engineer role in Cybersecurity Verification.
+- id: rl_qx_csver_cs_test_architect
+  title: Cybersecurity Test Architect
+  description: The Cybersecurity Test Architect role in Cybersecurity Verification.

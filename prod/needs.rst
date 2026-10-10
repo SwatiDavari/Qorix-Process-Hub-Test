@@ -56,6 +56,447 @@ ISO/SAE 21434:2021
 
    Clause: 5.5.5 [WP-05-05]
 
+.. std_req:: Asset identification
+   :id: std_req_isosae21434_assessment_153
+   :status: valid
+   :version: 1
+
+   Clause: 15.3
+
+.. std_req:: Threat scenario identification
+   :id: std_req_isosae21434_assessment_154
+   :status: valid
+   :version: 1
+
+   Clause: 15.4
+
+.. std_req:: Impact rating
+   :id: std_req_isosae21434_assessment_155
+   :status: valid
+   :version: 1
+
+   Clause: 15.5
+
+.. std_req:: Attack path analysis
+   :id: std_req_isosae21434_assessment_156
+   :status: valid
+   :version: 1
+
+   Clause: 15.6
+
+.. std_req:: Attack feasibility rating
+   :id: std_req_isosae21434_assessment_157
+   :status: valid
+   :version: 1
+
+   Clause: 15.7
+
+.. std_req:: Risk value determination
+   :id: std_req_isosae21434_assessment_158
+   :status: valid
+   :version: 1
+
+   Clause: 15.8
+
+.. std_req:: Risk treatment decision-making
+   :id: std_req_isosae21434_assessment_159
+   :status: valid
+   :version: 1
+
+   Clause: 15.9
+
+.. std_req:: Item definition
+   :id: std_req_isosae21434_concept_93
+   :status: valid
+   :version: 1
+
+   Clause: 9.3
+
+.. std_req:: Cybersecurity goals
+   :id: std_req_isosae21434_concept_94
+   :status: valid
+   :version: 1
+
+   Clause: 9.4
+
+.. std_req:: Cybersecurity concept
+   :id: std_req_isosae21434_concept_95
+   :status: valid
+   :version: 1
+
+   Clause: 9.5
+
+.. std_req:: Cybersecurity monitoring
+   :id: std_req_isosae21434_continual_83
+   :status: valid
+   :version: 1
+
+   Clause: 8.3
+
+.. std_req:: Cybersecurity event evaluation
+   :id: std_req_isosae21434_continual_84
+   :status: valid
+   :version: 1
+
+   Clause: 8.4
+
+.. std_req:: Vulnerability analysis
+   :id: std_req_isosae21434_continual_85
+   :status: valid
+   :version: 1
+
+   Clause: 8.5
+
+.. std_req:: Vulnerability management
+   :id: std_req_isosae21434_continual_86
+   :status: valid
+   :version: 1
+
+   Clause: 8.6
+
+.. std_req:: Design
+   :id: std_req_isosae21434_development_1041
+   :status: valid
+   :version: 1
+
+   Clause: 10.4.1
+
+.. std_req:: Integration and verification
+   :id: std_req_isosae21434_development_1042
+   :status: valid
+   :version: 1
+
+   Clause: 10.4.2
+
+.. std_req:: Supplier capability assessment
+   :id: std_req_isosae21434_distributed_741
+   :status: valid
+   :version: 1
+
+   Clause: 7.4.1
+
+.. std_req:: Request for quotation
+   :id: std_req_isosae21434_distributed_742
+   :status: valid
+   :version: 1
+
+   Clause: 7.4.2
+
+.. std_req:: Alignment of responsibilities
+   :id: std_req_isosae21434_distributed_743
+   :status: valid
+   :version: 1
+
+   Clause: 7.4.3
+
+.. std_req:: Cybersecurity incident response
+   :id: std_req_isosae21434_operations_133
+   :status: valid
+   :version: 1
+
+   Clause: 13.3
+
+.. std_req:: Updates
+   :id: std_req_isosae21434_operations_134
+   :status: valid
+   :version: 1
+
+   Clause: 13.4
+
+.. std_req:: Cybersecurity governance
+   :id: std_req_isosae21434_org_management_541
+   :status: valid
+   :version: 1
+
+   Clause: 5.4.1
+
+.. std_req:: Cybersecurity culture
+   :id: std_req_isosae21434_org_management_542
+   :status: valid
+   :version: 1
+
+   Clause: 5.4.2
+
+.. std_req:: Management systems
+   :id: std_req_isosae21434_org_management_544
+   :status: valid
+   :version: 1
+
+   Clause: 5.4.4
+
+.. std_req:: Tool management
+   :id: std_req_isosae21434_org_management_545
+   :status: valid
+   :version: 1
+
+   Clause: 5.4.5
+
+.. std_req:: Information security management
+   :id: std_req_isosae21434_org_management_546
+   :status: valid
+   :version: 1
+
+   Clause: 5.4.6
+
+.. std_req:: Organizational cybersecurity audit
+   :id: std_req_isosae21434_org_management_547
+   :status: valid
+   :version: 1
+
+   Clause: 5.4.7
+
+.. std_req:: Cybersecurity responsibilities
+   :id: std_req_isosae21434_project_dependent_641
+   :status: valid
+   :version: 1
+
+   Clause: 6.4.1
+
+.. std_req:: Cybersecurity planning
+   :id: std_req_isosae21434_project_dependent_642
+   :status: valid
+   :version: 1
+
+   Clause: 6.4.2
+
+.. std_req:: Tailoring of the cybersecurity activities
+   :id: std_req_isosae21434_project_dependent_643
+   :status: valid
+   :version: 1
+
+   Clause: 6.4.3
+
+.. std_req:: Cybersecurity case
+   :id: std_req_isosae21434_project_dependent_647
+   :status: valid
+   :version: 1
+
+   Clause: 6.4.7
+
+.. std_req:: Cybersecurity assessment
+   :id: std_req_isosae21434_project_dependent_648
+   :status: valid
+   :version: 1
+
+   Clause: 6.4.8
+
+.. std_req:: Release for post-development
+   :id: std_req_isosae21434_project_dependent_649
+   :status: valid
+   :version: 1
+
+   Clause: 6.4.9
+
+.. std_req:: Cybersecurity validation
+   :id: std_req_isosae21434_validation_114
+   :status: valid
+   :version: 1
+
+   Clause: 11.4
+
+.. std_wp:: Asset identification: work product
+   :id: std_wp_isosae21434_assessment_15331
+   :status: valid
+   :version: 1
+
+   Clause: 15.3.3.1 (work product)
+
+.. std_wp:: Asset identification: work product
+   :id: std_wp_isosae21434_assessment_15332
+   :status: valid
+   :version: 1
+
+   Clause: 15.3.3.2 (work product)
+
+.. std_wp:: Threat scenario identification: work product
+   :id: std_wp_isosae21434_assessment_15431
+   :status: valid
+   :version: 1
+
+   Clause: 15.4.3.1 (work product)
+
+.. std_wp:: Impact rating: work product
+   :id: std_wp_isosae21434_assessment_15531
+   :status: valid
+   :version: 1
+
+   Clause: 15.5.3.1 (work product)
+
+.. std_wp:: Attack path analysis: work product
+   :id: std_wp_isosae21434_assessment_15631
+   :status: valid
+   :version: 1
+
+   Clause: 15.6.3.1 (work product)
+
+.. std_wp:: Attack feasibility rating: work product
+   :id: std_wp_isosae21434_assessment_15731
+   :status: valid
+   :version: 1
+
+   Clause: 15.7.3.1 (work product)
+
+.. std_wp:: Risk value determination: work product
+   :id: std_wp_isosae21434_assessment_15831
+   :status: valid
+   :version: 1
+
+   Clause: 15.8.3.1 (work product)
+
+.. std_wp:: Risk treatment decision-making: work product
+   :id: std_wp_isosae21434_assessment_15931
+   :status: valid
+   :version: 1
+
+   Clause: 15.9.3.1 (work product)
+
+.. std_wp:: Clause 9.3.3.1
+   :id: std_wp_isosae21434_concept_9331
+   :status: valid
+   :version: 1
+
+   Clause: 9.3.3.1 (work product)
+
+.. std_wp:: Clause 9.4.3.2
+   :id: std_wp_isosae21434_concept_9432
+   :status: valid
+   :version: 1
+
+   Clause: 9.4.3.2 (work product)
+
+.. std_wp:: Clause 9.4.3.3
+   :id: std_wp_isosae21434_concept_9433
+   :status: valid
+   :version: 1
+
+   Clause: 9.4.3.3 (work product)
+
+.. std_wp:: Clause 9.4.3.4
+   :id: std_wp_isosae21434_concept_9434
+   :status: valid
+   :version: 1
+
+   Clause: 9.4.3.4 (work product)
+
+.. std_wp:: Clause 9.5.3.1
+   :id: std_wp_isosae21434_concept_9531
+   :status: valid
+   :version: 1
+
+   Clause: 9.5.3.1 (work product)
+
+.. std_wp:: Clause 9.5.3.2
+   :id: std_wp_isosae21434_concept_9532
+   :status: valid
+   :version: 1
+
+   Clause: 9.5.3.2 (work product)
+
+.. std_wp:: Clause 8.3.3.1
+   :id: std_wp_isosae21434_continual_8331
+   :status: valid
+   :version: 1
+
+   Clause: 8.3.3.1 (work product)
+
+.. std_wp:: Clause 8.3.3.2
+   :id: std_wp_isosae21434_continual_8332
+   :status: valid
+   :version: 1
+
+   Clause: 8.3.3.2 (work product)
+
+.. std_wp:: Clause 8.3.3.3
+   :id: std_wp_isosae21434_continual_8333
+   :status: valid
+   :version: 1
+
+   Clause: 8.3.3.3 (work product)
+
+.. std_wp:: Clause 8.4.3.1
+   :id: std_wp_isosae21434_continual_8431
+   :status: valid
+   :version: 1
+
+   Clause: 8.4.3.1 (work product)
+
+.. std_wp:: Clause 8.5.3.1
+   :id: std_wp_isosae21434_continual_8531
+   :status: valid
+   :version: 1
+
+   Clause: 8.5.3.1 (work product)
+
+.. std_wp:: Clause 8.6.3.1
+   :id: std_wp_isosae21434_continual_8631
+   :status: valid
+   :version: 1
+
+   Clause: 8.6.3.1 (work product)
+
+.. std_wp:: Clause 10.5.1
+   :id: std_wp_isosae21434_development_1051
+   :status: valid
+   :version: 1
+
+   Clause: 10.5.1 (work product)
+
+.. std_wp:: Clause 10.5.2
+   :id: std_wp_isosae21434_development_1052
+   :status: valid
+   :version: 1
+
+   Clause: 10.5.2 (work product)
+
+.. std_wp:: Clause 10.5.3
+   :id: std_wp_isosae21434_development_1053
+   :status: valid
+   :version: 1
+
+   Clause: 10.5.3 (work product)
+
+.. std_wp:: Clause 10.5.4
+   :id: std_wp_isosae21434_development_1054
+   :status: valid
+   :version: 1
+
+   Clause: 10.5.4 (work product)
+
+.. std_wp:: Clause 10.5.5
+   :id: std_wp_isosae21434_development_1055
+   :status: valid
+   :version: 1
+
+   Clause: 10.5.5 (work product)
+
+.. std_wp:: Clause 10.5.6
+   :id: std_wp_isosae21434_development_1056
+   :status: valid
+   :version: 1
+
+   Clause: 10.5.6 (work product)
+
+.. std_wp:: Clause 10.5.7
+   :id: std_wp_isosae21434_development_1057
+   :status: valid
+   :version: 1
+
+   Clause: 10.5.7 (work product)
+
+.. std_wp:: Cybersecurity incident response: work product
+   :id: std_wp_isosae21434_maintenance_13331
+   :status: valid
+   :version: 1
+
+   Clause: 13.3.3.1 (work product)
+
+.. std_wp:: Clause 11.5.1
+   :id: std_wp_isosae21434_validation_1151
+   :status: valid
+   :version: 1
+
+   Clause: 11.5.1 (work product)
+
 Automotive SPICE 4.0
 ====================
 

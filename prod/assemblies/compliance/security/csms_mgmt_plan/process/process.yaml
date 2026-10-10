@@ -1,0 +1,269 @@
+# Cybersecurity Management Plan (compliance/security/csms_mgmt_plan)  -  process: identity, classification, concepts.
+assembly:
+  id: csms_mgmt_plan
+  code: csplan
+  cluster: compliance
+  title: Cybersecurity Management Plan
+  enabler: SEC
+  scope: GLOB
+  layer: '-'
+  status: draft
+  owner: rl_qx_sec_security_office
+  purpose: Cybersecurity planning translates ISO/SAE 21434 requirements into a concrete, product/project-specific
+    execution framework.
+  standards:
+  - ISO/SAE 21434
+  tier: qorix
+  group: Security
+getting_started: '**Purpose**
+
+
+  The Cybersecurity Plan defines how cybersecurity activities are planned, coordinated, executed, monitored,
+  and maintained throughout the product lifecycle. It establishes clear accountability, sequencing, and
+  integration of cybersecurity activities to ensure systematic compliance with ISO/SAE 21434 requirements
+  (clauses 6.4.1-6.4.6).
+
+
+  This process ensures that cybersecurity is treated as a managed engineering discipline rather than an
+  ad-hoc activity, enabling traceability, governance, and auditability across products/projects.
+
+
+  **Scope and Applicability**
+
+
+  This process applies to all products/projects involving items or components that are determined to be
+  cybersecurity-relevant. It covers:
+
+
+  - New development
+
+  - Modification of existing items
+
+  - Reuse in a different operational environment
+
+  - Integration of components developed out-of-context
+
+  - Integration of off-the-shelf components
+
+
+  If an item is determined to be not cybersecurity-relevant, justification shall be documented and approved,
+  and no further cybersecurity planning activities are required (ISO/SAE 21434 clause 6.4.1).
+
+
+  **Lifecycle Relevance**
+
+
+  Cybersecurity planning spans the complete lifecycle, including:
+
+
+  - Concept and item definition
+
+  - Development and integration
+
+  - Verification and validation
+
+  - Release for post-development
+
+
+  The plan is established early and evolves iteratively to reflect lifecycle progress, changes, and refinements
+  (clauses 6.4.3, 6.4.6).
+
+
+  **Preconditions and Dependencies**
+
+
+  The following inputs typically exist before initiating cybersecurity planning:
+
+
+  - Product/Project proposal or customer agreement
+
+  - Cybersecurity Interface Agreement (CIA)
+
+  - Organizational CSMS framework
+
+  - Initial product/project plan and milestones
+
+
+  No formal prerequisite artifacts are mandatory, but alignment with product/project governance is required.
+
+
+  **Governance and Compliance Context**
+
+
+  The Cybersecurity Plan is a governed work product subject to:
+
+
+  - Configuration management
+
+  - Change management
+
+  - Documentation management
+
+  - Requirements management
+
+
+  It shall be referenced from, or integrated into, the overall product/project plan such that cybersecurity
+  activities remain clearly distinguishable (clause 6.4.4).
+
+
+  **Tailoring Information**
+
+
+  Cybersecurity planning may be tailored based on:
+
+
+  - Product/Project size and complexity
+
+  - Risk exposure and attack surface
+
+  - Degree of reuse or legacy content
+
+  - Organizational role distribution
+
+  - Product/Project-specific execution strategy (For example, if developed as per component-out-of-context
+  CooC approach.)
+
+
+  Any tailoring shall be justified, documented, and shown to remain sufficient to meet ISO/SAE 21434 objectives
+  (clauses 6.4.5, 6.4.6).'
+concepts:
+- id: doc_concept_qx_csplan_process
+  title: Cybersecurity Management Plan Concept
+  body: '**Core Concept**
+
+
+    Cybersecurity planning translates ISO/SAE 21434 requirements into a concrete, product/project-specific
+    execution framework. It ensures that:
+
+
+    - All required cybersecurity activities are identified
+
+    - Responsibilities are assigned and communicated
+
+    - Dependencies and sequencing are understood
+
+    - Required resources and work products are planned
+
+
+    This concept directly fulfills ISO/SAE 21434 clause 6.4.2.
+
+
+    **Cybersecurity Relevance Evaluation**
+
+
+    Planning begins with evaluating whether the item or component is cybersecurity-relevant. This decision
+    gates the entire CSMS lifecycle.
+
+
+    TBD-Cybersecurity relevance evaluation overview Image
+
+
+    If relevance is confirmed, cybersecurity planning becomes mandatory. If not, justification is documented
+    and approved (clause 6.4.1).
+
+
+    **Activity Identification and Structuring**
+
+
+    All cybersecurity activities applicable to the product/project are identified, including:
+
+
+    - Management activities
+
+    - Engineering and analysis activities
+
+    - Verification and validation activities
+
+    - Post-development preparation activities
+
+
+    Each activity is defined with:
+
+
+    - Objective
+
+    - Inputs and dependencies
+
+    - Responsible role
+
+    - Required resources
+
+    - Start/end points and duration
+
+    - Expected work products
+
+
+    This satisfies clause 6.4.2 and clause 6.4.3.
+
+
+    **Reuse and Out-of-Context Development**
+
+
+    When reuse or out-of-context development applies, planning explicitly incorporates reuse analysis
+    activities to:
+
+
+    - Identify modifications and operational environmental changes
+
+    - Analyze cybersecurity impact
+
+    - Assess validity of existing claims and assumptions
+
+    - Identify missing or affected work products
+
+
+    This ensures continuity of cybersecurity arguments across lifecycle reuse scenarios (clauses 6.4.2,
+    6.4.3).
+
+
+    **Interfaces with Other Processes**
+
+
+    The Cybersecurity Plan interfaces with:
+
+
+    - Product/Project management
+
+    - Systems engineering
+
+    - Safety management
+
+    - Supplier and interface management
+
+
+    Distributed activities are aligned through the Cybersecurity Interface Agreement to ensure consistent
+    execution across organizational boundaries (clause 6.4.4).
+
+
+    **Tailoring Information**
+
+
+    Conceptual tailoring focuses on:
+
+
+    - Interface with other process areas as per product/project execution strategy (For example, if developed
+    as per component-out-of-context approach.)
+
+    - Degree of formalization
+
+    - Granularity of activity planning
+
+    - Depth of reuse analysis'
+outcomes:
+- id: oc_qx_csplan_cs_mgmt_plan
+  title: Cybersecurity activities are planned and responsibilities assigned
+  status: draft
+  statement: Cybersecurity responsibilities are assigned, the activities are planned and tailored, and
+    the plan is maintained.
+  complies:
+  - std_req_isosae21434_project_dependent_641
+  - std_req_isosae21434_project_dependent_642
+  - std_req_isosae21434_project_dependent_643
+capabilities:
+- id: cap_qx_csplan_cs_mgmt_plan
+  title: Cybersecurity Management Plan
+  status: draft
+  description: Cybersecurity planning translates ISO/SAE 21434 requirements into a concrete, product/project-specific
+    execution framework.
+  realizes:
+  - oc_qx_csplan_cs_mgmt_plan
