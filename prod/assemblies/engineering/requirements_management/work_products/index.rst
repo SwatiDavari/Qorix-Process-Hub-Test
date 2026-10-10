@@ -12,6 +12,8 @@ Requirements Management and Traceability Work Products
 
    **Purpose:** Needs and constraints stated by customers, regulators and internal stakeholders.
 
+   **Kind:** need
+
    **Produced by:** processes outside these areas; used here as an input.
 
 .. workproduct:: Requirements Specification
@@ -24,6 +26,8 @@ Requirements Management and Traceability Work Products
 
    **Purpose:** Agreed set of requirements for the scope in question, each with identifier, attributes and verification criterion.
 
+   **Kind:** requirement
+
 .. workproduct:: Traceability Record
    :id: wp_qx_req_traceability_record
    :status: draft
@@ -33,4 +37,6 @@ Requirements Management and Traceability Work Products
    :typed_by: gd_temp_qx_req_trace_template
 
    **Purpose:** Links from needs to requirements to design and verification, with gaps listed.
+
+   **Kind:** register
 

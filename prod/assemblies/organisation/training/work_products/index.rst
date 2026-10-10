@@ -15,6 +15,8 @@ Training Work Products
 
    **Purpose:** Roles x required trainings x people, with validity dates.
 
+   **Kind:** register
+
 .. workproduct:: Training Material
    :id: wp_qx_trn_training_material
    :status: valid
@@ -25,6 +27,8 @@ Training Work Products
 
    **Purpose:** Training content per process area, versioned with the framework.
 
+   **Kind:** material
+
 .. workproduct:: Training Path
    :id: wp_qx_trn_training_path
    :status: valid
@@ -32,6 +36,8 @@ Training Work Products
    :tags: training
 
    **Purpose:** The trainings a person plans to take for a role, agreed with their line manager.
+
+   **Kind:** material
 
    **Produced by:** processes outside these areas; used here as an input.
 

@@ -12,6 +12,8 @@ Risk Management Work Products
 
    **Purpose:** Risk sources, risk appetite and the scales the organisation uses to rate risk.
 
+   **Kind:** definition
+
    **Produced by:** processes outside these areas; used here as an input.
 
 .. workproduct:: Risk Register
@@ -24,6 +26,8 @@ Risk Management Work Products
 
    **Purpose:** Identified risks with rating, owner, treatment and status.
 
+   **Kind:** register
+
 .. workproduct:: Risk Report
    :id: wp_qx_risk_report
    :status: draft
@@ -33,4 +37,6 @@ Risk Management Work Products
    :typed_by: gd_temp_qx_risk_report_template
 
    **Purpose:** Risk position for the review period: new, changed and closed risks and open treatments.
+
+   **Kind:** report
 

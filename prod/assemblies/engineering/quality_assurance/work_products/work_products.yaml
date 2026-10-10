@@ -2,6 +2,7 @@
 work_products:
 - id: wp_qx_qa_qms_plan
   title: QMS Plan
+  kind: plan
   status: draft
   purpose: |-
     The Quality Management System (QMS) Plan is the authoritative organisation-level
@@ -17,6 +18,7 @@ work_products:
   - std_req_iso15288_625
 - id: wp_qx_qa_audit_report
   title: Audit Report
+  kind: evidence
   status: draft
   purpose: |-
     The Audit Report records the findings, non-conformities, observations, and

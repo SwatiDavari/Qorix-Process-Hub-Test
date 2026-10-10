@@ -2,12 +2,14 @@
 work_products:
 - id: wp_qx_req_stakeholder_needs
   title: "Stakeholder Needs"
+  kind: need
   status: draft
   purpose: "Needs and constraints stated by customers, regulators and internal stakeholders."
   origin: external
   internal: true
 - id: wp_qx_req_requirements_spec
   title: "Requirements Specification"
+  kind: requirement
   status: draft
   purpose: "Agreed set of requirements for the scope in question, each with identifier, attributes and verification criterion."
   template: gd_temp_qx_req_spec_template
@@ -18,6 +20,7 @@ work_products:
   - std_req_aspice_40_swe_1
 - id: wp_qx_req_traceability_record
   title: "Traceability Record"
+  kind: register
   status: draft
   purpose: "Links from needs to requirements to design and verification, with gaps listed."
   template: gd_temp_qx_req_trace_template

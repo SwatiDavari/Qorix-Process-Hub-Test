@@ -12,6 +12,8 @@ Decision Management Work Products
 
    **Purpose:** The question to be decided, who is affected and the date a decision is needed.
 
+   **Kind:** request
+
    **Produced by:** processes outside these areas; used here as an input.
 
 .. workproduct:: Options Analysis
@@ -24,6 +26,8 @@ Decision Management Work Products
 
    **Purpose:** Decision criteria, options considered and the evaluation of each against the criteria.
 
+   **Kind:** analysis
+
 .. workproduct:: Decision Record
    :id: wp_qx_dec_decision_record
    :status: draft
@@ -33,4 +37,6 @@ Decision Management Work Products
    :typed_by: gd_temp_qx_dec_record_template
 
    **Purpose:** The decision taken, its rationale, the options rejected, the owner and the date.
+
+   **Kind:** record
 

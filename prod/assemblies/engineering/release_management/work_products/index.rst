@@ -14,3 +14,5 @@ Release Management Work Products
 
    **Purpose:** Announces the released organisation level baseline to projects, with the changes it contains and any open points.
 
+   **Kind:** record
+

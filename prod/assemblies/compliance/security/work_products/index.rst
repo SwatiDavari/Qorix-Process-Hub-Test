@@ -14,6 +14,8 @@ Security Work Products
 
    **Purpose:** The Cybersecurity Management System document covering Qorix's organisation level cybersecurity activities, objectives, and incident response procedures.
 
+   **Kind:** definition
+
 .. workproduct:: Incident Report
    :id: wp_qx_sec_incident_report
    :status: draft
@@ -23,4 +25,6 @@ Security Work Products
    :typed_by: gd_temp_qx_sec_incident_template
 
    **Purpose:** Record of a security incident: description, affected systems/projects, timeline, response actions, lessons learned.
+
+   **Kind:** record
 

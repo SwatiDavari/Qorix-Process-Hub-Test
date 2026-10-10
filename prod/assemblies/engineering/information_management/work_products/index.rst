@@ -12,6 +12,8 @@ Information and Documentation Management Work Products
 
    **Purpose:** A request to create, change or withdraw a controlled document, with reason.
 
+   **Kind:** request
+
    **Produced by:** processes outside these areas; used here as an input.
 
 .. workproduct:: Documentation Plan
@@ -24,6 +26,8 @@ Information and Documentation Management Work Products
 
    **Purpose:** Information to be kept, with owner, form, classification and retention.
 
+   **Kind:** plan
+
 .. workproduct:: Document Register
    :id: wp_qx_info_document_register
    :status: draft
@@ -33,4 +37,6 @@ Information and Documentation Management Work Products
    :typed_by: gd_temp_qx_info_register_template
 
    **Purpose:** Register of controlled documents with owner, version, classification and location.
+
+   **Kind:** register
 

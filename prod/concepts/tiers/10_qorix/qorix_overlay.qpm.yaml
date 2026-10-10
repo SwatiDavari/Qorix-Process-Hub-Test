@@ -78,6 +78,17 @@ operations:
       outcomes as well as to ASPICE IIC work product characteristics. The base rule stays valid;
       the overlay only adds these two accepted families.
 
+  - op: extend_element_type
+    name: workproduct
+    add_attributes:
+      kind:
+        required: false
+        enum: [need, requirement, definition, analysis, plan, request, baseline, report, evidence, policy, rule, material, record, register]
+        description: What the work product does for the process, independent of lifecycle model and technology (needs/artifact_kinds.yaml)
+    rationale: >
+      Classifies every work product by purpose so a process reads the same under any lifecycle model
+      or technology. Optional in the metamodel; the hub checker (qpm check-process) requires it.
+
   # ------------------------------------------------------------ WP triad: purpose / concept / template
   - op: add_relation_type
     name: typed_by

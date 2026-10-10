@@ -15,6 +15,8 @@ Validation Work Products
 
    **Purpose:** Test objectives, methods and coverage targets per ASIL / CAL and test level.
 
+   **Kind:** policy
+
 .. workproduct:: Test System Specification and Qualification
    :id: wp_qx_val_test_system_spec
    :status: valid
@@ -26,6 +28,8 @@ Validation Work Products
 
    **Purpose:** Definition, configuration baseline and qualification evidence of each test system.
 
+   **Kind:** definition
+
 .. workproduct:: Validation Report
    :id: wp_qx_val_validation_report
    :status: valid
@@ -36,6 +40,8 @@ Validation Work Products
 
    **Purpose:** Evidence that the released product meets its stakeholder requirements in the target environment.
 
+   **Kind:** evidence
+
 .. workproduct:: Verification Plan
    :id: wp_qx_val_verification_plan
    :status: valid
@@ -43,6 +49,8 @@ Validation Work Products
    :tags: validation
 
    **Purpose:** The project's verification plan the test policy must align with.
+
+   **Kind:** plan
 
    **Produced by:** processes outside these areas; used here as an input.
 
@@ -53,6 +61,8 @@ Validation Work Products
    :tags: validation
 
    **Purpose:** The stakeholder requirements a product is validated against.
+
+   **Kind:** requirement
 
    **Produced by:** processes outside these areas; used here as an input.
 

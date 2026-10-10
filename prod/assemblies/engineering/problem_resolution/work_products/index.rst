@@ -12,6 +12,8 @@ Problem Resolution Work Products
 
    **Purpose:** Problem as first reported, with source, date and evidence.
 
+   **Kind:** record
+
    **Produced by:** processes outside these areas; used here as an input.
 
 .. workproduct:: Problem Record
@@ -24,6 +26,8 @@ Problem Resolution Work Products
 
    **Purpose:** Analysed problem with severity, cause, impact, owner and status.
 
+   **Kind:** record
+
 .. workproduct:: Resolution Report
    :id: wp_qx_prb_resolution_report
    :status: draft
@@ -33,4 +37,6 @@ Problem Resolution Work Products
    :typed_by: gd_temp_qx_prb_resolution_template
 
    **Purpose:** Action taken, verification of the fix and closure date.
+
+   **Kind:** report
 

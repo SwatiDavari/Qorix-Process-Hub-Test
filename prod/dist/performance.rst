@@ -81,6 +81,10 @@ Operations log
      - ``None``
      - Qorix work products carry `complies` to ISO/IEC/IEEE 15288 clauses and to ASPICE process outcomes as well as to ASPICE IIC work product characteristics. The base rule stays valid; the overlay only adds these two accepted families.
    * - qorix
+     - extend_element_type
+     - ``workproduct``
+     - Classifies every work product by purpose so a process reads the same under any lifecycle model or technology. Optional in the metamodel; the hub checker (qpm check-process) requires it.
+   * - qorix
      - add_relation_type
      - ``typed_by``
      - -

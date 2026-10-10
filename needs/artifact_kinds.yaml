@@ -1,0 +1,49 @@
+# Artifact kinds: what a work product does for the process, independent of lifecycle model or technology.
+# Every work product carries exactly one `kind`. Categories group the kinds. IDs of kinds use single underscores.
+categories:
+- id: intent
+  title: Intent
+  purpose: Why the work exists and for whom.
+  kinds:
+  - {id: need, purpose: A stated need, objective, constraint or assumption of a stakeholder or the organisation.}
+- id: specification
+  title: Specification
+  purpose: What must hold.
+  kinds:
+  - {id: requirement, purpose: A verifiable statement of what the item or process must satisfy.}
+- id: definition
+  title: Definition
+  purpose: What something is.
+  kinds:
+  - {id: definition, purpose: A description of an item, process, profile or scope (structure, interfaces, behaviour or boundaries).}
+- id: analysis
+  title: Analysis
+  purpose: What could go wrong or differ, and the options.
+  kinds:
+  - {id: analysis, purpose: An assessment of risks, options or trade-offs that supports a decision.}
+- id: plan_control
+  title: Plan and control
+  purpose: How the work is run.
+  kinds:
+  - {id: plan, purpose: Intended activities, resources, schedule and responsibilities.}
+  - {id: request, purpose: A formal ask that starts work or a decision (change, document, decision).}
+  - {id: baseline, purpose: An approved, controlled configuration of items against which change is managed.}
+  - {id: report, purpose: Status, measurement or result information reported to a stakeholder.}
+- id: evidence
+  title: Evidence
+  purpose: Proof that something holds.
+  kinds:
+  - {id: evidence, purpose: A recorded result of verification, validation, review, assessment or audit.}
+- id: governance
+  title: Governance
+  purpose: Rules and material people follow.
+  kinds:
+  - {id: policy, purpose: An organisation-level statement of intent and direction.}
+  - {id: rule, purpose: A tailoring rule, overlay or procedure that constrains how a process is carried out.}
+  - {id: material, purpose: Training or guidance material that builds competence.}
+- id: record
+  title: Record
+  purpose: What was decided, found or kept.
+  kinds:
+  - {id: record, purpose: A dated entry of a decision, problem, incident, release or tailoring.}
+  - {id: register, purpose: A maintained list or matrix of items, risks, competences or links.}

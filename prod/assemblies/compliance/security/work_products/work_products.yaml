@@ -2,6 +2,7 @@
 work_products:
 - id: wp_qx_sec_policies
   title: Cybersecurity Management System Document
+  kind: definition
   status: draft
   purpose: The Cybersecurity Management System document covering Qorix's organisation level cybersecurity
     activities, objectives, and incident response procedures.
@@ -10,6 +11,7 @@ work_products:
   - std_wp_isosae21434_org_management_551
 - id: wp_qx_sec_incident_report
   title: Incident Report
+  kind: record
   status: draft
   purpose: 'Record of a security incident: description, affected systems/projects, timeline, response
     actions, lessons learned.'

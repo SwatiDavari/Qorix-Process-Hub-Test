@@ -12,6 +12,8 @@ Verification and Reviews Work Products
 
    **Purpose:** The work product to be verified, in the version submitted for review.
 
+   **Kind:** definition
+
    **Produced by:** processes outside these areas; used here as an input.
 
 .. workproduct:: Verification Plan
@@ -24,6 +26,8 @@ Verification and Reviews Work Products
 
    **Purpose:** Criteria, method, reviewers and schedule for verifying the work product.
 
+   **Kind:** plan
+
 .. workproduct:: Review Record
    :id: wp_qx_vnr_review_record
    :status: draft
@@ -33,4 +37,6 @@ Verification and Reviews Work Products
    :typed_by: gd_temp_qx_vnr_record_template
 
    **Purpose:** Findings, owners, dates and closure status of the review.
+
+   **Kind:** evidence
 

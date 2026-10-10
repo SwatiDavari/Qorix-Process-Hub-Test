@@ -12,6 +12,8 @@ Project Planning and Control Work Products
 
    **Purpose:** Scope statement, constraints and stakeholders from the project's commissioning.
 
+   **Kind:** plan
+
    **Produced by:** processes outside these areas; used here as an input.
 
 .. workproduct:: Project Plan
@@ -24,6 +26,8 @@ Project Planning and Control Work Products
 
    **Purpose:** Approved plan with scope, schedule, resources, responsibilities and the processes the project applies.
 
+   **Kind:** plan
+
 .. workproduct:: Project Status Report
    :id: wp_qx_plan_status_report
    :status: draft
@@ -33,4 +37,6 @@ Project Planning and Control Work Products
    :typed_by: gd_temp_qx_plan_status_template
 
    **Purpose:** Progress against the plan, deviations, actions and escalations for the review period.
+
+   **Kind:** report
 

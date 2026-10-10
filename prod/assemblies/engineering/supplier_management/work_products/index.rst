@@ -12,6 +12,8 @@ Supplier and Acquisition Management Work Products
 
    **Purpose:** What is to be acquired, why and by when.
 
+   **Kind:** need
+
    **Produced by:** processes outside these areas; used here as an input.
 
 .. workproduct:: Supplier Agreement
@@ -24,6 +26,8 @@ Supplier and Acquisition Management Work Products
 
    **Purpose:** Agreed requirements, deliverables, acceptance criteria and process obligations.
 
+   **Kind:** record
+
 .. workproduct:: Supplier Review
    :id: wp_qx_sup_supplier_review
    :status: draft
@@ -33,4 +37,6 @@ Supplier and Acquisition Management Work Products
    :typed_by: gd_temp_qx_sup_review_template
 
    **Purpose:** Supplier progress, deliverable status, deviations and actions for the period.
+
+   **Kind:** evidence
 

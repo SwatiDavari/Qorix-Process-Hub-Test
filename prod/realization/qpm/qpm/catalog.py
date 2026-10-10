@@ -419,6 +419,8 @@ def render_area(a: dict[str, Any], areas: list[dict[str, Any]] | None = None) ->
         opts = _opt("complies", wp.get("complies")) + _opt("has", wp.get("concept")) + _opt("typed_by", wp.get("template"))
         wp_txt += _need("workproduct", wp["title"], wp["id"], wp.get("status", "valid"), aid, opts)
         wp_txt += "   **Purpose:** " + _md(" ".join(wp["purpose"].split())) + "\n\n"
+        if wp.get("kind"):
+            wp_txt += f"   **Kind:** {wp['kind']}\n\n"
         if wp.get("origin") == "external":
             wp_txt += "   **Produced by:** processes outside these areas; used here as an input.\n\n"
     if not a.get("workproducts"):

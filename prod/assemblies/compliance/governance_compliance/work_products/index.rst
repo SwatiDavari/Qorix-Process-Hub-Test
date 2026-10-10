@@ -14,6 +14,8 @@ Governance & Compliance Work Products
 
    **Purpose:** The versioned Qorix tier (prod/concepts/tiers/10_qorix) and the Qorix process areas: the organisation-specific rules and processes.
 
+   **Kind:** rule
+
 .. workproduct:: Project Tailoring Record
    :id: wp_qx_gc_project_tailoring
    :status: valid
@@ -24,6 +26,8 @@ Governance & Compliance Work Products
    :typed_by: gd_temp_qx_gc_project_tailoring
 
    **Purpose:** dist/<id>/tailoring.qpm.yaml plus the generated tailoring report: integrity ceilings (ASIL, CAL, ASPICE level) and every narrowing with its rationale.
+
+   **Kind:** record
 
 .. workproduct:: Compliance Audit Report
    :id: wp_qx_gc_audit_report
@@ -36,6 +40,8 @@ Governance & Compliance Work Products
 
    **Purpose:** Result of a process / work-product audit, with findings recorded as gc_finding needs.
 
+   **Kind:** evidence
+
 .. workproduct:: Process Description
    :id: wp_qx_gc_process_description
    :status: valid
@@ -43,6 +49,8 @@ Governance & Compliance Work Products
    :tags: governance_compliance
 
    **Purpose:** Existing documented processes that the overlay must stay consistent with.
+
+   **Kind:** definition
 
    **Produced by:** processes outside these areas; used here as an input.
 
@@ -54,6 +62,8 @@ Governance & Compliance Work Products
 
    **Purpose:** Lessons learned and improvement requests collected from projects and audits.
 
+   **Kind:** report
+
    **Produced by:** processes outside these areas; used here as an input.
 
 .. workproduct:: Feature Request
@@ -64,6 +74,8 @@ Governance & Compliance Work Products
 
    **Purpose:** The project's scope and product features, used to set its integrity ceilings.
 
+   **Kind:** request
+
    **Produced by:** processes outside these areas; used here as an input.
 
 .. workproduct:: Safety Plan
@@ -73,6 +85,8 @@ Governance & Compliance Work Products
    :tags: governance_compliance
 
    **Purpose:** The project's safety plan, used as audit input.
+
+   **Kind:** plan
 
    **Produced by:** processes outside these areas; used here as an input.
 

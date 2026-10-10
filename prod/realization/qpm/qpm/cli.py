@@ -11,7 +11,7 @@ import argparse
 import sys
 from pathlib import Path
 
-from . import catalog, registers, reports
+from . import catalog, kinds, registers, reports
 from .adapters import sphinx_needs
 from .compose import compose
 from .model import QpmError, dump_json, dump_yaml, load_yaml
@@ -70,7 +70,7 @@ def main(argv: list[str] | None = None) -> int:
             errs = catalog.check_catalog(areas, stds)
             objs, pols = registers.load_registers(a.standards)
             rerrs, rwarns = registers.check_registers(objs, pols, areas, stds)
-            errs += rerrs + registers.check_minimum(areas)
+            errs += rerrs + registers.check_minimum(areas) + kinds.check_kinds(areas)
             for w in rwarns:
                 print(f"warning: {w}", file=sys.stderr)
             if errs:

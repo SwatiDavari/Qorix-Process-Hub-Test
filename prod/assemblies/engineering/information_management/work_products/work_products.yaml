@@ -2,12 +2,14 @@
 work_products:
 - id: wp_qx_info_document_request
   title: "Document Request"
+  kind: request
   status: draft
   purpose: "A request to create, change or withdraw a controlled document, with reason."
   origin: external
   internal: true
 - id: wp_qx_info_document_plan
   title: "Documentation Plan"
+  kind: plan
   status: draft
   purpose: "Information to be kept, with owner, form, classification and retention."
   template: gd_temp_qx_info_plan_template
@@ -15,6 +17,7 @@ work_products:
   - std_req_iso15288_636
 - id: wp_qx_info_document_register
   title: "Document Register"
+  kind: register
   status: draft
   purpose: "Register of controlled documents with owner, version, classification and location."
   template: gd_temp_qx_info_register_template

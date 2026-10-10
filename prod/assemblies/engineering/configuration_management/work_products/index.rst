@@ -13,6 +13,8 @@ Configuration Management Work Products
 
    **Purpose:** Quality management system status report input to process management reviews.
 
+   **Kind:** report
+
    **Produced by:** processes outside these areas; used here as an input.
 
 .. workproduct:: Policies
@@ -25,6 +27,8 @@ Configuration Management Work Products
 
    **Purpose:** Updated process policies and plans as output of process management activities.
 
+   **Kind:** policy
+
 .. workproduct:: Configuration Item List
    :id: wp_qx_cfg_config_item_list
    :status: draft
@@ -35,6 +39,8 @@ Configuration Management Work Products
 
    **Purpose:** List of organisation level configuration items under control, with owner and version.
 
+   **Kind:** register
+
 .. workproduct:: Baseline Record
    :id: wp_qx_cfg_baseline
    :status: draft
@@ -44,4 +50,6 @@ Configuration Management Work Products
    :typed_by: gd_temp_qx_cfg_baseline_template
 
    **Purpose:** Frozen, versioned set of configuration items that reflects all approved changes. Input to release.
+
+   **Kind:** baseline
 

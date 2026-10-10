@@ -2,6 +2,7 @@
 work_products:
 - id: wp_qx_rel_release_notice
   title: Release Notice
+  kind: record
   status: draft
   purpose: Announces the released organisation level baseline to projects, with the changes it contains and any open points.
   template: gd_temp_qx_rel_release_notice_template

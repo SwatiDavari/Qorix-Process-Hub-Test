@@ -14,6 +14,8 @@ Infrastructure Work Products
 
    **Purpose:** Pinned versions of Bazel, the docs toolchain, Python and qpm per framework release.
 
+   **Kind:** baseline
+
 .. workproduct:: Project Repository Baseline
    :id: wp_qx_infra_repo_baseline
    :status: valid
@@ -25,6 +27,8 @@ Infrastructure Work Products
 
    **Purpose:** A project repo wired to the framework (MODULE.bazel, BUILD, tailoring, CI).
 
+   **Kind:** baseline
+
 .. workproduct:: Tool Requirements
    :id: wp_qx_infra_tool_requirements
    :status: valid
@@ -32,6 +36,8 @@ Infrastructure Work Products
    :tags: infrastructure
 
    **Purpose:** Requirements on the process tools, from the areas that use them.
+
+   **Kind:** requirement
 
    **Produced by:** processes outside these areas; used here as an input.
 
@@ -44,4 +50,6 @@ Infrastructure Work Products
    :has: doc_concept_qx_infra_infra
 
    **Purpose:** Evidence that a tool or test system is qualified for its intended use (tool confidence level).
+
+   **Kind:** evidence
 

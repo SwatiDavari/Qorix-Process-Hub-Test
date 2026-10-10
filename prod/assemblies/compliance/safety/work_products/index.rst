@@ -14,6 +14,8 @@ Safety Work Products
 
    **Purpose:** The Functional Safety Management System document covering Qorix's organisation level safety activities, objectives, and process tailoring rules.
 
+   **Kind:** definition
+
 .. workproduct:: Safety Tailoring Rules
    :id: wp_qx_saf_safety_tailoring
    :status: draft
@@ -23,6 +25,8 @@ Safety Work Products
    :typed_by: gd_temp_qx_saf_tailoring_template
 
    **Purpose:** Tailoring rules for project-level safety plans derived from the organisation level FSMS.
+
+   **Kind:** rule
 
 .. workproduct:: Safety Anomaly Report
    :id: wp_qx_saf_safety_anomaly_report
@@ -34,6 +38,8 @@ Safety Work Products
 
    **Purpose:** Record of a safety anomaly, its analysis, resolution, and notification to affected projects.
 
+   **Kind:** record
+
 .. workproduct:: Safety Policies
    :id: wp_qx_saf_policies
    :status: draft
@@ -43,4 +49,6 @@ Safety Work Products
    :typed_by: gd_temp_qx_saf_fsms_template
 
    **Purpose:** Organisation level safety policies updated as output of safety management activities.
+
+   **Kind:** policy
 

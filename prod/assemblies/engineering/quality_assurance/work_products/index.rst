@@ -14,6 +14,8 @@ Quality Assurance Work Products
 
    **Purpose:** The Quality Management System (QMS) Plan is the authoritative organisation-level document defining the QMS scope, discipline plans, audit cadence, and improvement tracking. **Produced by:** Workflow *Maintain Quality Management System* **Consumed by:** Workflow *Conduct Organisation Level Internal Audit*
 
+   **Kind:** plan
+
 .. workproduct:: Audit Report
    :id: wp_qx_qa_audit_report
    :status: draft
@@ -23,4 +25,6 @@ Quality Assurance Work Products
    :typed_by: gd_temp_qx_qa_audit_report_template
 
    **Purpose:** The Audit Report records the findings, non-conformities, observations, and action items from an organisation-level internal audit. **Produced by:** Workflow *Conduct Organisation Level Internal Audit* **Consumed by:** Workflow *Maintain Quality Management System*
+
+   **Kind:** evidence
 

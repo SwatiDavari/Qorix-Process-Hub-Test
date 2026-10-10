@@ -440,3 +440,29 @@ def test_overlay_widens_workproduct_rule_to_15288_and_aspice():
     alts = next(r for r in m["rules"] if r["id"] == "workproduct_aspice_40")["check"]["expect"]["or"]
     assert {"id contains aspice_40_iic", "id contains std_wp"} <= set(alts)
     assert {"id contains std_req_iso15288", "id contains std_req_aspice_40"} <= set(alts)
+
+
+def test_every_workproduct_has_a_known_kind():
+    from qpm import kinds
+    areas = catalog.load_catalog(ASSEMBLIES)
+    assert kinds.check_kinds(areas) == []
+    cat, _ = kinds.load_kinds()
+    used = {wp["kind"] for a in areas for wp in a.get("workproducts") or []}
+    assert used <= set(cat) and len(cat) >= 10
+
+
+def test_missing_or_unknown_kind_is_reported():
+    from qpm import kinds
+    areas = catalog.load_catalog(ASSEMBLIES)
+    wp = areas[0]["workproducts"][0]
+    wp["kind"] = "banana"
+    assert any("unknown kind 'banana'" in e for e in kinds.check_kinds(areas))
+    del wp["kind"]
+    assert any("kind is required" in e for e in kinds.check_kinds(areas))
+
+
+def test_overlay_adds_workproduct_kind_attribute():
+    m = compose([BASE, OVERLAY])
+    from qpm import kinds
+    cat, _ = kinds.load_kinds()
+    assert set(m["element_types"]["workproduct"]["attributes"]["kind"]["enum"]) == set(cat)

@@ -12,6 +12,8 @@ Process Improvement and Tailoring Work Products
 
    **Purpose:** Audit findings, metrics, problem records and feedback that point to a process change.
 
+   **Kind:** record
+
    **Produced by:** processes outside these areas; used here as an input.
 
 .. workproduct:: Improvement Plan
@@ -24,6 +26,8 @@ Process Improvement and Tailoring Work Products
 
    **Purpose:** Selected improvements with owner, date, expected effect and evidence.
 
+   **Kind:** plan
+
 .. workproduct:: Project Profile
    :id: wp_qx_pim_project_profile
    :status: draft
@@ -31,6 +35,8 @@ Process Improvement and Tailoring Work Products
    :tags: process_improvement
 
    **Purpose:** The project's safety level, cybersecurity level, size and constraints.
+
+   **Kind:** definition
 
    **Produced by:** processes outside these areas; used here as an input.
 
@@ -43,4 +49,6 @@ Process Improvement and Tailoring Work Products
    :typed_by: gd_temp_qx_pim_tailoring_template
 
    **Purpose:** Parts of the organisation level process the project narrows, with rationale and approval.
+
+   **Kind:** record
 

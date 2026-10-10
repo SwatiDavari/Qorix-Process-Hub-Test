@@ -12,6 +12,8 @@ Measurement and Metrics Work Products
 
    **Purpose:** What a decision maker needs to know and why.
 
+   **Kind:** need
+
    **Produced by:** processes outside these areas; used here as an input.
 
 .. workproduct:: Metrics Plan
@@ -24,6 +26,8 @@ Measurement and Metrics Work Products
 
    **Purpose:** Defined metrics with information need, source, interval, owner and target.
 
+   **Kind:** plan
+
 .. workproduct:: Metrics Report
    :id: wp_qx_meas_metrics_report
    :status: draft
@@ -33,4 +37,6 @@ Measurement and Metrics Work Products
    :typed_by: gd_temp_qx_meas_report_template
 
    **Purpose:** Metric values for the period with trend and interpretation.
+
+   **Kind:** report
 

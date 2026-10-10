@@ -2,12 +2,14 @@
 work_products:
 - id: wp_qx_sup_acquisition_need
   title: "Acquisition Need"
+  kind: need
   status: draft
   purpose: "What is to be acquired, why and by when."
   origin: external
   internal: true
 - id: wp_qx_sup_agreement
   title: "Supplier Agreement"
+  kind: record
   status: draft
   purpose: "Agreed requirements, deliverables, acceptance criteria and process obligations."
   template: gd_temp_qx_sup_agreement_template
@@ -17,6 +19,7 @@ work_products:
   - std_req_aspice_40_acq_4
 - id: wp_qx_sup_supplier_review
   title: "Supplier Review"
+  kind: evidence
   status: draft
   purpose: "Supplier progress, deliverable status, deviations and actions for the period."
   template: gd_temp_qx_sup_review_template
