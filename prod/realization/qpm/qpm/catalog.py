@@ -466,30 +466,8 @@ def _std_list(ar: dict[str, Any]) -> list[str]:
     return sorted(ar.get("standards") or [], key=fam)
 
 
-def _meta_line(a: dict[str, Any], owners: dict[str, str]) -> str:
-    nwf, nwp = len(a.get("workflows") or []), len(a.get("workproducts") or [])
-    own = owners.get(a["area"]["owner"], a["area"]["owner"])
-    return f"Owner: {own} · {nwf} workflow{'s' if nwf != 1 else ''} · {nwp} work product{'s' if nwp != 1 else ''}"
-
-
-def _card(a: dict[str, Any], owners: dict[str, str]) -> str:
-    ar = a["area"]
-    st = ar["status"]
-    extra = [x for x in (ar.get("enabler", "-"), ar.get("scope", "-"), ar.get("layer", "-")) if x not in ("-", "GLOB")]
-    chips = f":bdg-{STATUS[st]}:`{st}`" + (f" :bdg-light:`{' / '.join(extra)}`" if extra else "")
-    stds = " ".join(_std_badge(x) for x in _std_list(ar))
-    body = [chips, ""] + ([stds, ""] if stds else []) + [" ".join(ar["purpose"].split()), "", "+++", _meta_line(a, owners)]
-    lines = [f".. grid-item-card:: {ar['title']}", f"   :link: qx_assembly_{ar['id']}", "   :link-type: ref", ""]
-    lines += [("   " + l) if l else "" for l in body]
-    return _indent("\n".join(lines), 3) + "\n\n"
-
-
-def _grid(cards: list[str]) -> str:
-    return ".. grid:: 1 2 3 3\n   :gutter: 2\n\n" + "".join(cards)
-
-
-def _table(areas: list[dict[str, Any]], owners: dict[str, str]) -> str:
-    out = (".. list-table::\n   :header-rows: 1\n   :widths: 26 16 26 9 12 11\n\n"
+def _table(areas: list[dict[str, Any]], owners: dict[str, str], group: str = "") -> str:
+    out = (".. list-table::" + (f" {group}" if group else "") + "\n   :header-rows: 1\n   :widths: 26 16 26 9 12 11\n   :class: qx-reg\n\n"
            "   * - Process\n     - Owner\n     - Standards\n     - Workflows\n     - Work products\n     - Status\n")
     for a in areas:
         ar = a["area"]
@@ -518,7 +496,7 @@ def _std_short(x: str) -> str:
 def _matrix(areas: list[dict[str, Any]], owners: dict[str, str]) -> str:
     """Standards coverage: one row per process, one column per standard clause the cluster cites."""
     cols = sorted({x for a in areas for x in a["area"].get("standards") or []}, key=lambda x: (_std_family(x), x))
-    out = (".. list-table::\n   :header-rows: 1\n   :class: qx-matrix\n\n   * - Process\n"
+    out = (".. list-table::\n   :header-rows: 1\n   :class: qx-reg qx-matrix\n\n   * - Process\n"
            + "".join(f"     - {_std_short(c)}\n" for c in cols))
     for a in areas:
         have = set(a["area"].get("standards") or [])
@@ -533,7 +511,7 @@ def _score(n: int, ok: bool | None = None) -> str:
 
 def _scorecard(areas: list[dict[str, Any]], owners: dict[str, str]) -> str:
     """Completeness against the minimum definition; recomputed from the YAML on every render."""
-    out = (".. list-table::\n   :header-rows: 1\n   :class: qx-scorecard\n\n"
+    out = (".. list-table::\n   :header-rows: 1\n   :class: qx-reg qx-scorecard\n\n"
            "   * - Process\n     - Outcomes\n     - Capabilities\n     - Workflows\n     - With gates\n"
            "     - Work products\n     - Roles\n     - Templates\n")
     for a in areas:
@@ -549,18 +527,16 @@ def _scorecard(areas: list[dict[str, Any]], owners: dict[str, str]) -> str:
 
 
 def _cluster_body(cluster: str, areas: list[dict[str, Any]], owners: dict[str, str]) -> str:
-    """Cluster content: plain card grid, or (when the cluster defines groups) tabular tabs:
-    grouped register, standards coverage matrix and completeness scorecard."""
-    groups = CLUSTER_GROUPS.get(cluster)
-    if not groups:
-        return _grid([_card(a, owners) for a in areas])
+    """Cluster content for every cluster: three tabular tabs (grouped register, standards coverage
+    matrix, completeness scorecard). Clusters without groups show one register table."""
+    groups = CLUSTER_GROUPS.get(cluster) or []
     by: dict[str, list[dict[str, Any]]] = {}
     for a in sorted(areas, key=lambda x: x["area"]["title"]):
-        by.setdefault(a["area"].get("group") or "Other", []).append(a)
+        by.setdefault(a["area"].get("group") or "", []).append(a)
     order = [g for g in groups if g in by] + [g for g in by if g not in groups]
     flat = [a for g in order for a in by[g]]
-    register = "".join(f".. rubric:: {g}\n\n{_table(by[g], owners)}" for g in order)
-    return (".. tab-set::\n\n   .. tab-item:: Grouped register\n\n" + _indent(register, 6) + "\n\n"
+    register = "".join(_table(by[g], owners, g) for g in order)
+    return (".. tab-set::\n   :class: qx-tabs\n\n   .. tab-item:: Grouped register\n\n" + _indent(register, 6) + "\n\n"
             "   .. tab-item:: Standards coverage\n\n" + _indent(_matrix(flat, owners), 6) + "\n\n"
             "   .. tab-item:: Completeness\n\n" + _indent(_scorecard(flat, owners), 6) + "\n\n")
 
@@ -590,6 +566,19 @@ def _standards_page(standards: list[dict[str, Any]]) -> str:
     return out
 
 
+def _cluster_index(used: list[str], by_cluster: dict[str, list[dict[str, Any]]]) -> str:
+    """One row per cluster linking to its page; the registers live on the cluster pages only."""
+    out = (".. list-table::\n   :header-rows: 1\n   :widths: 22 58 10 10\n   :class: qx-reg\n\n"
+           "   * - Cluster\n     - Processes\n     - Workflows\n     - Work products\n")
+    for c in used:
+        las = sorted(by_cluster[c], key=lambda x: x["area"]["title"])
+        names = ", ".join(f":ref:`{a['area']['title']} <qx_assembly_{a['area']['id']}>`" for a in las)
+        out += (f"   * - :ref:`{CLUSTERS[c]} <qx_cluster_{c}>`\n     - {names}\n"
+                f"     - {sum(len(a.get('workflows') or []) for a in las)}\n"
+                f"     - {sum(len(a.get('workproducts') or []) for a in las)}\n")
+    return out + "\n"
+
+
 def render_catalog(areas: list[dict[str, Any]], standards: list[dict[str, Any]]) -> dict[str, str]:
     """Return {path relative to prod/: content}: assembly pages, cluster pages, Assemblies and Needs pages."""
     out: dict[str, str] = {}
@@ -611,11 +600,10 @@ def render_catalog(areas: list[dict[str, Any]], standards: list[dict[str, Any]])
             "they use. The process model is described in :ref:`qx_process_model`.\n\n"
             "Assemblies are grouped into cluster assemblies. Each is classified by enabler, scope and "
             "layer:\n\n"
-            ".. list-table::\n   :header-rows: 1\n\n"
+            ".. list-table::\n   :header-rows: 1\n   :class: qx-reg\n\n"
             "   * - Enabler\n     - Scope\n     - Layer\n"
             "   * - PRD, TST, BLD, DOC, SAF, SEC\n     - GLOB, FEAT, COMP, UNIT\n     - INT, REQ, ARC, DES, IMP\n\n")
-    for c in used:
-        idx += _hdr(CLUSTERS[c], "=") + "\n" + _cluster_body(c, by_cluster[c], owners)
+    idx += _hdr("Clusters", "=") + "\n" + _cluster_index(used, by_cluster)
     idx += ".. toctree::\n   :hidden:\n\n" + "".join(f"   {c}/index\n" for c in used)
     out["assemblies/index.rst"] = idx
     out["needs.rst"] = _standards_page(standards)

@@ -170,3 +170,53 @@ table.qx-matrix td:not(:first-child), table.qx-scorecard td:not(:first-child), t
   text-align: center; color: var(--qx-purple); padding: 0.4rem 0.3rem;
 }
 .bd-article .sd-tab-set > .sd-tab-content table.qx-matrix { min-width: 0; }
+
+
+/* ---- Qorix tabular format (from the approved cluster preview): tabs, tables, badges ---- */
+:root {
+  --qx-head: #2d1650; --qx-headfg: #ffffff; --qx-band: #f0ebfd; --qx-title: #4b12b0; --qx-edge: #d9ccf7;
+  --qx-ok: #1d7a46; --qx-okbg: #e2f5ea; --qx-no: #a3361f; --qx-nobg: #fbe7e2;
+  --qx-iso-bg: #ece4ff; --qx-iso-fg: #4b12b0; --qx-iso-bd: #cdbcf5;
+  --qx-asp-bg: #dff3f1; --qx-asp-fg: #0b6b63; --qx-asp-bd: #aedbd6;
+}
+html[data-theme="dark"] {
+  --qx-head: #c3a8ff; --qx-headfg: #1a1230; --qx-band: #221b36; --qx-title: #c3a8ff; --qx-edge: #3b2f5e;
+  --qx-ok: #7ddba0; --qx-okbg: #17321f; --qx-no: #ff9b87; --qx-nobg: #3a1c16;
+  --qx-iso-bg: #2d2447; --qx-iso-fg: #d4c2ff; --qx-iso-bd: #4a3b78;
+  --qx-asp-bg: #123532; --qx-asp-fg: #8fe0d6; --qx-asp-bd: #245e58;
+}
+/* tabs: buttons above a transparent panel (replaces the engine's dark tab panel) */
+.bd-content .qx-tabs.sd-tab-set > label {
+  background: transparent !important; color: var(--qx-ink) !important;
+  border: 1px solid var(--qx-edge) !important; border-radius: 6px !important; padding: 0 0.9em; margin-bottom: 0.6rem;
+}
+.bd-content .qx-tabs.sd-tab-set > input:checked + label {
+  background: var(--qx-head) !important; color: var(--qx-headfg) !important; border-color: var(--qx-head) !important;
+}
+.bd-content .qx-tabs.sd-tab-set > .sd-tab-content {
+  background: transparent !important; color: var(--qx-ink) !important;
+  border: 0 !important; box-shadow: none !important; padding: 0.25rem 0 0 !important;
+}
+/* tables: dark header row, group band as caption, plain rows */
+.bd-content table.qx-reg { border-collapse: collapse; width: 100%; border: 1px solid var(--qx-edge); }
+.bd-content table.qx-reg caption {
+  caption-side: top; text-align: left; background: var(--qx-band); color: var(--qx-title);
+  font-weight: 700; padding: 8px 10px; border: 1px solid var(--qx-edge); border-bottom: 0;
+}
+.bd-content table.qx-reg thead th {
+  background: var(--qx-head) !important; color: var(--qx-headfg) !important; font-size: 12.5px; white-space: nowrap;
+  padding: 8px 10px; border-bottom: 1px solid var(--qx-edge);
+}
+.bd-content table.qx-reg tbody tr, .bd-content table.qx-reg tbody td {
+  background: transparent !important; color: var(--qx-ink); border-bottom: 1px solid var(--qx-edge); padding: 8px 10px;
+}
+.bd-content table.qx-reg td a, .bd-content table.qx-reg td a:visited { color: var(--qx-title); font-weight: 600; }
+.bd-content table.qx-reg code { background: transparent; color: var(--qx-title); }
+/* standard and status badges inside the tables */
+.bd-content table.qx-reg .sd-badge { border: 1px solid transparent; border-radius: 5px; font-weight: 600; font-size: 12px; }
+.bd-content table.qx-reg .sd-bg-primary { background: var(--qx-iso-bg) !important; color: var(--qx-iso-fg) !important; border-color: var(--qx-iso-bd); }
+.bd-content table.qx-reg .sd-bg-info { background: var(--qx-asp-bg) !important; color: var(--qx-asp-fg) !important; border-color: var(--qx-asp-bd); }
+.bd-content table.qx-reg .sd-bg-success { background: var(--qx-okbg) !important; color: var(--qx-ok) !important; border-radius: 10px; }
+.bd-content table.qx-reg .sd-bg-danger { background: var(--qx-nobg) !important; color: var(--qx-no) !important; border-radius: 10px; }
+.bd-content table.qx-reg .sd-bg-secondary, .bd-content table.qx-reg .sd-bg-dark, .bd-content table.qx-reg .sd-bg-light {
+  background: transparent !important; color: var(--qx-ink) !important; border-color: var(--qx-edge); }

@@ -6,21 +6,70 @@
 Organisation
 ############
 
-.. grid:: 1 2 3 3
-   :gutter: 2
+.. tab-set::
+   :class: qx-tabs
 
-   .. grid-item-card:: Training
-      :link: qx_assembly_training
-      :link-type: ref
+   .. tab-item:: Grouped register
 
-      :bdg-secondary:`draft`
+      .. list-table::
+         :header-rows: 1
+         :widths: 26 16 26 9 12 11
+         :class: qx-reg
 
-      :bdg-info:`(training material)` :bdg-dark-line:`ISO 26262-2 cl. 5.4.5` :bdg-dark-line:`ISO/SAE 21434 cl. 5.4.4`
+         * - Process
+           - Owner
+           - Standards
+           - Workflows
+           - Work products
+           - Status
+         * - :ref:`Training <qx_assembly_training>`
+           - Training Coordinator
+           - :bdg-info:`(training material)`
 
-      Make sure every person holding a process role is qualified for it, and keep the evidence (competence matrix, training records) assessor-ready.
+             :bdg-dark-line:`ISO 26262-2 cl. 5.4.5`
 
-      +++
-      Owner: Training Coordinator · 2 workflows · 3 work products
+             :bdg-dark-line:`ISO/SAE 21434 cl. 5.4.4`
+           - 2
+           - 3
+           - :bdg-secondary:`draft`
+
+   .. tab-item:: Standards coverage
+
+      .. list-table::
+         :header-rows: 1
+         :class: qx-reg qx-matrix
+
+         * - Process
+           - (training material)
+           - ISO 26262-2 cl. 5.4.5
+           - ISO/SAE 21434 cl. 5.4.4
+         * - :ref:`Training <qx_assembly_training>`
+           - ●
+           - ●
+           - ●
+
+   .. tab-item:: Completeness
+
+      .. list-table::
+         :header-rows: 1
+         :class: qx-reg qx-scorecard
+
+         * - Process
+           - Outcomes
+           - Capabilities
+           - Workflows
+           - With gates
+           - Work products
+           - Roles
+           - Templates
+         * - :ref:`Training <qx_assembly_training>`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`2 / 2`
+           - :bdg-success:`3`
+           - :bdg-success:`1`
+           - :bdg-success:`1`
 
 .. toctree::
    :hidden:

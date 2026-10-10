@@ -6,21 +6,70 @@
 Testing
 #######
 
-.. grid:: 1 2 3 3
-   :gutter: 2
+.. tab-set::
+   :class: qx-tabs
 
-   .. grid-item-card:: Validation
-      :link: qx_assembly_validation
-      :link-type: ref
+   .. tab-item:: Grouped register
 
-      :bdg-secondary:`draft` :bdg-light:`TST`
+      .. list-table::
+         :header-rows: 1
+         :widths: 26 16 26 9 12 11
+         :class: qx-reg
 
-      :bdg-info:`SYS.5 / VAL.1` :bdg-dark-line:`ISO 26262-4 cl. 8` :bdg-dark-line:`ISO 26262-8 cl. 9`
+         * - Process
+           - Owner
+           - Standards
+           - Workflows
+           - Work products
+           - Status
+         * - :ref:`Validation <qx_assembly_validation>`
+           - Validation Lead
+           - :bdg-info:`SYS.5 / VAL.1`
 
-      Set the organisation-wide test policy, qualify the test systems it relies on, and validate products against stakeholder requirements.
+             :bdg-dark-line:`ISO 26262-4 cl. 8`
 
-      +++
-      Owner: Validation Lead · 3 workflows · 5 work products
+             :bdg-dark-line:`ISO 26262-8 cl. 9`
+           - 3
+           - 5
+           - :bdg-secondary:`draft`
+
+   .. tab-item:: Standards coverage
+
+      .. list-table::
+         :header-rows: 1
+         :class: qx-reg qx-matrix
+
+         * - Process
+           - SYS.5 / VAL.1
+           - ISO 26262-4 cl. 8
+           - ISO 26262-8 cl. 9
+         * - :ref:`Validation <qx_assembly_validation>`
+           - ●
+           - ●
+           - ●
+
+   .. tab-item:: Completeness
+
+      .. list-table::
+         :header-rows: 1
+         :class: qx-reg qx-scorecard
+
+         * - Process
+           - Outcomes
+           - Capabilities
+           - Workflows
+           - With gates
+           - Work products
+           - Roles
+           - Templates
+         * - :ref:`Validation <qx_assembly_validation>`
+           - :bdg-success:`3`
+           - :bdg-success:`3`
+           - :bdg-success:`3`
+           - :bdg-success:`3 / 3`
+           - :bdg-success:`5`
+           - :bdg-success:`3`
+           - :bdg-success:`2`
 
 .. toctree::
    :hidden:

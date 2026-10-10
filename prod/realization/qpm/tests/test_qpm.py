@@ -466,3 +466,23 @@ def test_overlay_adds_workproduct_kind_attribute():
     from qpm import kinds
     cat, _ = kinds.load_kinds()
     assert set(m["element_types"]["workproduct"]["attributes"]["kind"]["enum"]) == set(cat)
+
+
+def test_every_cluster_page_has_the_three_tabs_and_the_index_has_no_copy():
+    areas = catalog.load_catalog(ASSEMBLIES)
+    stds = catalog.load_standards(ROOT / "needs/standards.yaml")
+    out = catalog.render_catalog(areas, stds)
+    pages = {k: v for k, v in out.items() if k.count("/") == 2 and k.endswith("/index.rst")}
+    assert len(pages) == 5
+    for k, v in pages.items():
+        for tab in ("Grouped register", "Standards coverage", "Completeness"):
+            assert f".. tab-item:: {tab}" in v, (k, tab)
+    idx = out["assemblies/index.rst"]
+    assert "tab-set" not in idx and "grid-item-card" not in idx
+    assert idx.count(":ref:`Engineering <qx_cluster_engineering>`") == 1
+
+
+def test_process_names_are_not_repeated_in_one_register():
+    areas = catalog.load_catalog(ASSEMBLIES)
+    titles = [a["area"]["title"] for a in areas]
+    assert len(titles) == len(set(titles))

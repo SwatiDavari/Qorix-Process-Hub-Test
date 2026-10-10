@@ -5,6 +5,7 @@ The Qorix Process Hub is the system of interest: one set of Qorix processes, def
 technology-neutral model, that every Qorix project inherits and narrows in its own tailoring.
 
 .. tab-set::
+   :class: qx-tabs
 
    .. tab-item:: Overview
 
@@ -53,15 +54,15 @@ technology-neutral model, that every Qorix project inherits and narrows in its o
 
             One distribution per project: its composed process and tailoring report.
 
-         .. grid-item-card:: Guide
+   .. tab-item:: Process Hub Guide
+
+      .. grid:: 1 1 1 1
+
+         .. grid-item-card:: Process Hub Guide
             :link: qx_guide
             :link-type: ref
 
-            How to read, reuse and change a process, and the element types of the hub.
-
-   .. tab-item:: Process Hub Guide
-
-      .. include:: guide/body.inc
+            How to read, reuse and change a process, the element types, relations, artifact kinds and abbreviations.
 
 .. toctree::
    :hidden:

@@ -6,21 +6,70 @@
 Build
 #####
 
-.. grid:: 1 2 3 3
-   :gutter: 2
+.. tab-set::
+   :class: qx-tabs
 
-   .. grid-item-card:: Infrastructure
-      :link: qx_assembly_infrastructure
-      :link-type: ref
+   .. tab-item:: Grouped register
 
-      :bdg-secondary:`draft` :bdg-light:`BLD`
+      .. list-table::
+         :header-rows: 1
+         :widths: 26 16 26 9 12 11
+         :class: qx-reg
 
-      :bdg-info:`PIM.3` :bdg-dark-line:`ISO 26262-8 cl. 11` :bdg-dark-line:`ISO/SAE 21434 cl. 5.4.5`
+         * - Process
+           - Owner
+           - Standards
+           - Workflows
+           - Work products
+           - Status
+         * - :ref:`Infrastructure <qx_assembly_infrastructure>`
+           - Infrastructure Lead
+           - :bdg-info:`PIM.3`
 
-      Provide and keep qualified the docs-as-code toolchain (Bazel, Sphinx-needs, qpm), the repository baseline and CI that every Qorix project consumes.
+             :bdg-dark-line:`ISO 26262-8 cl. 11`
 
-      +++
-      Owner: Infrastructure Lead · 2 workflows · 4 work products
+             :bdg-dark-line:`ISO/SAE 21434 cl. 5.4.5`
+           - 2
+           - 4
+           - :bdg-secondary:`draft`
+
+   .. tab-item:: Standards coverage
+
+      .. list-table::
+         :header-rows: 1
+         :class: qx-reg qx-matrix
+
+         * - Process
+           - PIM.3
+           - ISO 26262-8 cl. 11
+           - ISO/SAE 21434 cl. 5.4.5
+         * - :ref:`Infrastructure <qx_assembly_infrastructure>`
+           - ●
+           - ●
+           - ●
+
+   .. tab-item:: Completeness
+
+      .. list-table::
+         :header-rows: 1
+         :class: qx-reg qx-scorecard
+
+         * - Process
+           - Outcomes
+           - Capabilities
+           - Workflows
+           - With gates
+           - Work products
+           - Roles
+           - Templates
+         * - :ref:`Infrastructure <qx_assembly_infrastructure>`
+           - :bdg-success:`2`
+           - :bdg-success:`3`
+           - :bdg-success:`2`
+           - :bdg-success:`2 / 2`
+           - :bdg-success:`4`
+           - :bdg-success:`2`
+           - :bdg-success:`1`
 
 .. toctree::
    :hidden:

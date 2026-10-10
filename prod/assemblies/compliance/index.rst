@@ -6,47 +6,116 @@
 Compliance
 ##########
 
-.. grid:: 1 2 3 3
-   :gutter: 2
+.. tab-set::
+   :class: qx-tabs
 
-   .. grid-item-card:: Governance & Compliance
-      :link: qx_assembly_governance_compliance
-      :link-type: ref
+   .. tab-item:: Grouped register
 
-      :bdg-secondary:`draft`
+      .. list-table::
+         :header-rows: 1
+         :widths: 26 16 26 9 12 11
+         :class: qx-reg
 
-      :bdg-info:`PIM.3 / SUP.1 / MAN.3` :bdg-dark-line:`ISO 26262-2` :bdg-dark-line:`ISO/SAE 21434 cl. 5-6`
+         * - Process
+           - Owner
+           - Standards
+           - Workflows
+           - Work products
+           - Status
+         * - :ref:`Governance & Compliance <qx_assembly_governance_compliance>`
+           - Head of Governance & Compliance
+           - :bdg-info:`PIM.3 / SUP.1 / MAN.3`
 
-      Own the Qorix Process Hub: maintain the Qorix process overlay, approve project tailoring, and run compliance audits.
+             :bdg-dark-line:`ISO 26262-2`
 
-      +++
-      Owner: Head of Governance & Compliance · 3 workflows · 7 work products
+             :bdg-dark-line:`ISO/SAE 21434 cl. 5-6`
+           - 3
+           - 7
+           - :bdg-secondary:`draft`
+         * - :ref:`Safety <qx_assembly_safety>`
+           - Functional Safety Office
+           - :bdg-dark-line:`ISO 26262-2`
 
-   .. grid-item-card:: Safety
-      :link: qx_assembly_safety
-      :link-type: ref
+             :bdg-dark-line:`ISO 26262-8`
+           - 3
+           - 4
+           - :bdg-secondary:`draft`
+         * - :ref:`Security <qx_assembly_security>`
+           - Cybersecurity Office
+           - :bdg-dark-line:`ISO/SAE 21434`
+           - 2
+           - 2
+           - :bdg-secondary:`draft`
 
-      :bdg-secondary:`draft` :bdg-light:`SAF`
+   .. tab-item:: Standards coverage
 
-      :bdg-dark-line:`ISO 26262-2` :bdg-dark-line:`ISO 26262-8`
+      .. list-table::
+         :header-rows: 1
+         :class: qx-reg qx-matrix
 
-      Functional safety management: plan, perform and assess the safety activities ISO 26262 requires for Qorix products.
+         * - Process
+           - PIM.3 / SUP.1 / MAN.3
+           - ISO 26262-2
+           - ISO 26262-8
+           - ISO/SAE 21434
+           - ISO/SAE 21434 cl. 5-6
+         * - :ref:`Governance & Compliance <qx_assembly_governance_compliance>`
+           - ●
+           - ●
+           -
+           -
+           - ●
+         * - :ref:`Safety <qx_assembly_safety>`
+           -
+           - ●
+           - ●
+           -
+           -
+         * - :ref:`Security <qx_assembly_security>`
+           -
+           -
+           -
+           - ●
+           -
 
-      +++
-      Owner: Functional Safety Office · 3 workflows · 4 work products
+   .. tab-item:: Completeness
 
-   .. grid-item-card:: Security
-      :link: qx_assembly_security
-      :link-type: ref
+      .. list-table::
+         :header-rows: 1
+         :class: qx-reg qx-scorecard
 
-      :bdg-secondary:`draft` :bdg-light:`SEC`
-
-      :bdg-dark-line:`ISO/SAE 21434`
-
-      Cybersecurity management: plan, perform and assess the cybersecurity activities ISO/SAE 21434 requires for Qorix products.
-
-      +++
-      Owner: Cybersecurity Office · 2 workflows · 2 work products
+         * - Process
+           - Outcomes
+           - Capabilities
+           - Workflows
+           - With gates
+           - Work products
+           - Roles
+           - Templates
+         * - :ref:`Governance & Compliance <qx_assembly_governance_compliance>`
+           - :bdg-success:`3`
+           - :bdg-success:`3`
+           - :bdg-success:`3`
+           - :bdg-success:`3 / 3`
+           - :bdg-success:`7`
+           - :bdg-success:`4`
+           - :bdg-success:`2`
+         * - :ref:`Safety <qx_assembly_safety>`
+           - :bdg-success:`3`
+           - :bdg-success:`3`
+           - :bdg-success:`3`
+           - :bdg-success:`3 / 3`
+           - :bdg-success:`4`
+           - :bdg-success:`2`
+           - :bdg-success:`3`
+         * - :ref:`Security <qx_assembly_security>`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`2`
+           - :bdg-success:`2 / 2`
+           - :bdg-success:`2`
+           - :bdg-success:`1`
+           - :bdg-success:`2`
 
 .. toctree::
    :hidden:

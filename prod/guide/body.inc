@@ -1,6 +1,7 @@
 Use this guide to find your way around the hub, change a process safely and look up the element types.
 
 .. tab-set::
+   :class: qx-tabs
 
    .. tab-item:: Use it
 
@@ -8,6 +9,7 @@ Use this guide to find your way around the hub, change a process safely and look
 
       .. list-table::
          :header-rows: 1
+         :class: qx-reg
          :widths: 30 70
 
          * - What
@@ -70,6 +72,7 @@ Use this guide to find your way around the hub, change a process safely and look
 
       .. list-table::
          :header-rows: 1
+         :class: qx-reg
          :widths: 14 11 31 44
 
          * - Type
@@ -153,6 +156,7 @@ Use this guide to find your way around the hub, change a process safely and look
 
       .. list-table::
          :header-rows: 1
+         :class: qx-reg
          :widths: 28 72
 
          * - Relation
@@ -178,6 +182,7 @@ Use this guide to find your way around the hub, change a process safely and look
 
       .. list-table::
          :header-rows: 1
+         :class: qx-reg
          :widths: 28 72
 
          * - Category
@@ -205,6 +210,7 @@ Use this guide to find your way around the hub, change a process safely and look
 
       .. list-table::
          :header-rows: 1
+         :class: qx-reg
          :widths: 18 24 58
 
          * - Abbreviation
@@ -280,6 +286,7 @@ Use this guide to find your way around the hub, change a process safely and look
 
       .. list-table::
          :header-rows: 1
+         :class: qx-reg
          :widths: 18 42 40
 
          * - Code

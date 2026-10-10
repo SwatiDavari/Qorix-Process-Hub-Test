@@ -7,14 +7,14 @@ Engineering
 ###########
 
 .. tab-set::
+   :class: qx-tabs
 
    .. tab-item:: Grouped register
 
-      .. rubric:: Plan and control
-
-      .. list-table::
+      .. list-table:: Plan and control
          :header-rows: 1
          :widths: 26 16 26 9 12 11
+         :class: qx-reg
 
          * - Process
            - Owner
@@ -53,11 +53,10 @@ Engineering
            - 3
            - :bdg-secondary:`draft`
 
-      .. rubric:: Requirements and verification
-
-      .. list-table::
+      .. list-table:: Requirements and verification
          :header-rows: 1
          :widths: 26 16 26 9 12 11
+         :class: qx-reg
 
          * - Process
            - Owner
@@ -88,11 +87,10 @@ Engineering
            - 3
            - :bdg-secondary:`draft`
 
-      .. rubric:: Control and release
-
-      .. list-table::
+      .. list-table:: Control and release
          :header-rows: 1
          :widths: 26 16 26 9 12 11
+         :class: qx-reg
 
          * - Process
            - Owner
@@ -145,11 +143,10 @@ Engineering
            - 3
            - :bdg-secondary:`draft`
 
-      .. rubric:: Assure and improve
-
-      .. list-table::
+      .. list-table:: Assure and improve
          :header-rows: 1
          :widths: 26 16 26 9 12 11
+         :class: qx-reg
 
          * - Process
            - Owner
@@ -182,7 +179,7 @@ Engineering
 
       .. list-table::
          :header-rows: 1
-         :class: qx-matrix
+         :class: qx-reg qx-matrix
 
          * - Process
            - 15288 6.1.1-6.1.2
@@ -639,7 +636,7 @@ Engineering
 
       .. list-table::
          :header-rows: 1
-         :class: qx-scorecard
+         :class: qx-reg qx-scorecard
 
          * - Process
            - Outcomes
