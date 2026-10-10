@@ -115,7 +115,7 @@
         "op": {
           "enum": [
             "add_element_type", "extend_element_type", "extend_enum", "add_relation_type",
-            "add_rule", "add_forbidden_words",
+            "add_rule", "add_forbidden_words", "widen_rule",
             "restrict_enum", "require_attribute", "exclude_element_type"
           ]
         },

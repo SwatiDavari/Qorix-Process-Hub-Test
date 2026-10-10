@@ -19,7 +19,7 @@ from .model import QpmError, deepcopy, empty_model, load_yaml, validate_tier_doc
 
 OVERLAY_OPS = {
     "add_element_type", "extend_element_type", "extend_enum",
-    "add_relation_type", "add_rule", "add_forbidden_words",
+    "add_relation_type", "add_rule", "add_forbidden_words", "widen_rule",
 }
 PROJECT_OPS = {"restrict_enum", "require_attribute", "exclude_element_type", "add_rule"}
 
@@ -103,6 +103,20 @@ def op_add_rule(m, op, tier):
         raise QpmError(f"[{tier}] rule '{rule['id']}' exists")
     _types_sel(m, rule.get("applies_to", {}).get("types"))
     m["rules"].append(rule)
+    m["provenance"][f"rules.{rule['id']}"] = tier
+
+
+def op_widen_rule(m, op, tier):
+    """Widen a graph rule's `expect: or:` list (add alternatives only, never remove)."""
+    rule = next((r for r in m["rules"] if r["id"] == op["rule_id"]), None)
+    if rule is None:
+        raise QpmError(f"[{tier}] widen_rule: rule '{op['rule_id']}' not found")
+    exp = (rule.get("check") or {}).get("expect")
+    if not isinstance(exp, dict) or "or" not in exp:
+        raise QpmError(f"[{tier}] widen_rule: '{op['rule_id']}' has no `expect: or` list to widen")
+    for alt in op["add_alternatives"]:
+        if alt not in exp["or"]:
+            exp["or"].append(alt)
     m["provenance"][f"rules.{rule['id']}"] = tier
 
 

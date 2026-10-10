@@ -77,6 +77,10 @@ Operations log
      - ``qx_arch_asil_d_fulfilment``
      - Flags lower-integrity elements fulfilling ASIL D requirements unless decomposed.
    * - qorix
+     - widen_rule
+     - ``None``
+     - Qorix work products carry `complies` to ISO/IEC/IEEE 15288 clauses and to ASPICE process outcomes as well as to ASPICE IIC work product characteristics. The base rule stays valid; the overlay only adds these two accepted families.
+   * - qorix
      - add_relation_type
      - ``typed_by``
      - -

@@ -433,3 +433,10 @@ def test_overlay_adds_objective_and_policy_types():
     m = compose([BASE, OVERLAY])
     assert {"objective", "policy"} <= set(m["element_types"])
     assert m["element_types"]["objective"]["relations"]["drives"]["targets"] == ["policy"]
+
+
+def test_overlay_widens_workproduct_rule_to_15288_and_aspice():
+    m = compose([BASE, OVERLAY])
+    alts = next(r for r in m["rules"] if r["id"] == "workproduct_aspice_40")["check"]["expect"]["or"]
+    assert {"id contains aspice_40_iic", "id contains std_wp"} <= set(alts)
+    assert {"id contains std_req_iso15288", "id contains std_req_aspice_40"} <= set(alts)
