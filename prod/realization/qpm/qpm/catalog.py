@@ -626,6 +626,7 @@ def _standards_page(standards: list[dict[str, Any]]) -> str:
             kind = "std_req" if st["id"].startswith("std_req_") else "std_wp"
             out += (f".. {kind}:: {st['title']}\n   :id: {st['id']}\n   :status: valid\n   :version: 1\n\n"
                     f"   Clause: {st['clause']}\n\n")
+    out += ".. toctree::\n   :hidden:\n\n   needs/kpi_register\n"
     return out
 
 

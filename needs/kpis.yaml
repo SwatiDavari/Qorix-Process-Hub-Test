@@ -1,0 +1,812 @@
+# Qorix KPI register: a KPI is a measurable statement about an outcome (formula, unit, goal, limit, owner).
+# The hub defines each KPI once, at organisation level. Projects measure it and report the value; no values are stored here.
+# A KPI hangs under one outcome (measures), so it joins the thread objective, policy, outcome, workflow, work product.
+# Source: Qorix_KPI_Parameters.xlsx v2.0.0 (67 rows, 12 duplicates merged into `levels`). owner = process owner of the assembly (to confirm).
+kpis:
+- id: kpi_qx_req_func_req_to_design_cov
+  title: Module Functional Requirements-to-Design Coverage
+  status: draft
+  group: Module level
+  levels:
+  - module
+  unit: '%'
+  formula: (Number of Implementable functional requirements mapped in design / Total Implementable Functional requirements)
+    × 100
+  tool: Script executed as part of CICD
+  goal: 100%
+  owner: rl_qx_req_requirements_engineer
+  assembly: requirements_management
+  measures: oc_qx_req_traceability_both_ways
+- id: kpi_qx_req_design_to_code_cov
+  title: Module Design to Code Coverage
+  status: draft
+  group: Module level
+  levels:
+  - module
+  unit: '%'
+  formula: (Number of Module Design ID mapped in code / Total Module Design Elements) × 100
+  tool: Script executed as part of CICD
+  goal: 100%
+  owner: rl_qx_req_requirements_engineer
+  assembly: requirements_management
+  measures: oc_qx_req_traceability_both_ways
+- id: kpi_qx_vnr_design_to_test_cov
+  title: Module Design to Test Coverage
+  status: draft
+  group: Module level
+  levels:
+  - module
+  unit: '%'
+  formula: (Number of Module Design Elements Tested / Total Module Design Elements) × 100
+  tool: Script executed as part of CICD
+  goal: 100%
+  owner: rl_qx_vnr_review_lead
+  assembly: verification_reviews
+  measures: oc_qx_vnr_verification_planned
+- id: kpi_qx_vnr_open_misra_warnings
+  title: Open MISRA Warnings (Mandatory and Required)
+  status: draft
+  group: Module level
+  levels:
+  - module
+  unit: Number
+  formula: (Open MISRA warning (Mandatory and Required)
+  tool: Parasoft
+  goal: '0'
+  owner: rl_qx_vnr_review_lead
+  assembly: verification_reviews
+  measures: oc_qx_vnr_findings_closed
+- id: kpi_qx_vnr_cert_violations
+  title: CERT Violations
+  status: draft
+  group: Module level
+  levels:
+  - module
+  unit: Number
+  formula: Open Cert C and C++ Findings
+  tool: Parasoft
+  goal: '0'
+  remarks: Approved Rules enabled in the CICD
+  owner: rl_qx_vnr_review_lead
+  assembly: verification_reviews
+  measures: oc_qx_vnr_findings_closed
+- id: kpi_qx_vnr_code_duplication
+  title: Code Duplication
+  status: draft
+  group: Module level
+  levels:
+  - module
+  unit: '%'
+  formula: (Duplicate Lines of code/ Total lines of code)*100
+  tool: CPD
+  goal: 0-5%
+  remarks: Code Quality Metrics
+  owner: rl_qx_vnr_review_lead
+  assembly: verification_reviews
+  measures: oc_qx_vnr_findings_closed
+- id: kpi_qx_vnr_code_complexity
+  title: Code Complexity
+  status: draft
+  group: Module level
+  levels:
+  - module
+  unit: Number
+  formula: tool specific detection mechanism
+  tool: Lizard
+  goal: 0-20
+  remarks: Understandability of the code for the maintainance
+  owner: rl_qx_vnr_review_lead
+  assembly: verification_reviews
+  measures: oc_qx_vnr_findings_closed
+- id: kpi_qx_vnr_dynamic_analysis
+  title: Dynamic Analysis
+  status: draft
+  group: Module level
+  levels:
+  - module
+  unit: Number
+  formula: tool specific detection mechanism
+  tool: Parasoft/Valgrind
+  goal: '0'
+  remarks: Checks for memory leaks and other issues related to memory
+  owner: rl_qx_vnr_review_lead
+  assembly: verification_reviews
+  measures: oc_qx_vnr_findings_closed
+- id: kpi_qx_vnr_statement_coverage
+  title: Statement Coverage
+  status: draft
+  group: Module level
+  levels:
+  - module
+  unit: '%'
+  formula: (Total number of executed statements / Total number of statements in the code) × 100
+  tool: Unit testing tools Eg.TestWell CTC/CANTATA etc.
+  goal: 100%
+  owner: rl_qx_vnr_review_lead
+  assembly: verification_reviews
+  measures: oc_qx_vnr_verification_planned
+- id: kpi_qx_vnr_branch_coverage
+  title: Branch Coverage
+  status: draft
+  group: Module level
+  levels:
+  - module
+  unit: '%'
+  formula: (Number of Branches tested/Number of branches present) x 100
+  tool: Unit testing tools Eg.TestWell CTC/CANTATA etc.
+  goal: 100%
+  owner: rl_qx_vnr_review_lead
+  assembly: verification_reviews
+  measures: oc_qx_vnr_verification_planned
+- id: kpi_qx_vnr_function_coverage
+  title: Function Coverage
+  status: draft
+  group: Module level
+  levels:
+  - module
+  unit: '%'
+  formula: (Number of functions executed at least once / Total number of functions in the module) × 100
+  tool: Unit testing tools Eg.TestWell CTC/CANTATA etc.
+  goal: 100%
+  owner: rl_qx_vnr_review_lead
+  assembly: verification_reviews
+  measures: oc_qx_vnr_verification_planned
+- id: kpi_qx_vnr_mcdc_coverage
+  title: Modified Condition Decision Coverage (MC/DC)
+  status: draft
+  group: Module level
+  levels:
+  - module
+  unit: '%'
+  formula: (Number of MC/DC pairs tested/Number of MC/DC pairs required) x 100
+  tool: Unit testing tools Eg.TestWell CTC/CANTATA etc.
+  goal: 100%
+  remarks: MCDC goal for ASIL-D shall be 100%.
+  owner: rl_qx_vnr_review_lead
+  assembly: verification_reviews
+  measures: oc_qx_vnr_verification_planned
+- id: kpi_qx_vnr_toolchain_warnings
+  title: Tool Chain Warnings (Assembler, Linker, Compiler)
+  status: draft
+  group: Module level
+  levels:
+  - module
+  unit: Number
+  formula: tool specific detection mechanism
+  tool: QCC, GCC, Tasking, GHS etc.
+  goal: '0'
+  remarks: Assembler, Linker, Compiler warnings
+  owner: rl_qx_vnr_review_lead
+  assembly: verification_reviews
+  measures: oc_qx_vnr_findings_closed
+- id: kpi_qx_vnr_unit_tests_passed
+  title: Module Unit Test Cases Passed
+  status: draft
+  group: Module level
+  levels:
+  - module
+  unit: '%'
+  formula: (Number of Module Unit Test Cases Passed/ Number of Module Unit Total Test Cases)*100
+  tool: Script executed as part of CICD
+  goal: 100%
+  owner: rl_qx_vnr_review_lead
+  assembly: verification_reviews
+  measures: oc_qx_vnr_verification_planned
+- id: kpi_qx_vnr_func_tests_passed
+  title: Module Functional Test Cases Passed
+  status: draft
+  group: Module level
+  levels:
+  - module
+  unit: '%'
+  formula: (Number of Functional Test Cases Passed/ Number of Total Functional Test Cases)*100
+  tool: Script executed as part of CICD
+  goal: 100%
+  remarks: This covers all the test types like Requirement Based(Safety & security included) , Interface, Equivalence Class,
+    Fault Injection, Boundary Value, Error Guessing etc.
+  owner: rl_qx_vnr_review_lead
+  assembly: verification_reviews
+  measures: oc_qx_vnr_verification_planned
+- id: kpi_qx_vnr_func_test_case_cov
+  title: Module Functional Test Case Coverage
+  status: draft
+  group: Module level
+  levels:
+  - module
+  unit: '%'
+  formula: (Functional Requirements covered by test cases/ Total functional requirements) × 100
+  tool: Script executed as part of CICD
+  goal: 100%
+  owner: rl_qx_vnr_review_lead
+  assembly: verification_reviews
+  measures: oc_qx_vnr_verification_planned
+- id: kpi_qx_vnr_mod_test_design_done
+  title: Module Test Case Design Completion
+  status: draft
+  group: Module level
+  levels:
+  - module
+  unit: '%'
+  formula: (Total Number of Test cases having preconditions, Test steps, Expected results, / Total Test cases) × 100
+  tool: Script executed as part of CICD
+  goal: 100%
+  remarks: For completeness and consistency of test case design. [CS PREREQUISITE] CS-tagged test cases must include the CS
+    requirement reference as a mandatory field (in addition to preconditions, steps, expected results).
+  owner: rl_qx_vnr_review_lead
+  assembly: verification_reviews
+  measures: oc_qx_vnr_verification_planned
+- id: kpi_qx_vnr_prod_test_design_done
+  title: Product Test Case Design Completion
+  status: draft
+  group: Product level
+  levels:
+  - product
+  indicator: leading
+  applicability: quality
+  unit: '%'
+  formula: (Total Number of Test cases having preconditions, Test steps, Expected results, / Total Test cases) × 100
+  tool: Script executed as part of CICD
+  goal: 100%
+  remarks: For completeness and consistency of test case design
+  owner: rl_qx_vnr_review_lead
+  assembly: verification_reviews
+  measures: oc_qx_vnr_verification_planned
+- id: kpi_qx_vnr_cwe_violations
+  title: Common Weakness Enumeration Violations
+  status: draft
+  group: Module level
+  levels:
+  - module
+  unit: '%'
+  formula: Count of open SAST findings with CWE findings
+  tool: Parasoft
+  goal: '0'
+  remarks: 'Toolchain: Parasoft C/C++test CWE checker → JIRA with pre-label label (TBD). Reason: Not covered by MISRA or CERT'
+  owner: rl_qx_vnr_review_lead
+  assembly: verification_reviews
+  measures: oc_qx_vnr_findings_closed
+- id: kpi_qx_qa_defect_density_feature
+  title: Defect Density per Feature
+  status: draft
+  group: Module level
+  levels:
+  - module
+  process_area: SUP.1
+  unit: Number
+  formula: (Number of confirmed defects) / (Number of implemented features)
+  tool: JIRA
+  goal: ≤ 1
+  remarks: '- This includes end to end defects considering V cycle for implemented feature.Data shall be available Sprintwise
+    and threshold will have a continuous improvement over the time. - Defects created on JIRA shall have a link to JIRA feature
+    created for the implementation during PI Planning'
+  owner: rl_qx_qa_quality_office
+  assembly: quality_assurance
+  measures: oc_qx_qa_compliance_assured
+- id: kpi_qx_prb_problem_reopen_rate
+  title: Problem Re-open Rate
+  status: draft
+  group: Module level
+  levels:
+  - module
+  - product
+  process_area: SUP.9
+  indicator: lagging
+  applicability: quality
+  unit: '%'
+  formula: (Number of defects reopened / Total defects closed) × 100
+  tool: JIRA
+  goal: <2%
+  owner: rl_qx_prb_problem_manager
+  assembly: problem_resolution
+  measures: oc_qx_prb_problems_resolved
+- id: kpi_qx_prb_total_open_defects
+  title: Total Open Defects
+  status: draft
+  group: Module level
+  levels:
+  - module
+  - product
+  - process
+  process_area: SUP.9
+  indicator: lagging
+  applicability: quality
+  unit: Number
+  formula: Current count of open defects
+  tool: JIRA
+  goal: '0'
+  owner: rl_qx_prb_problem_manager
+  assembly: problem_resolution
+  measures: oc_qx_prb_problems_resolved
+- id: kpi_qx_prb_safety_open_defects
+  title: Safety Open Defects
+  status: draft
+  group: Module level
+  levels:
+  - module
+  - product
+  - process
+  process_area: SUP.9
+  indicator: lagging
+  applicability: safety
+  unit: Number
+  formula: Current count of safety open defects
+  tool: JIRA
+  goal: '0'
+  owner: rl_qx_prb_problem_manager
+  assembly: problem_resolution
+  measures: oc_qx_prb_problems_resolved
+- id: kpi_qx_pim_customer_satisfaction
+  title: Customer Satisfaction
+  status: draft
+  group: Module level
+  levels:
+  - module
+  - product
+  - process
+  process_area: PIM.3
+  indicator: lagging
+  applicability: quality
+  unit: Number
+  formula: CSAT score
+  tool: Excel Based
+  goal: ≥ 4 (on 1–5 scale)
+  remarks: If not meet, RCA shall be done
+  owner: rl_qx_pim_improvement_lead
+  assembly: process_improvement
+  measures: oc_qx_pim_improvements_planned
+- id: kpi_qx_infra_cicd_pipeline_success
+  title: CI/CD Pipeline Success
+  status: draft
+  group: Module level
+  levels:
+  - module
+  - product
+  - process
+  process_area: DevOps
+  indicator: leading
+  applicability: quality
+  unit: '%'
+  formula: (Number of successful pipeline runs on main branch / Total pipeline runs on main branch) × 100
+  tool: CICD
+  goal: 100%
+  owner: rl_qx_infra_lead
+  assembly: infrastructure
+  measures: oc_qx_infra_repo_ready
+- id: kpi_qx_req_req_to_arch_cov
+  title: Product SW Requirement-to-Architecture Coverage
+  status: draft
+  group: Product level
+  levels:
+  - product
+  indicator: leading
+  applicability: quality
+  unit: '%'
+  formula: (Product SW implementable requirements linked to architecture elements / Total Product SW implementable requirements)
+    × 100
+  tool: Script executed as part of CICD
+  goal: 100%
+  owner: rl_qx_req_requirements_engineer
+  assembly: requirements_management
+  measures: oc_qx_req_traceability_both_ways
+- id: kpi_qx_vnr_arch_to_test_cov
+  title: SW Architecture Design to Test Coverage
+  status: draft
+  group: Product level
+  levels:
+  - product
+  indicator: leading
+  applicability: quality
+  unit: '%'
+  formula: (Number of Architecture Elements Tested / Total Architecture Elements) × 100
+  tool: Script executed as part of CICD
+  goal: 100%
+  owner: rl_qx_vnr_review_lead
+  assembly: verification_reviews
+  measures: oc_qx_vnr_verification_planned
+- id: kpi_qx_vnr_integration_test_cov
+  title: Product Integration Test Coverage
+  status: draft
+  group: Product level
+  levels:
+  - product
+  indicator: leading
+  applicability: quality
+  unit: '%'
+  formula: (Number of Integration Test Cases Passed / Total Integration Test Cases) × 100
+  tool: Script executed as part of CICD
+  goal: 100%
+  remarks: This defines the maturity level of the product
+  owner: rl_qx_vnr_review_lead
+  assembly: verification_reviews
+  measures: oc_qx_vnr_verification_planned
+- id: kpi_qx_vnr_req_to_test_cov
+  title: Product Requirements to Test Coverage
+  status: draft
+  group: Product level
+  levels:
+  - product
+  indicator: leading
+  applicability: quality
+  unit: '%'
+  formula: (Number of SW Integration Requirements Tested / Total SW Integration Requirements) × 100
+  tool: Script executed as part of CICD
+  goal: 100%
+  owner: rl_qx_vnr_review_lead
+  assembly: verification_reviews
+  measures: oc_qx_vnr_verification_planned
+- id: kpi_qx_vnr_nfr_to_test_cov
+  title: Product Non-functional Requirements to Test Coverage
+  status: draft
+  group: Product level
+  levels:
+  - product
+  indicator: leading
+  applicability: safety
+  unit: '%'
+  formula: (Number of non functional requirements Tested / Total non functional requirements) × 100
+  tool: Script executed as part of CICD
+  goal: 100%
+  owner: rl_qx_vnr_review_lead
+  assembly: verification_reviews
+  measures: oc_qx_vnr_verification_planned
+- id: kpi_qx_vnr_prod_test_execution
+  title: Product Test Case Execution
+  status: draft
+  group: Product level
+  levels:
+  - product
+  indicator: leading
+  applicability: quality
+  unit: '%'
+  formula: (Test cases executed / Total test cases) × 100
+  tool: Script executed as part of CICD
+  goal: 100%
+  remarks: 'CS-tagged product-level tests are included. Note: Unexecuted planned tests count treated as failures. Toolchain:
+    CI pipeline'
+  owner: rl_qx_vnr_review_lead
+  assembly: verification_reviews
+  measures: oc_qx_vnr_verification_planned
+- id: kpi_qx_sec_open_crit_high_vuln
+  title: Open Critical / High Vulnerability Count
+  status: draft
+  group: Product level
+  levels:
+  - product
+  unit: Number
+  formula: Count of open JIRA CS-VULN tickets with severity Critical or High that have no Risk-Acceptance record
+  goal: '0'
+  remarks: 'Aggregates: SBOM CVE scan, architecture vulnerability analysis, FOSS findings, external CVE advisories, pen test
+    results. Toolchain: JIRA QICM space NOTE: FOSS license issues will be inputted into JIRA QICM board with specific tag'
+  owner: rl_qx_sec_security_office
+  assembly: security
+  measures: oc_qx_sec_management_maintained
+- id: kpi_qx_prb_change_impl_success
+  title: Implementation Success Rate (Changes Without Rework)
+  status: draft
+  group: Product level
+  levels:
+  - product
+  - process
+  process_area: SUP.9
+  indicator: lagging
+  applicability: quality
+  unit: '%'
+  formula: (Changes implemented without rework / Total changes implemented) × 100
+  goal: '0.95'
+  owner: rl_qx_prb_problem_manager
+  assembly: problem_resolution
+  measures: oc_qx_prb_problems_resolved
+- id: kpi_qx_prb_cr_turnaround_time
+  title: Change Request Turnaround Time
+  status: draft
+  group: Product level
+  levels:
+  - product
+  - process
+  process_area: SUP.9
+  indicator: lagging
+  applicability: quality
+  unit: Days
+  formula: Average (CR closure date − CR creation date)
+  goal: Project-specific
+  owner: rl_qx_prb_problem_manager
+  assembly: problem_resolution
+  measures: oc_qx_prb_problems_resolved
+- id: kpi_qx_prb_change_trace_cov
+  title: Traceability Coverage for Changes
+  status: draft
+  group: Product level
+  levels:
+  - product
+  - process
+  process_area: SUP.9
+  indicator: leading
+  applicability: quality
+  unit: '%'
+  formula: (CRs with complete links Req↔Change↔Design↔Code↔Test↔Results / Total CRs) × 100
+  goal: 100%
+  owner: rl_qx_prb_problem_manager
+  assembly: problem_resolution
+  measures: oc_qx_prb_problems_resolved
+- id: kpi_qx_plan_sprint_backlog_stability
+  title: Sprint Backlog Stability
+  status: draft
+  group: Process level
+  levels:
+  - process
+  process_area: MAN.3
+  indicator: leading
+  applicability: quality
+  unit: '%'
+  formula: 'Open vs closed items What it measures: Pending workload trend Formula: Open items at period end'
+  tool: JIRA, Any tool with backlogs logged
+  goal: 'Target: Stable or decreasing'
+  remarks: Last 2 sprints spillover count Sprint Effectiveness analysis
+  owner: rl_qx_plan_project_manager
+  assembly: project_planning
+  measures: oc_qx_plan_progress_controlled
+- id: kpi_qx_plan_effort_variance
+  title: Effort Variance
+  status: draft
+  group: Process level
+  levels:
+  - process
+  process_area: MAN.3
+  indicator: leading
+  applicability: quality
+  unit: '%'
+  formula: (Actual effort – Planned effort) / Planned effort × 100
+  tool: JIRA
+  goal: within ±10%
+  remarks: 'Productivity analysis. If more actual effort than planned effort Frequency : Per Sprint'
+  owner: rl_qx_plan_project_manager
+  assembly: project_planning
+  measures: oc_qx_plan_progress_controlled
+- id: kpi_qx_plan_velocity
+  title: Velocity
+  status: draft
+  group: Process level
+  levels:
+  - process
+  process_area: MAN.3
+  unit: '%'
+  formula: (Number of user story points / backlog items ) * 100
+  tool: JIRA
+  goal: ±10–15% variation
+  remarks: Last 2 sprints
+  owner: rl_qx_plan_project_manager
+  assembly: project_planning
+  measures: oc_qx_plan_progress_controlled
+- id: kpi_qx_risk_risk_closure_cov
+  title: Risk Closure Coverage
+  status: draft
+  group: Process level
+  levels:
+  - process
+  process_area: MAN.5
+  indicator: leading
+  applicability: quality
+  unit: '%'
+  formula: (Closed Risks/ Total identified risks) * 100
+  tool: JIRA
+  goal: 'Target: >= 95% for customer release, Production release and Service/Maintenance release. (Rationale: critical risks
+    will be closed and only medium and low risks with approval/ justification allowed)'
+  remarks: Monthly
+  owner: rl_qx_risk_risk_manager
+  assembly: risk_management
+  measures: oc_qx_risk_risks_treated
+- id: kpi_qx_risk_open_critical_risks
+  title: Open Critical Risks
+  status: draft
+  group: Process level
+  levels:
+  - process
+  process_area: MAN.5
+  indicator: leading
+  applicability: quality
+  unit: '%'
+  formula: '(Open High and Highest priority risks/ Total High and Highest priority risks) * 100 Purpose: Indicates critical
+    exposure of project.'
+  tool: JIRA
+  goal: 'Target: 0% before customer release, Production release (SOP) and Service/Maintenance release.'
+  remarks: Monthly To avoid risks closure at the time of release.
+  owner: rl_qx_risk_risk_manager
+  assembly: risk_management
+  measures: oc_qx_risk_risks_treated
+- id: kpi_qx_meas_kpi_coverage
+  title: KPI Coverage
+  status: draft
+  group: Process level
+  levels:
+  - process
+  process_area: MAN.6
+  indicator: leading
+  applicability: quality
+  unit: '%'
+  formula: Implemented KPIs / Planned KPIs × 100 at product level
+  tool: KPI Dashboard
+  goal: 100%
+  remarks: Monthly
+  owner: rl_qx_meas_metrics_analyst
+  assembly: measurement
+  measures: oc_qx_meas_metrics_defined
+- id: kpi_qx_qa_defect_density_kloc
+  title: Defect Density per KLOC
+  status: draft
+  group: Process level
+  levels:
+  - process
+  process_area: SUP.1
+  unit: Number
+  formula: Number of defects / KLOC (thousand lines of code)
+  tool: JIRA
+  goal: ≤ 1
+  remarks: Monthly
+  owner: rl_qx_qa_quality_office
+  assembly: quality_assurance
+  measures: oc_qx_qa_compliance_assured
+- id: kpi_qx_cm_cr_completion_rate
+  title: Change Request Completion Rate
+  status: draft
+  group: Process level
+  levels:
+  - process
+  process_area: SUP.10
+  indicator: leading
+  applicability: quality
+  unit: '%'
+  formula: (Number of change requests in done state / Total change requests in JIRA) × 100
+  tool: JIRA
+  goal: '0.8'
+  remarks: Monthly
+  owner: rl_qx_cm_change_manager
+  assembly: change_management
+  measures: oc_qx_cm_changes_authorised
+- id: kpi_qx_cm_cr_volume
+  title: Change Request Volume
+  status: draft
+  group: Process level
+  levels:
+  - process
+  process_area: SUP.10
+  unit: '%'
+  formula: Total CRs raised per month / sprint
+  tool: JIRA
+  goal: '0.8'
+  remarks: Sprint
+  owner: rl_qx_cm_change_manager
+  assembly: change_management
+  measures: oc_qx_cm_changes_authorised
+- id: kpi_qx_rel_on_time_releases
+  title: On-time Releases
+  status: draft
+  group: Process level
+  levels:
+  - process
+  process_area: SPL.2
+  unit: '%'
+  formula: Releases delivered on schedule / Planned releases × 100
+  tool: JIRA
+  goal: '>=95%'
+  remarks: Monthly
+  owner: rl_qx_rel_release_manager
+  assembly: release_management
+  measures: oc_qx_rel_release_controlled
+- id: kpi_qx_meas_ai_suggestion_accept
+  title: AI Code Suggestion Acceptance Rate
+  status: draft
+  group: AI KPIs
+  levels:
+  - ai
+  formula: '% of GitHub Copilot code suggestions accepted vs. total suggested'
+  tool: GitHub Enterprise metrics / Developer acceptance logs
+  goal: ≥ 60%
+  frequency: Monthly
+  owner: rl_qx_meas_metrics_analyst
+  assembly: measurement
+  measures: oc_qx_meas_decisions_informed
+- id: kpi_qx_meas_ai_review_cycle_time
+  title: AI Code Review Cycle Time
+  status: draft
+  group: AI KPIs
+  levels:
+  - ai
+  formula: Average time from code generation to merge for copilot-assisted PRs
+  tool: GitHub PR analytics (GitHub / JIRA integration)
+  goal: ≤ 4 days
+  frequency: Monthly
+  owner: rl_qx_meas_metrics_analyst
+  assembly: measurement
+  measures: oc_qx_meas_decisions_informed
+- id: kpi_qx_meas_ai_defect_density
+  title: Defect Density in AI Code
+  status: draft
+  group: AI KPIs
+  levels:
+  - ai
+  formula: Defects found per KLOC in code generated/assisted by copilot
+  tool: Code review findings + test results
+  goal: ≤ 2 defects/CLOC
+  frequency: Monthly
+  owner: rl_qx_meas_metrics_analyst
+  assembly: measurement
+  measures: oc_qx_meas_decisions_informed
+- id: kpi_qx_sec_ai_security_issues
+  title: AI Security and Compliance Issues
+  status: draft
+  group: AI KPIs
+  levels:
+  - ai
+  formula: Critical/High severity security issues in copilot-generated code
+  tool: SAST scan reports
+  frequency: Per sprint
+  owner: rl_qx_sec_security_office
+  assembly: security
+  measures: oc_qx_sec_management_maintained
+  goal: TBD
+- id: kpi_qx_req_req_ambiguity_score
+  title: Requirement Ambiguity Score
+  status: draft
+  group: AI predictive analysis
+  levels:
+  - ai_pred
+  remarks: 'Related ASPICE process: SWE.1'
+  owner: rl_qx_req_requirements_engineer
+  assembly: requirements_management
+  measures: oc_qx_req_requirements_agreed
+  goal: TBD
+- id: kpi_qx_req_trace_confidence_index
+  title: Traceability Confidence Index
+  status: draft
+  group: AI predictive analysis
+  levels:
+  - ai_pred
+  remarks: 'Related ASPICE process: SWE.1–5'
+  owner: rl_qx_req_requirements_engineer
+  assembly: requirements_management
+  measures: oc_qx_req_traceability_both_ways
+  goal: TBD
+- id: kpi_qx_vnr_test_effectiveness_idx
+  title: Test Effectiveness Index
+  status: draft
+  group: AI predictive analysis
+  levels:
+  - ai_pred
+  remarks: 'Related ASPICE process: SWE.4'
+  owner: rl_qx_vnr_review_lead
+  assembly: verification_reviews
+  measures: oc_qx_vnr_verification_planned
+  goal: TBD
+- id: kpi_qx_prb_defect_escape_prob
+  title: Defect Escape Probability
+  status: draft
+  group: AI predictive analysis
+  levels:
+  - ai_pred
+  remarks: 'Related ASPICE process: SUP.9'
+  owner: rl_qx_prb_problem_manager
+  assembly: problem_resolution
+  measures: oc_qx_prb_problems_recorded
+  goal: TBD
+- id: kpi_qx_qa_audit_capability_conf
+  title: Audit Capability Confidence
+  status: draft
+  group: AI predictive analysis
+  levels:
+  - ai_pred
+  remarks: 'Related ASPICE process: SUP.1'
+  owner: rl_qx_qa_quality_office
+  assembly: quality_assurance
+  measures: oc_qx_qa_compliance_assured
+  goal: TBD
+- id: kpi_qx_cm_change_risk_index
+  title: Change Risk Index
+  status: draft
+  group: AI predictive analysis
+  levels:
+  - ai_pred
+  remarks: 'Related ASPICE process: SUP.10'
+  owner: rl_qx_cm_change_manager
+  assembly: change_management
+  measures: oc_qx_cm_changes_authorised
+  goal: TBD

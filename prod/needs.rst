@@ -762,3 +762,7 @@ ISO/IEC/IEEE 15288:2023
 
    Clause: 6.4.11
 
+.. toctree::
+   :hidden:
+
+   needs/kpi_register

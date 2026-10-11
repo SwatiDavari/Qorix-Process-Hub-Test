@@ -1,0 +1,13 @@
+# Process standards: the primary standard behind each process area of the Qorix Process Hub.
+# Scope is Qorix: these apply at organisation level and every project inherits them. Clause level
+# compliance lives in standards.yaml; this register names the standard that governs each area.
+process_standards:
+  - {id: org_process_definition, area: Organizational Process Definition, standard: ISO 9001, scope: Qorix, purpose: Defines organization-wide process management and continual improvement}
+  - {id: process_architecture, area: Process Architecture / Process Framework, standard: APQC PCF, scope: Qorix, purpose: Standard business process taxonomy and enterprise process structure}
+  - {id: process_modeling, area: Business Process Modeling, standard: BPMN 2.0, scope: Qorix, purpose: Standard notation for documenting and visualizing processes}
+  - {id: software_lifecycle, area: Software Lifecycle Processes, standard: ISO/IEC/IEEE 12207, scope: Qorix, purpose: "Defines software lifecycle processes, activities, and outcomes independent of tools and methodologies"}
+  - {id: system_lifecycle, area: System Lifecycle Processes, standard: ISO/IEC/IEEE 15288, scope: Qorix, purpose: Defines system engineering and lifecycle processes}
+  - {id: software_testing, area: Software Testing Processes, standard: ISO/IEC/IEEE 29119, scope: Qorix, purpose: Defines generic software testing processes applicable to any lifecycle model}
+  - {id: configuration_management, area: Configuration Management, standard: "ISO 10007:2017", scope: Qorix, purpose: Guidelines for configuration management throughout product/service lifecycle}
+  - {id: configuration_governance, area: Configuration Management Governance, standard: SAE EIA-649C, scope: Qorix, purpose: "Industry-standard CM principles, planning, identification, change control, status accounting, and audits"}
+  - {id: process_assessment, area: Process Assessment, standard: ISO/IEC 330xx (SPICE), scope: Qorix, purpose: Process capability measurement and assessment}

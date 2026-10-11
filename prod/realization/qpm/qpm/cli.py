@@ -92,7 +92,12 @@ def main(argv: list[str] | None = None) -> int:
             errs = catalog.check_catalog(areas, stds)
             objs, pols = registers.load_registers(a.standards)
             rerrs, rwarns = registers.check_registers(objs, pols, areas, stds)
-            errs += rerrs + registers.check_minimum(areas) + kinds.check_kinds(areas)
+            kpis = registers.load_kpis(a.standards)
+            kerrs, kwarns = registers.check_kpis(kpis, objs, areas)
+            pstds = registers.load_process_standards(a.standards)
+            errs += registers.check_process_standards(pstds)
+            rwarns += kwarns
+            errs += kerrs + rerrs + registers.check_minimum(areas) + kinds.check_kinds(areas)
             for w in rwarns:
                 print(f"warning: {w}", file=sys.stderr)
             if errs:
@@ -104,6 +109,8 @@ def main(argv: list[str] | None = None) -> int:
             dates = control.derive(areas, control.repo_root(a.areas)) if a.git else None
             files = catalog.render_catalog(areas, stds, dates)
             files.update(registers.render_registers(objs, pols, areas, stds))
+            files.update(registers.render_kpis(kpis, areas))
+            files.update(registers.render_process_standards(pstds))
             return _write_tree(files, Path(a.out_dir), a.check)
         elif a.cmd in ("check-versions", "bump", "review-due"):
             areas = catalog.load_catalog(a.areas)

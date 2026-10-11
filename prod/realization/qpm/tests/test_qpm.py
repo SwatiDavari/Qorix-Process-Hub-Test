@@ -468,6 +468,48 @@ def test_overlay_widens_workproduct_rule_to_15288_and_aspice():
     alts = next(r for r in m["rules"] if r["id"] == "workproduct_aspice_40")["check"]["expect"]["or"]
     assert {"id contains aspice_40_iic", "id contains std_wp"} <= set(alts)
     assert {"id contains std_req_iso15288", "id contains std_req_aspice_40"} <= set(alts)
+    assert "id contains std_req_isosae21434" in alts
+
+
+def test_overlay_adds_kpi_type_under_an_outcome():
+    m = compose([BASE, OVERLAY])
+    assert {"kpi", "kpi_gate"} <= set(m["element_types"])
+    assert m["element_types"]["kpi"]["relations"]["measures"]["targets"] == ["outcome"]
+    assert m["element_types"]["kpi"]["relations"]["measures"]["required"] is True
+    assert m["element_types"]["objective"]["relations"]["measured_by"]["targets"] == ["kpi"]
+    assert m["element_types"]["kpi_gate"]["relations"]["gates"]["targets"] == ["workflow"]
+
+
+def test_kpi_register_is_valid_and_current():
+    areas = catalog.load_catalog(ASSEMBLIES)
+    objs, _ = registers.load_registers(STANDARDS)
+    kpis = registers.load_kpis(STANDARDS)
+    assert len(kpis) == 55
+    errs, _ = registers.check_kpis(kpis, objs, areas)
+    assert errs == []
+    files = registers.render_kpis(kpis, areas)
+    assert set(files) == {"needs/kpi_register.rst"}
+    for rel, txt in files.items():
+        assert (ROOT / "prod" / rel).read_text(encoding="utf-8") == txt, rel
+
+
+def test_kpi_checks_detect_violations():
+    import copy
+    areas = catalog.load_catalog(ASSEMBLIES)
+    good = registers.load_kpis(STANDARDS)[0]
+    def errs_for(**chg):
+        k = copy.deepcopy(good)
+        k.update(chg)
+        return "\n".join(registers.check_kpis([k], [], areas)[0])
+    assert "id must be kpi_qx_" in errs_for(id="kpi_qx_Bad__id")
+    assert "unknown role" in errs_for(owner="rl_nobody")
+    assert "unknown assembly" in errs_for(assembly="nowhere")
+    assert "unknown outcome" in errs_for(measures="oc_qx_none_none")
+    assert "belongs to" in errs_for(measures="oc_qx_prb_problems_recorded")
+    assert "must carry the assembly code" in errs_for(id="kpi_qx_sec_wrong_code")
+    assert "missing goal" in errs_for(goal="")
+    assert "duplicate id" in "\n".join(registers.check_kpis([good, good], [], areas)[0])
+    assert "unknown KPI" in "\n".join(registers.check_kpis([good], [{"id": "obj_x", "measured_by": ["kpi_qx_zz_none"]}], areas)[0])
 
 
 def test_every_workproduct_has_a_known_kind():
@@ -514,3 +556,14 @@ def test_process_names_are_not_repeated_in_one_register():
     areas = catalog.load_catalog(ASSEMBLIES)
     titles = [a["area"]["title"] for a in areas]
     assert len(titles) == len(set(titles))
+
+
+def test_process_standards_register_is_valid_and_current():
+    items = registers.load_process_standards(STANDARDS)
+    assert len(items) == 9
+    assert registers.check_process_standards(items) == []
+    bad = [dict(items[0], scope="Project"), dict(items[0], standard="")]
+    e = "\n".join(registers.check_process_standards(bad))
+    assert "must be Qorix" in e and "missing standard" in e and "duplicate id" in e
+    for rel, txt in registers.render_process_standards(items).items():
+        assert (ROOT / "prod" / rel).read_text(encoding="utf-8") == txt, rel

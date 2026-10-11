@@ -244,3 +244,58 @@ operations:
         drives: {required: false, targets: [policy]}
         contributes_to: {required: false, targets: [objective]}
       presentation: {color: "#FFF2CC"}
+
+  # ------------------------------------------------------------ KPIs (measurable statement about an outcome)
+  - op: add_relation_type
+    name: measures
+    forward: measures
+    reverse: measured by
+  - op: add_relation_type
+    name: measured_by
+    forward: is measured by
+    reverse: measures objective
+  - op: add_relation_type
+    name: read_by
+    forward: read by
+    reverse: reads
+  - op: add_relation_type
+    name: gates
+    forward: gates
+    reverse: gated by
+  - op: add_element_type
+    name: kpi
+    rationale: >
+      A key performance indicator: a measurable statement about one outcome, with a formula, a unit, a
+      goal, a limit and an owner. The hub defines it once at organisation level; projects measure it and
+      report the value. It hangs under an outcome, so it joins the thread objective, policy, outcome,
+      workflow, work product.
+    definition:
+      title: KPI
+      prefix: kpi_
+      id_parts: 1
+      tags: []
+      attributes:
+        status: {required: true, enum: [valid, draft, proposed, approved, released, deprecated, retired]}
+      relations:
+        measures: {required: true, targets: [outcome]}
+        read_by: {required: false, targets: [kpi_gate]}
+      presentation: {color: "#D5E8D4"}
+  - op: add_element_type
+    name: kpi_gate
+    rationale: >
+      A rule on a workflow that reads a KPI and decides whether the workflow output can be approved.
+    definition:
+      title: KPI gate
+      prefix: kg_
+      id_parts: 1
+      tags: []
+      attributes:
+        status: {required: true, enum: [valid, draft, proposed, approved, released, deprecated, retired]}
+      relations:
+        gates: {required: true, targets: [workflow]}
+      presentation: {color: "#B9E0A5"}
+  - op: extend_element_type
+    name: objective
+    add_relations:
+      measured_by: {required: false, targets: [kpi]}
+    rationale: An objective is measured by KPIs; this replaces its free-text measure and TBD target once KPIs are linked.

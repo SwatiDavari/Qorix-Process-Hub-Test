@@ -23,7 +23,7 @@ Element types by origin
 =======================
 
 * qorix-base: 52
-* qorix: 6
+* qorix: 8
 
 Operations log
 ==============
@@ -144,6 +144,34 @@ Operations log
      - add_element_type
      - ``objective``
      - A business objective in technology neutral wording. It drives policies and sits at the top of the chain objective, policy, process, outcome, capability, work product. A project objective contributes to an organisation objective.
+   * - qorix
+     - add_relation_type
+     - ``measures``
+     - -
+   * - qorix
+     - add_relation_type
+     - ``measured_by``
+     - -
+   * - qorix
+     - add_relation_type
+     - ``read_by``
+     - -
+   * - qorix
+     - add_relation_type
+     - ``gates``
+     - -
+   * - qorix
+     - add_element_type
+     - ``kpi``
+     - A key performance indicator: a measurable statement about one outcome, with a formula, a unit, a goal, a limit and an owner. The hub defines it once at organisation level; projects measure it and report the value. It hangs under an outcome, so it joins the thread objective, policy, outcome, workflow, work product.
+   * - qorix
+     - add_element_type
+     - ``kpi_gate``
+     - A rule on a workflow that reads a KPI and decides whether the workflow output can be approved.
+   * - qorix
+     - extend_element_type
+     - ``objective``
+     - An objective is measured by KPIs; this replaces its free-text measure and TBD target once KPIs are linked.
    * - performance
      - exclude_element_type
      - ``gc_finding``

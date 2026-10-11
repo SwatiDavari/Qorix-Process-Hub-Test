@@ -13,6 +13,12 @@ technology-neutral model, that every Qorix project inherits and narrows in its o
 
       What the hub must satisfy: the standard clauses Qorix work products comply with.
 
+   .. grid-item-card:: Process standards
+      :link: qx_process_standards
+      :link-type: ref
+
+      The primary standard behind each process area, with Qorix as scope.
+
    .. grid-item-card:: Policies
       :link: qx_policies
       :link-type: ref
@@ -59,6 +65,7 @@ technology-neutral model, that every Qorix project inherits and narrows in its o
    :hidden:
 
    needs
+   process_standards
    policies/index
    missions/index
    concepts/index

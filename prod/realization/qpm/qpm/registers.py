@@ -190,3 +190,146 @@ def render_registers(objs: list[dict[str, Any]], pols: list[dict[str, Any]], are
             t += _need("policy", p["title"], p["id"], p.get("status", "draft"), "policies", opts) + body + "\n"
         out["policies/register.rst"] = t
     return out
+
+
+KPI_RE = re.compile(r"^kpi_qx_[a-z]+_[a-z0-9]+(_[a-z0-9]+)*$")
+KPI_STATUS = {"valid", "draft", "proposed", "approved", "released", "deprecated", "retired"}
+KPI_LEVELS = {"module", "product", "process", "ai", "ai_pred"}
+KPI_INDICATORS = {"leading", "lagging"}
+KPI_APPLICABILITY = {"quality", "safety"}
+KPI_REQUIRED = ("title", "status", "group", "levels", "goal", "owner", "assembly", "measures")
+
+
+def load_kpis(standards_path: str | Path) -> list[dict[str, Any]]:
+    """KPI register source: needs/kpis.yaml (next to needs/standards.yaml)."""
+    p = Path(standards_path).parent / "kpis.yaml"
+    return list((load_yaml(p) or {}).get("kpis") or []) if p.is_file() else []
+
+
+def check_kpis(kpis: list[dict[str, Any]], objs: list[dict[str, Any]], areas: list[dict[str, Any]]) -> tuple[list[str], list[str]]:
+    """Return (errors, warnings). A KPI is defined once, at organisation level, and hangs under one outcome."""
+    errs: list[str] = []
+    warns: list[str] = []
+    roles = {r["id"] for a in areas for r in a.get("roles") or []}
+    asm = {a["area"]["id"]: a["area"]["code"] for a in areas}
+    out_asm = {o["id"]: a["area"]["id"] for a in areas for o in a.get("outcomes") or []}
+    seen: set[str] = set()
+    for k in kpis:
+        kid = k.get("id", "?")
+        if kid in seen:
+            errs.append(f"kpi {kid}: duplicate id")
+        seen.add(kid)
+        if not KPI_RE.match(kid) or "__" in kid:
+            errs.append(f"kpi {kid}: id must be kpi_qx_<assembly code>_<name>, lower case, no double underscore")
+        if len(kid) > MAX_ID_LENGTH:
+            errs.append(f"kpi {kid}: id longer than {MAX_ID_LENGTH} characters")
+        for f in KPI_REQUIRED:
+            if not k.get(f):
+                errs.append(f"kpi {kid}: missing {f}")
+        if k.get("status") and k["status"] not in KPI_STATUS:
+            errs.append(f"kpi {kid}.status: must be one of {', '.join(sorted(KPI_STATUS))}")
+        bad = [lv for lv in k.get("levels") or [] if lv not in KPI_LEVELS]
+        if bad:
+            errs.append(f"kpi {kid}.levels: unknown {', '.join(bad)}; use {', '.join(sorted(KPI_LEVELS))}")
+        if k.get("indicator") and k["indicator"] not in KPI_INDICATORS:
+            errs.append(f"kpi {kid}.indicator: must be leading or lagging")
+        if k.get("applicability") and k["applicability"] not in KPI_APPLICABILITY:
+            errs.append(f"kpi {kid}.applicability: must be quality or safety")
+        if k.get("owner") and k["owner"] not in roles:
+            errs.append(f"kpi {kid}.owner: unknown role '{k['owner']}'")
+        a = k.get("assembly")
+        if a and a not in asm:
+            errs.append(f"kpi {kid}.assembly: unknown assembly '{a}'")
+        elif a and not kid.startswith(f"kpi_qx_{asm[a]}_"):
+            errs.append(f"kpi {kid}: id must carry the assembly code '{asm[a]}' of '{a}'")
+        m = k.get("measures")
+        if m and m not in out_asm:
+            errs.append(f"kpi {kid}.measures: unknown outcome '{m}'")
+        elif m and a and out_asm[m] != a:
+            errs.append(f"kpi {kid}.measures: outcome '{m}' belongs to '{out_asm[m]}', not to '{a}'")
+        for f in ("formula", "unit"):
+            if not k.get(f):
+                warns.append(f"kpi {kid}: no {f} yet")
+    for o in objs:
+        for kid in o.get("measured_by") or []:
+            if kid not in seen:
+                errs.append(f"objective {o.get('id', '?')}.measured_by: unknown KPI '{kid}'")
+    return errs, warns
+
+
+def render_kpis(kpis: list[dict[str, Any]], areas: list[dict[str, Any]]) -> dict[str, str]:
+    """Return {path relative to prod/: content} for the KPI register under Needs, grouped."""
+    titles = {o["id"]: o["title"] for a in areas for o in a.get("outcomes") or []}
+    t = HEADER.format(src="needs/kpis.yaml") + ".. _qx_kpi_register:\n\n" + _hdr("KPI register", "#")
+    t += ("\nA KPI is a measurable statement about an outcome. It has a formula, a unit, a goal, a limit and an "
+          "owner. The hub defines each KPI once, at organisation level; projects measure it and report the value. "
+          "A KPI hangs under one outcome (``measures``), so it joins the thread objective, policy, outcome, "
+          "workflow, work product.\n\n")
+    groups: dict[str, list[dict[str, Any]]] = {}
+    for k in kpis:
+        groups.setdefault(k["group"], []).append(k)
+    if not kpis:
+        t += "No KPIs are defined yet.\n"
+    for g, ks in groups.items():
+        t += f"\n{_hdr(g, '=')}\n"
+        t += (".. list-table::\n   :header-rows: 1\n   :widths: 24 28 10 8 10 20\n\n"
+              "   * - ID\n     - KPI\n     - Levels\n     - Unit\n     - Goal\n     - Outcome\n")
+        for k in ks:
+            t += (f"   * - ``{k['id']}``\n     - {k['title']}\n     - {', '.join(k['levels'])}\n"
+                  f"     - {k.get('unit', '-')}\n     - {k['goal']}\n     - {titles.get(k['measures'], k['measures'])}\n")
+        t += "\n"
+        for k in ks:
+            body = f"   Goal: {k['goal']}."
+            if k.get("limit"):
+                body += f" Limit: {k['limit']}."
+            if k.get("unit"):
+                body += f" Unit: {k['unit']}."
+            body += f" Owner: ``{k['owner']}``. Assembly: ``{k['assembly']}``.\n"
+            if k.get("formula"):
+                body += f"\n   Formula: {k['formula']}\n"
+            extra = [f"{lbl}: {k[f]}" for f, lbl in (("tool", "Tool"), ("indicator", "Indicator"), ("applicability", "Applicability"),
+                                                      ("frequency", "Frequency"), ("process_area", "Process area")) if k.get(f)]
+            if extra:
+                body += "\n   " + ". ".join(extra) + ".\n"
+            if k.get("remarks"):
+                body += f"\n   Remarks: {k['remarks']}\n"
+            t += _need("kpi", k["title"], k["id"], k["status"], g, _opt("measures", k["measures"])) + body + "\n"
+    return {"needs/kpi_register.rst": t}
+
+
+PS_REQUIRED = ("id", "area", "standard", "purpose", "scope")
+
+
+def load_process_standards(standards_path: str | Path) -> list[dict[str, Any]]:
+    """Process standards register: needs/process_standards.yaml (next to needs/standards.yaml)."""
+    p = Path(standards_path).parent / "process_standards.yaml"
+    return list((load_yaml(p) or {}).get("process_standards") or []) if p.is_file() else []
+
+
+def check_process_standards(items: list[dict[str, Any]]) -> list[str]:
+    errs: list[str] = []
+    seen: set[str] = set()
+    for s in items:
+        sid = s.get("id", "?")
+        if sid in seen:
+            errs.append(f"process standard {sid}: duplicate id")
+        seen.add(sid)
+        for f in PS_REQUIRED:
+            if not s.get(f):
+                errs.append(f"process standard {sid}: missing {f}")
+        if s.get("scope") and s["scope"] != "Qorix":
+            errs.append(f"process standard {sid}.scope: must be Qorix")
+    return errs
+
+
+def render_process_standards(items: list[dict[str, Any]]) -> dict[str, str]:
+    """Return {path relative to prod/: content}: the Process standards page (tabular)."""
+    t = HEADER.format(src="needs/process_standards.yaml") + ".. _qx_process_standards:\n\n" + _hdr("Process standards", "#")
+    t += ("\nThe primary standard behind each process area of the hub. The scope is Qorix: they apply at "
+          "organisation level and every project inherits them. Clause level compliance is on the "
+          ":ref:`Needs <qx_needs>` page.\n\n"
+          ".. list-table::\n   :header-rows: 1\n   :widths: 24 18 44 14\n\n"
+          "   * - Process area\n     - Primary standard\n     - Purpose\n     - Scope\n")
+    for s in items:
+        t += f"   * - {s['area']}\n     - {s['standard']}\n     - {s['purpose']}\n     - {s['scope']}\n"
+    return {"process_standards.rst": t}
