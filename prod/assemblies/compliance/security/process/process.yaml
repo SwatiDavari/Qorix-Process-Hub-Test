@@ -18,6 +18,7 @@ assembly:
   - ISO/SAE 21434
   tier: qorix
   group: "Security"
+  nav_caption: Cybersecurity Management
 getting_started: |-
   This describes how to get started with the parts of cybersecurity management that belong to the organisation rather than to a project — ISO/SAE 21434 clause 5 "Organizational cybersecurity management".
 

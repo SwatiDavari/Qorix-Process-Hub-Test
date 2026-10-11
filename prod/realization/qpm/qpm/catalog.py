@@ -420,7 +420,7 @@ def render_area(a: dict[str, Any], areas: list[dict[str, Any]] | None = None,
         f"   /assemblies/{path}/{sub}/index\n" for sub in SUBCOMPONENTS[1:])
     nested = _nested_children(a, areas)
     if nested:   # navigation only: sub-processes appear under this assembly in the sidebar
-        idx += "\n.. toctree::\n   :maxdepth: 1\n   :caption: Sub-processes\n\n" + "".join(
+        idx += f"\n.. toctree::\n   :maxdepth: 1\n   :caption: {ar.get('nav_caption', 'Sub-processes')}\n\n" + "".join(
             f"   /assemblies/{b['_path']}/process/index\n" for b in nested)
     files["process/index.rst"] = idx
 

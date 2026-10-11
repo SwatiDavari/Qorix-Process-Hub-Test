@@ -87,7 +87,7 @@ Cybersecurity management: plan, perform and assess the cybersecurity activities 
 
 .. toctree::
    :maxdepth: 1
-   :caption: Sub-processes
+   :caption: Cybersecurity Management
 
    /assemblies/compliance/security/csms_assessment/process/index
    /assemblies/compliance/security/csms_audit/process/index
