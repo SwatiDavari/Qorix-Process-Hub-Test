@@ -79,7 +79,7 @@ Operations log
    * - qorix
      - widen_rule
      - ``None``
-     - Qorix work products carry `complies` to ISO/IEC/IEEE 15288 clauses and to ASPICE process outcomes as well as to ASPICE IIC work product characteristics. The base rule stays valid; the overlay only adds these two accepted families.
+     - Qorix work products carry `complies` to ISO/IEC/IEEE 15288 clauses and to ASPICE process outcomes as well as to ASPICE IIC work product characteristics. The base rule stays valid; the overlay only adds these accepted families (also ISO/SAE 21434 clause requirements for the cybersecurity assemblies).
    * - qorix
      - extend_element_type
      - ``workproduct``
