@@ -6,12 +6,29 @@
 Cybersecurity Tool Management
 #############################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Cybersecurity Tool Management
+   * - Process ID
+     - ``csms_tool_management``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_sec_security_office`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 The evaluation above (ISO 26262-8 clause 11, TCL) judges whether a tool's *output* can be trusted for safety purposes; it does not by itself address whether the tool itself can be tampered with ISO/SAE 21434:2021 clause 5.4.5 separately requires that "tools
 
-* **Assembly:** Compliance / Cybersecurity Tool Management (code ``cstool``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Compliance / ``cstool``
 * **Enabler / Scope / Layer:** SEC / GLOB / -
-* **Owner:** :need:`rl_qx_sec_security_office`
 * **Standards:** ISO/SAE 21434
 
 .. doc_getstrt:: Getting started on Cybersecurity Tool Management

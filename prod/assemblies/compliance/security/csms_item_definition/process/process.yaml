@@ -8,6 +8,9 @@ assembly:
   scope: GLOB
   layer: '-'
   status: draft
+  version: 0.1.0
+  effective_date: TBD
+  review_date: TBD
   owner: rl_qx_sec_security_office
   purpose: The item definition establishes an understanding of what is being protected from a cybersecurity
     perspective.

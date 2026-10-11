@@ -6,12 +6,29 @@
 Verification and Reviews
 ########################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Verification and Reviews
+   * - Process ID
+     - ``verification_reviews``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_vnr_review_lead`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Plan verification of work products against their criteria and carry out reviews that record findings and close them.
 
-* **Assembly:** Engineering / Verification and Reviews (code ``vnr``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Engineering / ``vnr``
 * **Enabler / Scope / Layer:** TST / GLOB / -
-* **Owner:** :need:`rl_qx_vnr_review_lead`
 * **Standards:** ISO/IEC/IEEE 15288 6.4.9
 
 .. doc_getstrt:: Getting started on Verification and Reviews

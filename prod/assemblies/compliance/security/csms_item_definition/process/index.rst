@@ -6,12 +6,29 @@
 Cybersecurity Item Definition
 #############################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Cybersecurity Item Definition
+   * - Process ID
+     - ``csms_item_definition``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_sec_security_office`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 The item definition establishes an understanding of what is being protected from a cybersecurity perspective.
 
-* **Assembly:** Compliance / Cybersecurity Item Definition (code ``csitem``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Compliance / ``csitem``
 * **Enabler / Scope / Layer:** SEC / GLOB / -
-* **Owner:** :need:`rl_qx_sec_security_office`
 * **Standards:** ISO/SAE 21434
 
 .. doc_getstrt:: Getting started on Cybersecurity Item Definition

@@ -6,12 +6,29 @@
 Governance & Compliance
 #######################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Governance & Compliance
+   * - Process ID
+     - ``governance_compliance``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_gc_head`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Own the Qorix Process Hub: maintain the Qorix process overlay, approve project tailoring, and run compliance audits.
 
-* **Assembly:** Compliance / Governance & Compliance (code ``gc``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Compliance / ``gc``
 * **Enabler / Scope / Layer:** - / GLOB / -
-* **Owner:** :need:`rl_qx_gc_head`
 * **Standards:** ISO 26262-2, ISO/SAE 21434 cl. 5-6, ASPICE 4.0 PIM.3 / SUP.1 / MAN.3
 
 .. doc_concept:: Qorix Process Tiering Concept

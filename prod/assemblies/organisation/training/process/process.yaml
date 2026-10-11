@@ -8,6 +8,9 @@ assembly:
   scope: GLOB
   layer: '-'
   status: draft
+  version: 0.1.0
+  effective_date: TBD
+  review_date: TBD
   owner: rl_qx_trn_training_coordinator
   purpose: |
     Make sure every person holding a process role is qualified for it, and keep the evidence (competence matrix, training records) assessor-ready.

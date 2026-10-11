@@ -6,12 +6,29 @@
 Measurement and Metrics
 #######################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Measurement and Metrics
+   * - Process ID
+     - ``measurement``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_meas_metrics_analyst`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Define the measures the organisation needs, collect them consistently and report them to the people who decide.
 
-* **Assembly:** Engineering / Measurement and Metrics (code ``meas``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Engineering / ``meas``
 * **Enabler / Scope / Layer:** - / GLOB / -
-* **Owner:** :need:`rl_qx_meas_metrics_analyst`
 * **Standards:** ISO/IEC/IEEE 15288 6.3.7, ASPICE 4.0 MAN.6
 
 .. doc_getstrt:: Getting started on Measurement and Metrics

@@ -6,12 +6,29 @@
 Cybersecurity Threat Analysis and Risk Assessment
 #################################################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Cybersecurity Threat Analysis and Risk Assessment
+   * - Process ID
+     - ``csms_tara``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_sec_security_office`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 An item or component can be made to behave in ways its road users never consented to if a cybersecurity property of one of its assets is compromised.
 
-* **Assembly:** Compliance / Cybersecurity Threat Analysis and Risk Assessment (code ``cstara``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Compliance / ``cstara``
 * **Enabler / Scope / Layer:** SEC / GLOB / -
-* **Owner:** :need:`rl_qx_sec_security_office`
 * **Standards:** ISO/SAE 21434
 
 .. doc_getstrt:: Getting started on Cybersecurity Threat Analysis and Risk Assessment

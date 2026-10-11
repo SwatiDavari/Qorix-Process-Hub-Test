@@ -6,12 +6,29 @@
 Cybersecurity Concept
 #####################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Cybersecurity Concept
+   * - Process ID
+     - ``csms_concept``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_sec_security_office`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Cybersecurity goals and claims state what must be protected and why; the cybersecurity concept states how it is protected.
 
-* **Assembly:** Compliance / Cybersecurity Concept (code ``cscon``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Compliance / ``cscon``
 * **Enabler / Scope / Layer:** SEC / GLOB / -
-* **Owner:** :need:`rl_qx_sec_security_office`
 * **Standards:** ISO/SAE 21434
 
 .. doc_getstrt:: Getting started on Cybersecurity Concept

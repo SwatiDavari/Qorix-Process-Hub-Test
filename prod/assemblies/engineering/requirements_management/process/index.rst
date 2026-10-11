@@ -6,12 +6,29 @@
 Requirements Management and Traceability
 ########################################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Requirements Management and Traceability
+   * - Process ID
+     - ``requirements_management``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_req_requirements_engineer`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Define stakeholder and system requirements once, keep them agreed and trace them both ways to what they come from and what satisfies them.
 
-* **Assembly:** Engineering / Requirements Management and Traceability (code ``req``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Engineering / ``req``
 * **Enabler / Scope / Layer:** PRD / GLOB / REQ
-* **Owner:** :need:`rl_qx_req_requirements_engineer`
 * **Standards:** ISO/IEC/IEEE 15288 6.4.2-6.4.3, ASPICE 4.0 SYS.2, ASPICE 4.0 SWE.1
 
 .. doc_getstrt:: Getting started on Requirements Management and Traceability

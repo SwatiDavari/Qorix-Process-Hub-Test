@@ -6,12 +6,29 @@
 Decision Management
 ###################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Decision Management
+   * - Process ID
+     - ``decision_management``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_dec_decision_owner`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Take significant decisions from analysed alternatives and keep the decision, its rationale and its owner on record.
 
-* **Assembly:** Engineering / Decision Management (code ``dec``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Engineering / ``dec``
 * **Enabler / Scope / Layer:** - / GLOB / -
-* **Owner:** :need:`rl_qx_dec_decision_owner`
 * **Standards:** ISO/IEC/IEEE 15288 6.3.3
 
 .. doc_getstrt:: Getting started on Decision Management

@@ -6,12 +6,29 @@
 Risk Management
 ###############
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Risk Management
+   * - Process ID
+     - ``risk_management``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_risk_risk_manager`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Identify, analyse, treat and monitor risks to projects and to the organisation level processes.
 
-* **Assembly:** Engineering / Risk Management (code ``risk``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Engineering / ``risk``
 * **Enabler / Scope / Layer:** - / GLOB / -
-* **Owner:** :need:`rl_qx_risk_risk_manager`
 * **Standards:** ISO/IEC/IEEE 15288 6.3.4, ASPICE 4.0 MAN.5
 
 .. doc_getstrt:: Getting started on Risk Management

@@ -6,12 +6,29 @@
 Problem Resolution
 ##################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Problem Resolution
+   * - Process ID
+     - ``problem_resolution``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_prb_problem_manager`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Record problems from any source, analyse their cause and take them to verified resolution.
 
-* **Assembly:** Engineering / Problem Resolution (code ``prb``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Engineering / ``prb``
 * **Enabler / Scope / Layer:** - / GLOB / -
-* **Owner:** :need:`rl_qx_prb_problem_manager`
 * **Standards:** ASPICE 4.0 SUP.9
 
 .. doc_getstrt:: Getting started on Problem Resolution

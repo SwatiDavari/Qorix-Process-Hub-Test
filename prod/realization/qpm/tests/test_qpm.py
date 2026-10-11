@@ -148,6 +148,20 @@ def test_guidance_prefixes_are_typed():
     assert {"gd_req", "gd_guidl", "gd_chklst", "gd_temp"} <= kinds
 
 
+def test_document_control_fields_are_checked_and_rendered():
+    areas = catalog.load_catalog(ASSEMBLIES)
+    stds = catalog.load_standards(STANDARDS)
+    ar = areas[0]["area"]
+    ar["version"] = "1.0"
+    assert any("version" in e for e in catalog.check_catalog(areas, stds))
+    ar["version"], ar["status"] = "1.0.0", "approved"
+    assert any("effective date" in e for e in catalog.check_catalog(areas, stds))
+    ar["effective_date"], ar["review_date"] = "2026-10-01", "2026-09-01"
+    assert any("after the effective date" in e for e in catalog.check_catalog(areas, stds))
+    page = catalog.render_area(areas[0])["process/index.rst"]
+    assert page.index("Document control") < page.index("Cluster / Code")
+
+
 def test_catalog_detects_violations():
     areas = catalog.load_catalog(ASSEMBLIES)
     wf = next(x for x in areas if x["workflows"])["workflows"][0]

@@ -6,12 +6,29 @@
 Quality Assurance
 #################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Quality Assurance
+   * - Process ID
+     - ``quality_assurance``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_qa_quality_office`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Quality management system and quality assurance: make sure processes are followed and work products meet their criteria.
 
-* **Assembly:** Engineering / Quality Assurance (code ``qa``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Engineering / ``qa``
 * **Enabler / Scope / Layer:** - / GLOB / -
-* **Owner:** :need:`rl_qx_qa_quality_office`
 * **Standards:** ISO 9001, IATF 16949, ASPICE 4.0 SUP.1, ISO/IEC/IEEE 15288 6.3.8
 
 .. doc_concept:: Quality Assurance Process

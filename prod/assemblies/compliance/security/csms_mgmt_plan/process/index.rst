@@ -6,12 +6,29 @@
 Cybersecurity Management Plan
 #############################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Cybersecurity Management Plan
+   * - Process ID
+     - ``csms_mgmt_plan``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_sec_security_office`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Cybersecurity planning translates ISO/SAE 21434 requirements into a concrete, product/project-specific execution framework.
 
-* **Assembly:** Compliance / Cybersecurity Management Plan (code ``csplan``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Compliance / ``csplan``
 * **Enabler / Scope / Layer:** SEC / GLOB / -
-* **Owner:** :need:`rl_qx_sec_security_office`
 * **Standards:** ISO/SAE 21434
 
 .. doc_getstrt:: Getting started on Cybersecurity Management Plan

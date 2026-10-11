@@ -8,6 +8,9 @@ assembly:
   scope: GLOB
   layer: '-'
   status: draft
+  version: 0.1.0
+  effective_date: TBD
+  review_date: TBD
   owner: rl_qx_sup_supplier_manager
   group: Control and release
   purpose: "Agree what is acquired from suppliers, put the agreement in writing and monitor the supplier against it."

@@ -6,12 +6,29 @@
 Validation
 ##########
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Validation
+   * - Process ID
+     - ``validation``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_val_validation_lead`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Set the organisation-wide test policy, qualify the test systems it relies on, and validate products against stakeholder requirements.
 
-* **Assembly:** Testing / Validation (code ``val``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Testing / ``val``
 * **Enabler / Scope / Layer:** TST / GLOB / -
-* **Owner:** :need:`rl_qx_val_validation_lead`
 * **Standards:** ISO 26262-4 cl. 8, ISO 26262-8 cl. 9, ASPICE 4.0 SYS.5 / VAL.1
 
 .. doc_concept:: Validation Concept

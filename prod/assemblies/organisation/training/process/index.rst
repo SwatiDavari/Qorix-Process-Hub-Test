@@ -6,12 +6,29 @@
 Training
 ########
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Training
+   * - Process ID
+     - ``training``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_trn_training_coordinator`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Make sure every person holding a process role is qualified for it, and keep the evidence (competence matrix, training records) assessor-ready.
 
-* **Assembly:** Organisation / Training (code ``trn``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Organisation / ``trn``
 * **Enabler / Scope / Layer:** - / GLOB / -
-* **Owner:** :need:`rl_qx_trn_training_coordinator`
 * **Standards:** ISO 26262-2 cl. 5.4.5, ISO/SAE 21434 cl. 5.4.4, ASPICE 4.0 (training material)
 
 .. doc_concept:: Competence Management Concept

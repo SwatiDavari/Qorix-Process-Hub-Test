@@ -6,12 +6,29 @@
 Cybersecurity Management Systems
 ################################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Cybersecurity Management Systems
+   * - Process ID
+     - ``csms_mgmt_systems``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_sec_security_office`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 The management systems the cybersecurity activities rely on, including information security management, are in place and kept effective.
 
-* **Assembly:** Compliance / Cybersecurity Management Systems (code ``csmgmt``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Compliance / ``csmgmt``
 * **Enabler / Scope / Layer:** SEC / GLOB / -
-* **Owner:** :need:`rl_qx_sec_security_office`
 * **Standards:** ISO/SAE 21434
 
 .. doc_concept:: Cybersecurity Management Systems Concept

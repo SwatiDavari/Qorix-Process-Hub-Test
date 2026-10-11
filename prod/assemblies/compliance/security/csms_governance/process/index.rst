@@ -6,12 +6,29 @@
 Cybersecurity Governance
 ########################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Cybersecurity Governance
+   * - Process ID
+     - ``csms_governance``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_sec_security_office`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Cybersecurity Governance defines how the organization directs, controls, and supports cybersecurity engineering activities.
 
-* **Assembly:** Compliance / Cybersecurity Governance (code ``csgov``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Compliance / ``csgov``
 * **Enabler / Scope / Layer:** SEC / GLOB / -
-* **Owner:** :need:`rl_qx_sec_security_office`
 * **Standards:** ISO/SAE 21434
 
 .. doc_getstrt:: Getting started on Cybersecurity Governance

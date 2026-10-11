@@ -6,12 +6,29 @@
 Cybersecurity Goals and Claims
 ##############################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Cybersecurity Goals and Claims
+   * - Process ID
+     - ``csms_goals_claims``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_sec_security_office`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Cybersecurity goals and cybersecurity claims translate TARA risk treatment decisions into concept-level statements that drive downstream cybersecurity requirements.
 
-* **Assembly:** Compliance / Cybersecurity Goals and Claims (code ``csgoal``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Compliance / ``csgoal``
 * **Enabler / Scope / Layer:** SEC / GLOB / -
-* **Owner:** :need:`rl_qx_sec_security_office`
 * **Standards:** ISO/SAE 21434
 
 .. doc_getstrt:: Getting started on Cybersecurity Goals and Claims

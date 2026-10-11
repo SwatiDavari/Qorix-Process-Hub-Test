@@ -6,12 +6,29 @@
 Cybersecurity Distributed Activities
 ####################################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Cybersecurity Distributed Activities
+   * - Process ID
+     - ``csms_distributed``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_sec_security_office`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Suppliers are assessed, requests for quotation state the cybersecurity needs, and responsibilities are aligned and recorded.
 
-* **Assembly:** Compliance / Cybersecurity Distributed Activities (code ``csdist``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Compliance / ``csdist``
 * **Enabler / Scope / Layer:** SEC / GLOB / -
-* **Owner:** :need:`rl_qx_sec_security_office`
 * **Standards:** ISO/SAE 21434
 
 .. doc_concept:: Cybersecurity Distributed Activities Concept

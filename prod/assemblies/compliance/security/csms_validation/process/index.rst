@@ -6,12 +6,29 @@
 Cybersecurity Validation
 ########################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Cybersecurity Validation
+   * - Process ID
+     - ``csms_validation``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_sec_security_office`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Cybersecurity validation (Clause 11) confirms, with the item / component in its intended operational environment and typical release configuration, that the cybersecurity goals are achieved, the cybersecurity claims are valid, and every requirement that
 
-* **Assembly:** Compliance / Cybersecurity Validation (code ``csval``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Compliance / ``csval``
 * **Enabler / Scope / Layer:** SEC / GLOB / -
-* **Owner:** :need:`rl_qx_sec_security_office`
 * **Standards:** ISO/SAE 21434
 
 .. doc_getstrt:: Getting started on Cybersecurity Validation

@@ -6,12 +6,29 @@
 Cybersecurity Culture
 #####################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Cybersecurity Culture
+   * - Process ID
+     - ``csms_culture``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_sec_security_office`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Cybersecurity culture represents the collective knowledge, beliefs, perceptions, attitudes, assumptions, norms, and values of individuals regarding cybersecurity, and how these elements manifest in daily behaviors when interacting with information
 
-* **Assembly:** Compliance / Cybersecurity Culture (code ``cscult``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Compliance / ``cscult``
 * **Enabler / Scope / Layer:** SEC / GLOB / -
-* **Owner:** :need:`rl_qx_sec_security_office`
 * **Standards:** ISO/SAE 21434
 
 .. doc_getstrt:: Getting started on Cybersecurity Culture

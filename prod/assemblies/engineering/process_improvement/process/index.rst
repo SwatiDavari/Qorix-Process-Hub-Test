@@ -6,12 +6,29 @@
 Process Improvement and Tailoring
 #################################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Process Improvement and Tailoring
+   * - Process ID
+     - ``process_improvement``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_pim_improvement_lead`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Turn audit findings, metrics and feedback into process improvements, and record how a project tailors the processes and why.
 
-* **Assembly:** Engineering / Process Improvement and Tailoring (code ``pim``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Engineering / ``pim``
 * **Enabler / Scope / Layer:** - / GLOB / -
-* **Owner:** :need:`rl_qx_pim_improvement_lead`
 * **Standards:** ISO/IEC/IEEE 15288 Annex A, ASPICE 4.0 PIM.3
 
 .. doc_getstrt:: Getting started on Process Improvement and Tailoring

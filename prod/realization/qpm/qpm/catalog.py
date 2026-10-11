@@ -6,6 +6,7 @@ Sphinx-needs RST (one adapter among possible others).
 """
 from __future__ import annotations
 
+import re
 from pathlib import Path
 from typing import Any
 
@@ -141,6 +142,7 @@ def check_catalog(areas: list[dict[str, Any]], standards: list[dict[str, Any]]) 
             errs.append(f"{aid}.group: must be one of {', '.join(allowed)}")
         if grp and not allowed:
             errs.append(f"{aid}.group: cluster '{a['area'].get('cluster')}' defines no groups")
+        errs += _check_control(aid, a["area"])
         for key, allowed in (("enabler", ENABLERS), ("scope", SCOPES), ("layer", LAYERS)):
             if a["area"].get(key) not in allowed:
                 errs.append(f"{aid}.{key}: must be one of {', '.join(sorted(allowed))}")
@@ -192,6 +194,26 @@ def check_catalog(areas: list[dict[str, Any]], standards: list[dict[str, Any]]) 
             if r["id"] not in used_roles and r["id"] not in owners:
                 errs.append(f"{a['area']['id']}.{r['id']}: role not used by any workflow")
     errs += _check_layers(areas, known)
+    return errs
+
+
+_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+
+def _check_control(aid: str, ar: dict[str, Any]) -> list[str]:
+    """Document control: version, effective date and review date (TBD only while not approved)."""
+    errs: list[str] = []
+    if not re.fullmatch(r"\d+\.\d+\.\d+", str(ar.get("version", ""))):
+        errs.append(f"{aid}.version: must look like 1.0.0")
+    dates = {k: str(ar.get(k, "")) for k in ("effective_date", "review_date")}
+    for k, v in dates.items():
+        if v != "TBD" and not _DATE.match(v):
+            errs.append(f"{aid}.{k}: must be YYYY-MM-DD or TBD")
+    if ar.get("status") in ("approved", "released"):
+        if "TBD" in dates.values():
+            errs.append(f"{aid}: an {ar['status']} process needs an effective date and a review date")
+        elif dates["review_date"] <= dates["effective_date"]:
+            errs.append(f"{aid}.review_date: must be after the effective date")
     return errs
 
 
@@ -352,9 +374,16 @@ def render_area(a: dict[str, Any], areas: list[dict[str, Any]] | None = None) ->
 
     # process: identity, classification, getting started, concepts
     idx = h + f".. _qx_assembly_{aid}:\n\n" + _hdr(ar["title"], "#") + "\n"
+    idx += (".. list-table:: Document control\n   :class: qx-reg\n   :stub-columns: 1\n\n"
+            f"   * - Process name\n     - {ar['title']}\n"
+            f"   * - Process ID\n     - ``{aid}``\n"
+            f"   * - Version\n     - {ar['version']}\n"
+            f"   * - Status\n     - :bdg-{STATUS[ar['status']]}:`{ar['status']}`\n"
+            f"   * - Owner\n     - :need:`{ar['owner']}`\n"
+            f"   * - Effective date\n     - {ar['effective_date']}\n"
+            f"   * - Review date\n     - {ar['review_date']}\n\n")
     idx += " ".join(ar["purpose"].split()) + "\n\n"
-    idx += f"* **Assembly:** {CLUSTERS[ar['cluster']]} / {ar['title']} (code ``{ar['code']}``)\n"
-    idx += f"* **Status:** :bdg-{STATUS[ar['status']]}:`{ar['status']}`\n"
+    idx += f"* **Cluster / Code:** {CLUSTERS[ar['cluster']]} / ``{ar['code']}``\n"
     idx += (f"* **Enabler / Scope / Layer:** {ar.get('enabler', '-')} / {ar.get('scope', '-')} / "
             f"{ar.get('layer', '-')}\n")
     if ar.get("part_of"):
@@ -362,7 +391,6 @@ def render_area(a: dict[str, Any], areas: list[dict[str, Any]] | None = None) ->
     kids = [b["area"]["id"] for b in areas or [] if b["area"].get("part_of") == aid]
     if kids:
         idx += "* **Parts:** " + ", ".join(f":ref:`qx_assembly_{k}`" for k in kids) + "\n"
-    idx += f"* **Owner:** :need:`{ar['owner']}`\n"
     idx += f"* **Standards:** {', '.join(ar.get('standards') or [])}\n\n"
     if a.get("getting_started"):
         idx += _need("doc_getstrt", f"Getting started on {ar['title']}",

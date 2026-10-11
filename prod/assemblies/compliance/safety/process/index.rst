@@ -6,12 +6,29 @@
 Safety
 ######
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Safety
+   * - Process ID
+     - ``safety``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_saf_safety_office`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Functional safety management: plan, perform and assess the safety activities ISO 26262 requires for Qorix products.
 
-* **Assembly:** Compliance / Safety (code ``saf``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Compliance / ``saf``
 * **Enabler / Scope / Layer:** SAF / GLOB / -
-* **Owner:** :need:`rl_qx_saf_safety_office`
 * **Standards:** ISO 26262-2, ISO 26262-8
 
 .. doc_getstrt:: Getting started on Safety

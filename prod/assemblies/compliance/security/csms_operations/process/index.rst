@@ -6,12 +6,29 @@
 Cybersecurity Operations and Maintenance
 ########################################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Cybersecurity Operations and Maintenance
+   * - Process ID
+     - ``csms_operations``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_sec_security_office`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Cybersecurity incidents can occur in the field after item / component release, due to vulnerability exploitation, unexpected behavior, or a newly discovered weakness.
 
-* **Assembly:** Compliance / Cybersecurity Operations and Maintenance (code ``csops``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Compliance / ``csops``
 * **Enabler / Scope / Layer:** SEC / GLOB / -
-* **Owner:** :need:`rl_qx_sec_security_office`
 * **Standards:** ISO/SAE 21434
 
 .. doc_getstrt:: Getting started on Cybersecurity Operations and Maintenance

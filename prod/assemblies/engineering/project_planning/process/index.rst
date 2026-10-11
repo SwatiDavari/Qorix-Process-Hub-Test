@@ -6,12 +6,29 @@
 Project Planning and Control
 ############################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Project Planning and Control
+   * - Process ID
+     - ``project_planning``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_plan_project_manager`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Plan a project's scope, schedule, resources and responsibilities, and control progress against that plan.
 
-* **Assembly:** Engineering / Project Planning and Control (code ``plan``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Engineering / ``plan``
 * **Enabler / Scope / Layer:** - / GLOB / -
-* **Owner:** :need:`rl_qx_plan_project_manager`
 * **Standards:** ISO/IEC/IEEE 15288 6.3.1-6.3.2, ASPICE 4.0 MAN.3
 
 .. doc_getstrt:: Getting started on Project Planning and Control

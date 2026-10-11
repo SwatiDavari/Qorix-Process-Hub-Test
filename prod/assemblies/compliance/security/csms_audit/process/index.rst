@@ -6,12 +6,29 @@
 Cybersecurity Audit
 ###################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Cybersecurity Audit
+   * - Process ID
+     - ``csms_audit``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_sec_security_office`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 An organisational cybersecurity audit is planned, performed and reported.
 
-* **Assembly:** Compliance / Cybersecurity Audit (code ``csaud``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Compliance / ``csaud``
 * **Enabler / Scope / Layer:** SEC / GLOB / -
-* **Owner:** :need:`rl_qx_sec_security_office`
 * **Standards:** ISO/SAE 21434
 
 .. doc_concept:: Cybersecurity Audit Concept

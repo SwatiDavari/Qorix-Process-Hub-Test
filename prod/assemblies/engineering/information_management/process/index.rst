@@ -6,12 +6,29 @@
 Information and Documentation Management
 ########################################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Information and Documentation Management
+   * - Process ID
+     - ``information_management``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_info_documentation_owner`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Decide which information the organisation keeps, keep it current and retrievable, and protect it as its classification requires.
 
-* **Assembly:** Engineering / Information and Documentation Management (code ``info``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Engineering / ``info``
 * **Enabler / Scope / Layer:** DOC / GLOB / -
-* **Owner:** :need:`rl_qx_info_documentation_owner`
 * **Standards:** ISO/IEC/IEEE 15288 6.3.6
 
 .. doc_getstrt:: Getting started on Information and Documentation Management

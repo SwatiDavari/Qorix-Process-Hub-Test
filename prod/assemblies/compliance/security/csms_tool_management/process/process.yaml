@@ -8,6 +8,9 @@ assembly:
   scope: GLOB
   layer: '-'
   status: draft
+  version: 0.1.0
+  effective_date: TBD
+  review_date: TBD
   owner: rl_qx_sec_security_office
   purpose: The evaluation above (ISO 26262-8 clause 11, TCL) judges whether a tool's *output* can be trusted
     for safety purposes; it does not by itself address whether the tool itself can be tampered with ISO/SAE

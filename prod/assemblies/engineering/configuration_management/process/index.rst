@@ -6,12 +6,29 @@
 Configuration Management
 ########################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Configuration Management
+   * - Process ID
+     - ``configuration_management``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_cfg_config_manager`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Identify, baseline and control configuration items so every release is reproducible.
 
-* **Assembly:** Engineering / Configuration Management (code ``cfg``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Engineering / ``cfg``
 * **Enabler / Scope / Layer:** - / GLOB / -
-* **Owner:** :need:`rl_qx_cfg_config_manager`
 * **Standards:** ISO 26262-8 cl. 7, ASPICE 4.0 SUP.8, ISO/IEC/IEEE 15288 6.3.5
 
 .. doc_getstrt:: Getting started on Configuration Management

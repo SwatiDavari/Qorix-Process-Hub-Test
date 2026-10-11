@@ -6,12 +6,29 @@
 Supplier and Acquisition Management
 ###################################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Supplier and Acquisition Management
+   * - Process ID
+     - ``supplier_management``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_sup_supplier_manager`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Agree what is acquired from suppliers, put the agreement in writing and monitor the supplier against it.
 
-* **Assembly:** Engineering / Supplier and Acquisition Management (code ``sup``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Engineering / ``sup``
 * **Enabler / Scope / Layer:** - / GLOB / -
-* **Owner:** :need:`rl_qx_sup_supplier_manager`
 * **Standards:** ISO/IEC/IEEE 15288 6.1.1-6.1.2, ASPICE 4.0 ACQ.4
 
 .. doc_getstrt:: Getting started on Supplier and Acquisition Management

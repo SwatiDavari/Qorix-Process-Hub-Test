@@ -6,12 +6,29 @@
 Cybersecurity Development
 #########################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Cybersecurity Development
+   * - Process ID
+     - ``csms_development``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_sec_security_office`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 The cybersecurity concept (Clause 9.5) states the high-level cybersecurity requirements and controls for the item / component; the cybersecurity development process refines them into system and software requirements, allocates them to an architectural design,
 
-* **Assembly:** Compliance / Cybersecurity Development (code ``csdev``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Compliance / ``csdev``
 * **Enabler / Scope / Layer:** SEC / GLOB / -
-* **Owner:** :need:`rl_qx_sec_security_office`
 * **Standards:** ISO/SAE 21434
 
 .. doc_getstrt:: Getting started on Cybersecurity Development

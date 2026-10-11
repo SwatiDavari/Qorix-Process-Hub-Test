@@ -6,12 +6,29 @@
 Cybersecurity Verification
 ##########################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Cybersecurity Verification
+   * - Process ID
+     - ``csms_verification``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_sec_security_office`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 The cybersecurity specification (Clause 10.4.1) states what the item / component must do to satisfy its cybersecurity requirements; the cybersecurity verification process confirms that the implementation and integration actually do it.
 
-* **Assembly:** Compliance / Cybersecurity Verification (code ``csver``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Compliance / ``csver``
 * **Enabler / Scope / Layer:** SEC / GLOB / -
-* **Owner:** :need:`rl_qx_sec_security_office`
 * **Standards:** ISO/SAE 21434
 
 .. doc_getstrt:: Getting started on Cybersecurity Verification

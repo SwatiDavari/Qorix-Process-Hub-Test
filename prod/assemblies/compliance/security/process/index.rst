@@ -6,12 +6,29 @@
 Security
 ########
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Security
+   * - Process ID
+     - ``security``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_sec_security_office`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Cybersecurity management: plan, perform and assess the cybersecurity activities ISO/SAE 21434 requires for Qorix products.
 
-* **Assembly:** Compliance / Security (code ``sec``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Compliance / ``sec``
 * **Enabler / Scope / Layer:** SEC / GLOB / -
-* **Owner:** :need:`rl_qx_sec_security_office`
 * **Standards:** ISO/SAE 21434
 
 .. doc_getstrt:: Getting started on Security

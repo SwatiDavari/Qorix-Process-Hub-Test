@@ -6,12 +6,29 @@
 Cybersecurity Continual Activities
 ##################################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Cybersecurity Continual Activities
+   * - Process ID
+     - ``csms_continual``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_sec_security_office`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 An item or component accumulates new cybersecurity information for as long as it is supported: newly disclosed weaknesses in reused / open-source components, researcher or vendor advisories, field incidents, and results from cybersecurity verification and
 
-* **Assembly:** Compliance / Cybersecurity Continual Activities (code ``cscont``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Compliance / ``cscont``
 * **Enabler / Scope / Layer:** SEC / GLOB / -
-* **Owner:** :need:`rl_qx_sec_security_office`
 * **Standards:** ISO/SAE 21434
 
 .. doc_getstrt:: Getting started on Cybersecurity Continual Activities

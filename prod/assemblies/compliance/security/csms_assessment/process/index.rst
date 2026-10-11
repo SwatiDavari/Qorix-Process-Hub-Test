@@ -6,12 +6,29 @@
 Cybersecurity Assessment
 ########################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Cybersecurity Assessment
+   * - Process ID
+     - ``csms_assessment``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_sec_security_office`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 A cybersecurity assessment is performed and the item is released for post-development on its result.
 
-* **Assembly:** Compliance / Cybersecurity Assessment (code ``csassm``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Compliance / ``csassm``
 * **Enabler / Scope / Layer:** SEC / GLOB / -
-* **Owner:** :need:`rl_qx_sec_security_office`
 * **Standards:** ISO/SAE 21434
 
 .. doc_concept:: Cybersecurity Assessment Concept

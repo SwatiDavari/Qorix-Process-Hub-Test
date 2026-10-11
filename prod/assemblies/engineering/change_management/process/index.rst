@@ -6,12 +6,29 @@
 Change Management
 #################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Change Management
+   * - Process ID
+     - ``change_management``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_cm_change_manager`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Request, analyse, approve and track changes to work products and products.
 
-* **Assembly:** Engineering / Change Management (code ``cm``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Engineering / ``cm``
 * **Enabler / Scope / Layer:** - / GLOB / -
-* **Owner:** :need:`rl_qx_cm_change_manager`
 * **Standards:** ISO 26262-8 cl. 8, ASPICE 4.0 SUP.10, ISO/IEC/IEEE 15288 6.3.5
 
 .. doc_getstrt:: Getting started on Change Management

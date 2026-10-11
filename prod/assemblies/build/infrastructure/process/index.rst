@@ -6,12 +6,29 @@
 Infrastructure
 ##############
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Infrastructure
+   * - Process ID
+     - ``infrastructure``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_infra_lead`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Provide and keep qualified the docs-as-code toolchain (Bazel, Sphinx-needs, qpm), the repository baseline and CI that every Qorix project consumes.
 
-* **Assembly:** Build / Infrastructure (code ``infra``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Build / ``infra``
 * **Enabler / Scope / Layer:** BLD / GLOB / -
-* **Owner:** :need:`rl_qx_infra_lead`
 * **Standards:** ISO 26262-8 cl. 11, ISO/SAE 21434 cl. 5.4.5, ASPICE 4.0 PIM.3
 
 .. doc_concept:: Infrastructure Concept

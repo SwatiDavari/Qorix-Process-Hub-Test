@@ -6,12 +6,29 @@
 Release Management
 ##################
 
+.. list-table:: Document control
+   :class: qx-reg
+   :stub-columns: 1
+
+   * - Process name
+     - Release Management
+   * - Process ID
+     - ``release_management``
+   * - Version
+     - 0.1.0
+   * - Status
+     - :bdg-secondary:`draft`
+   * - Owner
+     - :need:`rl_qx_rel_release_manager`
+   * - Effective date
+     - TBD
+   * - Review date
+     - TBD
+
 Release a baselined, audited organisation level configuration so every project applies a known, reproducible version.
 
-* **Assembly:** Engineering / Release Management (code ``rel``)
-* **Status:** :bdg-secondary:`draft`
+* **Cluster / Code:** Engineering / ``rel``
 * **Enabler / Scope / Layer:** - / GLOB / -
-* **Owner:** :need:`rl_qx_rel_release_manager`
 * **Standards:** ISO 26262-4 cl. 11, ASPICE 4.0 SPL.2, ISO/IEC/IEEE 15288 6.4.10
 
 .. doc_getstrt:: Getting started on Release Management
