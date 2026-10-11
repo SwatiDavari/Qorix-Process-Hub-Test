@@ -9,8 +9,8 @@ assembly:
   layer: '-'
   status: draft
   version: 0.1.0
-  effective_date: TBD
-  review_date: TBD
+  effective_date: auto
+  review_date: auto
   owner: rl_qx_sec_security_office
   purpose: An item or component can be made to behave in ways its road users never consented to if a cybersecurity
     property of one of its assets is compromised.
