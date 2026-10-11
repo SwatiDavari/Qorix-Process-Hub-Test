@@ -214,9 +214,7 @@ concepts:
     cybersecurity event is assessed to determine whether it represents a weakness in the item or component.
 
 
-    .. figure:: _assets/cs_cont_event_evaluation_logic.png :align: center :alt: Decision logic used to
-    confirm whether reported cybersecurity information is a weakness for the integrated component :name:
-    cs_cont_event_evaluation_logic
+    .. image file cs_cont_event_evaluation_logic.png is not in the repository; restore the figure once it is added
 
 
     Event evaluation decision logic: a reported issue is confirmed against the actually integrated component

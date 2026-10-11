@@ -131,7 +131,7 @@ An item or component accumulates new cybersecurity information for as long as it
 
    1. Plan and prepare (Plan and Prepare Cybersecurity Monitoring): Sources of cybersecurity information are selected and triggers for triage are defined, based on the item / component definition, cybersecurity claims, cybersecurity specifications, threat scenarios, past vulnerability analysis, and field information. 2. Monitor (Collect and Triage Cybersecurity Information): Information from the selected sources is collected continuously and triaged against the defined triggers to determine whether it constitutes one or more cybersecurity events. 3. Evaluate (Evaluate Cybersecurity Events for Weaknesses): Each cybersecurity event is assessed to determine whether it represents a weakness in the item or component.
 
-   .. figure:: _assets/cs_cont_event_evaluation_logic.png :align: center :alt: Decision logic used to confirm whether reported cybersecurity information is a weakness for the integrated component :name: cs_cont_event_evaluation_logic
+   .. image file cs_cont_event_evaluation_logic.png is not in the repository; restore the figure once it is added
 
    Event evaluation decision logic: a reported issue is confirmed against the actually integrated component and configuration before it is dismissed as not applicable.
 
