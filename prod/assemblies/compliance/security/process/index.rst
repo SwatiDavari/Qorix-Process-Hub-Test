@@ -84,3 +84,26 @@ Cybersecurity management: plan, perform and assess the cybersecurity activities 
    /assemblies/compliance/security/work_products/index
    /assemblies/compliance/security/roles/index
    /assemblies/compliance/security/templates/index
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Sub-processes
+
+   /assemblies/compliance/security/csms_assessment/process/index
+   /assemblies/compliance/security/csms_audit/process/index
+   /assemblies/compliance/security/csms_case/process/index
+   /assemblies/compliance/security/csms_concept/process/index
+   /assemblies/compliance/security/csms_continual/process/index
+   /assemblies/compliance/security/csms_culture/process/index
+   /assemblies/compliance/security/csms_development/process/index
+   /assemblies/compliance/security/csms_distributed/process/index
+   /assemblies/compliance/security/csms_goals_claims/process/index
+   /assemblies/compliance/security/csms_governance/process/index
+   /assemblies/compliance/security/csms_item_definition/process/index
+   /assemblies/compliance/security/csms_mgmt_plan/process/index
+   /assemblies/compliance/security/csms_mgmt_systems/process/index
+   /assemblies/compliance/security/csms_operations/process/index
+   /assemblies/compliance/security/csms_tara/process/index
+   /assemblies/compliance/security/csms_tool_management/process/index
+   /assemblies/compliance/security/csms_validation/process/index
+   /assemblies/compliance/security/csms_verification/process/index

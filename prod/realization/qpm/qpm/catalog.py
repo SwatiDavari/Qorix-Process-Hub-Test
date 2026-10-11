@@ -418,6 +418,10 @@ def render_area(a: dict[str, Any], areas: list[dict[str, Any]] | None = None,
         idx += _indent(_md(c["description"])) + "\n\n"
     idx += ".. toctree::\n   :maxdepth: 1\n\n" + "".join(
         f"   /assemblies/{path}/{sub}/index\n" for sub in SUBCOMPONENTS[1:])
+    nested = _nested_children(a, areas)
+    if nested:   # navigation only: sub-processes appear under this assembly in the sidebar
+        idx += "\n.. toctree::\n   :maxdepth: 1\n   :caption: Sub-processes\n\n" + "".join(
+            f"   /assemblies/{b['_path']}/process/index\n" for b in nested)
     files["process/index.rst"] = idx
 
     # workflows
@@ -588,11 +592,23 @@ def _cluster_body(cluster: str, areas: list[dict[str, Any]], owners: dict[str, s
             "   .. tab-item:: Completeness\n\n" + _indent(_scorecard(flat, owners), 6) + "\n\n")
 
 
+def _nested_children(a: dict[str, Any], areas: list[dict[str, Any]] | None) -> list[dict[str, Any]]:
+    """Assemblies whose folder sits directly inside this assembly's folder (navigation nesting only)."""
+    pre = a["_path"] + "/"
+    return sorted((b for b in areas or [] if b["_path"].startswith(pre) and "/" not in b["_path"][len(pre):]),
+                  key=lambda b: b["_path"])
+
+
+def _is_nested(a: dict[str, Any], areas: list[dict[str, Any]]) -> bool:
+    return any(a["_path"].startswith(b["_path"] + "/") for b in areas)
+
+
 def _cluster_page(cluster: str, areas: list[dict[str, Any]], owners: dict[str, str]) -> str:
     out = HEADER.format(src=f"prod/assemblies/{cluster}/*/process/process.yaml") + f".. _qx_cluster_{cluster}:\n\n"
     out += _hdr(CLUSTERS[cluster], "#") + "\n"
     out += _cluster_body(cluster, areas, owners)
-    out += ".. toctree::\n   :hidden:\n\n" + "".join(f"   /assemblies/{a['_path']}/process/index\n" for a in areas)
+    out += ".. toctree::\n   :hidden:\n\n" + "".join(
+        f"   /assemblies/{a['_path']}/process/index\n" for a in areas if not _is_nested(a, areas))
     return out
 
 
