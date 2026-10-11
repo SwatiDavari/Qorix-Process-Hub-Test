@@ -9,8 +9,8 @@ assembly:
   layer: '-'
   status: draft
   version: 0.1.0
-  effective_date: TBD
-  review_date: TBD
+  effective_date: auto
+  review_date: auto
   owner: rl_qx_cm_change_manager
   group: Control and release
   purpose: Request, analyse, approve and track changes to work products and products.

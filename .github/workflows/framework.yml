@@ -11,12 +11,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - run: pip install -r prod/realization/qpm/requirements_lock.txt
       - name: Self-tests (round trip, tiering rules, catalog)
         run: python -m pytest prod/realization/qpm/tests -q
+      - name: Changed processes need a version bump
+        if: github.event_name == 'pull_request'
+        run: PYTHONPATH=prod/realization/qpm python -m qpm check-versions --assemblies prod/assemblies --base "origin/${{ github.base_ref }}"
       - name: Regenerate and fail on drift
         run: |
           bash prod/realization/regen.sh
@@ -28,6 +33,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r prod/realization/qpm/requirements_lock.txt
+      - name: Fill effective and review dates from git (published pages only, not committed)
+        run: PYTHONPATH=prod/realization/qpm python -m qpm render-process --assemblies prod/assemblies --standards needs/standards.yaml --out-dir prod --git
       - name: Install Graphviz (needed by PlantUML)
         run: sudo apt-get update && sudo apt-get install -y graphviz
       - uses: bazel-contrib/setup-bazel@0.14.0

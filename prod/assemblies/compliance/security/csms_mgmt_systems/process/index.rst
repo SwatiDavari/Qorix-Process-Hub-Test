@@ -21,9 +21,9 @@ Cybersecurity Management Systems
    * - Owner
      - :need:`rl_qx_sec_security_office`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 The management systems the cybersecurity activities rely on, including information security management, are in place and kept effective.
 

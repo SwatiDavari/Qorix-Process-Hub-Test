@@ -21,9 +21,9 @@ Risk Management
    * - Owner
      - :need:`rl_qx_risk_risk_manager`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Identify, analyse, treat and monitor risks to projects and to the organisation level processes.
 

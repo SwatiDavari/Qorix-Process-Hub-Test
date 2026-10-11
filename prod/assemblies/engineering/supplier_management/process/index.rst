@@ -21,9 +21,9 @@ Supplier and Acquisition Management
    * - Owner
      - :need:`rl_qx_sup_supplier_manager`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Agree what is acquired from suppliers, put the agreement in writing and monitor the supplier against it.
 

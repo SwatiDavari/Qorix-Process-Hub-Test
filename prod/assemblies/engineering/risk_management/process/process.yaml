@@ -9,8 +9,8 @@ assembly:
   layer: '-'
   status: draft
   version: 0.1.0
-  effective_date: TBD
-  review_date: TBD
+  effective_date: auto
+  review_date: auto
   owner: rl_qx_risk_risk_manager
   group: Plan and control
   purpose: "Identify, analyse, treat and monitor risks to projects and to the organisation level processes."

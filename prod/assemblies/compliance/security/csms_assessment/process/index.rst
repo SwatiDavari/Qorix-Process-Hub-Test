@@ -21,9 +21,9 @@ Cybersecurity Assessment
    * - Owner
      - :need:`rl_qx_sec_security_office`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 A cybersecurity assessment is performed and the item is released for post-development on its result.
 

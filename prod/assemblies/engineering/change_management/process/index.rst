@@ -21,9 +21,9 @@ Change Management
    * - Owner
      - :need:`rl_qx_cm_change_manager`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Request, analyse, approve and track changes to work products and products.
 

@@ -21,9 +21,9 @@ Cybersecurity Concept
    * - Owner
      - :need:`rl_qx_sec_security_office`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Cybersecurity goals and claims state what must be protected and why; the cybersecurity concept states how it is protected.
 

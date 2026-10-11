@@ -9,8 +9,8 @@ assembly:
   layer: '-'
   status: draft
   version: 0.1.0
-  effective_date: TBD
-  review_date: TBD
+  effective_date: auto
+  review_date: auto
   owner: rl_qx_sec_security_office
   purpose: Cybersecurity goals and cybersecurity claims translate TARA risk treatment decisions into concept-level
     statements that drive downstream cybersecurity requirements.

@@ -21,9 +21,9 @@ Cybersecurity Verification
    * - Owner
      - :need:`rl_qx_sec_security_office`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 The cybersecurity specification (Clause 10.4.1) states what the item / component must do to satisfy its cybersecurity requirements; the cybersecurity verification process confirms that the implementation and integration actually do it.
 

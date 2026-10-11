@@ -21,9 +21,9 @@ Cybersecurity Continual Activities
    * - Owner
      - :need:`rl_qx_sec_security_office`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 An item or component accumulates new cybersecurity information for as long as it is supported: newly disclosed weaknesses in reused / open-source components, researcher or vendor advisories, field incidents, and results from cybersecurity verification and
 

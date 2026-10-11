@@ -4,14 +4,20 @@
     qpm check-process    --assemblies D --standards F
     qpm render-process   --assemblies D --standards F --out-dir D [--check]
     qpm lint-needs       --tier F [...] --needs-json F
+    qpm render-process   ... --git          fill effective and review dates from git history
+    qpm check-versions   --assemblies D --base REF      changed processes need a version bump
+    qpm bump             --assemblies D --process ID --level major|minor|patch
+    qpm review-due       --assemblies D [--within DAYS] [--today YYYY-MM-DD] [--format text|json]
 """
 from __future__ import annotations
 
 import argparse
+import datetime as dt
+import json
 import sys
 from pathlib import Path
 
-from . import catalog, kinds, registers, reports
+from . import catalog, control, kinds, registers, reports
 from .adapters import sphinx_needs
 from .compose import compose
 from .model import QpmError, dump_json, dump_yaml, load_yaml
@@ -48,6 +54,22 @@ def main(argv: list[str] | None = None) -> int:
         if name == "render-process":
             s.add_argument("--out-dir", required=True)
             s.add_argument("--check", action="store_true")
+            s.add_argument("--git", action="store_true", help="fill effective and review dates from git history")
+
+    s = sub.add_parser("check-versions")
+    s.add_argument("--assemblies", dest="areas", required=True)
+    s.add_argument("--base", required=True)
+
+    s = sub.add_parser("bump")
+    s.add_argument("--assemblies", dest="areas", required=True)
+    s.add_argument("--process", required=True)
+    s.add_argument("--level", required=True, choices=control.LEVELS)
+
+    s = sub.add_parser("review-due")
+    s.add_argument("--assemblies", dest="areas", required=True)
+    s.add_argument("--within", type=int, default=30)
+    s.add_argument("--today")
+    s.add_argument("--format", choices=("text", "json"), default="text")
 
     s = sub.add_parser("lint-needs")
     s.add_argument("--tier", action="append", required=True)
@@ -79,9 +101,31 @@ def main(argv: list[str] | None = None) -> int:
             if a.cmd == "check-process":
                 print(f"process catalog OK ({len(areas)} assemblies)")
                 return 0
-            files = catalog.render_catalog(areas, stds)
+            dates = control.derive(areas, control.repo_root(a.areas)) if a.git else None
+            files = catalog.render_catalog(areas, stds, dates)
             files.update(registers.render_registers(objs, pols, areas, stds))
             return _write_tree(files, Path(a.out_dir), a.check)
+        elif a.cmd in ("check-versions", "bump", "review-due"):
+            areas = catalog.load_catalog(a.areas)
+            root = control.repo_root(a.areas)
+            if a.cmd == "bump":
+                f, old, new = control.bump(areas, a.process, a.level)
+                print(f"{a.process}: {old} -> {new} ({f})")
+            elif a.cmd == "check-versions":
+                errs = control.check_bumps(areas, control.changed_assemblies(root, areas, a.base),
+                                           control.base_versions(root, Path(a.areas), a.base))
+                if errs:
+                    print("version check failed:\n  " + "\n  ".join(errs), file=sys.stderr)
+                    return 1
+                print("version check OK")
+            else:
+                today = dt.date.fromisoformat(a.today) if a.today else dt.date.today()
+                due = control.review_due(areas, control.derive(areas, root), today, a.within)
+                if a.format == "json":
+                    print(json.dumps(due, indent=2))
+                else:
+                    for d in due:
+                        print(f"{d['id']}: review {d['review']} ({d['state']}, {d['days']} days), owner {d['owner']}")
         elif a.cmd == "lint-needs":
             problems = reports.lint_needs(compose(a.tier), a.needs_json)
             for p in problems:

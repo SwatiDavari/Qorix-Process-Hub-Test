@@ -21,9 +21,9 @@ Cybersecurity Goals and Claims
    * - Owner
      - :need:`rl_qx_sec_security_office`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Cybersecurity goals and cybersecurity claims translate TARA risk treatment decisions into concept-level statements that drive downstream cybersecurity requirements.
 

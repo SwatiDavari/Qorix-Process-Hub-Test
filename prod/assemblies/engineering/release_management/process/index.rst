@@ -21,9 +21,9 @@ Release Management
    * - Owner
      - :need:`rl_qx_rel_release_manager`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Release a baselined, audited organisation level configuration so every project applies a known, reproducible version.
 

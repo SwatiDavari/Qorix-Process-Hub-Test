@@ -21,9 +21,9 @@ Safety
    * - Owner
      - :need:`rl_qx_saf_safety_office`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Functional safety management: plan, perform and assess the safety activities ISO 26262 requires for Qorix products.
 

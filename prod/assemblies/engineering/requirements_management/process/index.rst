@@ -21,9 +21,9 @@ Requirements Management and Traceability
    * - Owner
      - :need:`rl_qx_req_requirements_engineer`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Define stakeholder and system requirements once, keep them agreed and trace them both ways to what they come from and what satisfies them.
 

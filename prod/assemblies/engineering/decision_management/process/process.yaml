@@ -9,8 +9,8 @@ assembly:
   layer: '-'
   status: draft
   version: 0.1.0
-  effective_date: TBD
-  review_date: TBD
+  effective_date: auto
+  review_date: auto
   owner: rl_qx_dec_decision_owner
   group: Plan and control
   purpose: "Take significant decisions from analysed alternatives and keep the decision, its rationale and its owner on record."

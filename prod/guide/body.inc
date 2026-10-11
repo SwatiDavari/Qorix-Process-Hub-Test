@@ -60,6 +60,13 @@ Use this guide to find your way around the hub, change a process safely and look
       #. Edit ``needs/objectives.yaml`` or ``needs/policies.yaml``. Every objective has an owner and a measure. Every policy is driven by at least one objective and drives outcomes.
       #. Keep the wording neutral: no standard, tool or technology names in objectives and policies.
 
+      **Version, dates and reviews**
+
+      #. A person decides the ``status``, ``owner`` and ``version`` in ``process/process.yaml``. Run ``python3 -m qpm bump --assemblies prod/assemblies --process <id> --level patch|minor|major`` to raise the version.
+      #. ``effective_date`` and ``review_date`` stay ``auto``. The published site fills them from git: the effective date is the day the current version of an approved process reached ``main``, and the review date follows after 12 months. Set ``review_cycle_months`` in the process to change the cycle.
+      #. A pull request that changes a process without raising its version fails CI.
+      #. A weekly workflow opens a ``review-due`` issue for every process due within 30 days or overdue.
+
       **Check and publish**
 
       #. Run ``python3 -m qpm check-process --assemblies prod/assemblies --standards needs/standards.yaml``. Fix every error.

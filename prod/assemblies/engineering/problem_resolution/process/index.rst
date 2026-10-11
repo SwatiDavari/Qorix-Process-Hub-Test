@@ -21,9 +21,9 @@ Problem Resolution
    * - Owner
      - :need:`rl_qx_prb_problem_manager`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Record problems from any source, analyse their cause and take them to verified resolution.
 

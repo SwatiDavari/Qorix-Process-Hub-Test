@@ -21,9 +21,9 @@ Process Improvement and Tailoring
    * - Owner
      - :need:`rl_qx_pim_improvement_lead`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Turn audit findings, metrics and feedback into process improvements, and record how a project tailors the processes and why.
 

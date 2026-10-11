@@ -21,9 +21,9 @@ Measurement and Metrics
    * - Owner
      - :need:`rl_qx_meas_metrics_analyst`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Define the measures the organisation needs, collect them consistently and report them to the people who decide.
 

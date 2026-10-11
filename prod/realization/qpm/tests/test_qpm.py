@@ -154,8 +154,8 @@ def test_document_control_fields_are_checked_and_rendered():
     ar = areas[0]["area"]
     ar["version"] = "1.0"
     assert any("version" in e for e in catalog.check_catalog(areas, stds))
-    ar["version"], ar["status"] = "1.0.0", "approved"
-    assert any("effective date" in e for e in catalog.check_catalog(areas, stds))
+    ar["version"], ar["effective_date"] = "1.0.0", "TBD"
+    assert any("effective_date" in e for e in catalog.check_catalog(areas, stds))
     ar["effective_date"], ar["review_date"] = "2026-10-01", "2026-09-01"
     assert any("after the effective date" in e for e in catalog.check_catalog(areas, stds))
     page = catalog.render_area(areas[0])["process/index.rst"]

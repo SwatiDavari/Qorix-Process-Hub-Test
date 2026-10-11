@@ -21,9 +21,9 @@ Cybersecurity Item Definition
    * - Owner
      - :need:`rl_qx_sec_security_office`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 The item definition establishes an understanding of what is being protected from a cybersecurity perspective.
 

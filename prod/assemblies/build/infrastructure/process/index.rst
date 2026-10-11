@@ -21,9 +21,9 @@ Infrastructure
    * - Owner
      - :need:`rl_qx_infra_lead`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Provide and keep qualified the docs-as-code toolchain (Bazel, Sphinx-needs, qpm), the repository baseline and CI that every Qorix project consumes.
 

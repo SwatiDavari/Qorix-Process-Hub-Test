@@ -21,9 +21,9 @@ Cybersecurity Operations and Maintenance
    * - Owner
      - :need:`rl_qx_sec_security_office`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Cybersecurity incidents can occur in the field after item / component release, due to vulnerability exploitation, unexpected behavior, or a newly discovered weakness.
 

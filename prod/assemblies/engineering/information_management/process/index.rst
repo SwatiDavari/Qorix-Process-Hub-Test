@@ -21,9 +21,9 @@ Information and Documentation Management
    * - Owner
      - :need:`rl_qx_info_documentation_owner`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Decide which information the organisation keeps, keep it current and retrievable, and protect it as its classification requires.
 

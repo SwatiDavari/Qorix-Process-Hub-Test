@@ -9,8 +9,8 @@ assembly:
   layer: '-'
   status: draft
   version: 0.1.0
-  effective_date: TBD
-  review_date: TBD
+  effective_date: auto
+  review_date: auto
   owner: rl_qx_sec_security_office
   purpose: The cybersecurity concept (Clause 9.5) states the high-level cybersecurity requirements and
     controls for the item / component; the cybersecurity development process refines them into system

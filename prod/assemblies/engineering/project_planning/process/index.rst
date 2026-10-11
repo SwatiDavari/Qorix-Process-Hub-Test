@@ -21,9 +21,9 @@ Project Planning and Control
    * - Owner
      - :need:`rl_qx_plan_project_manager`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Plan a project's scope, schedule, resources and responsibilities, and control progress against that plan.
 

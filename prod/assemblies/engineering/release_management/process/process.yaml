@@ -9,8 +9,8 @@ assembly:
   layer: '-'
   status: draft
   version: 0.1.0
-  effective_date: TBD
-  review_date: TBD
+  effective_date: auto
+  review_date: auto
   owner: rl_qx_rel_release_manager
   group: Control and release
   purpose: Release a baselined, audited organisation level configuration so every project applies a known, reproducible version.

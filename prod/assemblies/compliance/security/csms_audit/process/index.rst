@@ -21,9 +21,9 @@ Cybersecurity Audit
    * - Owner
      - :need:`rl_qx_sec_security_office`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 An organisational cybersecurity audit is planned, performed and reported.
 

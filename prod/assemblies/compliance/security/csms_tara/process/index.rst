@@ -21,9 +21,9 @@ Cybersecurity Threat Analysis and Risk Assessment
    * - Owner
      - :need:`rl_qx_sec_security_office`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 An item or component can be made to behave in ways its road users never consented to if a cybersecurity property of one of its assets is compromised.
 

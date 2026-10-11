@@ -9,8 +9,8 @@ assembly:
   layer: '-'
   status: draft
   version: 0.1.0
-  effective_date: TBD
-  review_date: TBD
+  effective_date: auto
+  review_date: auto
   owner: rl_qx_info_documentation_owner
   group: Control and release
   purpose: "Decide which information the organisation keeps, keep it current and retrievable, and protect it as its classification requires."

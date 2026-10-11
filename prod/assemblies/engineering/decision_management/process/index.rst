@@ -21,9 +21,9 @@ Decision Management
    * - Owner
      - :need:`rl_qx_dec_decision_owner`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Take significant decisions from analysed alternatives and keep the decision, its rationale and its owner on record.
 

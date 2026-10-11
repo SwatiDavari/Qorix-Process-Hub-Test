@@ -201,19 +201,19 @@ _DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
 def _check_control(aid: str, ar: dict[str, Any]) -> list[str]:
-    """Document control: version, effective date and review date (TBD only while not approved)."""
+    """Document control: version plus effective and review date ("auto" = taken from git)."""
     errs: list[str] = []
     if not re.fullmatch(r"\d+\.\d+\.\d+", str(ar.get("version", ""))):
         errs.append(f"{aid}.version: must look like 1.0.0")
     dates = {k: str(ar.get(k, "")) for k in ("effective_date", "review_date")}
     for k, v in dates.items():
-        if v != "TBD" and not _DATE.match(v):
-            errs.append(f"{aid}.{k}: must be YYYY-MM-DD or TBD")
-    if ar.get("status") in ("approved", "released"):
-        if "TBD" in dates.values():
-            errs.append(f"{aid}: an {ar['status']} process needs an effective date and a review date")
-        elif dates["review_date"] <= dates["effective_date"]:
-            errs.append(f"{aid}.review_date: must be after the effective date")
+        if v != "auto" and not _DATE.match(v):
+            errs.append(f"{aid}.{k}: must be 'auto' (taken from git) or YYYY-MM-DD")
+    cyc = ar.get("review_cycle_months")
+    if cyc is not None and not (isinstance(cyc, int) and 1 <= cyc <= 60):
+        errs.append(f"{aid}.review_cycle_months: must be a whole number from 1 to 60")
+    if all(_DATE.match(v) for v in dates.values()) and dates["review_date"] <= dates["effective_date"]:
+        errs.append(f"{aid}.review_date: must be after the effective date")
     return errs
 
 
@@ -365,7 +365,18 @@ def _need(kind: str, title: str, nid: str, status: str, tag: str, opts: str = ""
             f"   :tags: {tag}\n{opts}\n")
 
 
-def render_area(a: dict[str, Any], areas: list[dict[str, Any]] | None = None) -> dict[str, str]:
+def _date_cell(ar: dict[str, Any], key: str, control: dict[str, dict[str, str]] | None) -> str:
+    v = str(ar[key])
+    if v != "auto":
+        return v
+    got = (control or {}).get(ar["id"])
+    if got:
+        return got["effective" if key == "effective_date" else "review"]
+    return "TBD until approved" if ar.get("status") not in ("approved", "released") else "auto (from git)"
+
+
+def render_area(a: dict[str, Any], areas: list[dict[str, Any]] | None = None,
+                control: dict[str, dict[str, str]] | None = None) -> dict[str, str]:
     """Render one assembly into its five subcomponent pages (<sub>/index.rst)."""
     ar = a["area"]
     aid, path = ar["id"], a["_path"]
@@ -380,8 +391,8 @@ def render_area(a: dict[str, Any], areas: list[dict[str, Any]] | None = None) ->
             f"   * - Version\n     - {ar['version']}\n"
             f"   * - Status\n     - :bdg-{STATUS[ar['status']]}:`{ar['status']}`\n"
             f"   * - Owner\n     - :need:`{ar['owner']}`\n"
-            f"   * - Effective date\n     - {ar['effective_date']}\n"
-            f"   * - Review date\n     - {ar['review_date']}\n\n")
+            f"   * - Effective date\n     - {_date_cell(ar, 'effective_date', control)}\n"
+            f"   * - Review date\n     - {_date_cell(ar, 'review_date', control)}\n\n")
     idx += " ".join(ar["purpose"].split()) + "\n\n"
     idx += f"* **Cluster / Code:** {CLUSTERS[ar['cluster']]} / ``{ar['code']}``\n"
     idx += (f"* **Enabler / Scope / Layer:** {ar.get('enabler', '-')} / {ar.get('scope', '-')} / "
@@ -615,14 +626,15 @@ def _cluster_index(used: list[str], by_cluster: dict[str, list[dict[str, Any]]])
     return out + "\n"
 
 
-def render_catalog(areas: list[dict[str, Any]], standards: list[dict[str, Any]]) -> dict[str, str]:
+def render_catalog(areas: list[dict[str, Any]], standards: list[dict[str, Any]],
+                   control: dict[str, dict[str, str]] | None = None) -> dict[str, str]:
     """Return {path relative to prod/: content}: assembly pages, cluster pages, Assemblies and Needs pages."""
     out: dict[str, str] = {}
     owners = {r["id"]: r["title"] for a in areas for r in a.get("roles") or []}
     by_cluster: dict[str, list[dict[str, Any]]] = {c: [] for c in CLUSTERS}
     for a in areas:
         by_cluster.setdefault(a["area"]["cluster"], []).append(a)
-        for name, txt in render_area(a, areas).items():
+        for name, txt in render_area(a, areas, control).items():
             out[f"assemblies/{a['_path']}/{name}"] = txt
     used = [c for c, la in by_cluster.items() if la]
     for c in used:

@@ -21,9 +21,9 @@ Configuration Management
    * - Owner
      - :need:`rl_qx_cfg_config_manager`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Identify, baseline and control configuration items so every release is reproducible.
 

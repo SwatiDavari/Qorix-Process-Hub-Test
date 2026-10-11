@@ -21,9 +21,9 @@ Cybersecurity Culture
    * - Owner
      - :need:`rl_qx_sec_security_office`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Cybersecurity culture represents the collective knowledge, beliefs, perceptions, attitudes, assumptions, norms, and values of individuals regarding cybersecurity, and how these elements manifest in daily behaviors when interacting with information
 

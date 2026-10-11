@@ -1,0 +1,44 @@
+name: Process review reminders
+
+on:
+  schedule:
+    - cron: "17 5 * * 1"      # Mondays
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  review-due:
+    name: Open an issue for each process due for review
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r prod/realization/qpm/requirements_lock.txt
+      - name: Find processes due within 30 days or overdue
+        run: PYTHONPATH=prod/realization/qpm python -m qpm review-due --assemblies prod/assemblies --within 30 --format json > due.json
+      - name: Open one issue per process (skip when one is already open)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create review-due --color 5a14f0 --description "Process review date reached" 2>/dev/null || true
+          python3 - <<'PY'
+          import json, subprocess
+          for d in json.load(open("due.json")):
+              title = f"Review due: {d['title']} ({d['id']}) by {d['review']}"
+              key = f"({d['id']})"
+              open_ = subprocess.run(["gh", "issue", "list", "--label", "review-due", "--state", "open", "--search", key,
+                                      "--json", "number", "--jq", "length"], capture_output=True, text=True).stdout.strip()
+              if open_ not in ("", "0"):
+                  continue
+              body = (f"Process `{d['id']}` is {d['state']}: review date {d['review']} ({d['days']} days). "
+                      f"Owner role: `{d['owner']}`.\n\nReview the process. When it is still valid, raise the patch version "
+                      f"in its `process.yaml`; the next approval restarts the review clock.")
+              subprocess.run(["gh", "issue", "create", "--title", title, "--body", body, "--label", "review-due"], check=True)
+          PY

@@ -21,9 +21,9 @@ Cybersecurity Distributed Activities
    * - Owner
      - :need:`rl_qx_sec_security_office`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Suppliers are assessed, requests for quotation state the cybersecurity needs, and responsibilities are aligned and recorded.
 

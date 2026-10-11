@@ -21,9 +21,9 @@ Cybersecurity Case
    * - Owner
      - :need:`rl_qx_sec_security_office`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 A cybersecurity case collects the arguments and evidence that the cybersecurity goals are achieved.
 

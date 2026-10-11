@@ -9,8 +9,8 @@ assembly:
   layer: '-'
   status: draft
   version: 0.1.0
-  effective_date: TBD
-  review_date: TBD
+  effective_date: auto
+  review_date: auto
   owner: rl_qx_vnr_review_lead
   group: Requirements and verification
   purpose: "Plan verification of work products against their criteria and carry out reviews that record findings and close them."

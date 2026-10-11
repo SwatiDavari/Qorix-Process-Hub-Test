@@ -21,9 +21,9 @@ Cybersecurity Management Plan
    * - Owner
      - :need:`rl_qx_sec_security_office`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Cybersecurity planning translates ISO/SAE 21434 requirements into a concrete, product/project-specific execution framework.
 

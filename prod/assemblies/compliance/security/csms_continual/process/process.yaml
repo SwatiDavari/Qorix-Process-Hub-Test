@@ -9,8 +9,8 @@ assembly:
   layer: '-'
   status: draft
   version: 0.1.0
-  effective_date: TBD
-  review_date: TBD
+  effective_date: auto
+  review_date: auto
   owner: rl_qx_sec_security_office
   purpose: 'An item or component accumulates new cybersecurity information for as long as it is supported:
     newly disclosed weaknesses in reused / open-source components, researcher or vendor advisories, field

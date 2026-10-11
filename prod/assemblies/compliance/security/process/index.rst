@@ -21,9 +21,9 @@ Security
    * - Owner
      - :need:`rl_qx_sec_security_office`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Cybersecurity management: plan, perform and assess the cybersecurity activities ISO/SAE 21434 requires for Qorix products.
 

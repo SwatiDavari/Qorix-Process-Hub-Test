@@ -21,9 +21,9 @@ Validation
    * - Owner
      - :need:`rl_qx_val_validation_lead`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Set the organisation-wide test policy, qualify the test systems it relies on, and validate products against stakeholder requirements.
 

@@ -21,9 +21,9 @@ Cybersecurity Validation
    * - Owner
      - :need:`rl_qx_sec_security_office`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Cybersecurity validation (Clause 11) confirms, with the item / component in its intended operational environment and typical release configuration, that the cybersecurity goals are achieved, the cybersecurity claims are valid, and every requirement that
 

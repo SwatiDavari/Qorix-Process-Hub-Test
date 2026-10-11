@@ -21,9 +21,9 @@ Quality Assurance
    * - Owner
      - :need:`rl_qx_qa_quality_office`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Quality management system and quality assurance: make sure processes are followed and work products meet their criteria.
 

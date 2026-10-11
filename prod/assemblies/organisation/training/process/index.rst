@@ -21,9 +21,9 @@ Training
    * - Owner
      - :need:`rl_qx_trn_training_coordinator`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Make sure every person holding a process role is qualified for it, and keep the evidence (competence matrix, training records) assessor-ready.
 

@@ -21,9 +21,9 @@ Governance & Compliance
    * - Owner
      - :need:`rl_qx_gc_head`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Own the Qorix Process Hub: maintain the Qorix process overlay, approve project tailoring, and run compliance audits.
 

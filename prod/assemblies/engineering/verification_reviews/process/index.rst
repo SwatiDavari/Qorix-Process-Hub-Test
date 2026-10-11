@@ -21,9 +21,9 @@ Verification and Reviews
    * - Owner
      - :need:`rl_qx_vnr_review_lead`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 Plan verification of work products against their criteria and carry out reviews that record findings and close them.
 

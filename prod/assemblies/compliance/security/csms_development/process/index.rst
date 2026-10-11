@@ -21,9 +21,9 @@ Cybersecurity Development
    * - Owner
      - :need:`rl_qx_sec_security_office`
    * - Effective date
-     - TBD
+     - TBD until approved
    * - Review date
-     - TBD
+     - TBD until approved
 
 The cybersecurity concept (Clause 9.5) states the high-level cybersecurity requirements and controls for the item / component; the cybersecurity development process refines them into system and software requirements, allocates them to an architectural design,
 

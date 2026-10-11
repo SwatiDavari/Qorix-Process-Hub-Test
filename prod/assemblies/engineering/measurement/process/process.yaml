@@ -9,8 +9,8 @@ assembly:
   layer: '-'
   status: draft
   version: 0.1.0
-  effective_date: TBD
-  review_date: TBD
+  effective_date: auto
+  review_date: auto
   owner: rl_qx_meas_metrics_analyst
   group: Plan and control
   purpose: "Define the measures the organisation needs, collect them consistently and report them to the people who decide."
