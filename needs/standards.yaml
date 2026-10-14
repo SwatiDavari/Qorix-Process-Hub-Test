@@ -109,3 +109,39 @@ standards:
   - {id: std_wp_isosae21434_development_1057, standard: "ISO/SAE 21434:2021", clause: "10.5.7 (work product)", title: "Clause 10.5.7"}
   - {id: std_wp_isosae21434_maintenance_13331, standard: "ISO/SAE 21434:2021", clause: "13.3.3.1 (work product)", title: "Cybersecurity incident response: work product"}
   - {id: std_wp_isosae21434_validation_1151, standard: "ISO/SAE 21434:2021", clause: "11.5.1 (work product)", title: "Clause 11.5.1"}
+
+  # Neutral base catalogue: ISO 26262:2018 Parts 4/6/7/8/9/10, ASPICE 4.0 SWE.2-SWE.6, REU.2. Clause titles are group titles; verify against the standard text.
+  - {id: std_req_aspice_40_swe_2, standard: "Automotive SPICE 4.0", clause: "SWE.2", title: "Software architectural design"}
+  - {id: std_req_aspice_40_swe_3, standard: "Automotive SPICE 4.0", clause: "SWE.3", title: "Software detailed design and unit construction"}
+  - {id: std_req_aspice_40_swe_4, standard: "Automotive SPICE 4.0", clause: "SWE.4", title: "Software unit verification"}
+  - {id: std_req_aspice_40_swe_5, standard: "Automotive SPICE 4.0", clause: "SWE.5", title: "Software component verification and integration verification"}
+  - {id: std_req_aspice_40_swe_6, standard: "Automotive SPICE 4.0", clause: "SWE.6", title: "Software verification"}
+  - {id: std_req_aspice_40_reu_2, standard: "Automotive SPICE 4.0", clause: "REU.2", title: "Management of products for reuse"}
+  - {id: std_req_iso26262_p4_6, standard: "ISO 26262:2018", clause: "Part 4, 6", title: "Initiation of product development at the system level"}
+  - {id: std_req_iso26262_p4_7, standard: "ISO 26262:2018", clause: "Part 4, 7", title: "Specification of the technical safety requirements"}
+  - {id: std_req_iso26262_p4_8, standard: "ISO 26262:2018", clause: "Part 4, 8", title: "System architectural design"}
+  - {id: std_req_iso26262_p4_9, standard: "ISO 26262:2018", clause: "Part 4, 9", title: "Item integration and testing"}
+  - {id: std_req_iso26262_p4_10, standard: "ISO 26262:2018", clause: "Part 4, 10", title: "Safety validation"}
+  - {id: std_req_iso26262_p4_11, standard: "ISO 26262:2018", clause: "Part 4, 11", title: "Release for production"}
+  - {id: std_req_iso26262_p6_6, standard: "ISO 26262:2018", clause: "Part 6, 6", title: "Initiation of product development at the software level"}
+  - {id: std_req_iso26262_p6_7, standard: "ISO 26262:2018", clause: "Part 6, 7", title: "Specification of software safety requirements"}
+  - {id: std_req_iso26262_p6_8, standard: "ISO 26262:2018", clause: "Part 6, 8", title: "Software architectural design"}
+  - {id: std_req_iso26262_p6_9, standard: "ISO 26262:2018", clause: "Part 6, 9", title: "Software unit design and implementation"}
+  - {id: std_req_iso26262_p6_10, standard: "ISO 26262:2018", clause: "Part 6, 10", title: "Software unit verification"}
+  - {id: std_req_iso26262_p6_11, standard: "ISO 26262:2018", clause: "Part 6, 11", title: "Software integration and verification"}
+  - {id: std_req_iso26262_p6_12, standard: "ISO 26262:2018", clause: "Part 6, 12", title: "Testing of the embedded software"}
+  - {id: std_req_iso26262_p7_6, standard: "ISO 26262:2018", clause: "Part 7, 6", title: "Production"}
+  - {id: std_req_iso26262_p7_7, standard: "ISO 26262:2018", clause: "Part 7, 7", title: "Operation, service and decommissioning"}
+  - {id: std_req_iso26262_p8_5, standard: "ISO 26262:2018", clause: "Part 8, 5", title: "Interfaces within distributed developments"}
+  - {id: std_req_iso26262_p8_6, standard: "ISO 26262:2018", clause: "Part 8, 6", title: "Specification and management of safety requirements"}
+  - {id: std_req_iso26262_p8_7, standard: "ISO 26262:2018", clause: "Part 8, 7", title: "Configuration management"}
+  - {id: std_req_iso26262_p8_8, standard: "ISO 26262:2018", clause: "Part 8, 8", title: "Change management"}
+  - {id: std_req_iso26262_p8_9, standard: "ISO 26262:2018", clause: "Part 8, 9", title: "Verification"}
+  - {id: std_req_iso26262_p8_10, standard: "ISO 26262:2018", clause: "Part 8, 10", title: "Documentation management"}
+  - {id: std_req_iso26262_p8_11, standard: "ISO 26262:2018", clause: "Part 8, 11", title: "Confidence in the use of software tools"}
+  - {id: std_req_iso26262_p8_12, standard: "ISO 26262:2018", clause: "Part 8, 12", title: "Qualification of software components"}
+  - {id: std_req_iso26262_p9_6, standard: "ISO 26262:2018", clause: "Part 9, 6", title: "Requirements decomposition with respect to ASIL tailoring"}
+  - {id: std_req_iso26262_p9_7, standard: "ISO 26262:2018", clause: "Part 9, 7", title: "Criteria for coexistence of elements"}
+  - {id: std_req_iso26262_p9_8, standard: "ISO 26262:2018", clause: "Part 9, 8", title: "Analysis of dependent failures"}
+  - {id: std_req_iso26262_p9_9, standard: "ISO 26262:2018", clause: "Part 9, 9", title: "Safety analyses"}
+  - {id: std_req_iso26262_p10, standard: "ISO 26262:2018", clause: "Part 10", title: "Guidelines on ISO 26262 (informative)"}

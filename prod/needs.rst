@@ -25,6 +25,202 @@ ISO 26262:2018
 
    Clause: Part 2, 5.5.2
 
+.. std_req:: Initiation of product development at the system level
+   :id: std_req_iso26262_p4_6
+   :status: valid
+   :version: 1
+
+   Clause: Part 4, 6
+
+.. std_req:: Specification of the technical safety requirements
+   :id: std_req_iso26262_p4_7
+   :status: valid
+   :version: 1
+
+   Clause: Part 4, 7
+
+.. std_req:: System architectural design
+   :id: std_req_iso26262_p4_8
+   :status: valid
+   :version: 1
+
+   Clause: Part 4, 8
+
+.. std_req:: Item integration and testing
+   :id: std_req_iso26262_p4_9
+   :status: valid
+   :version: 1
+
+   Clause: Part 4, 9
+
+.. std_req:: Safety validation
+   :id: std_req_iso26262_p4_10
+   :status: valid
+   :version: 1
+
+   Clause: Part 4, 10
+
+.. std_req:: Release for production
+   :id: std_req_iso26262_p4_11
+   :status: valid
+   :version: 1
+
+   Clause: Part 4, 11
+
+.. std_req:: Initiation of product development at the software level
+   :id: std_req_iso26262_p6_6
+   :status: valid
+   :version: 1
+
+   Clause: Part 6, 6
+
+.. std_req:: Specification of software safety requirements
+   :id: std_req_iso26262_p6_7
+   :status: valid
+   :version: 1
+
+   Clause: Part 6, 7
+
+.. std_req:: Software architectural design
+   :id: std_req_iso26262_p6_8
+   :status: valid
+   :version: 1
+
+   Clause: Part 6, 8
+
+.. std_req:: Software unit design and implementation
+   :id: std_req_iso26262_p6_9
+   :status: valid
+   :version: 1
+
+   Clause: Part 6, 9
+
+.. std_req:: Software unit verification
+   :id: std_req_iso26262_p6_10
+   :status: valid
+   :version: 1
+
+   Clause: Part 6, 10
+
+.. std_req:: Software integration and verification
+   :id: std_req_iso26262_p6_11
+   :status: valid
+   :version: 1
+
+   Clause: Part 6, 11
+
+.. std_req:: Testing of the embedded software
+   :id: std_req_iso26262_p6_12
+   :status: valid
+   :version: 1
+
+   Clause: Part 6, 12
+
+.. std_req:: Production
+   :id: std_req_iso26262_p7_6
+   :status: valid
+   :version: 1
+
+   Clause: Part 7, 6
+
+.. std_req:: Operation, service and decommissioning
+   :id: std_req_iso26262_p7_7
+   :status: valid
+   :version: 1
+
+   Clause: Part 7, 7
+
+.. std_req:: Interfaces within distributed developments
+   :id: std_req_iso26262_p8_5
+   :status: valid
+   :version: 1
+
+   Clause: Part 8, 5
+
+.. std_req:: Specification and management of safety requirements
+   :id: std_req_iso26262_p8_6
+   :status: valid
+   :version: 1
+
+   Clause: Part 8, 6
+
+.. std_req:: Configuration management
+   :id: std_req_iso26262_p8_7
+   :status: valid
+   :version: 1
+
+   Clause: Part 8, 7
+
+.. std_req:: Change management
+   :id: std_req_iso26262_p8_8
+   :status: valid
+   :version: 1
+
+   Clause: Part 8, 8
+
+.. std_req:: Verification
+   :id: std_req_iso26262_p8_9
+   :status: valid
+   :version: 1
+
+   Clause: Part 8, 9
+
+.. std_req:: Documentation management
+   :id: std_req_iso26262_p8_10
+   :status: valid
+   :version: 1
+
+   Clause: Part 8, 10
+
+.. std_req:: Confidence in the use of software tools
+   :id: std_req_iso26262_p8_11
+   :status: valid
+   :version: 1
+
+   Clause: Part 8, 11
+
+.. std_req:: Qualification of software components
+   :id: std_req_iso26262_p8_12
+   :status: valid
+   :version: 1
+
+   Clause: Part 8, 12
+
+.. std_req:: Requirements decomposition with respect to ASIL tailoring
+   :id: std_req_iso26262_p9_6
+   :status: valid
+   :version: 1
+
+   Clause: Part 9, 6
+
+.. std_req:: Criteria for coexistence of elements
+   :id: std_req_iso26262_p9_7
+   :status: valid
+   :version: 1
+
+   Clause: Part 9, 7
+
+.. std_req:: Analysis of dependent failures
+   :id: std_req_iso26262_p9_8
+   :status: valid
+   :version: 1
+
+   Clause: Part 9, 8
+
+.. std_req:: Safety analyses
+   :id: std_req_iso26262_p9_9
+   :status: valid
+   :version: 1
+
+   Clause: Part 9, 9
+
+.. std_req:: Guidelines on ISO 26262 (informative)
+   :id: std_req_iso26262_p10
+   :status: valid
+   :version: 1
+
+   Clause: Part 10
+
 ISO/SAE 21434:2021
 ==================
 
@@ -618,6 +814,48 @@ Automotive SPICE 4.0
    :version: 1
 
    Clause: PIM.3
+
+.. std_req:: Software architectural design
+   :id: std_req_aspice_40_swe_2
+   :status: valid
+   :version: 1
+
+   Clause: SWE.2
+
+.. std_req:: Software detailed design and unit construction
+   :id: std_req_aspice_40_swe_3
+   :status: valid
+   :version: 1
+
+   Clause: SWE.3
+
+.. std_req:: Software unit verification
+   :id: std_req_aspice_40_swe_4
+   :status: valid
+   :version: 1
+
+   Clause: SWE.4
+
+.. std_req:: Software component verification and integration verification
+   :id: std_req_aspice_40_swe_5
+   :status: valid
+   :version: 1
+
+   Clause: SWE.5
+
+.. std_req:: Software verification
+   :id: std_req_aspice_40_swe_6
+   :status: valid
+   :version: 1
+
+   Clause: SWE.6
+
+.. std_req:: Management of products for reuse
+   :id: std_req_aspice_40_reu_2
+   :status: valid
+   :version: 1
+
+   Clause: REU.2
 
 ISO/IEC/IEEE 15288:2023
 =======================
